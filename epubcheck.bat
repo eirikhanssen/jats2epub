@@ -3,7 +3,7 @@ rem	Overview:
 rem	
 rem	This is a windows batch file used to run epubcheck to validate a created
 rem	ePub file. It requires java to be installed and epubcheck-3.0.1.jar to 
-rem be installed in the correct folder.
+rem	be installed in the correct folder.
 rem
 rem	Optionally:
 rem
