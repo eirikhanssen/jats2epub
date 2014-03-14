@@ -1,6 +1,6 @@
 Consult www.xmlcalabash.com for the latest version.
 you can install this with java -jar (name of downloaded jar installer),
 then:
-- 	put the calabash.bat file that appears in the installed folder
+- 	put the calabash.bat (for windows systems) file that appears in the installed folder
 	in the same folder as process-jats.xpl or
--	or put it in a folder that is int the path environment variable
+-	or put it in a folder that is in the path environment variable
