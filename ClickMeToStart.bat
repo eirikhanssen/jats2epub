@@ -2,14 +2,14 @@
 rem	Overview:
 rem	
 rem	This is a windows batch file that is intended to be easy to find and click 
-rem inside the unpacked folder conatining all the files in the jats2epub package
-rem On windows using windows-explorer for instance.
+rem	inside the unpacked folder conatining all the files in the jats2epub package
+rem	On windows using windows-explorer for instance.
 rem
-rem It will first open a windows command console in the current folder
-rem and then run startupguide.bat in the windows console to display some usage 
-rem information about using the jats2epub.bat script
+rem	It will first open a windows command console in the current folder
+rem	and then run startupguide.bat in the windows console to display some usage 
+rem	information about using the jats2epub.bat script
 rem
-rem Created by Eirik Hanssen, Oslo and Akershus University College
+rem	Created by Eirik Hanssen, Oslo and Akershus University College
 rem
 rem	License:
 rem	
