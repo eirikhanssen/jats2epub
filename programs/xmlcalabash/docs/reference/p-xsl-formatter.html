@@ -1,0 +1,163 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>p:xsl-formatter</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="p-xquery.html" title="p:xquery"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Standard XProc Steps" href="p-steps.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="p:xslt" href="p-xslt.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="p-xsl-formatter" class="refentry">
+                  <div class="refnamediv">
+                     <h2>Name</h2>
+                     <p><span class="refname">p:xsl-formatter</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">The standard p:xsl-formatter step</span><span class="refpurpose-punc">.</span></span></p>
+                  </div>
+                  <div class="refsynopsisdiv">
+                     <h2>Synopsis</h2>
+                     <p class="element-syntax element-syntax-declare-step-opt"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">p:xsl-formatter</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">source</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">parameters</code><code>"</code> <code class="attr kind-attr">kind</code><code>="</code><code class="value kind-value">parameter</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code> <code class="attr primary-attr">primary</code><code>="</code><code class="value primary-value">false</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-req"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">href</code><code>"</code> <code class="attr required-attr">required</code><code>="</code><code class="value required-value">true</code><code>"</code><code>/&gt;</code><code>                       </code><code class="comment">&lt;!-- </code><span class="opt-type">anyURI</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">content-type</code><code>"</code><code>/&gt;</code><code>                               </code><code class="comment">&lt;!-- </code><span class="opt-type">string</span><code class="comment"> --&gt;</code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
+                  </div>
+                  <div class="refsection">
+                     <div class="refsection-titlepage">
+                        <h2>Description</h2>
+                     </div>
+                     
+                     
+                     
+                     <p>The XSL formatter supports three backends: AntennaHouse, FOP, and RenderX.</p>
+                     
+                     
+                     <p>Select the backend using the <span class="property">com.xmlcalabash.fo-processor</span> system
+                        property or the <code class="tag-element">fo-processor</code> configuration setting.
+                     </p>
+                     
+                     
+                     <figure id="p-xsl-formatter.3.4" class="informaltable-wrapper">
+                        <div class="informaltable">
+                           <table border="1">
+                              <thead>
+                                 <tr>
+                                    
+                                    <th align="left">Processor</th>
+                                    
+                                    <th align="left">Configuration value</th>
+                                    
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    
+                                    <td>AntennaHouse</td>
+                                    
+                                    <td><code class="literal">com.xmlcalabash.util.FoAH</code></td>
+                                    
+                                 </tr>
+                                 <tr>
+                                    
+                                    <td>FOP</td>
+                                    
+                                    <td><code class="literal">com.xmlcalabash.util.FoFOP</code></td>
+                                    
+                                 </tr>
+                                 <tr>
+                                    
+                                    <td>RenderX</td>
+                                    
+                                    <td><code class="literal">com.xmlcalabash.util.FoXEP</code></td>
+                                    
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </figure>
+                     
+                     
+                     <p>Each processor accepts configuration parameters (using the parameter input port
+                        or explicit <code class="tag-element">p:with-param</code> instructions) to control its behavior. The specific
+                        parameters accepted, and their meanings, are implementation dependent.
+                     </p>
+                     
+                     
+                     <div id="ah-prop" class="refsection">
+                        <div class="refsection-titlepage">
+                           <h3>AntennaHouse properties</h3>
+                        </div>
+                        
+                        
+                        
+                        <p>AntennaHouse accepts the following properties:
+                           <span class="simplelist"><span class="member"><code class="literal">EmbedAllFontsEx</code></span>, <span class="member"><code class="literal">ExitLevel</code></span>, <span class="member"><code class="literal">ImageCompression</code></span>, <span class="member"><code class="literal">NoAccessibility</code></span>, <span class="member"><code class="literal">NoAddingOrChangingComments</code></span>, <span class="member"><code class="literal">NoAssembleDoc</code></span>, <span class="member"><code class="literal">NoChanging</code></span>, <span class="member"><code class="literal">NoContentCopying</code></span>, <span class="member"><code class="literal">NoFillForm</code></span>, <span class="member"><code class="literal">NoPrinting</code></span>, <span class="member"><code class="literal">OptionsFileURI</code></span>, <span class="member"><code class="literal">OwnersPassword</code></span>, <span class="member"><code class="literal">TwoPassFormatting</code></span></span>
+                           
+                        </p>
+                        
+                        
+                     </div>
+                     
+                     
+                     <div id="fop-prop" class="refsection">
+                        <div class="refsection-titlepage">
+                           <h3>FOP properties</h3>
+                        </div>
+                        
+                        
+                        
+                        <p>FOP accepts the following properties:
+                           <span class="simplelist"><span class="member"><code class="literal">Accessibility</code></span>, <span class="member"><code class="literal">Author</code></span>, <span class="member"><code class="literal">Base14KerningEnabled</code></span>, <span class="member"><code class="literal">BaseURL</code></span>, <span class="member"><code class="literal">BreakIndentInheritanceOnReferenceAreaBoundary</code></span>, <span class="member"><code class="literal">ConserveMemoryPolicy</code></span>, <span class="member"><code class="literal">CreationDate</code></span>, <span class="member"><code class="literal">Creator</code></span>, <span class="member"><code class="literal">FontBaseURL</code></span>, <span class="member"><code class="literal">HyphenBaseURL</code></span>, <span class="member"><code class="literal">Keywords</code></span>, <span class="member"><code class="literal">LocatorEnabled</code></span>, <span class="member"><code class="literal">PageHeight</code></span>, <span class="member"><code class="literal">PageWidth</code></span>, <span class="member"><code class="literal">Producer</code></span>, <span class="member"><code class="literal">SourceResolution</code></span>, <span class="member"><code class="literal">StrictUserConfigValidation</code></span>, <span class="member"><code class="literal">StrictValidation</code></span>, <span class="member"><code class="literal">Subject</code></span>, <span class="member"><code class="literal">TargetResolution</code></span>, <span class="member"><code class="literal">TargetResolution</code></span>, <span class="member"><code class="literal">Title</code></span>, <span class="member"><code class="literal">UseCache</code></span>, <span class="member"><code class="literal">UserConfig</code></span></span>
+                           
+                        </p>
+                        
+                        
+                     </div>
+                     
+                     
+                     <div id="xep-prop" class="refsection">
+                        <div class="refsection-titlepage">
+                           <h3>RenderX properties</h3>
+                        </div>
+                        
+                        
+                        
+                        <p>The RenderX formatter uses its own system property,
+                           <span class="property">com.renderx.xep.CONFIG</span> to specify the formatter properties.
+                        </p>
+                        
+                        
+                     </div>
+                     
+                     
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="p:xquery" href="p-xquery.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="p:xslt" href="p-xslt.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">p:xquery </td>
+                  <td width="20%" align="center"><a title="Standard XProc Steps" href="p-steps.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> p:xslt</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

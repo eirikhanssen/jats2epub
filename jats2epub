@@ -1,0 +1,220 @@
+#!/bin/bash
+#	Overview:
+#	
+#	This is a linux bash script that can be used to generate .epub, .mobi 
+#	(and in a later version also .pdf output) from NISO JATS tagged .xml input
+#
+#	Created by Eirik Hanssen, Oslo and Akershus University College
+#	
+#	License:
+#	
+#	This file is part of jats2epub.
+#
+#	jats2epub is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 3 of the License, or
+#	(at your option) any later version.
+#
+#	jats2epub is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
+#	
+#	Contact: eirik dot hanssen at hioa dot no
+
+# display usage help'
+function displayUsage {
+	echo ""
+	echo "Usage: ./jats2epub xmlfile [required] assetfolder [optional]"
+	echo ""
+	echo "Available switches:"
+	echo "   -h,   --help					Display Help/Troubleshooting"
+	echo "   -i,   --install-info				Display how to install components used by this script"
+	echo "   -o,   --operation				Display how the script operates"
+	echo ""
+	echo "Examples"
+	echo "   To process \"article.xml\" in the \"xml-source folder\":"
+	echo "   (1)	./jats2epub xml-source/article.xml"
+	echo ""
+	echo "   To process \"article.xml\" in the \"xml-source folder\" and also copy images from \"xml-source/article-extras/images\" into epub-structure:"
+	echo "   (2)	./jats2epub xml-source-folder/article.xml xml-source-folder/article-extras"
+	echo ""
+	echo "   Display Help/Troubleshooting/Install-info:"
+	echo "   (3)	./jats2epub			Display this usage"
+	echo "   (4)	./jats2epub -h		Display Help/Troubleshooting"
+	echo "   (5)	./jats2epub -i		Display how to install components used by this script"
+	echo "   (6)	./jats2epub -o		Display how to the script operates"
+
+}
+
+function displayOperation {
+	echo "### How the script Operates  ###"
+	echo ""
+	echo "(1) clear out existing contents of output-folder "
+	echo "(2) create output/epub folder"
+	echo "(3) copy contents of assets/epub-template into output/epub"
+	echo "(4) If a folder is supplied in 2.nd parameter, copy contents of this folder to output/epub/OEBPS"
+	echo "(5) Attempt to process the source xml article with the XProc pipeline \"process-jats-xml.xpl\" with the following command:"
+	echo "	calabash -i source=[path-to-xml-source-article] process-jats-xml.xpl"
+	echo ""
+	echo "If all goes well the output/epub folder is correctly populated and can be made into an ePub"
+	echo "This script will then attempt to pack the ePub by using zip-commands."
+	echo ""
+	echo "(6) Creating a zip archive with the same name as the xml-file, excluding the extension and adding a timestamp and the \".epub\" extension"
+	echo "(7) Adding mimetype to this archive with no compression"
+	echo "(8) Adding the rest of the files inside output/epub to the archive with higher compression"
+	echo "(9) Moving the created epub from output/epub to two directories up (should be the dir you are running the script from)"
+	echo ""
+	echo "(10) Call epubcheck to validate the newly created epub"
+
+}
+
+function displayInstallInfo {
+	echo "### Installing components used by this script  ###"
+	echo ""
+	echo "   The versions mentioned here are the ones current at the time of writing (dec 2013)."
+	echo "   You might have to adjust to newer versions in the future"
+	echo ""
+	echo "XML Calabash - XProc processor used to process the pipeline. [MUST HAVE]."
+	echo "   XML Calabash can be downloaded from at http://xmlcalabash.com/download/"
+	echo "   At the time of writing http://xmlcalabash.com/download/calabash-1.0.15-94.jar is the version used."
+	echo ""
+	echo "   Get XMLCalabash:"
+	echo "      wget http://xmlcalabash.com/download/calabash-1.0.15-94.jar"
+	echo "   Install (need root access to install system wide, but can also be installed in a user's home dir):"
+	echo "      java -jar calabash-1.0.15-94.jar"
+	echo ""
+	echo "Epubcheck - Utility to validate epubs. Used by the script to validate produced epub. [GOOD TO HAVE]"	 
+	echo "   Find it at http://code.google.com/p/epubcheck/, or download directly: "
+	echo ""
+	echo "   Get epubcheck:"
+	echo "      wget http://epubcheck.googlecode.com/files/epubcheck-3.0.1.zip"
+	echo "      unzip epubcheck-3.0.1.zip"
+	echo ""
+	echo "   System wide installation requires root access:"
+	echo "      sudo cp -r epubcheck-3.0.1 /usr/local/"
+	echo "      sudo ln -s /usr/local/epubcheck-3.0.1/ /usr/local/epubcheck"
+	echo ""
+	echo "   Create a shellscript to simplify running epubcheck and put it in /usr/local/bin:"
+	echo "      printf \"#\"! > epubcheck && printf \"/bin/bash\n\" >> epubcheck && echo \"java -jar /usr/local/epubcheck/epubcheck-3.0.1.jar \\\$1\" >> epubcheck"
+	echo "      chmod +x epubcheck && sudo chown root epubcheck && sudo mv epubcheck /usr/local/bin"
+	echo ""
+
+}
+
+function displayHelp {
+	echo "### Help/Troubleshooting  ###"
+	echo ""
+	echo "This is a script to automate ePub creation from an article tagged and validated against the NISO JATS 1.0 XML tagset"
+	echo ""
+	echo "To begin with, the input xml-file needs to be tagged according to the JATS1.0 tagset and validated against jats xsd or DTD."
+	echo "The first parameter is required: the xml-file to be processed"
+	echo "If no images are used in the article, you only need to use the 1st parameter"
+	echo ""
+	echo "Example"
+	echo "	./jats2epub xml-source/article.xml"
+	echo ""
+	echo "The second parameter is optional: a folder. It must be used if the article contains images to be copied inside the epub"
+	echo "It should be the parent folder of a \"images\"-folder where the images are placed."
+	echo ""
+	echo "Example"
+	echo "Article is located at this path:"
+	echo "	/home/username/xml-source/article01.xml"
+	echo "Images are located at this path:"
+	echo "	/home/username/xml-source/article01/images/figure01.png"
+	echo "	/home/username/xml-source/article01/images/figure02.png"
+	echo "	/home/username/xml-source/article01/images/figure03.png"
+	echo "To process article01.xml and include all images you would run this command:"
+	echo "	./jats2epub /home/username/xml-source/article.xml /home/username/xml-source/article01"
+	echo ""
+	echo "You don't have to use absolute paths, you can use relative paths as well."
+	echo ""
+	echo "Component Requirements"
+	echo "   See install info to find out how to install these components using this command:"
+	echo "      ./jats2epub -i"
+	echo ""
+	echo "This script relies on the following components:"
+	echo "   XML Calabash [REQUIRED]"
+	echo "      An XProc processor capable of processing pipelines written in XProc. "
+	echo "	    XProc is an XML pipeline language. XML Calabash Supports XPath 2.0, as well as XSL-documents written in XSLT2.0 and XSLT1.0 "
+	echo "	    the source article will be processed with \"process-jats-xml.xpl\" which means a chain of XSLT stylesheets are used to produce"
+	echo "	    the different components needed for ePub production."
+	echo ""
+	echo "   zip (commandline) [REQUIRED]"
+	echo "      The zip utility is used to pack the files and folders in the ePub bundle. It is normally included in your GNU/Linux environment."
+	echo ""
+	echo "   epubchecker [OPTIONAL] (but important nonetheless)"
+	echo "      The epubchecker utility is used to validate the epub-file after creation"
+	echo ""
+}
+
+# check if there is one or two  parameters
+if [ "$#" = "1" ] || [ "$#" = "2" ]; then
+	filepath=$1
+	if [ $1 == "-o" ] || [ $1 == "--operation" ]; then
+		displayOperation
+	elif [ $1 == "-h" ] || [ $1 == "--help" ]; then
+		displayHelp
+	elif [ $1 == "-i" ] || [ $1 == "--install-info" ]; then
+		displayInstallInfo
+	elif [ -f "$filepath" ]
+	then
+		dirname=${filepath%/*}
+		filename=${filepath##*/}
+		filename_base=${filename%%.*}
+		filename_ext=${filename##*.}
+		timestamp=$(date +-%Y%m%d-%H%M%S)
+		epubname=$filename_base$timestamp.epub
+		mobiname=$filename_base$timestamp.mobi
+		pdfname=$filename_base$timestamp.pdf
+		htmlname=$filename_base$timestamp.html
+		echo ""
+		echo "Clearing old contents of output/epub .."
+		rm -rf output_working/epub/
+		echo "Creating folders (if they don't exist): output/epub ..."
+		mkdir -p output_working/epub/
+		echo "Copying over epub-template from assets/epub-template to output/epub/ ..."
+		cp -r assets/epub-template/* output_working/epub/
+		# copying assets for one article
+		# should I check this before running?
+		if [ "$#" = "2"  ]; then
+			resources=$2
+			echo "cp -r $resources/* output/epub/OEBPS"
+			cp -r $resources/* output_working/epub/OEBPS
+		fi
+		echo "Processing \"$filename\" in \"$dirname\" with \"process-jats-xml.xpl\" (XProc pipeline) using XML Calabash ..."
+		echo ""
+		calabash -i source=$filepath process-jats-xml.xpl
+		echo ""
+		echo "If the processing went well, you will see <c:result ...>...</c:result> elements above, one for each created file, if not, calabash will output error messages."
+		echo ""
+		echo "Creating $epubname (packing with zip)..."
+		cd output_working/epub
+		zip -0Xq $epubname mimetype
+		zip -Xr9Dq $epubname *
+		mv $epubname ../../output_final/
+		cd ../../
+		echo ""
+		echo "Moving web-version of article to output_final/$htmlname"
+		echo ""
+		mv output_working/article.html output_final/$htmlname
+		echo ""
+		echo "Validating $epubname with epubcheck:"
+		echo ""
+		java -jar programs/epubcheck-3.0.1/epubcheck-3.0.1.jar output_final/$epubname
+		echo ""
+		echo "If epubcheck returned no errors, congratulations! If epubcheck returned with errors, try to fix them and rerun this script"
+		echo ""
+		echo "Trying to generate kindle .mobi"
+		programs/kindlegen/kindlegen output_final/$epubname -o $mobiname
+		echo "DONE"
+	else
+		echo "Error: The file '$filepath' was not found."
+		displayUsage
+	fi
+else 
+	displayUsage
+fi

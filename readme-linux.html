@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Generating ePub using this package (GNU/Linux)</title>
+<style>
+    body {line-height: 1.75em;}
+	a {color: blue; text-decoration: underline;}
+	code{font-family: monospace; font-size: large; border: 1px solid #ccc; padding: .1em .3em; white-space: pre; background-color: black; color: white; display: block; }
+	.block {display: block; padding-left: 1em;}
+	code:hover {background-color: #ffa; color: black;}
+	code em {background-color: #ffa; margin-top: -.3em; margin-bottom: -.3em; font-style: normal; padding-top: .3em; padding-bottom: .3em; border: 1px solid orange;margin-left: -1px; margin-right: -1px;}
+	code:hover em {border: 1px solid red; }
+	.included {color: green; font-weight: bold;}
+	.not-included, .important {color: red; font-weight: bold;}
+	.inline {display: inline}
+	.contents li {list-style-type: none;}
+</style>
+</head>
+<body>
+<h1>Generating ePub using jats2epub (Gnu/Linux)</h1>
+<p><a href="readme-linux.html">There is also version of this readme for running jats2epub on windows.</a></p>
+
+<h2 id="contents">Contents</h2>
+<ul class="contents">
+	<li><a href="#background">Project background</a></li>
+	<li><a href="#itworks">Maybe it just works</a></li>
+	<li><a href="#folderstruct">Package folder structure</a></li>
+	<li><a href="#requiredsoft">Required software</a>
+		<ul>
+			<li><a href="#jre">Java Runtime Environment</a> <em class="not-included">(not included)</em> - Several parts of this package are java based and require JRE to run</li>
+			<li><a href="#date">GNU date</a> <em class="included">(not-included but should be present on any GNU/Linux system)</em></li>
+			<li><a href="#calabash">XML Calabash</a> <em class="included">(included)</em></li>
+			<li><a href="#epubcheck">Epubcheck</a> <em class="included">(included)</em></li>
+			<li><a href="#zip">GNU zip</a> <em class="included">(not-included but should be present on any GNU/Linux system)</em></li>
+		</ul>
+	</li>
+	<li><a href="#optionalsoft">Optional software</a>
+		<ul>
+			<li><a href="#kindlegen">Amazon Kindlegen</a> <em class="not-included">(not included due to licensing restrictions)</em> - but it is free to download for personal use</li>
+		</ul>
+	</li>
+	<li><a href="#troubleshooting">Troubleshooting</a></li>
+	<li><a href="#validxml">Only valid XML documents can pass through an XProc Pipeline</a></li>
+	<li><a href="#xprocfuture">Future additions to XProc</a></li>
+	<li><a href="#nicetoknow">Nice to know information</a>
+	<ul>
+		<li><a href="#buildfirstepub">Building your first epub</a></li>
+	</ul>
+	</li>
+</ul>
+
+<h2 id="background">Project background</h2>
+<p>This package was created in a project to create a new, xml-based workflow to publish OpenAccess articles in electronic journals in the ePub format.</p> 
+<p>You might be interested in reading about this project in the article that is published in Code4lib: <strong>EPUB as publication format in Open Access journals: Tools and workflow.</strong> <em>By Trude Eikebrokk, Tor Arne Dahl and Siri Kessel, Oslo and Akershus University College of Applied Sciences</em>.</p>
+<p>The xslt-scripts used in this package are created by Tor-Arne Dahl, Trude Eikebrokk and Eirik Hanssen at Oslo and Akershus University College of Applied Sciences. The windows batch-files, GNU/Linux shellscripts, and the xproc-pipeline are written by Eirik Hanssen. But this package also uses scripts created by Piez Wendell, created for National Library of Medicine, scripts that are part of the JATS tools package. These scripts from the JATS tools package are located in the assets/jats-xslt folder.</p> 
+<p>This package is hosted on github: <a href="https://github.com/eirikhanssen/jats2epub">https://github.com/eirikhanssen/jats2epub</a>, ssh-clone url: git@github.com:eirikhanssen/jats2epub.git</p>
+<p>Author and maintainer of this readme and the jats2epub package on GitHub is Eirik Hanssen, Oslo and Akershus University College.</p>
+<p>Contact: eirik dot hanssen at hioa dot no</p>
+
+<h2 id="itworks">Maybe it just works</h2>
+<ul>
+	<li>Unzip jats2epub.zip and enter the directory jats2epub using windows explorer.</li>
+	<li>Doubleclick the file<code class="inline">ClickMeToStart.bat</code>. It is a windows batch file that will open up a console (cmd.exe) in the jats2epub folder and display some usage information.</li>
+	<li>Unless you take extra steps to make sure the commands are available in PATH for the whole system, <strong class="important">you can only run jats2epub from the root folder (jats2epub folder)</strong>.</li>
+	<li>Please read the instructions on the screen.</li>
+	<li>To get started and see usage, type:<code>jats2epub</code></li>
+	<li>To generate your first e-book using this package, try one of the two examples (type this in your console and press return key):
+	<ol>
+		<li><code>jats2epub source-xml/saks.xml</code></li>
+		<li><code>jats2epub source-xml/spehar.xml source-xml/spehar</code></li>
+	</ol>
+	Then inspect the files and folders in source-xml, output_final and output_working. The finished .epub will be saved in the folder output_final if all went well. It will be given a date-timestamp as part of the filename, so you don't have to worry about over-writing old epub files you made.
+	</li>
+</ul>
+
+<h2 id="folderstruct">Package folder structure</h2>
+<p>All files and folders here are listed relative to the jats2epub (folder) that you get when you unzip the package. The .bat files located in the jats2epub folder
+make sure that all the commands used by the script will work from that folder.</p>
+
+<h3>assets (folder)</h3>
+<p>
+ The files and folders in the assets folder are to be copied into the epub folder generated by the epub-generation pipeline. 
+This will happen automatically by the script when running the pipeline. Some of the files and folders will be the same for every epub generated, and those files/folders are contained here.
+</p>
+
+<h3>install (folder)</h3>
+<p>
+This folder contains the installation files to components used by this package that have licenses that allow distribution.
+</p>
+
+<h3>output_final (folder)</h3>
+<p>
+The .html files intended for web display as well as .epub files generated will populate this directory. If KindleGen is enabled, (see the section on <a href="#optionalsoft">optional software</a>), .mobi files will also populate this directory.
+</p><p>Later the pipeline can be extended to generate pdf as well, and .pdf output will also be placed here.</p>
+
+<h3>output_working (folder)</h3>
+<p>
+This is the folder the script is using as a working folder. All temporary files created will be placed here, as well as the complete epub-structure used for packing epub. It can be useful to inspect files here to see the output generated from the different steps in the XProc pipeline as they will be stored here.
+</p>
+<p>
+Each time jats2epub is run, a warning is issued about deleting the contents of this folder. 
+This is to remind you to back up files if you wish do do so. 
+If you press y, to continue when prompted, this folder will be deleted and recreated. 
+This is a necceceary step to do in order to make sure no files are left behind by a previous run. 
+If this isn't done, you risk getting .epub files that do not validate because of left-over files.
+</p>
+
+<h3>output_working/epub (folder)</h3>
+<p>
+Here you find the files and folders that make up the .epub.
+They have to be packed into a zipfile in two steps. First the mimetype with no compression, then the rest.
+This is done automatically by the script using zip from info-zip.org.
+Some of the files were generated by the XProc pipeline, and others were simply copied over unchanged.
+</p>
+
+<h3>programs (folder)</h3>
+<p>
+The programs folder contains programs used and required by the script that you won't find on your regular windows pc. All programs included have licenses that allow distribution.
+<ul>
+	<li>programs/epubcheck-3.0.1/epubcheck-3.0.1.jar (all systems) - java executable that is used to validate the generated .epub. This is done automatically by the script.</li>
+	<li>programs/kindlegen (your system) - This is where you will extract kindlegen.exe if you want the added .mobi functionality. Contains a readme with instructions on how to do so, as the amazon kindlegen license does not permit distribution.</li>
+	<li>programs/UnxUtils (windows only) - This folder contains date.exe - a Win32 port of GNU coreutils date. This executable is required by the script to generate a date-timestamp that is used as the last part of the filename.</li>
+	<li>programs/xmlcalabash (all systems) - contains java executable that is used to run XProc and XSLT transformations on the xml file used for .epub production.</li>
+	<li>programs/zip3-win32 (windows only) - commandline zip.exe that is used for packing the epub archive.</li>
+</ul>
+
+<h3>source-xml (folder)</h3>
+<p>
+This folder contains two sample articles, spehar.xml and saks.xml, both tagged in the JATS 1.0 xml tagset. Also you will find a folder named spehar that contains extras (images) to be copied into the epub-structure for that article.
+</p>
+
+
+<h3>Files in the top level of the jats2epub folder</h3>
+<ul>
+	<li>calabash.bat (windows only) - this is used to invoke xmlcalabash that processes the xproc pipeline and xslt processing.</li>
+	<li>ClickMeToStart.bat (windows only) - when you click this, it will start a console window (cmd.exe) in this folder that you can use to run commands to generate .epub from xml input files.</li>
+	<li>commandhelp.bat (windows only) - if you type <code class="inline">commandhelp</code> in the console, you will get some general tips on commands you can use in the console.</li>
+	<li>epubcheck.bat (windows only) - this is used to perform epub validation. It is used automaticallyl by the script, but you can also use it manually to validate .epub: <code class="inline">epubcheck output_final/my-article.epub</code></li>
+	<li>jats2epub (GNU/Linux only) - this file with no extension is a linux shell script for use in a GNU/Linux environment. From the xproc-pipeline folder, use it like in one of these two examples: <code>./jats2epub source-xml/spehar.xml source-xml/spehar</code>
+	<code>./jats2epub source-xml/saks.xml</code></li>
+	<li>jats2epub.bat (windows only) - this is the windows batch script that wraps up the whole process and generates .epub.</li>
+	<li>kindlegen.bat (windows only) - if kindlegen.exe exists in jats2epub/programs/kindlegen, a .mobi file will be generated, otherwise, will output a message.</li>
+	<li>process-jats-xml.xpl (all systems) - An XProc pipeline. This is the file that, when used by xmlcalabash will do the heavy work of transforming the input xmlfile and creating different files needed in the .epub by use of XSLT transformations.</li>
+	<li>readme-win-html - readme for windows users</li>
+	<li>readme-linux.html - this readme</li>
+	<li>startupguide.bat (windows only) - when you use the command <code class="inline">startupguide</code>, in the console in the jats2epub folder, you will get the first screen of information listed again.</li>
+</ul>
+
+
+<h2 id="requiredsoft">Required software</h2>
+<p>The software that is included has licenses that allow redistribution. You might want to check if there is a new version out though.</p>
+<ol>
+	<li id="jre"><strong>Java Runtime Environment</strong> <em class="not-included">(not included)</em> - JRE is required by XML Calabash and Epubcheck that are java based programs.</li>
+	<li id="date"><strong>GNU date</strong> - GNU date is required and used by jats2epub to generate a date-timestamp that is used as the last part of the filenames that this script creates. It should be present on any GNU/Linux distribution.</li>
+	<li id="calabash"><strong><a href="http://xmlcalabash.com/">XML Calabash</a></strong> <em class="included">(included)</em> - A java based XProc processor for running XProc pipelines. XProc pipelines utilize XPATH2.0 and has support for XSLT2.0 and XSLT1.0. Requires JRE to run.
+	<br>It is located in: <code>jats2epub/programs/xmlcalabash</code>
+	</li>
+	<li id="epubcheck"><strong><a href="http://code.google.com/p/epubcheck/">Epubcheck</a></strong> <em class="included">(included)</em> - A java based epub validator for epub files version 2.0 and later. Requires JRE to run.
+	<br>It is located in: <code>jats2epub/programs/epubcheck-3.0.1</code>
+	<li id="zip"><strong>Zip</strong> - GNU zip commandline is used by jats2epub to properly pack the epub archive. It should be present on any GNU/Linux distribution. If not, it should be easy to install anyway.</li>
+</ol>
+
+<h2 id="optionalsoft">Optional software</h2>
+<ol>
+	<li id="kindlegen"><strong><a href="https://www.google.no/search?q=amazon+kindlegen">Amazon KindleGen</a></strong> <em class="not-included">(not included, optional)</em> - Can be used to convert .epub to .mobi format
+		<p>
+			Because of licencing restrictions, we can't include Amazon kindlegen in this package. You can however, download it yourself legally and for free.</p>
+
+		<p>If you wish to automatically create .mobi format for use with kindle devices aswell do the following steps:<p>
+	<ol>
+		<li>Download kindlegen from amazon.
+			<ul>
+				<li>Search google: <a href="https://www.google.no/search?q=amazon+kindlegen">Amazon KindleGen</a></li>
+				<li>At time of writing: <a href="http://www.amazon.com/gp/feature.html?docId=1000765211">KindleGen download page</a></li>
+				<li>At time of writing, download link: <a href="http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz">kindlegen_linux_2.6_i386_v2_9.tar.gz</a></li>
+			</ul>
+		</li>
+		<li>Unpack kindlegen executable to: <code>jats2epub/programs/kindlegen/kindlegen</code></li>
+		<li>When you run jats2epubs the next time, it will find kindlegen, and will generate .mobi format also.</li>
+	</ol>
+	</li>
+</ol>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>
+	The script checks if you used 0, 1, 2 or more parameters.
+	If called with no parameters, it simply displays usage.
+	The script does a dumb check to see if parameter 1 or 2 exists on the file system,
+	but doesn't check if what exists is a file or folder. It also does no attempt at validating the files/folders.
+	If you use a file where the folder is expected or vice versa, the wrong files, or an xml-file that is not validated against 
+	the NISO Jats 1.0 dtd or xsd, the script will continue, but you should expect to get warnings and errors.
+</p>
+
+<h2 id="validxml">Only valid xml documents can flow through an XProc pipeline</h2>
+<p>
+	Since only valid xml documents can flow through the XProc pipeline, not all can be implemented using XProc with xmlcalabash alone. That's the reason why it has been wrapped in batchfiles.
+</p>
+
+<h2 id="xprocfuture">Future additions to XProc</h2>
+<p>
+In the future many of the steps in the batfile jats2epub.bat might be unnecceceary. There are currently working drafts that address some of XProc's shortcomings:
+</p>
+<ul>
+<li><a href="http://www.w3.org/XML/XProc/docs/fileos/">File and operating system steps for XProc</a></li>
+<li><a href="http://www.w3.org/XML/XProc/docs/xproc-zip_unzip.html">Zip and Unzip Steps for XProc (DRAFT)</a></li>
+</ul>
+
+<h2 id="nicetoknow">Nice to know information</h2>
+<h3 id="buildfirstepub">Building your first ePUB</h3>
+<p>
+See this article at IBM developerWorks: <a href="http://www.ibm.com/developerworks/xml/tutorials/x-epubtut/section3.html">Build a digital book with EPUB</a>
+</p>
+</html>

@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>p:http-request</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="p-hash.html" title="p:hash"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Standard XProc Steps" href="p-steps.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="p:identity" href="p-identity.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="p-http-request" class="refentry">
+                  <div class="refnamediv">
+                     <h2>Name</h2>
+                     <p><span class="refname">p:http-request</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">The standard p:http-request step</span><span class="refpurpose-punc">.</span></span></p>
+                  </div>
+                  <div class="refsynopsisdiv">
+                     <h2>Synopsis</h2>
+                     <p class="element-syntax element-syntax-declare-step-opt"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">p:http-request</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">source</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">byte-order-mark</code><code>"</code><code>/&gt;</code><code>                            </code><code class="comment">&lt;!-- </code><span class="opt-type">boolean</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">cdata-section-elements</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">''</code><code>"</code><code>/&gt;</code><code>         </code><code class="comment">&lt;!-- </code><span class="opt-type">ListOfQNames</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">doctype-public</code><code>"</code><code>/&gt;</code><code>                             </code><code class="comment">&lt;!-- </code><span class="opt-type">string</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">doctype-system</code><code>"</code><code>/&gt;</code><code>                             </code><code class="comment">&lt;!-- </code><span class="opt-type">anyURI</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">encoding</code><code>"</code><code>/&gt;</code><code>                                   </code><code class="comment">&lt;!-- </code><span class="opt-type">string</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">escape-uri-attributes</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'false'</code><code>"</code><code>/&gt;</code><code>     </code><code class="comment">&lt;!-- </code><span class="opt-type">boolean</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">include-content-type</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'true'</code><code>"</code><code>/&gt;</code><code>       </code><code class="comment">&lt;!-- </code><span class="opt-type">boolean</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">indent</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'false'</code><code>"</code><code>/&gt;</code><code>                    </code><code class="comment">&lt;!-- </code><span class="opt-type">boolean</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">media-type</code><code>"</code><code>/&gt;</code><code>                                 </code><code class="comment">&lt;!-- </code><span class="opt-type">string</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">method</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'xml'</code><code>"</code><code>/&gt;</code><code>                      </code><code class="comment">&lt;!-- </code><span class="opt-type">QName</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">normalization-form</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'none'</code><code>"</code><code>/&gt;</code><code>         </code><code class="comment">&lt;!-- </code><span class="opt-type">NormalizationForm</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">omit-xml-declaration</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'true'</code><code>"</code><code>/&gt;</code><code>       </code><code class="comment">&lt;!-- </code><span class="opt-type">boolean</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">standalone</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'omit'</code><code>"</code><code>/&gt;</code><code>                 </code><code class="comment">&lt;!-- </code><span class="opt-type">"true" | "false" | "omit"</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">undeclare-prefixes</code><code>"</code><code>/&gt;</code><code>                         </code><code class="comment">&lt;!-- </code><span class="opt-type">boolean</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">version</code><code>"</code> <code class="attr select-attr">select</code><code>="</code><code class="value select-value">'1.0'</code><code>"</code><code>/&gt;</code><code>                     </code><code class="comment">&lt;!-- </code><span class="opt-type">string</span><code class="comment"> --&gt;</code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
+                  </div>
+                  <div class="refsection">
+                     <div class="refsection-titlepage">
+                        <h2>Description</h2>
+                     </div>
+                     
+                     
+                     <p>TBD.</p>
+                     
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="p:hash" href="p-hash.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="p:identity" href="p-identity.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">p:hash </td>
+                  <td width="20%" align="center"><a title="Standard XProc Steps" href="p-steps.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> p:identity</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

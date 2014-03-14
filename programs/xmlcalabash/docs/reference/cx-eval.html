@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>cx:eval</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cx-delta-xml.html" title="cx:delta-xml"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="XML Calabash Extension Steps" href="cx-steps.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="cx:get-cookies" href="cx-get-cookies.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="cx-eval" class="refentry">
+                  <div class="refnamediv">
+                     <h2>Name</h2>
+                     <p><span class="refname">cx:eval</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">Evaluate a dynamically constructed pipeline</span><span class="refpurpose-punc">.</span></span></p>
+                  </div>
+                  <div class="refsynopsisdiv">
+                     <h2>Synopsis</h2>
+                     <p class="element-syntax element-syntax-declare-step-opt"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">cx:eval</code><code>"</code> <code class="attr xmlns-attr">xmlns:cx</code><code>="</code><code class="value xmlns-value">http://xmlcalabash.com/ns/extensions</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">pipeline</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">source</code><code>"</code> <code class="attr sequence-attr">sequence</code><code>="</code><code class="value sequence-value">true</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">options</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">step</code><code>"</code><code>/&gt;</code><code>                                       </code><code class="comment">&lt;!-- </code><span class="opt-type">QName</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">detailed</code><code>"</code><code>/&gt;</code><code>                                   </code><code class="comment">&lt;!-- </code><span class="opt-type">boolean</span><code class="comment"> --&gt;</code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
+                  </div>
+                  <div class="refsection">
+                     <div class="refsection-titlepage">
+                        <h2>Description</h2>
+                     </div>
+                     
+                     
+                     
+                     <p>In the simplest case, where the specified pipeline has a single
+                        input and a single output, the document(s) on the <code class="literal port">source</code>
+                        port are passed to the pipeline, processed, and the results are passed
+                        back on the <code class="literal port">result</code> port.
+                     </p>
+                     
+                     
+                     <p>If the pipeline specified has multiple inputs or outputs, then the
+                        inputs and outputs have to be “multiplexed” on the single port. If this is
+                        the case, you must specify that the <code class="option">detailed</code> option is
+                        “<code class="literal">true</code>”, and encode the input using <code class="tag-element">cx:document</code>.
+                        Each input must be wrapped in <code class="tag-element">cx:document</code> with a
+                        <code class="tag-attribute">port</code> attribute that identifies the port to
+                        which that document is to be sent. Each output will be wrapped in a
+                        <code class="tag-element">cx:document</code> element identifying the port from which it came.
+                     </p>
+                     
+                     
+                     <p>If the pipeline has options, they are passed to the <code class="literal port">options</code>
+                        port. Each options document must have <code class="tag-element">cx:options</code> as its document
+                        element and consist entirely of <code class="tag-element">cx:option</code> elements with
+                        <code class="tag-attribute">name</code> and <code class="tag-attribute">value</code>
+                        attributes that specify options and their values.
+                     </p>
+                     
+                     
+                     <p>If the pipeline is a <code class="tag-element">p:library</code>, then the step to evaluate
+                        may be specified using the <code class="option">step</code> option. If the pipeline is
+                        a library and no step option is specified, the first step in the library will
+                        be selected.
+                     </p>
+                     
+                     
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="cx:delta-xml" href="cx-delta-xml.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="cx:get-cookies" href="cx-get-cookies.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">cx:delta-xml </td>
+                  <td width="20%" align="center"><a title="XML Calabash Extension Steps" href="cx-steps.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> cx:get-cookies</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

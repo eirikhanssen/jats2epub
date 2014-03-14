@@ -1,0 +1,197 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>cx:metadata-extractor</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cx-message.html" title="cx:message"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="XML Calabash Extension Steps" href="cx-steps.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="cx:namespace-delete" href="cx-namespace-delete.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="cx-metadata-extractor" class="refentry">
+                  <div class="refnamediv">
+                     <h2>Name</h2>
+                     <p><span class="refname">cx:metadata-extractor</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">Extract metadata from images</span><span class="refpurpose-punc">.</span></span></p>
+                  </div>
+                  <div class="refsynopsisdiv">
+                     <h2>Synopsis</h2>
+                     <p class="element-syntax element-syntax-declare-step-opt"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">cx:metadata-extractor</code><code>"</code> <code class="attr xmlns-attr">xmlns:cx</code><code>="</code><code class="value xmlns-value">http://xmlcalabash.com/ns/extensions</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">href</code><code>"</code><code>/&gt;</code><code>                                       </code><code class="comment">&lt;!-- </code><span class="opt-type">anyURI</span><code class="comment"> --&gt;</code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
+                  </div>
+                  <div class="refsection">
+                     <div class="refsection-titlepage">
+                        <h2>Description</h2>
+                     </div>
+                     
+                     
+                     
+                     <p>The <code class="tag-element">cx:metadata-extractor</code> step returns an XML description of
+                        the metadata associated with an image. For example, the metadata associated with
+                        the image in
+                        <a href="cx-metadata-extractor.html#fig.amaryllis">Figure 1, “Amaryllis”</a> is shown in
+                        <a href="cx-metadata-extractor.html#ex.amaryllis">Example 2, “Amaryllis metadata”</a>.
+                     </p>
+                     
+                     
+                     <figure id="fig.amaryllis" class="figure-wrapper">
+                        <div class="figure">
+                           <div id="fig.amaryllis.2" class="mediaobject"><img src="img/amaryllis.jpg" /></div>
+                        </div>
+                        <div class="title">Figure 1. Amaryllis</div>
+                     </figure>
+                     
+                     
+                     <figure id="ex.amaryllis" class="example-wrapper">
+                        <div class="title">Example 2. Amaryllis metadata</div>
+                        <div class="example">
+                           <div class="programlisting"><pre class="xml"><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;c:metadata xmlns:c="http://www.w3.org/ns/xproc-step"
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>            href="amaryllis.jpg"&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0000" name="Data Precision"&gt;8 bits&lt;/c:tag&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0001" name="Image Height"&gt;336 pixels&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0003" name="Image Width"&gt;500 pixels&lt;/c:tag&gt;
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0005" name="Number of Components"&gt;3&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0006" name="Component 1"&gt;Y component: Quantization table 0, Sampling factors 1 horiz/1 vert&lt;/c:tag&gt;
+<span class="linenumber">  8</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0007" name="Component 2"&gt;Cb component: Quantization table 1, Sampling factors 1 horiz/1 vert&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0008" name="Component 3"&gt;Cr component: Quantization table 1, Sampling factors 1 horiz/1 vert&lt;/c:tag&gt;
+<span class="linenumber"> 10</span><span class="linenumber-separator"> </span>&lt;/c:metadata&gt;</pre></div>
+                        </div>
+                     </figure>
+                     
+                     
+                     <p>In practice, the amount of metadata associated with an image is almost
+                        arbitrarily large. <a href="cx-metadata-extractor.html#ex.digicam">Example 3, “Digital Camera metadata”</a>, for example, shows the metadata
+                        associated with an image from a digital camera.
+                     </p>
+                     
+                     
+                     <figure id="ex.digicam" class="example-wrapper">
+                        <div class="title">Example 3. Digital Camera metadata</div>
+                        <div class="example">
+                           <div class="programlisting"><pre class="xml"><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;c:metadata xmlns:c="http://www.w3.org/ns/xproc-step"
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>            href="file:/Volumes/Data/Pictures/2012/01/14/20120114-085508.jpg"&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x010f" name="Make"&gt;Panasonic&lt;/c:tag&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0110" name="Model"&gt;DMC-FS25&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0112" name="Orientation"&gt;Right side, top (Rotate 90 CW)&lt;/c:tag&gt;
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x011a" name="X Resolution"&gt;180 dots per inch&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x011b" name="Y Resolution"&gt;180 dots per inch&lt;/c:tag&gt;
+<span class="linenumber">  8</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0128" name="Resolution Unit"&gt;Inch&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0131" name="Software"&gt;Ver.1.1  &lt;/c:tag&gt;
+<span class="linenumber"> 10</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0132" name="Date/Time"&gt;2012-01-14T08:55:08&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0213" name="YCbCr Positioning"&gt;Datum point&lt;/c:tag&gt;
+<span class="linenumber"> 12</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x829a" name="Exposure Time"&gt;1/40 sec&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x829d" name="F-Number"&gt;F5.6&lt;/c:tag&gt;
+<span class="linenumber"> 14</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x8822" name="Exposure Program"&gt;Program normal&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x8827" name="ISO Speed Ratings"&gt;160&lt;/c:tag&gt;
+<span class="linenumber"> 16</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9000" name="Exif Version"&gt;2.21&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9003" name="Date/Time Original"&gt;2012-01-14T08:55:08&lt;/c:tag&gt;
+<span class="linenumber"> 18</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9004" name="Date/Time Digitized"&gt;2012-01-14T08:55:08&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9101" name="Components Configuration"&gt;YCbCr&lt;/c:tag&gt;
+<span class="linenumber"> 20</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9102" name="Compressed Bits Per Pixel"&gt;4 bits/pixel&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9204" name="Exposure Bias Value"&gt;0 EV&lt;/c:tag&gt;
+<span class="linenumber"> 22</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9205" name="Max Aperture Value"&gt;F3.3&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9207" name="Metering Mode"&gt;Multi-segment&lt;/c:tag&gt;
+<span class="linenumber"> 24</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9208" name="Light Source"&gt;Unknown (4)&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9209" name="Flash"&gt;Flash fired, auto&lt;/c:tag&gt;
+<span class="linenumber"> 26</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x920a" name="Focal Length"&gt;14.2 mm&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa000" name="FlashPix Version"&gt;1.00&lt;/c:tag&gt;
+<span class="linenumber"> 28</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa001" name="Color Space"&gt;sRGB&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa002" name="Exif Image Width"&gt;4000 pixels&lt;/c:tag&gt;
+<span class="linenumber"> 30</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa003" name="Exif Image Height"&gt;3000 pixels&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa217" name="Sensing Method"&gt;One-chip color area sensor&lt;/c:tag&gt;
+<span class="linenumber"> 32</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa300" name="File Source"&gt;Digital Still Camera (DSC)&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa301" name="Scene Type"&gt;Directly photographed image&lt;/c:tag&gt;
+<span class="linenumber"> 34</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa401" name="Custom Rendered"&gt;Normal process&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa402" name="Exposure Mode"&gt;Auto exposure&lt;/c:tag&gt;
+<span class="linenumber"> 36</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa403" name="White Balance"&gt;Auto white balance&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa404" name="Digital Zoom Ratio"&gt;Digital zoom not used.&lt;/c:tag&gt;
+<span class="linenumber"> 38</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa405" name="Focal Length 35"&gt;80mm&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa406" name="Scene Capture Type"&gt;Standard&lt;/c:tag&gt;
+<span class="linenumber"> 40</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa407" name="Gain Control"&gt;Low gain up&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa408" name="Contrast"&gt;None&lt;/c:tag&gt;
+<span class="linenumber"> 42</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa409" name="Saturation"&gt;None&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xa40a" name="Sharpness"&gt;None&lt;/c:tag&gt;
+<span class="linenumber"> 44</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xc4a5" name="Unknown tag (0xc4a5)"&gt;...&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0103" name="Compression"&gt;JPEG (old-style)&lt;/c:tag&gt;
+<span class="linenumber"> 46</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0201" name="Thumbnail Offset"&gt;10740 bytes&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x0202" name="Thumbnail Length"&gt;4153 bytes&lt;/c:tag&gt;
+<span class="linenumber"> 48</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0xf001" name="Thumbnail Data"&gt;[4153 bytes of thumbnail data]&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Panasonic Makernote" type="0x0001" name="Quality Mode"&gt;2&lt;/c:tag&gt;
+<span class="linenumber"> 50</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Panasonic Makernote" type="0x0002" name="Version"&gt;0 1 1 0&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Panasonic Makernote" type="0x0003" name="Unknown tag (0x0003)"&gt;1&lt;/c:tag&gt;
+<span class="linenumber"> 52</span><span class="linenumber-separator"> </span>   ...
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Panasonic Makernote" type="0x001c" name="Macro Mode"&gt;Off&lt;/c:tag&gt;
+<span class="linenumber"> 54</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Panasonic Makernote" type="0x001f" name="Record Mode"&gt;Unknown (37)&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Interoperability" type="0x0001" name="Interoperability Index"&gt;Recommended Exif Interoperability Rules (ExifR98)&lt;/c:tag&gt;
+<span class="linenumber"> 56</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Interoperability" type="0x0002" name="Interoperability Version"&gt;1.00&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0000" name="Data Precision"&gt;8 bits&lt;/c:tag&gt;
+<span class="linenumber"> 58</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0001" name="Image Height"&gt;3000 pixels&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0003" name="Image Width"&gt;4000 pixels&lt;/c:tag&gt;
+<span class="linenumber"> 60</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0005" name="Number of Components"&gt;3&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0006" name="Component 1"&gt;Y component: Quantization table 0, Sampling factors 1 horiz/2 vert&lt;/c:tag&gt;
+<span class="linenumber"> 62</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0007" name="Component 2"&gt;Cb component: Quantization table 1, Sampling factors 1 horiz/1 vert&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0008" name="Component 3"&gt;Cr component: Quantization table 1, Sampling factors 1 horiz/1 vert&lt;/c:tag&gt;
+<span class="linenumber"> 64</span><span class="linenumber-separator"> </span>&lt;/c:metadata&gt;</pre></div>
+                        </div>
+                     </figure>
+                     
+                     
+                     <p>The <code class="tag-element">cx:metadata-extractor</code> step relies on
+                        <span class="personname"><span class="firstname">Drew</span> <span class="surname">Noakes</span></span>’
+                        <span class="application"><a href="http://drewnoakes.com/code/exif/">Metadata Extractor</a></span>
+                        libraries. If the image identified is not a JPEG image, then the underlying Java
+                        <code class="classname">Image</code> properties are returned, if possible. For example, a PNG image
+                        might return results such as those shown in <a href="cx-metadata-extractor.html#ex.png">Example 4, “PNG metadata”</a>.
+                     </p>
+                     
+                     
+                     <figure id="ex.png" class="example-wrapper">
+                        <div class="title">Example 4. PNG metadata</div>
+                        <div class="example">
+                           <div class="programlisting"><pre class="xml"><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;c:metadata xmlns:c="http://www.w3.org/ns/xproc-step"
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>            href="cover.png"&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Exif" type="0x9000" name="Exif Version"&gt;0&lt;/c:tag&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0001" name="Image Height"&gt;480 pixels&lt;/c:tag&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;c:tag dir="Jpeg" type="0x0003" name="Image Width"&gt;364 pixels&lt;/c:tag&gt;
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span>&lt;/c:metadata&gt;</pre></div>
+                        </div>
+                     </figure>
+                     
+                     
+                     <p>The “Exif Version” of “0” is returned to identify this case.</p>
+                     
+                     
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="cx:message" href="cx-message.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="cx:namespace-delete" href="cx-namespace-delete.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">cx:message </td>
+                  <td width="20%" align="center"><a title="XML Calabash Extension Steps" href="cx-steps.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> cx:namespace-delete</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

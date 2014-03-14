@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>23. Serialization options</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.step-error-listener.html" title="22 .  Step error listener"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="24 .  Extension function" href="cfg.extension-function.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.serialization" class="section">
+                  <div class="section-titlepage">
+                     <h3>23. Serialization options</h3>
+                  </div>
+                  <p>All of the XML serialization options can be specified with system properties or
+                     specified in the configuration file.
+                  </p>
+                  <figure id="cfg.serialization.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Java system properties:</td>
+                                 <td><span class="property">com.xmlcalabash.serial.<em class="replaceable"><code>option</code></em></span>=<em class="replaceable"><code>value</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-emptytag">&lt;cc:serialization <em class="replaceable"><code>option</code></em>="<em class="replaceable"><code>value</code></em>"/&gt;</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>The option names supported on both system properties and <code class="tag-element">cc:serialization</code> are:
+                     <code class="literal">byte-order-mark</code>,
+                     <code class="literal">doctype-public</code>,
+                     <code class="literal">doctype-system</code>,
+                     <code class="literal">encoding</code>,
+                     <code class="literal">escape-uri-attributes</code>,
+                     <code class="literal">include-content-type</code>,
+                     <code class="literal">indent</code>,
+                     <code class="literal">media-type</code>,
+                     <code class="literal">normalization-form</code>,
+                     <code class="literal">omit-xml-declaration</code>,
+                     <code class="literal">standalone</code>,
+                     <code class="literal">undeclare-prefixes</code>, and
+                     <code class="literal">version</code>.
+                     In addition, the <code class="literal">cdata-section-elements</code> option is supported on
+                     <code class="tag-element">cc:serialization</code>. (It's only supported in the configuration file because the
+                     values are QNames.)
+                  </p>
+                  <p>T.B.D.</p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="22 .  Step error listener" href="cfg.step-error-listener.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="24 .  Extension function" href="cfg.extension-function.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">22 .  Step error listener </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 24 .  Extension function</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

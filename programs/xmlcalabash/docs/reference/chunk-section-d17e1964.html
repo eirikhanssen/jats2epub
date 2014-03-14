@@ -1,0 +1,1044 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>4. Parameters specified as nested elements</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="chunk-section-d17e1412.html" title="3 .  Parameters"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="5 .  Examples" href="chunk-section-d17e3218.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="anttask.6" class="section">
+                  <div class="section-titlepage">
+                     <h3>4. Parameters specified as nested elements</h3>
+                  </div>
+                  <section id="ant.input" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.1. input</h4>
+                     </div>
+                     <p>Specification of resources to apply to an input port. May specify
+                        additional or alternative inputs to be applied to the
+                        <code class="tag-attribute">inPort</code> port or may be fixed or mapped
+                        resources to be applied to other ports.
+                     </p>
+                     <section id="ant.input.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.1.1. Parameters</h5>
+                        </div>
+                        <figure id="ant.input.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>port</td>
+                                       
+                                       <td>port name</td>
+                                       
+                                       <td>No; the primary non-parameter input
+                                          port will be used
+                                       </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>type</td>
+                                       
+                                       <td>input type, either <code class="literal">XML</code> or <code class="literal">DATA</code></td>
+                                       
+                                       <td>No; default is <code class="literal">XML</code></td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>contentType</td>
+                                       
+                                       <td>content type, if this is equal to <code class="literal">application/xml</code>,
+                                          ends in <code class="literal">+xml</code>, starts with <code class="literal">text/</code>
+                                          or has a charset of <code class="literal">utf-8</code> specified, the input
+                                          is treated as text, otherwise the input gets base64 encoded
+                                          automatically before it is given to the pipeline
+                                       </td>
+                                       
+                                       <td>No; default is guessed from the resource content, as fallback from the
+                                          resource name and as second fallback <code class="literal">application/octet-stream</code>
+                                          is used
+                                       </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="ant.input.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.1.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <p>Either <a href="http://ant.apache.org/manual/Types/resources.html">Ant resources</a> <em>or</em> a
+                           mapper may be specified, but not both.
+                        </p>
+                        <section id="ant.input.4.3" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.1.2.1. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a></h6>
+                           </div>
+                           <p>Use <a href="http://ant.apache.org/manual/Types/resources.html">Ant resources</a> to specify
+                              fixed resources that should be applied to this
+                              port. Any readable resource can be used, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;input&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;string&gt;&lt;![CDATA[
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;foo/&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>    ]]&gt;&lt;/string&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/input&gt;</pre></div>
+                              or
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;input&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;url url="http://www.w3.org"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/input&gt;</pre></div>
+                           </p>
+                        </section>
+                        <section id="ant.input.4.4" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.1.2.2. mapper</h6>
+                           </div>
+                           <p>You can define resources to be used based on the
+                              resource(s) specified for the <code class="tag-attribute">inPort</code> port or on the
+                              current resource from the implicit and / or explicit
+                              input fileset.
+                           </p>
+                           <p>You cannot use a mapper on the <code class="tag-attribute">inPort</code> port.
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+                  <section id="ant.pipeline" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.2. pipeline</h4>
+                     </div>
+                     <p>Pipeline resource. Can be used instead of <code class="tag-attribute">pipeline</code> attribute.
+                     </p>
+                     <section id="ant.pipeline.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.2.1. Parameters</h5>
+                        </div>
+                        <figure id="ant.pipeline.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="ant.pipeline.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.2.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <section id="ant.pipeline.4.2" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.2.2.1. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a></h6>
+                           </div>
+                           <p>Any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a> can be used, but only
+                              one single readable resource may be contained
+                              in it, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;pipeline&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;string&gt;&lt;![CDATA[
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;p:declare-step xmlns:p="http://www.w3.org/ns/xproc" version="1.0"&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>            &lt;p:input port="source" kind="document" primary="true"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>            &lt;p:output port="result" sequence="true"/&gt;
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span>            &lt;p:identity/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;/p:declare-step&gt;
+<span class="linenumber">  8</span><span class="linenumber-separator"> </span>    ]]&gt;&lt;/string&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/pipeline&gt;</pre></div>
+                              or
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;pipeline&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;url url="http://www.domain.org/pipeline.xpl"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/pipeline&gt;</pre></div>
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+                  <section id="ant.output" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.3. output</h4>
+                     </div>
+                     <p>Specification of resources to which to write the output from an
+                        output port. May be used as an alternative to <code class="tag-attribute">out</code> to specify to where to
+                        write the output from the <code class="tag-attribute">outPort</code>
+                        port or may be fixed or mapped resources to be applied to other
+                        ports.
+                     </p>
+                     <section id="ant.output.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.3.1. Parameters</h5>
+                        </div>
+                        <figure id="ant.output.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>port</td>
+                                       
+                                       <td>port name</td>
+                                       
+                                       <td>No; the primary output port will be used</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="ant.output.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.3.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <p>Either <a href="http://ant.apache.org/manual/Types/resources.html">Ant resources</a>
+                           <em>or</em> a mapper may be specified, but not both.
+                        </p>
+                        <section id="ant.output.4.3" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.3.2.1. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a></h6>
+                           </div>
+                           <p>Use <a href="http://ant.apache.org/manual/Types/resources.html">Ant resources</a> to specify fixed
+                              resources that should be applied to this
+                              port. Any writable <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a> can be used, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;output&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;file file="result.xml.bz2"/&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>    &lt;/bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/output&gt;</pre></div>
+                           </p>
+                        </section>
+                        <section id="ant.output.4.4" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.3.2.2. mapper</h6>
+                           </div>
+                           <p>You can define resources to which to write based
+                              on the resource(s) specified for the <code class="tag-attribute">inPort</code> port.
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+                  <section id="anttask.6.5" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.4. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a></h4>
+                     </div>
+                     <p>Use readable <a href="http://ant.apache.org/manual/Types/resources.html">Ant resources</a> to specify fixed resources that
+                        should be processed consecutively in a sequence of Calabash
+                        runs.
+                     </p>
+                  </section>
+                  <section id="anttask.6.6" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.5. mapper</h4>
+                     </div>
+                     <p>You can define resources to which to write based on the
+                        resource(s) specified for the implicit fileset (based on <code class="tag-attribute">includes</code>, etc.) and / or on the
+                        explicit fileset formed from resource collections that are
+                        children of <code class="tag-element">calabash</code>.
+                     </p>
+                  </section>
+                  <section id="anttask.6.7" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.6. namespace</h4>
+                     </div>
+                     <p>Use nested <code class="tag-element">namespace</code> elements to define
+                        mappings between prefixes and namespace URIs for any prefixes
+                        that are used in <code class="tag-element">option</code> or <code class="tag-element">parameter</code> elements.
+                     </p>
+                     <section id="anttask.6.7.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.6.1. Parameters</h5>
+                        </div>
+                        <figure id="anttask.6.7.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>prefix</td>
+                                       
+                                       <td>Prefix to which to map the URI</td>
+                                       
+                                       <td>Yes</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>uri</td>
+                                       
+                                       <td>Namespace uri</td>
+                                       
+                                       <td>Yes</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                  </section>
+                  <section id="ant.option" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.7. option</h4>
+                     </div>
+                     <p>Specifies an option to be passed to the XProc processor</p>
+                     <section id="ant.option.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.7.1. Parameters</h5>
+                        </div>
+                        <figure id="ant.option.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>name</td>
+                                       
+                                       <td>Option name, which must be
+                                          unique amongst the ones that are going to be used
+                                          according to their <code class="tag-attriute">if</code> and
+                                          <code class="tag-attribute">unless</code> attributes.
+                                          QNames have their prefix matched against
+                                          bindings specified in <code class="tag-element">namespace</code> elements. QNames may also be
+                                          specified in Clark notation, i. e.
+                                          <code class="literal">{uri}name</code>.
+                                       </td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>value</td>
+                                       
+                                       <td>Option string value</td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                  </section>
+                  <section id="ant.parameter" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.8. parameter</h4>
+                     </div>
+                     <p>Specifies a parameter to be passed to the XProc processor</p>
+                     <section id="ant.parameter.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.8.1. Parameters</h5>
+                        </div>
+                        <figure id="ant.parameter.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>port</td>
+                                       
+                                       <td>Port to which to apply the
+                                          parameter.
+                                       </td>
+                                       
+                                       <td>No; default is only available parameter port, if there
+                                          are no or more than one parameter ports, an error
+                                          is raised
+                                       </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>name</td>
+                                       
+                                       <td>Parameter name, which must
+                                          be unique amongst the ones that are going to be used
+                                          according to their <code class="tag-attriute">if</code> and
+                                          <code class="tag-attribute">unless</code> attributes.
+                                          QNames have their prefix matched
+                                          against bindings specified in <code class="tag-element">namespace</code> elements. QNames may also be
+                                          specified in Clark notation, e.g.,
+                                          <code class="literal">{uri}name</code>.
+                                       </td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>value</td>
+                                       
+                                       <td>Parameter string value</td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                  </section>
+                  <section id="anttask.6.10" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.9. sysproperty</h4>
+                     </div>
+                     <p>Specify Java system properties used by Calabash</p>
+                  </section>
+                  <section id="anttask.6.11" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.10. syspropertyset</h4>
+                     </div>
+                     <p>Specify sets of Java system properties used by Calabash</p>
+                  </section>
+                  <section id="anttask.6.12" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.11. profile</h4>
+                     </div>
+                     <p>Profile resource. Can be used instead of <code class="tag-attribute">profileFile</code> attribute.
+                     </p>
+                     <section id="anttask.6.12.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.11.1. Parameters</h5>
+                        </div>
+                        <figure id="anttask.6.12.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="anttask.6.12.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.11.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <section id="anttask.6.12.4.2" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.11.2.1. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a></h6>
+                           </div>
+                           <p>Any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a> can be used, but only
+                              one single writable resource may be contained
+                              in it, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;profile&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;file file="profile.xml.bz2"/&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>    &lt;/bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/profile&gt;</pre></div>
+                              or
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;profile&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;stderr/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/profile&gt;</pre></div>
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+                  <section id="anttask.6.13" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.12. saxonConfig</h4>
+                     </div>
+                     <p>Saxon config resource. Can be used instead of <code class="tag-attribute">saxonConfigFile</code> attribute.
+                     </p>
+                     <section id="anttask.6.13.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.12.1. Parameters</h5>
+                        </div>
+                        <figure id="anttask.6.13.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="anttask.6.13.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.12.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <section id="anttask.6.13.4.2" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.12.2.1. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a></h6>
+                           </div>
+                           <p>Any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a> can be used, but only
+                              one single readable resource may be contained
+                              in it, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;saxonConfig&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;file file="saxon-config.xml.bz2"/&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>    &lt;/bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/saxonConfig&gt;</pre></div>
+                              or
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;saxonConfig&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;stdin/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/saxonConfig&gt;</pre></div>
+                              or
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;saxonConfig&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;string&gt;&lt;![CDATA[
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;configuration xmlns="http://saxon.sf.net/ns/configuration"&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>            &lt;global optimizationLevel="10"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;/configuration&gt;
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span>    ]]&gt;&lt;/string&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/saxonConfig&gt;</pre></div>
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+                  <section id="anttask.6.14" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.13. config</h4>
+                     </div>
+                     <p>Config resource. Can be used instead of <code class="tag-attribute">configFile</code> attribute.
+                     </p>
+                     <section id="anttask.6.14.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.13.1. Parameters</h5>
+                        </div>
+                        <figure id="anttask.6.14.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="anttask.6.14.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.13.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <section id="anttask.6.14.4.2" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.13.2.1. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a></h6>
+                           </div>
+                           <p>Any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a> can be used, but only
+                              one single readable resource may be contained
+                              in it, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;config&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;file file="config.xml.bz2"/&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>    &lt;/bzip2resource&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/config&gt;</pre></div>
+                              or
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;config&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;stdinout/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/config&gt;</pre></div>
+                              or
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;config&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;string&gt;&lt;![CDATA[
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;xproc-config xmlns="http://xmlcalabash.com/ns/configuration"&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>            &lt;html-parser value="tagsoup" /&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;/xproc-config&gt;
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span>    ]]&gt;&lt;/string&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/config&gt;</pre></div>
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+                  <section id="ant.library" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.14. library</h4>
+                     </div>
+                     <p>Library resources. The steps in the libraries loaded are only available in <code class="tag-emptytag">&lt;step/&gt;</code> tags.
+                        If no steps are specified, the first step of the first loaded library will be used.
+                     </p>
+                     <section id="ant.library.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.14.1. Parameters</h5>
+                        </div>
+                        <figure id="ant.library.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="ant.library.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.14.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <section id="ant.library.4.2" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.14.2.1. any <a href="http://ant.apache.org/manual/Types/resources.html">Ant resources</a></h6>
+                           </div>
+                           <p>Any readable <a href="http://ant.apache.org/manual/Types/resources.html">Ant resource</a> can be used, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;library&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;url url="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/library&gt;</pre></div>
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+                  <section id="ant.step" class="section">
+                     <div class="section-titlepage">
+                        <h4>4.15. step</h4>
+                     </div>
+                     <p>The steps to be used to form an implicit pipeline.
+                        If no steps are specified, the first step of the first loaded library will be used.
+                     </p>
+                     <section id="ant.step.3" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.15.1. Parameters</h5>
+                        </div>
+                        <figure id="ant.step.3.2" class="informaltable-wrapper">
+                           <div class="informaltable">
+                              <table frame="border">
+                                 <thead>
+                                    <tr>
+                                       
+                                       <th>Attribute</th>
+                                       
+                                       <th>Description</th>
+                                       
+                                       <th>Required</th>
+                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       
+                                       <td>name</td>
+                                       
+                                       <td>The name of the step to execute.
+                                          QNames have their prefix matched
+                                          against bindings specified in <code class="tag-element">namespace</code> elements. QNames may also be
+                                          specified in Clark notation, e.g.,
+                                          <code class="literal">{uri}name</code>.
+                                       </td>
+                                       
+                                       <td>Yes</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>if</td>
+                                       
+                                       <td>This parameter behaves like standard Ant if's as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                       <td>unless</td>
+                                       
+                                       <td>This parameter behaves like standard Ant unless' as documented at
+                                          <code class="uri">http://ant.apache.org/manual/properties.html#if+unless</code></td>
+                                       
+                                       <td>No</td>
+                                       
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </figure>
+                     </section>
+                     <section id="ant.step.4" class="section">
+                        <div class="section-titlepage">
+                           <h5>4.15.2. Parameters specified as nested elements</h5>
+                        </div>
+                        <section id="ant.step.4.2" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.15.2.1. input</h6>
+                           </div>
+                           <p>Input elements as documented in <a href="chunk-section-d17e1964.html#ant.input">Section 4.1, “input”</a>, with the exception that no nested mapper is supported, but only resource collections,
+                              e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;step name="p:identity"&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;input port="source"&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>        &lt;string&gt;&lt;![CDATA[&lt;foo/&gt;]]&gt;&lt;/string&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>    &lt;/input&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/step&gt;</pre></div>
+                           </p>
+                        </section>
+                        <section id="ant.step.4.3" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.15.2.2. parameter</h6>
+                           </div>
+                           <p>Parameter elements as documented in <a href="chunk-section-d17e1964.html#ant.parameter">Section 4.8, “parameter”</a>, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;step name="p:template"&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;parameter name="foo" value="bar" /&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/step&gt;</pre></div>
+                           </p>
+                        </section>
+                        <section id="ant.step.4.4" class="section">
+                           <div class="section-titlepage">
+                              <h6>4.15.2.3. option</h6>
+                           </div>
+                           <p>Option elements as documented in <a href="chunk-section-d17e1964.html#ant.option">Section 4.7, “option”</a>, e. g.
+                              
+                              <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;step name="p:count"&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;option name="limit" value="1" /&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/step&gt;</pre></div>
+                           </p>
+                        </section>
+                     </section>
+                  </section>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="3 .  Parameters" href="chunk-section-d17e1412.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="5 .  Examples" href="chunk-section-d17e3218.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">3 .  Parameters </td>
+                  <td width="20%" align="center"><a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 5 .  Examples</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

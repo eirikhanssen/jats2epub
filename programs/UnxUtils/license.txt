@@ -1,0 +1,20 @@
+date.exe --version
+> date (GNU sh-utils) 1.13
+
+This date.exe is a windows port of GNU sh-utils (now gnu coreutils) date
+It is a part of UnxUtils - a toolset for running several useful GNU/Linux commands on windows
+
+See: StdDisclaimer.html and UnxUtilsDist.html
+
+Webpage: http://unxutils.sourceforge.net/
+Download: UnxUtils zip file at http://sourceforge.net/projects/unxutils/files/
+
+GNU sh-utils/coreutils date that this date.exe is a port of, are GNU-GPL licenced
+Therefore a port should also have the same license even if it is not supplied with UnxUtils
+
+GNU coreutils can be found at: 
+Webpage: http://www.gnu.org/software/coreutils/
+Download: http://ftp.gnu.org/gnu/coreutils/
+
+License: GNU coreutils are licenced under GNU GPLv3
+See COPYING.txt

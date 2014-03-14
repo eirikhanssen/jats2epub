@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>31. Send mail configuration</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.saxon-configuration-property.html" title="30 .  Saxon configuration property"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="32 .  Piperack configuration" href="cfg.piperack.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.sendmail" class="section">
+                  <div class="section-titlepage">
+                     <h3>31. Send mail configuration</h3>
+                  </div>
+                  <p>There are two ways to specify the SMTP configuration for sending mail.</p>
+                  <figure id="cfg.sendmail.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td rowspan="4" valign="top">Java system properties:</td>
+                                 <td><span class="property">com.xmlcalabash.mail-host</span>=<em class="replaceable"><code>hostname</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="property">com.xmlcalabash.mail-port</span>=<em class="replaceable"><code>portnumber</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="property">com.xmlcalabash.mail-username</span>=<em class="replaceable"><code>name</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="property">com.xmlcalabash.mail-password</span>=<em class="replaceable"><code>password</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-emptytag">&lt;cc:sendmail
+                                       <em class="replaceable"><code>host</code></em>="<em class="replaceable"><code>hostname</code></em>"
+                                       <em class="replaceable"><code>port</code></em>="<em class="replaceable"><code>portnumber</code></em>"
+                                       <em class="replaceable"><code>username</code></em>="<em class="replaceable"><code>name</code></em>"
+                                       <em class="replaceable"><code>password</code></em>="<em class="replaceable"><code>password</code></em>"/&gt;</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>If you specify a <code class="tag-attribute">username</code>, you must specify a
+                     <code class="tag-attribute">password</code>, otherwise all the properties are optional. Any unspecified
+                     properties will be defaulted by JavaMail to whatever defaults JavaMail uses.
+                  </p>
+                  <p>T.B.D.</p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="30 .  Saxon configuration property" href="cfg.saxon-configuration-property.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="32 .  Piperack configuration" href="cfg.piperack.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">30 .  Saxon configuration property </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 32 .  Piperack configuration</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

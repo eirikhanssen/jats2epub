@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>p:xslt</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="p-xsl-formatter.html" title="p:xsl-formatter"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Standard XProc Steps" href="p-steps.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="Proposed EXProc Steps" href="pxp-steps.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="p-xslt" class="refentry">
+                  <div class="refnamediv">
+                     <h2>Name</h2>
+                     <p><span class="refname">p:xslt</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">The standard p:xslt step</span><span class="refpurpose-punc">.</span></span></p>
+                  </div>
+                  <div class="refsynopsisdiv">
+                     <h2>Synopsis</h2>
+                     <p class="element-syntax element-syntax-declare-step-opt"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">p:xslt</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">source</code><code>"</code> <code class="attr sequence-attr">sequence</code><code>="</code><code class="value sequence-value">true</code><code>"</code> <code class="attr primary-attr">primary</code><code>="</code><code class="value primary-value">true</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">stylesheet</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">parameters</code><code>"</code> <code class="attr kind-attr">kind</code><code>="</code><code class="value kind-value">parameter</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code> <code class="attr primary-attr">primary</code><code>="</code><code class="value primary-value">true</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">secondary</code><code>"</code> <code class="attr sequence-attr">sequence</code><code>="</code><code class="value sequence-value">true</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">initial-mode</code><code>"</code><code>/&gt;</code><code>                               </code><code class="comment">&lt;!-- </code><span class="opt-type">QName</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">template-name</code><code>"</code><code>/&gt;</code><code>                              </code><code class="comment">&lt;!-- </code><span class="opt-type">QName</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">output-base-uri</code><code>"</code><code>/&gt;</code><code>                            </code><code class="comment">&lt;!-- </code><span class="opt-type">anyURI</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">version</code><code>"</code><code>/&gt;</code><code>                                    </code><code class="comment">&lt;!-- </code><span class="opt-type">string</span><code class="comment"> --&gt;</code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
+                  </div>
+                  <div class="refsection">
+                     <div class="refsection-titlepage">
+                        <h2>Description</h2>
+                     </div>
+                     
+                     
+                     <p>TBD.</p>
+                     
+                     
+                     <div id="p-xslt-ext" class="refsection">
+                        <div class="refsection-titlepage">
+                           <h3>Extensions</h3>
+                        </div>
+                        
+                        
+                        
+                        <p>By default, <em class="citetitle">XML Calabash</em> processes all XSLT stylesheets
+                           using an XSLT 2.0 processor. If the stylesheet version is “1.0”, it is processed
+                           by a 2.0 processor in “backwards compatible mode”.
+                        </p>
+                        
+                        
+                        <p>If the “<a href="cfg.extension.html">use XSLT 1.0</a>” extension is
+                           enabled, <em class="citetitle">XML Calabash</em> will attempt to instantiate an
+                           XSLT 1.0 processor and use that instead.
+                        </p>
+                        
+                        
+                        <p>When a 1.0 processor is used, several limitations apply:</p>
+                        
+                        
+                        <div class="orderedlist">
+                           <ol style="list-style: decimal;">
+                              <li>
+                                 <p>There can be at most one input document.</p>
+                              </li>
+                              <li>
+                                 <p>The <code class="literal">initial-mode</code>, <code class="literal">template-name</code>,
+                                    and <code class="literal">output-base-uri</code> options are ignored.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>There's no standard mechanism to capture secondary result documents created
+                                    with, for example, <code class="literal">exsl:document</code>. Any such documents are likely
+                                    to be written directly to the filesystem. They <em>will not</em>
+                                    appear on the secondary result port, which will always be empty.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="p:xsl-formatter" href="p-xsl-formatter.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="Proposed EXProc Steps" href="pxp-steps.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">p:xsl-formatter </td>
+                  <td width="20%" align="center"><a title="Standard XProc Steps" href="p-steps.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> Proposed EXProc Steps</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

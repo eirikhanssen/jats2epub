@@ -1,0 +1,434 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>3. Parameters</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="chunk-section-d17e1040.html" title="2 .  Description"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="4 .  Parameters specified as nested elements" href="chunk-section-d17e1964.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="anttask.5" class="section">
+                  <div class="section-titlepage">
+                     <h3>3. Parameters</h3>
+                  </div>
+                  <figure id="anttask.5.2" class="informaltable-wrapper">
+                     <div class="informaltable">
+                        <table frame="border">
+                           <thead>
+                              <tr>
+                                 
+                                 <th>Attribute</th>
+                                 
+                                 <th>Description</th>
+                                 
+                                 <th>Required</th>
+                                 
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 
+                                 <td>in</td>
+                                 
+                                 <td>Path to a single file to process as main input</td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>inType</td>
+                                 
+                                 <td>The input type that is used for <code class="tag-attribute">in</code> file or for implicit
+                                    or explicit filesets, either <code class="literal">XML</code> or <code class="literal">DATA</code></td>
+                                 
+                                 <td>No; default is <code class="literal">XML</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>inPort</td>
+                                 
+                                 <td>Pipeline input port to which to apply
+                                    <code class="tag-attribute">in</code> file (or to apply files from
+                                    implicit or explicit filesets)
+                                 </td>
+                                 
+                                 <td>No; the primary non-parameter input port will be used</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>out</td>
+                                 
+                                 <td>Path to the single output result file that will be produced</td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>outPort</td>
+                                 
+                                 <td>Pipeline output port that writes to out (or to
+                                    outputs mapped from implicit and / or explicit input
+                                    filesets)
+                                 </td>
+                                 
+                                 <td>No; the primary output port will be used</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>pipeline</td>
+                                 
+                                 <td>Path to a single XProc pipeline file to be used</td>
+                                 
+                                 <td>Yes, unless a nested <code class="tag-element">pipeline</code> has
+                                    been specified, or unless nested <code class="tag-element">library</code>
+                                    or <code class="tag-element">step</code> elements have been specified in which
+                                    case no pipeline must be specified explicitly
+                                 </td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>useImplicitFileset</td>
+                                 
+                                 <td>Whether to use the implicit fileset formed using
+                                    includes, excludes, etc.
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">true</code> unless
+                                    <code class="tag-attribute">in</code> or a nested
+                                    <code class="tag-element">input</code> corresponding to
+                                    <span class="markup">inPort</span> or <code class="tag-attribute">out</code> or
+                                    a nested <code class="tag-element">output</code> corresponding to
+                                    <span class="markup">outPort</span> has been specified
+                                 </td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>basedir</td>
+                                 
+                                 <td>Where to find the source XML when the implicit
+                                    fileset or input mappers are used
+                                 </td>
+                                 
+                                 <td>No; default is the Ant project's
+                                    <code class="tag-attriute">basedir</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>destdir</td>
+                                 
+                                 <td>Where to store the results when the implicit
+                                    fileset or output mappers are used
+                                 </td>
+                                 
+                                 <td>No; default is the <code class="tag-attriute">basedir</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>extension</td>
+                                 
+                                 <td>Desired file extension to use for outputs mapped
+                                    from the implicit and / or explicit filesets
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">-out.xml</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>includes</td>
+                                 
+                                 <td>Comma- or space-separated list of patterns of files
+                                    that must be included. All files are included when
+                                    omitted. 
+                                 </td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>includesfile</td>
+                                 
+                                 <td>Name of a file, each line of which is taken as an
+                                    include pattern
+                                 </td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>excludes</td>
+                                 
+                                 <td>Comma- or space-separated list of patterns of files
+                                    that must be excluded. No files (except default
+                                    excludes) are excluded when omtted.
+                                 </td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>excludesfile</td>
+                                 
+                                 <td>Name of a file, each line of which is taken as an
+                                    exclude pattern
+                                 </td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>defaultexcludes</td>
+                                 
+                                 <td>Indicates whether default excludes should be used
+                                    or not. Default excludes are used when
+                                    omitted.
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">true</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>scanIncludedDirectories</td>
+                                 
+                                 <td>If any directories are matched by the
+                                    includes / excludes patterns, try to process all
+                                    files in those directories
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">true</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>failOnNoResources</td>
+                                 
+                                 <td>Whether the build should fail if the explicit
+                                    fileset from nested <a href="http://ant.apache.org/manual/Types/resources.html">Ant resources</a> is
+                                    empty
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">true</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>force</td>
+                                 
+                                 <td>Run pipeline, even when outputs are newer than
+                                    all inputs and the pipeline.
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>failOnError</td>
+                                 
+                                 <td>Whether the build should fail if any errors
+                                    occur
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">true</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>debug</td>
+                                 
+                                 <td>Whether to enable debugging output from
+                                    Calabash
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>generalValues</td>
+                                 
+                                 <td>Whether to enable general values.  See <code class="uri"><a href="extensions.html#ext.general-values">http://xmlcalabash.com/docs/reference/extensions.html#ext.general-values</a></code></td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>xPointerOnText</td>
+                                 
+                                 <td>Whether XPointer attributes on an XInclude element
+                                    can be used when
+                                    <span class="markup">parse="text"</span></td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>useXslt10</td>
+                                 
+                                 <td>Whether to enable the use of XSLT 1.0</td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>transparentJSON</td>
+                                 
+                                 <td>Whether ot automatically translate between JSON and
+                                    XML
+                                 </td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>jsonFlavor</td>
+                                 
+                                 <td>Desired JSON flavor</td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>profileFile</td>
+                                 
+                                 <td>The path to the file where profile information should be written to, or "<code class="literal">-</code>" for stdout
+                                 </td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>saxonProcessor</td>
+                                 
+                                 <td>The edition of Saxon that should be used, must be "<code class="literal">he</code>" (default), "<code class="literal">pe</code>" or "<code class="literal">ee</code>"
+                                 </td>
+                                 
+                                 <td>No; default is "<code class="literal">he</code>"
+                                 </td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>saxonConfigFile</td>
+                                 
+                                 <td>The path to the Saxon configuration file to be loaded</td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>schemaAware</td>
+                                 
+                                 <td>Whether schema-aware processing should be done</td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>safeMode</td>
+                                 
+                                 <td>Whether "safe" execution should be done</td>
+                                 
+                                 <td>No; default is <code class="literal">false</code></td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>configFile</td>
+                                 
+                                 <td>The path to a particular configuration file to be loaded</td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>logStyle</td>
+                                 
+                                 <td>The default style for p:log output, must be "<code class="literal">off</code>", "<code class="literal">plain</code>", "<code class="literal">wrapped</code>" (default), or "<code class="literal">directory</code>"
+                                 </td>
+                                 
+                                 <td>No; default is "<code class="literal">wrapped</code>"
+                                 </td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>entityResolver</td>
+                                 
+                                 <td>The resolver class for entity resolution</td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                              <tr>
+                                 
+                                 <td>uriResolver</td>
+                                 
+                                 <td>The resolver class for URI resolution</td>
+                                 
+                                 <td>No</td>
+                                 
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="2 .  Description" href="chunk-section-d17e1040.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="4 .  Parameters specified as nested elements" href="chunk-section-d17e1964.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">2 .  Description </td>
+                  <td width="20%" align="center"><a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 4 .  Parameters specified as nested elements</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

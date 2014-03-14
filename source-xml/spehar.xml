@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article>
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" article-type="research-article" xml:lang="en" xsi:noNamespaceSchemaLocation="../../../../ePub-prosjekt/jats/1.0/jats-publishing-xsd-1.0/JATS-journalpublishing1.xsd">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="DOAJ">18931049</journal-id>
+      <issn>1893-1049</issn>
+      <publisher>
+        <publisher-name>Oslo and Akershus University College of Applied Sciences</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">	10.7577/pp.v2i1.178</article-id>
+      <article-id pub-id-type="doaj">1084722</article-id>
+      <article-id pub-id-type="other">URN:NBN:no-30973</article-id>
+      <article-categories>
+        <subj-group subj-group-type="article-type">
+          <subject>Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="vdp">
+          <subject>289</subject>
+        </subj-group>
+        <subj-group subj-group-type="dewey">
+          <subject>305.553</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Medical Management in Norwegian Hospitals</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Spehar</surname>
+            <given-names>Ivan</given-names>
+          </name>
+          <role>Correspondig author</role>
+          <xref ref-type="aff" rid="UIO"/>
+          <address>
+            <addr-line>Ivan Spehar</addr-line>
+            <addr-line>P.O Box 1089 Blindern</addr-line>
+            <addr-line>0318 Oslo</addr-line>
+            <email>ivan.spehar@medisin.uio.no</email>
+          </address>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Kjekshus</surname>
+            <given-names>Lars Ivar</given-names>
+          </name>
+          <xref ref-type="aff" rid="UIO"/>
+        </contrib>
+      </contrib-group>
+      <aff id="UIO">Department of Health Management and Health Economics, University of Oslo</aff>
+      <pub-date pub-type="pub">
+        <day>21</day>
+        <month>06</month>
+        <year>2012</year>
+      </pub-date>
+      <volume>2</volume>
+      <issue>1</issue>
+      <fpage>42</fpage>
+      <lpage>59</lpage>
+      <history>
+        <date date-type="received">
+          <day>26</day>
+          <month>01</month>
+          <year>2012</year>
+        </date>
+        <date date-type="accepted">
+          <day>20</day>
+          <month>04</month>
+          <year>2012</year>
+        </date>
+      </history>
+      <permissions>
+        <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/3.0/">
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+        </license>
+      </permissions>
+      <self-uri xlink:href="">http://journals.hioa.no/index.php/pp/article/view/178/359</self-uri>
+      <abstract>
+        <p>Hospitals are increasing in size and complexity and hospital management is being professionalized. This paper aims to investigate how doctors engage in hospital management. Are doctors losing their influence? Based on a review of existing literature and data from a longitudinal study, we show that Norwegian doctors have seemingly lost some of their previous dominance in hospital management, as other professions have entered traditional areas of medical influence. However, we argue that doctors appear to regain an influential position in formal decision making by entering positions with higher potential for influence. We suggest an analytical approach that illustrates the changing engagement of doctors in management. Our paper contributes to the current and requested research on the relationship between medicine and management in European states.</p>
+      </abstract>
+      <kwd-group kwd-group-type="author-generated">
+        <kwd>Medicine</kwd>
+        <kwd>Management</kwd>
+        <kwd>Autonomy</kwd>
+        <kwd>Professionalism</kwd>
+        <kwd>Hybridization</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <p>Healthcare organizations have been described as professional bureaucracies (<xref ref-type="bibr" rid="M1979">Mintzberg, 1979</xref>), with the clinical level dominated by individuals with professional backgrounds, valuing self-governance and autonomy. In contrast, the top management level is mostly founded on classical management theories, top-down models and the logics of economics and administration (<xref ref-type="bibr" rid="SK1995">Schjander &amp; Kenning, 1995</xref>). Hospitals have illustratively been described as consisting of “separate worlds” in this respect (<xref ref-type="bibr" rid="GM2001">Glouberman &amp; Mintzberg, 2001</xref>; <xref ref-type="bibr" rid="ØS1998">Østergren &amp; Sahlin-Andersson, 1998</xref>), with tensions between the top level of the organization and the core medical activity related to conflicting values and goals. There has consequently been an increased emphasis on doctors as mediators between the different logics of management and medicine (<xref ref-type="bibr" rid="KJ2005">Kragh Jespersen, 2005</xref>; <xref ref-type="bibr" rid="L2001">Llewellyn, 2001</xref>), along with calls for doctors to take on management positions within the hospital sector (<xref ref-type="bibr" rid="E2009">Edmonstone, 2009</xref>; <xref ref-type="bibr" rid="SP2000">Schwartz &amp; Pogge, 2000</xref>). This has spurred a growing interest in studying the engagement of doctors in management (<xref ref-type="bibr" rid="NK2009">Neogy &amp; Kirkpatrick, 2009</xref>). Reviewing literature on hybrid management, <xref ref-type="bibr" rid="M2001">Montgomery (2001)</xref> concluded that doctors are ‘uniquely positioned to bring their expertise and insights from the clinical side of medicine to the complex issues facing today´s managed health care delivery systems’ (<xref ref-type="bibr" rid="M2001">p. 236</xref>). Neogy and Kirkpatrick (<xref ref-type="bibr" rid="NK2009">2009</xref>) believe that doctors embody a unique ability to control resources and clinical practice, as they exercise a key role in treatment decisions that often have important implications for overall budgets. Calls to involve doctors in management have echoed these statements (<xref ref-type="bibr" rid="D2010">Dwyer, 2010</xref>). Actors are also calling on Norwegian doctors to take on management skills (<xref ref-type="bibr" rid="AH2011">Aslaksen &amp; Haug, 2011</xref>), including a call from the president of the Norwegian Medical Association (<xref ref-type="bibr" rid="G2011">Gjessing, 2011</xref>). Although efforts to involve doctors in management are increasing, Kirkpatrick and colleagues <xref ref-type="bibr" rid="K2009">(2009)</xref> argue that there is limited knowledge of how processes of medical re-stratification are unfolding across different national systems. With these issues in mind, <xref ref-type="bibr" rid="NK2009">Neogy and Kirkpatrick (2009)</xref> request more micro level research with emphasis on the extent to which doctors are engaged in management.</p>
+    <p>This article attempts to delineate some key influences on the relationship between doctors and management in Norwegian hospitals. This will allow us to gain insight into whether Norwegian doctors are choosing to embrace or resist management roles. While Norway has been compared to Sweden and Denmark in terms of decentralized care, Norway is distinctive in its history of strong professional integration in the state and characterization as a "reluctant reformer” (<xref ref-type="bibr" rid="O1996">Olsen, 1996</xref>), later becoming eager to catch up with recent reforms (<xref ref-type="bibr" rid="C2008">Christensen et al. 2008</xref>). This has resulted in large New Public Management inspired reforms over a short time span. As New Public Management related reforms are popularly believed to impede professional autonomy (<xref ref-type="bibr" rid="M2011">Mastekaasa, 2011</xref>), this opens up the possibility of studying the impact of these reforms on the relationship between medicine and management. <xref ref-type="bibr" rid="KDK2011">Kirkpatrick, Dent and Kragh Jespersen (2011)</xref> have also identified Norway as an area for future comparative research, as it represents a system where the opportunities for clinical professions to successfully contest the jurisdiction of management is stronger than in other countries. Indeed, Norway is one of the few countries where reforms have seen nurses successfully challenge doctors for management positions (<xref ref-type="bibr" rid="J2009">Johansen, 2009</xref>).</p>
+    <p>The approach of our analysis is twofold. First, we will draw on <xref ref-type="bibr" rid="F2001">Freidson’s (2001)</xref> and <xref ref-type="bibr" rid="A1988">Abbott’s (1988)</xref> sociological approaches towards professions. While there have been some Norwegian studies covering medicine in management (e.g. <xref ref-type="bibr" rid="JG2009">Johansen &amp; Gjerberg 2009</xref>; <xref ref-type="bibr" rid="M2006">Mo 2006</xref>), more research is needed in understanding the factors leading up to and influencing current events. According to <xref ref-type="bibr" rid="F2001">Freidson (2001)</xref>, historical and national differences, such as variations in professional organization, state policy and political climates, influence the strength of medical professionalism. <xref ref-type="bibr" rid="A1988">Abbott (1988)</xref> further describes a system of interdependent professions, where change in one profession inevitably affects the other. Our aim is to outline the recent decades of medical management in Norwegian hospitals by exploring these factors. Drawing on Freidson and Abbott, we expect that doctors are motivated to engage in management in order to preserve professional autonomy. In addition, we introduce an analytical model that differentiates between the quantity of management positions and the influence doctors may exert within these positions. This will allow us to nuance the debate on the engagement of doctors in management.</p>
+    <sec>
+      <title>Theoretical perspective</title>
+      <p>The organization of healthcare systems in most Western countries has traditionally been governed by the medical profession (<xref ref-type="bibr" rid="B2008">Berg, 2008</xref>). Berg (<xref ref-type="bibr" rid="B1991">1991</xref>, <xref ref-type="bibr" rid="B2008">2008</xref>) has used the terms “medicracy” and “iatrocracy” interchangeably to describe these traditional forms of medical governance. A key characteristic has been the implementation of doctors in central positions, in order to emphasize professional practice and prevent interferences from outside influence. However, following budget deficits and the increased complexity of health care organizations, reforms inspired by New Public Management have been requested, both internationally (<xref ref-type="bibr" rid="GM2001">Glouberman &amp; Mintzberg, 2001</xref>) and in Norway (<xref ref-type="bibr" rid="NOU1997">NOU, 1997</xref>; <xref ref-type="bibr" rid="NOU2005">NOU, 2005</xref>). The NPM movement can be traced back to the late 1970s, beginning in the United Kingdom and several municipal governments in the U.S. (<xref ref-type="bibr" rid="G2001">Gruening, 2001</xref>). New Zealand and Australia followed shortly after, prompting more countries to put similar reforms on their agendas. Some prevalent characteristics include the introduction of professional management, performance measurement and parsimony in resource use (<xref ref-type="bibr" rid="H1991">Hood, 1991</xref>). In the wake of these reforms, new management models have emerged. In order to understand how these dynamics could influence the relationship between medicine and management, we turn to the literature on professions.</p>
+      <p>The concept of professional autonomy has received extensive attention in the sociological literature on professions, and Abbott (e.g. <xref ref-type="bibr" rid="A1988">1988</xref>) and Freidson (e.g. <xref ref-type="bibr" rid="F1970">1970</xref>, <xref ref-type="bibr" rid="F2001">2001</xref>) have been among the most influential scholars in this regard. Both authors have presented arguments for a conflicted and dynamic nature of professions. More specifically, Abbott (<xref ref-type="bibr" rid="A1988">1988</xref>) has analyzed the emergence of professions and their competitive relationships. Central to Abbott´s (1988) analysis is that professions make up an interacting system in which they compete to maintain and expand their jurisdictions. In this model, professions are seen as interdependent, in that one profession’s claim of jurisdiction limits the others. The concept of closure, first outlined by Max Weber (1864-1920), is applicable in this regard. The concept refers to a monopolization of advantages by one group in society, at the expense of closed opportunities for other groups. Abbott´s (<xref ref-type="bibr" rid="A1988">1988</xref>) analysis illustrates how the nature of professions is in a state of constant flux, as they exist ‘under the various pressures of market demands, specialization, and inter-professional competition’ (<xref ref-type="bibr" rid="A1988">p. 84</xref>). These theoretical perspectives suggest that doctors will actively seek to maintain positions of influence, as the medical profession is engaged in a struggle against competitive forces for dominance and self-governance. Indeed, Freidson (<xref ref-type="bibr" rid="F2001">2001</xref>) argues that the competing logics of market forces and government regulations may threaten to control the behavior of doctors in ways that could undermine the medical profession’s independence. In order to preserve their functions, medical professionals must insist on their discipline´s independence, ‘analogous to what is claimed by a religious congregation’ (<xref ref-type="bibr" rid="F2001">2001, p. 221</xref>). Berg (<xref ref-type="bibr" rid="B1996">1996</xref>), discussing the role of Norwegian doctors in management, echoes this statement by arguing that ‘…in order to achieve professional autonomy, doctors must control the conditions under which they practice […] And to avoid politics, doctors must control politics’ (<xref ref-type="bibr" rid="B1996">p. 432</xref>). In essence, these theoretical perspectives suggest that doctors will engage in management in so far as it becomes a way of securing or defending their professional autonomy. <xref ref-type="bibr" rid="FHK2004">Forbes, Hallier and Kelly (2004</xref>) have for example shown that doctors may assume management roles in order to ‘protect particular specialties from outside influence or from those they [believe to be] inappropriate clinician–managers’ (<xref ref-type="bibr" rid="FHK2004">p. 167</xref>). Management may thus become a “contested terrain”, as Kirkpatrick and colleagues (<xref ref-type="bibr" rid="KDK2011">2011</xref>) have noted. Doctors may also attempt to influence decision making by more informal means. Kirkpatrick and colleagues (<xref ref-type="bibr" rid="KDK2011">2011</xref>) show how Danish doctors were successful in preventing the implementation of a new joint management model, both by lobbying and arguing against it publicly.</p>
+      <sec>
+        <title>Analytical approach</title>
+        <p>We have so far presented theory that could be useful for analyzing the relationship between medicine and management. However, studies of doctors´ engagement in hospital management might neglect the influence that doctors (and other professionals) are able to exert within different positions. For instance, there is a qualitative difference between engaging in top management versus department management positions. We therefore find it appropriate to distinguish the quantity of management positions from the influence that actors may exert in each position. Such a distinction might nuance the debate on the engagement of doctors in management. We propose this distinction in an analytical model (Figure 1). The vertical scale represents the degree of influence an actor can exert in formal decision making. We have used the term “impact” in order to avoid conceptual confusion. For sake of analytical comparisons, we label the upper right quadrant as “informal influential” and the upper left as “formal influential”. In contrast, we label the lower left quadrant as “negligible” and the lower right as “inferior”. The model illustrates that only a few positions grant a high level of impact in formal decision making – namely top management and division manager positions, which are situated in the upper left quadrant. The impact of managers who are situated lower in the managerial hierarchy (department and section managers) is limited to more informal means of influence. Our model thus illustrates that it is possible to hold a few positions within management, and still exert strong formal influence in decision making.</p>
+        <fig>
+          <caption>
+            <p><italic>Figure 1.</italic> Our analytical approach towards understanding the engagement of professions in management.</p>
+          </caption>
+          <graphic xlink:href="images/Spehar1.png">
+            <alt-text>Figure containing Formal influential Informal influential Negligible Inferior</alt-text>
+          </graphic>
+        </fig>
+        <p>Furthermore, if we accept the idea of an interrelated system of professions, where external and internal changes in one profession causes disturbances throughout the system (<xref ref-type="bibr" rid="A1988">Abbott, 1988</xref>), we need to take these aspects into account when discussing the role of medicine in management. According to Numerato, Salvatore and Fattore (<xref ref-type="bibr" rid="NSF2011">2011</xref>), ‘the frequent consideration of doctors in strict relation to other healthcare professionals suggests the need to examine the interaction of these professional groups’ (<xref ref-type="bibr" rid="NSF2011">p. 12</xref>). Our model is suited for illustrating the medical profession as coexisting with other professions in an interdependent system (<xref ref-type="bibr" rid="A1988">Abbott, 1998</xref>). Movement of one profession between the different quadrants may influence the system as a whole. For example, if one profession seizes management positions in either quadrant, other professions will move further away from that quadrant. This is especially evident in the upper left quadrant, where there are only a few influential positions. We will return to the model in the analytical part of our paper.</p>
+      </sec>
+      <sec>
+        <title>The history of medicine in management</title>
+        <p>In order to understand the emergence of contemporary management structures in Norwegian hospitals, we will examine the recent history of medicine in management. Our analysis is based on a review of existing literature, as well as empirical data from a longitudinal study of the internal organization of Norwegian hospitals. In this study, questionnaires are sent by mail to the directors of each Norwegian health trust, who then distribute the different parts of the questionnaire to relevant managers and employees. Our period of analysis is from early 1970 to 2009. Our focus will be on the pivotal events affecting the role of medicine in the management of Norwegian hospitals</p>
+        <p>Until the 1960s, only a few hospitals had official directors. Most hospitals were publicly owned and managed on a part-time basis by a medical director, with assistance from a general manager. Hospitals were organized as loosely coupled departments, and functioned primarily as a form of external spokesperson for the institution and as a service institution for the departments (<xref ref-type="bibr" rid="B1996">Berg, 1996</xref>). The heads of departments were ‘relatively independent autocrats in almost independent departments’ (<xref ref-type="bibr" rid="B1996">Berg, 1996, p. 441</xref>) Until around 1970, doctors reigned on top of the hospital hierarchy, with the hospital physician practicing ‘in a secluded and protected world that he could shape as he would’ (<xref ref-type="bibr" rid="B1996">Berg, 1996, p. 438</xref>). This was possible because the local county authorities, which owned most of the public hospitals, more or less ‘bowed to the wishes of the doctors and let them organize and run hospitals as they preferred’ (<xref ref-type="bibr" rid="B1996">Berg, 1996, p. 440</xref>). This description, although somewhat exaggerated, reflects the status of doctors and medicine in Norwegian health care in the middle of the twentieth century. This was in part due to the influence of doctor Karl Evang, who held the position of Medical General Manager from 1934 to 1972. Before this period, medicine held a rather weak status in Norwegian health care in terms of professional dominance and power. But from the 1930s onward, the medical profession began to strongly influence the national health policy, as it became more and more incorporated into the state. This was in part due to Evang’s political connections with central actors in the reigning Norwegian Social Democratic Party (<xref ref-type="bibr" rid="E1995">Erichsen, 1995</xref>).</p>
+        <p> Around 1970 the medical stronghold was challenged, and doctors were in some ways unprepared for the changes that would follow (<xref ref-type="bibr" rid="B1996">Berg, 1996</xref>). The strong focus on medical treatment had greatly increased the costs of health care, and in 1975 a government proposal to regionalize the health care system was passed (<xref ref-type="bibr" rid="St9">St. meld. nr 9 1974-1975</xref>). General hospital administrators were introduced, and the head of departments were now instead becoming middle-managers. At the same time, doctors were losing influential positions in health policy. Erichsen (<xref ref-type="bibr" rid="E1995">1995</xref>) states that politicians saw the elimination of doctors in key policy positions as a mean to strengthen budgetary control, and Berg (<xref ref-type="bibr" rid="B1996">1996, p. 442</xref>) describes the turn of events as society´s ‘revenge’ on doctors that had previously excluded other professions from influencing health care. This aligns well with what Light (<xref ref-type="bibr" rid="L1995">1995</xref>) describes as ‘the ironic consequences of professional dominance, as a profession´s power to shape its domain in its own image leads to excesses that prompt counter-reactions’ (<xref ref-type="bibr" rid="L1995">p. 25</xref>).</p>
+        <p>From the 1980s towards the middle of the 90s, the demands and expectations towards hospitals were increasing, while waiting lists persisted. These events led to increased criticism towards what was called ‘the hospital crisis’ (<xref ref-type="bibr" rid="NOU1997">NOU 1997, p. 30</xref>). Focus was consequently placed on designing organizational and management structures that would result in better coordination of tasks. During this period, there was a significant shift in Norwegian health politics, which may account for some of the management structures that were suggested. During the 1970s and 80s, health politics were left-wing oriented, with political top-down guidelines governing hospitals and employees. As significant challenges relating to the efficiency and costs of health care persisted, a turn for more right-wing politics was introduced in the beginning of the 90s, in terms of more market-oriented measures. According to Grønlie (<xref ref-type="bibr" rid="G2006">2006</xref>), this saw a decreasing support for decisions based on democratic processes and increasing support for independent professional managers.</p>
+        <p>In 1980, the so-called Øie committee was formed after initiative from the Norwegian Association of Local Authorities (<xref ref-type="bibr" rid="NOU1997">NOU, 1997)</xref>. The committee recommended that clinical departments should be led by attending physicians, thereby implying that doctors should have the ultimate authority over other professions. The recommendation was met with strong criticism from nurses, who interpreted this as an attempt to remove nurses from the traditional dual management model implemented in the 1970s, where the head nurse and head doctor were both in charge of running the department (<xref ref-type="bibr" rid="M1990">Melby, 1990</xref>). Following the recommendations from the Øie committee, another committee (“Organisasjonskomité 3”) was formed. This time, two different management models were suggested. The first suggestion mirrored the previous recommendation by the Øie committee, while the second suggestion involved appointing a separate administrative manager for the clinical departments. This administrative position would also be open for other professions, thereby possibly reducing the influence of clinicians in department management. However, the suggestion that the head nurse would work under the administrator was not met with enthusiasm by the nurses (<xref ref-type="bibr" rid="J2009">Johansen, 2009</xref>), and the practice of dual management continued well into the 1990s.</p>
+      </sec>
+      <sec>
+        <title>Wage settlements</title>
+        <p>According to Evensen (<xref ref-type="bibr" rid="E1996">1996</xref>), many hospital physicians in the 1990s felt that their status had decreased. This was further emphasized by the perception that their salary development had been ‘miserable for many years’ (<xref ref-type="bibr" rid="E1996">p. 420</xref>).  This was to change with two wage settlements, first in 1996 and then in 2003. Prior to the 1996 settlement, several doctors had chosen to leave the hospitals in order to start private practice, and the waiting lists in hospitals were increasing (<xref ref-type="bibr" rid="M2005">Moe, 2005</xref>). Wages for hospital doctors were now radically increased, together with an increase in imposed working hours. Doctors could also work additional hours to a tariff based wage per hour. The intention of the settlement was to motivate the doctors to continue to work long hours, introducing a lower basic wage and a high variable wage for working extra hours. The year 2003 saw another “working hour reform” (<xref ref-type="bibr" rid="M2005">Moe, 2005</xref>). The new arrangement gave hospitals more flexibility in deciding working hours and working arrangements, resulting in higher basic wages (with an increase of 2,5 working hours per week) and lower payment for extra hours. The new structure also granted employers the liberty to assign individual, lucrative working contracts with doctors, if services within their specialty were needed. However the employer was free to end the contract if additional work was not needed.</p>
+        <p>Although the two wage settlements were different in nature, they both increased doctors´ wages, but with different incentives. The first involved incentives to work additional hours, while the second involved incentives to seek out individual contracts with lucrative payment for additional hours. Thus, they both contributed to financially lucrative opportunities in the clinic. However, by requesting increased wages, doctors were in a way giving in to increased regulation. As Evensen (<xref ref-type="bibr" rid="E1996">1996</xref>) notes, when doctors began demanding working conditions that were more equal to those of other employees, such as payment for inconvenient working hours and over-time, they also had to accept more extensive supervision from their employers. Light (<xref ref-type="bibr" rid="L1995">1995</xref>) argues that health systems could be compared along a continuum of dominance, with the profession and state at each end. At one end, professional dominance involves control over one´s own work, as well as related institutions, services and finances. At the other end, ‘doctors are employees – with relatively low status […] – of a delivery system designed by the state’ (<xref ref-type="bibr" rid="L1995">Light, 1995, p. 28</xref>). To some extent, then, the wage settlements in 1996 and 2003 contributed in moving doctors towards the latter end of the continuum.</p>
+      </sec>
+      <sec>
+        <title>The introduction of unitary management</title>
+        <p>In 1997, about 90% of the somatic departments in Norwegian hospitals reported practicing dual management (<xref ref-type="bibr" rid="NOU1997">NOU, 1997</xref>). The year before, a committee (the “Steine committee”) had been appointed by the Ministry of Social Affairs and Health to evaluate the internal organization and management structures in hospitals, and to suggest measures for improving these areas (<xref ref-type="bibr" rid="Ot10">Ot.prp.10 1998-1999</xref>). In 1997, the committee recommended that the practice of dual management in clinical departments be replaced by unitary management. While both management competence and competence within a health profession was emphasized for the new management role, the committee did not specify a profession, thus leaving the position open for individuals with different health related backgrounds.</p>
+        <p>There were several reasons for why the Steine committee viewed dual management as undesirable. Along with ambiguities about management responsibilities, the committee also believed that dual management would suggest that a profession could not be subjected to the management of other professionals (<xref ref-type="bibr" rid="NOU1997">NOU, 1997</xref>). Because contemporary ideas from New Public Management were gaining popularity in both the Norwegian and Scandinavian public sector, this was considered an unfortunate signal to send out. Torjesen (<xref ref-type="bibr" rid="T2007">2007</xref>) has examined the arguments from the committee closely, and concludes that they were based on the assumption that patients should be viewed as customers relating to healthcare organizations as a whole, instead of exclusively relating to specific professions. Hospitals were therefore to be led by introducing new management structures with an emphasis on managing organizational units as a whole, instead of only leading one professional group. Although doctors objected heavily against the prospect of outside involvement in the management of medical departments (e.g. <xref ref-type="bibr" rid="GS2006">Gjerberg &amp; Sørensen, 2006</xref>), a proposition to establish unitary management at all levels in Norwegian hospitals was passed by the Norwegian Parliament in 1999, officially introducing unitary management through the Specialist Health Services Act in 2001 (<xref ref-type="bibr" rid="Ot10">Ot.prp.10 1998-1999</xref>). Doctor´s would now have to compete for management positions against applicants with other health backgrounds. They did not accept these changes lightly, and in 2004, three years after the reform, around half of the departments in Norwegian hospitals had experienced conflicts of various degrees (<xref ref-type="bibr" rid="GS2006">Gjerberg &amp; Sørensen, 2006</xref>). Local strategies, such as appointing assistant managers and splitting previous departments into smaller, independent departments, helped reduce some of these conflicts.</p>
+        <p>Despite such local strategies, however, Johansen (<xref ref-type="bibr" rid="J2009">2009</xref>) points out that the political drive to implement professional neutrality would become the most important reason for why doctors lost several of their former management positions, as the formalization of unitary management paved the way for Norwegian nurses into management. The author also shows how this contrasts with other Western countries, where reforms that were implemented around the same time actually strengthened doctors´ position in management. The development in Norway could be understood in a historical and gender- based context, as nurses had long sought increased recognition by demanding access to management positions that were previously held exclusively by doctors (<xref ref-type="bibr" rid="J2009">Johansen, 2009</xref>). Indeed, the initial introduction and maintenance of dual management in hospital departments from the 1970´s can partly be understood in light of the increased recognition of women’s position in the workforce. While doctors have traditionally been male, nurses have been female (<xref ref-type="bibr" rid="S2006">Skaset, 2006</xref>). Dual management was perceived as a means of highlighting and facilitating both women´s and nurses´ status in the health care environment and emerged after nurses had engaged in repeated struggles for increased recognition and respect. After the introduction of unitary management, which emphasized professional neutrality, nurses have been competing directly with doctors for department manager positions.</p>
+        <p>While 2001 marked a major reform in Norwegian health care, the year 2002 marked a second fundamental reform, which can also be seen as markedly influenced by ideas from New Public Management (<xref ref-type="bibr" rid="Ot66">Ot. prp. nr. 66 2000-2001</xref>). Norway had previously been described as a “reluctant reformer” (<xref ref-type="bibr" rid="O1996">Olsen, 1996</xref>), and Christensen, Lie and Lægreid (<xref ref-type="bibr" rid="C2008">2008</xref>) suggest that Norway was under pressure to catch up with reform trends in other countries. As Norwegian healthcare was now shaking of its reputation as a reluctant reformer (<xref ref-type="bibr" rid="C2008">Christensen et al. 2008</xref>), all hospitals were to be transferred to the state and amalgamated into five regional government enterprises (becoming four in 2007), which divided their corresponding hospitals under local health trusts. Both the regional and local trusts were defined as separate legal entities, each with their own managing directors and executive boards. Part of the rationale was that the hospital owners and the top management would gain stronger credibility, as central politicians would not be directly involved in hospitals´ actions (<xref ref-type="bibr" rid="Ot66">Ot. prp. nr. 66 2000-2001</xref>). Following the reform of 2002, there has been a steady increase in management levels in most Norwegian hospitals, with 71 % of the hospitals practicing four management levels in 2009, compared to only 13 % in 2001 (<xref ref-type="bibr" rid="KB2010">Kjekshus &amp; Bernstrøm, 2010</xref>). These levels are represented by the director of the health trusts, division managers, department managers and section managers, respectively.</p>
+      </sec>
+      <sec>
+        <title>The present </title>
+        <p>As shown above, the role of medicine in management has undergone a substantial change following the 1970s. During this period, doctors went from ‘relatively independent autocrats’ (<xref ref-type="bibr" rid="B1996">Berg, 1996, p. 441</xref>) in small hospital organizations to accepting more extensive supervision from their employers. In addition, doctors now have to compete for management positions with other health care professionals. This is a stark contrast to the ‘secluded and protected world’ (<xref ref-type="bibr" rid="B1996">Berg, 1996, p. 438</xref>) they once could practice in. Data from our own longitudinal study (<xref ref-type="bibr" rid="KB2010">Kjekshus &amp; Bernstrøm, 2010</xref>) show that doctors now hold less than half of the department manager positions in hospitals, and the percentage has remained largely the same in recent years (Table 1). Nurses are holding a majority of these positions, although the percentage has declined somewhat in previous years. However, the high percentage of nurses in these positions could reflect the fact that several hospital wards were reclassified as separate organizatory units following the implementation of unitary management <xref ref-type="bibr" rid="KB2010">(Kjekshus &amp; Bernstrøm, 2010</xref>). The percentage of managers with other backgrounds has also increased, which may be due to the emergence of new departments not directly related to clinical activities.</p>
+        <table-wrap id="T1">
+          <caption>
+            <p>Table 1</p>
+            <p>
+              <italic>Professional background of department managers from 2005 to 2009 </italic>
+            </p>
+          </caption>
+          <table frame="box" width="100%">
+            <thead>
+              <tr style="border-bottom: solid thin border-top: solid thin">
+                <th/>
+                <th>2005</th>
+                <th>2007</th>
+                <th>2009</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Doctor</td>
+                <td>40%</td>
+                <td>39%</td>
+                <td>39%</td>
+              </tr>
+              <tr>
+                <td>Nurse</td>
+                <td>55%</td>
+                <td>54%</td>
+                <td>48%</td>
+              </tr>
+              <tr>
+                <td>Other</td>
+                <td>5%</td>
+                <td>7%</td>
+                <td>13%</td>
+              </tr>
+              <tr style="border-bottom: solid thin border-top: solid thin">
+                <td>Total (N)</td>
+                <td>(674)</td>
+                <td>(741)</td>
+                <td>(646)</td>
+              </tr>
+            </tbody>
+          </table>
+          <attrib>Source: <xref ref-type="bibr" rid="KB2010">Kjekshus &amp; Bernstrøm, 2010</xref></attrib>
+        </table-wrap>
+        <p>Table 2 shows a similar distribution in the percentage of division managers with a medical background, while nurses are represented in only about a fifth of these positions. Interestingly, the percentage of doctors and managers with other backgrounds has largely remained the same.</p>
+        <table-wrap id="T2">
+          <caption>
+            <p>Table 2</p>
+            <p>
+              <italic>Professional background of division managers from 2003 to 2009</italic>
+            </p>
+          </caption>
+          <table frame="box" width="100%">
+            <thead>
+              <tr style="border-bottom: solid thin border-top: solid thin">
+                <th/>
+                <th>2003</th>
+                <th>2005</th>
+                <th>2007</th>
+                <th>2009</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Medicine</td>
+                <td>43%</td>
+                <td>40%</td>
+                <td>33%</td>
+                <td>41%</td>
+              </tr>
+              <tr>
+                <td>Natural science</td>
+                <td>6%</td>
+                <td>4%</td>
+                <td>10%</td>
+                <td>4%</td>
+              </tr>
+              <tr>
+                <td>Social science</td>
+                <td>8%</td>
+                <td>10%</td>
+                <td>11%</td>
+                <td>11%</td>
+              </tr>
+              <tr>
+                <td>Nursing</td>
+                <td>22%</td>
+                <td>23%</td>
+                <td>21%</td>
+                <td>22%</td>
+              </tr>
+              <tr>
+                <td>Economics</td>
+                <td>8%</td>
+                <td>12%</td>
+                <td>10%</td>
+                <td>11%</td>
+              </tr>
+              <tr>
+                <td>Other</td>
+                <td>12%</td>
+                <td>10%</td>
+                <td>15%</td>
+                <td>10%</td>
+              </tr>
+              <tr style="border-bottom: solid thin border-top: solid thin">
+                <td>Total (N)</td>
+                <td>(35)</td>
+                <td>(25)</td>
+                <td>(25)</td>
+                <td>(17)</td>
+              </tr>
+            </tbody>
+          </table>
+          <attrib>Source: <xref ref-type="bibr" rid="KB2010">Kjekshus &amp; Bernstrøm, 2010</xref></attrib>
+        </table-wrap>
+        <p>More extensive changes can be observed in the top management staff. In 1999, a chief physician was represented in 89% of the hospitals. This percentage decreased drastically over the next decade, dropping to 6% in 2009. Although this shift appears dramatic, it should partly be interpreted in light of a gradual change in professional titles, namely the shift from the title “chief physician” to “medical advisor”. As the percentage of chief physicians was reduced, the percentage of medical advisors began rising from 27% in 2003 to 44% in 2007, remaining the same in 2009. Nevertheless, this percentage is considerably lower compared to the initial percentage of chief physicians in 1999. Chief nurses experienced a similar drop in percentage, and although the title of “health care professional advisor” became gradually incorporated, the distribution of this title dropped significantly from 24% in 2005 to 6% in 2009. According to our findings, both doctors and nurses have had to give way to individuals with other backgrounds, such as information managers (9% in 1999 and 87% in 2009) and financial directors (89% in 1999 and 100% in 2009).</p>
+        <table-wrap id="T3">
+          <caption>
+            <p>Table 3</p>
+            <p>
+              <italic>Formalization of management positions</italic>
+            </p>
+          </caption>
+          <table frame="box" width="100%">
+            <thead>
+              <tr style="border-bottom: solid thin border-top: solid thin">
+                <th/>
+                <th>1999</th>
+                <th>2001</th>
+                <th>2003</th>
+                <th>2005</th>
+                <th>2007</th>
+                <th>2009</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Written guidelines</td>
+                <td>72%</td>
+                <td>85%</td>
+                <td>84%</td>
+                <td>88%</td>
+                <td>89%</td>
+                <td>95%</td>
+              </tr>
+              <tr>
+                <td>Temporary hiring</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>25%</td>
+                <td>9%</td>
+                <td>3%</td>
+              </tr>
+              <tr>
+                <td>Permanent hiring</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>70%</td>
+                <td>90%</td>
+                <td>93%</td>
+              </tr>
+            </tbody>
+          </table>
+          <attrib>Note. Dashes indicate that data were not collected for the specific year</attrib>
+        </table-wrap>
+        <p>Our data also indicate that management positions are becoming increasingly formalized. Table 3 indicates a tendency towards formalization of management responsibilities through increased use of written instructions for managers at the department level. The data also show more use of permanent hiring of department managers in contrast to temporary contracts, indicating that management is becoming formalized as a permanent position. This development is interesting, as the Norwegian Association of Senior Hospital Physicians has argued against the use of permanent hiring, due in part to ‘the job´s complexity and extensive challenges’ (<xref ref-type="bibr" rid="NO2011">Norsk Overlegeforening, 2011</xref>, translated) and the wish of many doctors to return to clinical work in order to update and develop their professional skills. Judging by our data, these concerns have so far not been addressed.</p>
+      </sec>
+      <sec>
+        <title>Understanding the present</title>
+        <p>In order to illustrate the changing role of doctors in management, we can apply our suggested analytical model (Figure 2). We have included both the medical and nursing profession in the model.</p>
+        <p>The implementation of unitary management saw nurses (as well as some professionals with other health related backgrounds) entering several department manager positions, thus increasing their impact in decision making and reducing the total number of management positions held by doctors. The figure shows how doctors have correspondingly transitioned away from the upper right quadrant.  In response, doctors appear to be seeking influence through other channels, such as upper management positions in the regional health authorities and various directorate positions. Doctors are currently occupying central positions in the Norwegian Directorate of Health, and three of the managing directors in the four regional health authorities have a medical background.  Our model thus illustrates the paradoxical notion that doctors may now hold fewer management positions than before, but still retain considerable impact in decision making. This follows from what we have noted previously: that formal influence in decision making is limited to a few influential positions. Nurses have gained access to more managerial positions over time, but their impact in decision making remains comparatively low, as these positions are generally at a lower level, and consequently less influential.</p>
+        <fig>
+          <caption>
+            <p>
+              <italic>Figure 2. Change of professional impact in management</italic>
+            </p>
+          </caption>
+          <graphic xlink:href="images/Spehar2.png">
+            <alt-text>Figure containing Impact high low Positions few many doctors nurses</alt-text>
+          </graphic>
+        </fig>
+        <p>It is beyond the scope of our paper to depict the role of other professions in the figure. However, although there is no evidence of an influx of general managers into the hospital sector, the emergence of general managers in top management, such as financial and information managers, suggests the presence of influential individuals from other professions in our model. Our data also indicate that lawyers were represented in 35% of the top management staff´s in 2009 (<xref ref-type="bibr" rid="KB2010">Kjekshus &amp; Bernstrøm, 2010</xref>). Following the increasing complexity of hospitals and the emergence of new professions in management, it appears that Norwegian hospitals are amalgamating into a complex system of professions. </p>
+      </sec>
+      <sec>
+        <title>Medicine in management: new clothes, same impact</title>
+        <p>Our model illustrates that doctors are not abandoning management, as Berg (<xref ref-type="bibr" rid="B2008">2008</xref>), for instance, has speculated. Rather, doctors are entering management positions at higher levels in order to exert formal influence in decision making. Correspondingly, there is a re-structuring of the medical profession in management, still geared towards securing self-governance over professional work (<xref ref-type="bibr" rid="F2001">Freidson, 2001</xref>), but through different means. This explanation could also account for why the number of doctors in management and division management positions has largely remained the same in recent years; doctors have been seeking higher impact. But how can we explain that doctors are transitioning towards the left side of our model, instead of retreating to the clinic and attempting to exert informal influence? Following the hospital reform in 2002, the scope of organizational complexity has increased. Healthcare organizations are becoming increasingly larger, and new professional management structures are being established in the wake of recent mergers. The Steine committee, which recommended the implementation of unitary management in the 90s, concluded that organizations which had initially begun as simple hospitals were now in the process of becoming highly differentiated organizations, with each medical specialty about to be turned into a separate department (<xref ref-type="bibr" rid="NOU1997">NOU, 1997: 2, p.32</xref>). This characterization appears equally fitting for the current trends in the Norwegian hospital sector. The increasing complexity may create a stronger need for top managers to formalize management roles.</p>
+        <p>Increased formalization and regulation of management roles is not unique to the Norwegian hospital sector. Gray and Harrison (<xref ref-type="bibr" rid="GH2004">2004</xref>) are among several authors that have identified similar trends in the NHS. The professional bureaucracy that Mintzberg (<xref ref-type="bibr" rid="M1979">1979</xref>) identified several decades ago appears to take on characteristics of a machine bureaucracy, in which there is a formal hierarchical structure and a centralized form of decision making. Flynn (<xref ref-type="bibr" rid="F2002">2002</xref>), for example, argues that the implementation of clinical governance tools, such as performance monitoring, is moving the NHS towards a machine bureaucracy. Our results are interesting in this light, as they suggest how doctors might respond to these trends. As we shown, the status of Norwegian doctors is becoming more like that of regular employees, following wage settlements and reforms in the hospital sector. This has challenged their ability to decide the core of their professional work. While doctors have previously been able to influence decisions by virtue of their professional status (<xref ref-type="bibr" rid="B1996">Berg, 1996</xref>; <xref ref-type="bibr" rid="E1995">Erichsen, 1995</xref>), they must now increasingly consort to formal means of influence. Noordegraaf (<xref ref-type="bibr" rid="N2007">2007</xref>) highlights the medical profession as one of several traditional professions that have become weakened as health care organizations are restructured and professions become subjected to increased monitoring. In other words, ‘... instead of status professions, modern professions have turned into occupational professions and perhaps into organizational professions that primarily face organizational control’ (<xref ref-type="bibr" rid="N2007">Noordegraaf, 2007, p. 763</xref>). Therefore, drawing on the rationale of sociological theories of professions (<xref ref-type="bibr" rid="A1988">Abbott, 1988</xref>; <xref ref-type="bibr" rid="F2001">Freidson, 2001</xref>), doctors are likely to seek out impact in decision making by entering management positions that strengthen their formal influence.</p>
+      </sec>
+      <sec>
+        <title>The future role of medicine in management </title>
+        <p>Considering the increased formalization of management roles and the declining status of the medical profession, we may discern three alternatives for the future role of doctors in management. According to sociological theories of professions, intergroup conflict often emerges when organizations are characterized by multiprofessionality (<xref ref-type="bibr" rid="A1991">Abbott, 1991</xref>). Data from our longitudinal study indicate that managers with other professional backgrounds are emerging. Mo (<xref ref-type="bibr" rid="M2006">2006</xref>) interviewed Norwegian doctors in management positions and found that many do not consider other professionals to have the necessary expertise for managing clinical departments. A response to the increase of managers with other backgrounds might be the mobilization of so-called reluctant doctors, who engage in management roles in order to protect their profession from outside influence (<xref ref-type="bibr" rid="FHK2004">Forbes et al., 2004</xref>). Informal means of influence, such as non-compliance, might also be pursued. The Specialist Health Services Act from 2001 (<xref ref-type="bibr" rid="Ot10">Ot. prp. 10 1998-1999: § 3-9</xref>) states that managers in medical departments are required to rely on medical counselors in issues concerning medical matters. The Norwegian Association of Senior Hospital Physicians is officially advising its members not to take on these positions, as they do not grant formal authority (<xref ref-type="bibr" rid="NO2011">Norsk Overlegeforening, 2011</xref>). In turn, the association may effectively “sabotage” other professionals from taking management positions at this level. These examples indicate that there might be continued efforts to secure ownership of medical areas of expertise, as new actors are emerging in the system of professions (<xref ref-type="bibr" rid="A1988">Abbott, 1988</xref>).</p>
+        <p>Another possibility, which was alluded to in the beginning of our paper, is that Norwegian doctors could undergo a transition from “pure” to “hybrid” professionals, as hospitals become ‘ambiguous domains, in which expertise can no longer be isolated from other experts, decision makers or clients’ (<xref ref-type="bibr" rid="N2007">Noordegraaf, 2007, p. 780</xref>). Kurunmaki (<xref ref-type="bibr" rid="K2004">2004</xref>) has shown how medicine became a hybrid profession in Finland, following the adoption of accounting techniques by Finnish doctors in the early 1990’s. She concludes that this was possible because the doctors did not view accounting expertise as rooted in a specific profession, but rather as ‘transferable across professional boundaries’ (<xref ref-type="bibr" rid="K2004">p. 342</xref>). In other countries, doctors have traditionally regarded these tools as part of an administration profession, and therefore resisted to incorporate these sets of knowledge into their own professional standards (<xref ref-type="bibr" rid="K2004">Kurunmaki, 2004</xref>). In Norway, accounting has been linked with administration, which doctors have regarded as ‘second-rate business’ (<xref ref-type="bibr" rid="E1996">Evensen, 1996, p. 417</xref>). A hybridization of Norwegian doctors could therefore seem less likely. However, a report by Dalland and Sørngård (<xref ref-type="bibr" rid="DS2007">2007</xref>), investigating the professional identity of Norwegian doctors in the wake of the hospital reform in 2002, suggests that doctors working closely with financial controllers may incorporate economical perspectives in their identities over time. This could suggest a slow process of hybridization over time, in which efforts to secure exclusive ownership of specific areas of expertise (<xref ref-type="bibr" rid="A1988">Abbott, 1988</xref>; <xref ref-type="bibr" rid="F2001">Freidson, 2001</xref>) are lessened. Recent recommendations from the Office of the Auditor General of Norway state that clinicians should be more involved in strategic and budgetary decisions in order to improve the economic efficiency of healthcare organizations (<xref ref-type="bibr" rid="R2009">Riksrevisjonen, 2009</xref>). The implications of these recommendations will perhaps be seen in the years to follow.</p>
+        <p>A last possibility is that doctors will be less concerned about maintaining autonomy. A recent study by Mastekaasa (<xref ref-type="bibr" rid="M2011">2011</xref>) suggests that future generations of doctors might be less concerned about autonomy than their counterparts in the classic professional literature (<xref ref-type="bibr" rid="F1970">Freidson 1970</xref>, <xref ref-type="bibr" rid="F2001">2001</xref>; <xref ref-type="bibr" rid="A1988">Abbott, 1988</xref>). Using survey data, the author examined the ratings of job characteristics among recently graduated professionals, and compared the results to a general population sample. Autonomy was rated as less important by Norwegian medical doctors compared to the general population. In addition, job characteristics such as security, interesting work and usefulness to society were rated higher. The answers given by the respondents could reflect their short experience as professional workers, as the emphasis on autonomy could develop over time. However, the results are still interesting when attempting to delineate the future role and direction of doctors in management.</p>
+      </sec>
+      <sec>
+        <title>Limitations and future studies</title>
+        <p>There are some limitations to our study. First, although we have attempted to explain the results from our longitudinal study, causality cannot be confirmed. Secondly, we have regarded professions as a single entity for the sake of analytical clarity. However, Skaset (<xref ref-type="bibr" rid="S2006">2006</xref>) has shown an increased fragmentation among doctors. For instance, there is a growing number of medical specialties, which may create a hierarchical order of prestige (<xref ref-type="bibr" rid="AW2008">Album &amp; Westin, 2008</xref>) and formation of administrative or managerial elites within the profession. It should also be noted that some authors have contested the notion of professions as constantly competing with other logics. For instance, Bourgeault, Hirschkorn &amp; Sainsa (<xref ref-type="bibr" rid="BHS2011">2011</xref>) have presented a case for moving from a conflict-based model of relations between professions and organizations to considering areas of convergences and overlapping interests. Lastly, we acknowledge that individual doctors who choose to engage in management roles could be motivated by other factors than merely the prospect of exerting control over one’s specialty. While these motivations have not been pursued further in this paper, future studies should examine the motivations of doctors who are presently holding management positions. Such studies could potentially strengthen or weaken the contribution of sociological theories in this area of research.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>Concluding remarks</title>
+      <p>More micro level research on the extent to which doctors are engaged in manage-ment has been requested (<xref ref-type="bibr" rid="NK2009">Neogy &amp; Kirkpatrick, 2009</xref>). We believe that this article, in which we have outlined some key influences on the relationship between medicine and management in Norwegian hospitals, contributes to this research. We also encourage results from similar studies of medicine and management in other European countries. Our analytical model could be used to offer insight on the engagement of professionals in management. Future studies might attempt to advance our model by including additional factors.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="A1988">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Abbott</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <year>1988</year>
+          <source>The system of professions: an essay on the division of expert labor</source>
+          <publisher-name>University of Chicago Press</publisher-name>
+          <publisher-loc>Chicago, IL</publisher-loc>
+        </element-citation>
+      </ref>
+      <ref id="A1991">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Abbott</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <year>1991</year>
+          <chapter-title>The future of professions: Occupation and expertise in the age of organization</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Bacharach</surname>
+              <given-names>S. B.</given-names>
+            </name>
+          </person-group>
+          <source>Research in the Sociology of Organizations</source>
+          <volume>8</volume>
+          <issue>1</issue>
+          <fpage>17</fpage>
+          <lpage>42</lpage>
+          <publisher-name>JAI Press</publisher-name>
+          <publisher-loc>Greenwich, CT</publisher-loc>
+        </element-citation>
+      </ref>
+      <ref id="AW2008">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Album</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Westin</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <year>2008</year>
+          <article-title>Do diseases have a prestige hierarchy? A survey among physicians and medical students</article-title>
+          <source>Social Science &amp; Medicine</source>
+          <volume>66</volume>
+          <issue>1</issue>
+          <fpage>182</fpage>
+          <lpage>188</lpage>
+          <uri>http://dx.doi.org/10.1016/j.socscimed.2007.07.003</uri>
+        </element-citation>
+      </ref>
+      <ref id="AH2011">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Aslaksen</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Haug</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>Flere leger bør lære ledelse (commentary) [More doctors should learn management].</article-title>
+          <source>The Journal of the Norwegian Medical Association</source>
+          <volume>131</volume>
+          <issue>8</issue>
+          <fpage>805</fpage>
+          <uri>http://dx.doi.org/10.4045/tidsskr.11.0228</uri>
+        </element-citation>
+      </ref>
+      <ref id="B1991">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Berg</surname>
+              <given-names>O.</given-names>
+            </name>
+          </person-group>
+          <year>1991</year>
+          <chapter-title>Medikrati, hierarki og marked. [Medicracy, hierarchy and market]</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Album</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Midré</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <source>Mellom idealer og realiteter: Studier i medisinsk sosiologi</source>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Ad Notam</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="B1996">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <person-group>
+            <name>
+              <surname>Berg</surname>
+              <given-names>O.</given-names>
+            </name>
+          </person-group>
+          <year>1996</year>
+          <chapter-title>Meta-medicine: The rise and fall of the doctor as leader and manager</chapter-title>
+          <person-group>
+            <name>
+              <surname>Larsen</surname>
+              <given-names>Ø.</given-names>
+            </name>
+            <name>
+              <surname>Olsen</surname>
+              <given-names>B. O.</given-names>
+            </name>
+          </person-group>
+          <source>The shaping of a profession: Physicians in Norway, past and present</source>
+          <fpage>431</fpage>
+          <lpage>443</lpage>
+          <publisher-loc>Canton, MA</publisher-loc>
+          <publisher-name>Science History Publications</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="B2008">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Berg</surname>
+              <given-names>O.</given-names>
+            </name>
+          </person-group>
+          <year>2008</year>
+          <article-title>The demise of the “iatrocracy” (Editorial)</article-title>
+          <source>Journal of Management and Marketing in Healthcare</source>
+          <volume>1</volume>
+          <issue>2</issue>
+          <fpage>117</fpage>
+          <lpage>119</lpage>
+          <uri>http://dx.doi.org/10.1179/175330308791011588</uri>
+        </element-citation>
+      </ref>
+      <ref id="BHS2011">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group>
+            <name>
+              <surname>Bourgeault</surname>
+              <given-names>I. L.</given-names>
+            </name>
+            <name>
+              <surname>Hirschkorn</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Sainsaulieu</surname>
+              <given-names>I.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>Relations between professions and organizations: More fully considering the role of the client</article-title>
+          <source>Professions and Professionalism</source>
+          <volume>1</volume>
+          <issue>1</issue>
+          <fpage>67</fpage>
+          <lpage>86</lpage>
+          <uri>http://dx.doi.org/10.7577/pp.v1i1.150</uri>
+        </element-citation>
+      </ref>
+      <ref id="C2008">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Christensen</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Lie</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Lægreid</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <year>2008</year>
+          <article-title>Beyond New Public Management: Agencification and regulatory reform in Norway</article-title>
+          <source>Financial Accountability &amp; Management</source>
+          <volume>24</volume>
+          <issue>1</issue>
+          <fpage>15</fpage>
+          <lpage>30</lpage>
+          <uri>http://dx.doi.org/10.1111/j.1468-0408.2008.00441.x</uri>
+        </element-citation>
+      </ref>
+      <ref id="DS2007">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dalland</surname>
+              <given-names>H. T.</given-names>
+            </name>
+            <name>
+              <surname>Sørngård</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <year>2007</year>
+          <source>Endring av profesjonell identitet: Helsereformens krav til økonomisk kunnskap blant de medisinske lederne. [Change of professional identity: The health reform´s requirement of economical skills among medical managers]</source>
+          <series>SNF-rapport</series>
+          <issue>13/07</issue>
+          <publisher-loc>Bergen</publisher-loc>
+          <publisher-name>Samfunns- og næringslivsforskning AS</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="D2010">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dwyer</surname>
+              <given-names>A. J.</given-names>
+            </name>
+          </person-group>
+          <year>2010</year>
+          <article-title>Medical managers in contemporary healthcare organisations: A consideration of the literature</article-title>
+          <source>Australian Health Review</source>
+          <volume>34</volume>
+          <issue>4</issue>
+          <fpage>514</fpage>
+          <lpage>522</lpage>
+          <uri>http://dx.doi.org/10.1071/AH09736</uri>
+        </element-citation>
+      </ref>
+      <ref id="E2009">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Edmonstone</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <article-title>Clinical leadership: The elephant in the room</article-title>
+          <source>The International Journal of Health Planning and Management</source>
+          <volume>24</volume>
+          <issue>4</issue>
+          <fpage>290</fpage>
+          <lpage>305</lpage>
+          <uri>http://dx.doi.org/10.1002/hpm.959</uri>
+        </element-citation>
+      </ref>
+      <ref id="E1995">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Erichsen</surname>
+              <given-names>V.</given-names>
+            </name>
+          </person-group>
+          <year>1995</year>
+          <article-title>Health care reform in Norway: The end of the “profession state”?</article-title>
+          <source>Journal of Health Politics, Policy and Law</source>
+          <volume>20</volume>
+          <issue>3</issue>
+          <fpage>719</fpage>
+          <lpage>737</lpage>
+          <uri>http://dx.doi.org/10.1215/03616878-20-3-719</uri>
+        </element-citation>
+      </ref>
+      <ref id="E1996">
+        <element-citation publication-type="book-chapter" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Evensen</surname>
+              <given-names>S. A.</given-names>
+            </name>
+          </person-group>
+          <year>1996</year>
+          <chapter-title>The changing conditions for the hospital physician</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Larsen</surname>
+              <given-names>Ø.</given-names>
+            </name>
+            <name>
+              <surname>Olsen</surname>
+              <given-names>B. O.</given-names>
+            </name>
+          </person-group>
+          <source>The shaping of a profession: Physicians in Norway, past and present</source>
+          <fpage>411</fpage>
+          <lpage>420</lpage>
+          <publisher-loc>Canton, MA</publisher-loc>
+          <publisher-name>Science History Publications</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="F2002">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Flynn</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <year>2002</year>
+          <article-title>Clinical governance and governmentality</article-title>
+          <source>Health, Risk and Society</source>
+          <volume>4</volume>
+          <issue>2</issue>
+          <fpage>155</fpage>
+          <lpage>173</lpage>
+          <uri>http://dx.doi.org/10.1080/13698570220137042</uri>
+        </element-citation>
+      </ref>
+      <ref id="FHK2004">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Forbes</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Hallier</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Kelly</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <year>2004</year>
+          <article-title>Doctors as managers: Investors and reluctants in a dual role</article-title>
+          <source>Health Services Management Research</source>
+          <volume>17</volume>
+          <issue>3</issue>
+          <fpage>167</fpage>
+          <lpage>176</lpage>
+          <uri>http://dx.doi.org/10.1258/0951484041485638</uri>
+        </element-citation>
+      </ref>
+      <ref id="F1970">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Freidson</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <year>1970</year>
+          <source>Professional dominance: The social structure of medical care.</source>
+          <publisher-loc>New York, NY</publisher-loc>
+          <publisher-name>Atherton Press</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="F2001">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Freidson</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <year>2001</year>
+          <source>Professionalism: The third logic.</source>
+          <publisher-loc>Cambridge</publisher-loc>
+          <publisher-name>Polity Press</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="GS2006">
+        <element-citation publication-type="journal" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gjerberg</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Sørensen</surname>
+              <given-names>B. A.</given-names>
+            </name>
+          </person-group>
+          <year>2006</year>
+          <article-title>Enhetlig ledelse: Fortsatt en varm potet? [Unitary management: Still a hot potato?]</article-title>
+          <source>Tidsskrift for den norske legeforening</source>
+          <volume>126</volume>
+          <issue>8</issue>
+          <fpage>1063</fpage>
+          <lpage>1066</lpage>
+        </element-citation>
+      </ref>
+      <ref id="G2011">
+        <element-citation publication-type="journal" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gjessing</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>Stolthet og drivkraft. [Pride and driving force]</article-title>
+          <source>The Journal of the Norwegian Medical Association</source>
+          <volume>131</volume>
+          <issue>17</issue>
+          <fpage>1691</fpage>
+        </element-citation>
+      </ref>
+      <ref id="GM2001">
+        <element-citation publication-type="journal" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Glouberman</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Mintzberg</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <year>2001</year>
+          <article-title>Managing the care of health and the cure of disease - Part 1: Differentiation</article-title>
+          <source>Health Care Management Review</source>
+          <volume>26</volume>
+          <issue>1</issue>
+          <fpage>56</fpage>
+          <lpage>92</lpage>
+        </element-citation>
+      </ref>
+      <ref id="GH2004">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gray</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Harrison</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <year>2004</year>
+          <source>Governing medicine: theory and practice</source>
+          <publisher-loc>Buckingham</publisher-loc>
+          <publisher-name>Open University Press</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="G2001">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gruening</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <year>2001</year>
+          <article-title>Origin and theoretical basis of New Public Management</article-title>
+          <source>International Public Management Journal</source>
+          <volume>4</volume>
+          <issue>1</issue>
+          <fpage>1</fpage>
+          <lpage>25</lpage>
+          <uri>http://dx.doi.org/10.1016/S1096-7494(01)00041-1</uri>
+        </element-citation>
+      </ref>
+      <ref id="G2006">
+        <element-citation publication-type="journal" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Grønlie</surname>
+              <given-names>T.</given-names>
+            </name>
+          </person-group>
+          <year>2006</year>
+          <article-title>Norwegian general hospitals, 1970-2002: County ownership – an interlude between welfare localism and state direction</article-title>
+          <source>Medical History</source>
+          <volume>50</volume>
+          <issue>2</issue>
+          <fpage>189</fpage>
+          <lpage>208</lpage>
+        </element-citation>
+      </ref>
+      <ref id="H1991">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group>
+            <name>
+              <surname>Hood</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <year>1991</year>
+          <article-title>A public management for all seasons</article-title>
+          <source>Public Administration</source>
+          <volume>69</volume>
+          <issue>1</issue>
+          <fpage>3</fpage>
+          <lpage>19</lpage>
+          <uri>http://dx.doi.org/10.1111/j.1467-9299.1991.tb00779.x</uri>
+        </element-citation>
+      </ref>
+      <ref id="KJ2005">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jespersen</surname>
+              <given-names>P. K.</given-names>
+            </name>
+          </person-group>
+          <year>2005</year>
+          <source>Mellem profession og management: ledelse i danske sygehuse</source>
+          <comment>[Between profession and management: management in Danish hospitals]</comment>
+          <publisher-loc>København</publisher-loc>
+          <publisher-name>Handelshøjskolens Forlag</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="J2009">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Johansen</surname>
+              <given-names>M. S.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <source>Mellom profesjon og reform: om fremveksten og implementeringen av enhetlig ledelse i norsk sykehusvesen </source>
+          <comment>[Between profession and reform: about the emergence and implementation of unitary management in the Norwegian hospital sector] (PhD thesis)</comment>
+          <publisher-name>BI Norwegian School of Management</publisher-name>
+          <publisher-loc>Oslo</publisher-loc>
+        </element-citation>
+      </ref>
+      <ref id="JG2009">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Johansen</surname>
+              <given-names>M. S.</given-names>
+            </name>
+            <name>
+              <surname>Gjerberg</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <article-title>Unitary management, multiple practices?</article-title>
+          <source>Journal of Health, Organization and Management</source>
+          <volume>23</volume>
+          <issue>4</issue>
+          <fpage>396</fpage>
+          <lpage>410</lpage>
+          <uri>http://dx.doi.org/10.1108/14777260910979290</uri>
+        </element-citation>
+      </ref>
+      <ref id="KDK2011">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kirkpatrick</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Dent</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Jespersen</surname>
+              <given-names>P. K.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>The contested terrain of hospital management: Professional projects and healthcare reforms in Denmark</article-title>
+          <source>Current Sociology</source>
+          <volume>59</volume>
+          <issue>4</issue>
+          <fpage>489</fpage>
+          <lpage>506</lpage>
+          <uri>http://dx.doi.org/10.1177/0011392111402718</uri>
+        </element-citation>
+      </ref>
+      <ref id="K2009">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kirkpatrick</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Jespersen</surname>
+              <given-names>P. K.</given-names>
+            </name>
+            <name>
+              <surname>Dent</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Neogy</surname>
+              <given-names>I.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <article-title>Medicine and management in a comparative perspective: The case of Denmark and England</article-title>
+          <source>Sociology of Health and Illness</source>
+          <volume>31</volume>
+          <issue>5</issue>
+          <fpage>642</fpage>
+          <lpage>658</lpage>
+          <uri>http://dx.doi.org/10.1111/j.1467-9566.2009.01157.x</uri>
+        </element-citation>
+      </ref>
+      <ref id="KB2010">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kjekshus</surname>
+              <given-names>L. E.</given-names>
+            </name>
+            <name>
+              <surname>Bernstrøm</surname>
+              <given-names>V. H.</given-names>
+            </name>
+          </person-group>
+          <year>2010</year>
+          <source>Helseforetakenes interne organisering og ledelse: INTORG 2009</source>
+          <comment>[The internal organization and management of health trusts]</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Universitetet i Oslo</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="K2004">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kurunmaki</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <year>2004</year>
+          <article-title>A hybrid profession: The acquisition of management accounting expertise by medical professionals</article-title>
+          <source>Accounting, Organizations and Society</source>
+          <volume>29</volume>
+          <issue>3-4</issue>
+          <fpage>327</fpage>
+          <lpage>347</lpage>
+          <uri>http://dx.doi.org/10.1016/S0361-3682(02)00069-7</uri>
+        </element-citation>
+      </ref>
+      <ref id="L2001">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Llewellyn</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <year>2001</year>
+          <article-title>‘Two-way windows’: Clinicians as medical managers</article-title>
+          <source>Organization Studies</source>
+          <volume>22</volume>
+          <issue>4</issue>
+          <fpage>593</fpage>
+          <lpage>623</lpage>
+          <uri>http://dx.doi.org/10.1177/0170840601224003</uri>
+        </element-citation>
+      </ref>
+      <ref id="L1995">
+        <element-citation publication-type="book-chapter" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Light</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>1995</year>
+          <chapter-title>Countervailing powers: A framework for professions in transition</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Johnson</surname>
+              <given-names>T. J.</given-names>
+            </name>
+            <name>
+              <surname>Larkin</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Saks</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <source>Health professions and the state in Europe</source>
+          <fpage>25</fpage>
+          <lpage>41</lpage>
+          <publisher-loc>London</publisher-loc>
+          <publisher-name>Routledge</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="M2011">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mastekaasa</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>How important is autonomy to professional workers?</article-title>
+          <source>Professions &amp; Professionalism</source>
+          <volume>1</volume>
+          <issue>1</issue>
+          <fpage>36</fpage>
+          <lpage>51</lpage>
+          <uri>http://dx.doi.org/10.7577/pp.v1i1.143</uri>
+        </element-citation>
+      </ref>
+      <ref id="M1990">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Melby</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <year>1990</year>
+          <source>Kall og kamp</source>
+          <comment>[A calling and struggle]</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Cappelen</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="M2001">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Montgomery</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <year>2001</year>
+          <article-title>Physician executives: The evolution and impact of a hybrid profession</article-title>
+          <source>Advances in Health Care Management</source>
+          <volume>2</volume>
+          <fpage>215</fpage>
+          <lpage>241</lpage>
+          <uri>http://dx.doi.org/10.1016/S1474-8231(01)02028-6</uri>
+        </element-citation>
+      </ref>
+      <ref id="M1979">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mintzberg</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <year>1979</year>
+          <source>The structuring of organizations.</source>
+          <publisher-loc>Englewood cliffs, NJ</publisher-loc>
+          <publisher-name>Prentice Hall</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="M2006">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mo</surname>
+              <given-names>T. O.</given-names>
+            </name>
+          </person-group>
+          <year>2006</year>
+          <source>Ledelse til begjær eller besvær - om reformer, fag og ledelse i sykehus.</source>
+          <comment>[Management as desire or difficulty – about reforms, profession and management in hospitals] (PhD thesis)</comment>
+          <publisher-loc>Trondheim</publisher-loc>
+          <publisher-name>NTNU - Norwegian University of Science and Technology</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="M2005">
+        <element-citation publication-type="journal" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Moe</surname>
+              <given-names>A. R.</given-names>
+            </name>
+          </person-group>
+          <year>2005</year>
+          <article-title>Legelønn og oppslag i mediene</article-title>
+          <comment>[Doctors’ salary and media coverage]</comment>
+          <source>The Journal of the Norwegian Medical Association</source>
+          <volume>125</volume>
+          <issue>17</issue>
+          <fpage>2406</fpage>
+          <lpage>2407</lpage>
+        </element-citation>
+      </ref>
+      <ref id="NK2009">
+        <element-citation publication-type="book" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Neogy</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Kirkpatrick</surname>
+              <given-names>I.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <source>Medicine in management - lessons across Europe.</source>
+          <publisher-loc>Leeds</publisher-loc>
+          <publisher-name>University of Leeds, Centre for Innovation in Health Management</publisher-name>
+          <uri>http://www.cihm.leeds.ac.uk/new/wp-content/uploads/2010/01/6382_MM_brochure_print.pdf</uri>
+        </element-citation>
+      </ref>
+      <ref id="N2007">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Noordegraaf</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <year>2007</year>
+          <article-title>From "pure" to "hybrid" professionalism: Present-day professionalism in ambiguous public domains</article-title>
+          <source>Administration and Society</source>
+          <volume>39</volume>
+          <issue>6</issue>
+          <fpage>761</fpage>
+          <lpage>785</lpage>
+          <uri>http://dx.doi.org/10.1177/0095399707304434</uri>
+        </element-citation>
+      </ref>
+      <ref id="NO2011">
+        <element-citation publication-type="report" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Norsk Overlegeforening</surname>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <source>Infohefte: Sykehus trenger leger som ledere.</source>
+          <comment>[Info booklet: Hospitals need doctors as managers]</comment>
+          <uri>http://www.legeforeningen.no/id/173318.0</uri>
+        </element-citation>
+      </ref>
+      <ref id="NOU1997">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>NOU (1997: 2)</surname>
+            </name>
+          </person-group>
+          <year>1997</year>
+          <source>Pasienten først! Ledelse og organisering i sykehus.</source>
+          <comment>[The patient first! Leadership and organization in hospitals]</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Statens forvaltningstjeneste</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="NOU2005">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>NOU (2005: 3)</surname>
+            </name>
+          </person-group>
+          <year>2005</year>
+          <source>Fra stykkevis til helt: En sammenhengende helsetjeneste.</source>
+          <comment>[From part-wise to whole: A consecutive health care service]</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Statens forvaltningstjeneste</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="NSF2011">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Numerato</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Salvatore</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Fattore</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>The impact of management on medical professionalism: A review</article-title>
+          <source>Sociology of Health and Illness</source>
+          <volume>34</volume>
+          <issue>4</issue>
+          <fpage>626</fpage>
+          <lpage>644</lpage>
+          <uri>http://dx.doi.org/10.1111/j.1467-9566.2011.01393.x</uri>
+        </element-citation>
+      </ref>
+      <ref id="O1996">
+        <element-citation publication-type="book-chapter" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Olsen</surname>
+              <given-names>J. P.</given-names>
+            </name>
+          </person-group>
+          <year>1996</year>
+          <chapter-title>Norway: Slow learner - or another triumph of the tortoise?</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Olsen</surname>
+              <given-names>J. P.</given-names>
+            </name>
+            <name>
+              <surname>Peters</surname>
+              <given-names>B. G.</given-names>
+            </name>
+          </person-group>
+          <source>Lessons from experience</source>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Scandinavian University Press</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="Ot10">
+        <element-citation publication-type="report" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ot. prp. nr. 10 (1998-1999)</surname>
+            </name>
+          </person-group>
+          <year>1998</year>
+          <source>Om lov om spesialisthelsetjenesten m.m.</source>
+          <comment>[About the act relating to the specialist health care service etc]</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Sosial- og helse-departementet</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="Ot66">
+        <element-citation publication-type="report" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ot. prp. nr. 66 (2000-2001)</surname>
+            </name>
+          </person-group>
+          <year>2001</year>
+          <source>Om lov om helseforetak m.m.</source>
+          <comment>[About the act relating to health authorities and health trusts etc]</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Sosial- og helsedepartementet</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="R2009">
+        <element-citation publication-type="report">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Riksrevisjonen</surname>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <source>Riksrevisjonens undersøkelse av økonomistyring i helseforetakene.</source>
+          <comment>[Office of the Auditor General of Norway’s investigation of the financial management in health trusts]</comment>
+          <series>Dokument</series>
+          <issue>3:3</issue>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Riksrevisjonen</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="SK1995">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schjander</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Kenning</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <year>1995</year>
+          <source>Hvis jeg bare hadde en bedre sjef: George Kenning om ledelse.</source>
+          <comment>[If only I had a better supervisor: George Kenning about leadership]</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>Hjemmets Bokforlag</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="SP2000">
+        <element-citation publication-type="journal" publication-format="online">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schwartz</surname>
+              <given-names>R. W.</given-names>
+            </name>
+            <name>
+              <surname>Pogge</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <year>2000</year>
+          <article-title>Physician leadership: Essential skills in a changing environment</article-title>
+          <source>American Journal of Surgery</source>
+          <volume>180</volume>
+          <issue>3</issue>
+          <fpage>187</fpage>
+          <lpage>192</lpage>
+          <uri>http://dx.doi.org/10.1016/S0002-9610(00)00481-5</uri>
+        </element-citation>
+      </ref>
+      <ref id="S2006">
+        <element-citation publication-type="thesis" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Skaset</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <year>2006</year>
+          <source>I gode og onde dager… De norske legene og staten 1945-2000</source>
+          <comment>[In good and bad days… The Norwegian doctors and the state] (PhD thesis)</comment>
+          <publisher-loc>Oslo</publisher-loc>
+          <publisher-name>University of Oslo</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="St9">
+        <element-citation publication-type="report" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>St. meld. nr. 9 (1974-75)</surname>
+            </name>
+          </person-group>
+          <year>1974</year>
+          <source>Sykehusutbygging m.v. i et regionalisert helsevesen.</source>
+          <comment>[White paper no. 9. Hospital planning in a regionalized health care system]</comment>
+        </element-citation>
+      </ref>
+      <ref id="T2007">
+        <element-citation publication-type="thesis" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Torjesen</surname>
+              <given-names>D. O.</given-names>
+            </name>
+          </person-group>
+          <year>2007</year>
+          <source>Foretak, management og medikrati. En sektorstudie av helseforetaksreform og ledelse i den norske spesialisthelsetjenesten.</source>
+          <comment>[Business, management and medicracy. A sector study of health trust reform and management in the Norwegian specialist health care] (PhD thesis)</comment>
+          <publisher-loc>Bergen</publisher-loc>
+          <publisher-name>University of Bergen</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="ØS1998">
+        <element-citation publication-type="book" publication-format="paper">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Østergren</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Sahlin-Andersson</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <year>1998</year>
+          <source>Att hantera skilda världar: Läkares chefskap i mötet mellan profession, politik och administration</source>
+          <comment>[Dealing with divided worlds: Doctors´ management in the meeting between profession, politics and administration]</comment>
+          <publisher-loc>Stockholm</publisher-loc>
+          <publisher-name>Landstingsförbundet</publisher-name>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>

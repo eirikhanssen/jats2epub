@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>1. Setting up the Ant Task and Types</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="anttask.html" title="Chapter  2 .  Calabash Ant Task"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="2 .  Description" href="chunk-section-d17e1040.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="antsetup" class="section">
+                  <div class="section-titlepage">
+                     <h3>1. Setting up the Ant Task and Types</h3>
+                  </div>
+                  <p>Setting up is as for any other custom Antlib.
+                     You need a <code class="tag-emptytag">&lt;typedef/&gt;</code> and a namespace declaration.
+                     After that the custom Task and Types are available in the defined namespace.
+                     If you put the calabash.jar to your Ant classpath, e. g. by placing it inside
+                     <code class="literal">${ant.home}/lib</code>, you can even save the
+                     <code class="tag-emptytag">&lt;typedef/&gt;</code> declaration ant the namespace definition
+                     is enough to invoke the secret magic that automatically loads the Antlib as
+                     soon as it is used in the build file.
+                  </p>
+                  <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;project xmlns:c="antlib:com.xmlcalabash"&gt;
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>    &lt;typedef uri="antlib:com.xmlcalabash"
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>             resource="com/xmlcalabash/antlib.xml"
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>             classpath="<em class="replaceable"><code>path/to</code></em>/calabash.jar"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/project&gt;</pre></div>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="2 .  Description" href="chunk-section-d17e1040.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">Chapter  2 .  Calabash Ant Task </td>
+                  <td width="20%" align="center"><a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 2 .  Description</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article>
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" article-type="research-article" xml:lang="en" xsi:noNamespaceSchemaLocation="C:/Users/torad/Dropbox/jats/1.0/jats-publishing-xsd-1.0/JATS-journalpublishing1.xsd">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="DOAJ">18931049</journal-id>
+      <issn>1893-1049</issn>
+      <publisher>
+        <publisher-name>Oslo and Akershus University College of Applied Sciences</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.7577/pp.v2i1.151</article-id>
+      <article-id pub-id-type="doaj">1084719</article-id>
+      <article-id pub-id-type="other">URN:NBN:no-30970</article-id>
+      <article-categories>
+        <subj-group subj-group-type="article-type">
+          <subject>Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="vdp">
+          <subject>289</subject>
+        </subj-group>
+        <subj-group subj-group-type="dewey">
+          <subject>305.553</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Defining a Professions: The Role of Knowledge and Expertise <sup><xref ref-type="fn" rid="fn1">1</xref></sup></article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Saks</surname>
+            <given-names>Mike</given-names>
+          </name>
+          <role>Principal author</role>
+          <xref ref-type="aff" rid="Suff"/>
+          <address>
+            <addr-line>Neptune Quay Ipswich</addr-line>
+            <addr-line>IP4 1QJ</addr-line>
+            <email>m.saks@ucs.ac.uk</email>
+          </address>
+        </contrib>
+      </contrib-group>
+      <aff id="Suff">University Campus Suffolk, UK. Waterfront Building</aff>
+      <pub-date pub-type="pub">
+        <day>21</day>
+        <month>06</month>
+        <year>2012</year>
+      </pub-date>
+      <volume>2</volume>
+      <issue>1</issue>
+      <fpage>1</fpage>
+      <lpage>10</lpage>
+      <history>
+        <date date-type="received">
+          <day>18</day>
+          <month>10</month>
+          <year>2011</year>
+        </date>
+        <date date-type="accepted">
+          <day>6</day>
+          <month>05</month>
+          <year>2011</year>
+        </date>
+      </history>
+      <permissions>
+        <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0/">
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+        </license>
+      </permissions>
+      <self-uri xlink:href="http://journals.hioa.no/index.php/pp/article/view/151/355">http://journals.hioa.no/index.php/pp/article/view/151/355</self-uri>
+      <abstract>
+        <p>The paper highlights the importance of resurrecting the debate about how to define a profession. The drive to define a profession is traced back to the taxonomic approach – encompassing the work of trait and functionalist writers – in which professions were seen as possessing unique and positive characteristics, including distinctive knowledge and expertise. A range of critical challenges to this approach are then considered, particularly as they relate to the role of knowledge and expertise in defining a profession, covering interactionism, Marxism, Foucauld-ianism and discourse analysis. However, the most effective challenge to the taxonomic approach is considered to be the neo-Weberian perspective based on a less broadly assumptive and more analytically useful definition of a profession centered on exclusionary closure. With reference to case studies, the relative merits of neo-Weberianism compared to taxonomic and other approaches are examined in relation to the role of knowledge and expertise and delineating professional boundaries.</p>
+      </abstract>
+      <kwd-group kwd-group-type="author-generated">
+        <kwd>Definition of professions</kwd>
+        <kwd>Professional attributes</kwd>
+        <kwd>Philosophy of science</kwd>
+        <kwd>Mechanism</kwd>
+        <kwd>Intervention</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <p>It has long been suggested in the sociology of professions from various theoretical vantage points that debating the definition of a profession is a sterile exercise (for example, <xref ref-type="bibr" rid="J1972">Johnson 1972</xref>). Now, with some notable exceptions (for instance, <xref ref-type="bibr" rid="Sc2010">Sciulli 2010</xref>; <xref ref-type="bibr" rid="B2011">Brante 2011)</xref>, the field has moved on and this has become a subject that is rarely discussed. However, it is argued here that defining a profession is not a pointless exercise in relation to knowledge and expertise and other claimed features of profession – as it is actually at the root of understanding what professions are about and how they operate. The main issue is the terms on which definitions of professions are constructed in the Anglo-American and Western European context. It is this area that is explored in this paper from both an historical and contemporary perspective before building to a conclusion advising on future studies of this field. </p>
+    <sec>
+      <title>The taxonomic approach</title>
+      <p>Although earlier observations were made on professions as a distinctive group in the division of labour – as exemplified by <xref ref-type="bibr" rid="CW1933">Carr-Saunders and Wilson (1933)</xref> who saw the professions as a stable force in society – the task of defining professions seriously began with the taxonomic approach of the 1950s and 1960s. Professions within this approach were seen as possessing a diverse range of characteristics differentiating them from other occupations. These characteristics centrally encom-passed knowledge and expertise – as well as others such as playing a positive part in the community. The emphasis that taxonomic contributors gave to knowledge and expertise was understandable as recognised professions typically had a stronger formal knowledge and higher educational base than other occupations (<xref ref-type="bibr" rid="F1986">Freidson 1986</xref>). Identifying this was perhaps one of the strengths of the taxonomic approach in the context of this paper – especially in versions of the approach that presented such characteristics in the form of an ‘ideal type’, against which professions could be judged (as illustrated by <xref ref-type="bibr" rid="P1952">Parsons 1952</xref>), as distinct from describing presumed features of professional groups.</p>
+      <p>There were two broad variants of the early taxonomic approach. The first involved trait writers who generated many differing ad hoc lists of attributes of professions (for instance, <xref ref-type="bibr" rid="W1964">Wilensky 1964</xref>). Most lists included high level knowledge and expertise or related items as special features – alongside other characteristics such as codes of ethics, altruism, rationality and educational credentials. In this vein <xref ref-type="bibr" rid="G1957">Greenwood (1957)</xref> felt that knowledge organised into a body of theory based on abstract propositions was important in defining a profession, in which preparation for practice was intellectual. Functionalists presented more theoretically coherent accounts, seeing a functional relationship between professions and society (for example, <xref ref-type="bibr" rid="G1960">Goode 1960</xref> and <xref ref-type="bibr" rid="B1963">Barber 1963)</xref>. Specifically in this context, occupations with very esoteric and complex knowledge and expertise of great importance to society were usually seen as being granted a high position in the social system with state sanction in return for protecting the public and/or clients. Herein for the functionalists lies the functionality of knowledge and expertise.</p>
+      <p>However, the rather uncritical and ahistorical taxonomic perspective has rightly been criticised – not least in terms of the centrality of knowledge and expertise to the professions. The critique of such an approach was highlighted by the focus of some writers within the trait approach on constructing league tables glorifying one or other professions, depending on the range and weighting of elements (<xref ref-type="bibr" rid="M1964">Millerson 1964</xref>). A number of the characteristics were also often assumed rather than established, including aspects of knowledge and expertise – with trait and functionalist writers opening themselves up to the argument that they were reflexively presenting professional ideology rather than reality. In this regard, the critique of taxonomy can probably best be explored through the variety of alternative, sometimes intersecting, but less complimentary perspectives that subsequently emerged in the sociology of professional groups.</p>
+    </sec>
+    <sec>
+      <title>The critics of the taxonomic approach</title>
+      <p>Of the early critics of the taxonomic approach, interactionism based on labelling theory drew attention to the parallels rather than differences between high flung professions and more stigmatised occupations such as garbage attendants and prostitutes, including in making sense of their work (for instance, <xref ref-type="bibr" rid="B1962">Becker 1962</xref> and <xref ref-type="bibr" rid="H1963">Hughes 1963</xref>). This theme has more recently been resurrected by <xref ref-type="bibr" rid="B2010">Brante (2010)</xref> who has noted, amongst other things, that the knowledge and skills of auto mechanics are not as distinctive as supposed, having many features in common with professional practitioners like doctors and lawyers – not least in being classified into generalists and specialists. It was through such examples that the early writing of the interactionists prompted sociologists to view trait and functionalist contributors as being the ‘dupe’ of professions in terms of knowledge, expertise and other characteristics in legitimating their dominance by reifying their uniqueness without too much empirical analysis <xref ref-type="bibr" rid="R1974">(Roth 1974)</xref>.</p>
+      <p>Interactionism, however, had the downside of being micro oriented and viewing a ‘profession’ simply as a socially negotiated label based on occupational ideologies, not least in terms of the knowledge and skills involved. It did not therefore offer a structural explanation of success or failure in relation to the state in terms of winning professional spurs. The Marxist approach, though, undoubtedly does take a macro structural approach – even if it often has a self-fulfilling view of the state as serving capitalist interests and has become politically questionable with the recent demise of state socialist societies (<xref ref-type="bibr" rid="S1998">Saks 1998</xref>). It has diverse strands, ranging from professions being seen as skilled agents of surveillance and control for a dominant class (for example, <xref ref-type="bibr" rid="EE1979">Ehrenreich and Ehrenreich 1979</xref>) to being concepttualised as increasingly de-professionalised under capitalism as their knowledge and expertise is rationalised (for instance, <xref ref-type="bibr" rid="MA1985">McKinlay and Arches 1985</xref>). This view of de-professionalisation is most starkly represented by <xref ref-type="bibr" rid="B1974">Braverman (1974)</xref> who argued that skilled professional tasks were being broken down as a result of managerial strategies for controlling the labour process under capitalism. </p>
+      <p>A somewhat different take is provided by Foucauldians, who challenge the rationality frequently assumed by taxonomic contributors as regards the scientific progress associated with professions in prisons, schools and other institutional areas (<xref ref-type="bibr" rid="F1979">Foucault 1979</xref>) – for example, by highlighting the destructive rather than positive force of psychiatry (<xref ref-type="bibr" rid="F1973">Foucault 1973</xref>). This more critical approach is in part centred on ‘governmentality’, involving the ‘institutionalisation of expertise’, in which the state is seen not as a coherent calculating entity, but as an ensemble of institutions, knowledges and procedures derived from the outcome of governing. This approach has its own difficulties in terms of empirical operationalisation, not least because of its conceptual integration of the state and the professions (<xref ref-type="bibr" rid="S2003a">Saks 2003a</xref>). However, critically in this context, the position of professions is not here defined as being inherently generated by knowledge and expertise per se; rather, this group of occupations is seen as based on the selective political incorporation of expertise into state formation as a key resource of governance <xref ref-type="bibr" rid="J1995">(Johnson 1995)</xref>. </p>
+      <p>Leaving aside the highly abstracted Marxist and Foucauldian approaches (<xref ref-type="bibr" rid="M1995">Macdonald 1995</xref>), a perspective currently more in vogue in offering an alternative to the taxonomic approach is centred on the discourse of professionalism. This is illustrated by <xref ref-type="bibr" rid="F1999">Fournier (1999)</xref> in recruitment and advertising, who accentuates the importance of the ideology of professionalism in work contexts. <xref ref-type="bibr" rid="CWAF2005">Cohen, Wilkinson, Arnold and Finn (2005)</xref> build on this approach in analysing architects’ accounts of the purpose and process of their own occupation in the public and private sector, which are particularly focused on the role of creative knowledge and expertise. In providing greater insight into the culture of professionalism, this perspective opens up a wider range of occupations to the purview of the sociology of professions. Even if it lacks the analytical insights provided by some other, more tightly drawn, approaches (<xref ref-type="bibr" rid="S2010">Saks 2010</xref>), it again fruitfully goes beyond the taxonomic reification of knowledge and expertise and other attributes in defining a profession.</p>
+    </sec>
+    <sec>
+      <title>The neo-Weberian approach</title>
+      <p>As has been seen, therefore, the four mainstream approaches to professional definition identified and examined above challenge – each in their own way – the more traditional trait and functionalist notion that knowledge and expertise in itself plays a critical role in professionalisation. What they variously highlight is that the articulation of the role of knowledge and expertise is more complex than taxonomic writers typically set out – whether because of the more nuanced macro political base of professions or the way in which they use these concepts ideologically to legitimate their standing. The critics thereby question the centrality of knowledge and expertise per se to the definition of a profession. It is argued here, though, that the analytically most helpful perspective going beyond taxonomy in defining professions is the neo-Weberian approach (see, for instance, <xref ref-type="bibr" rid="P1979">Parkin 1979</xref>). This will now be considered in more detail, especially in this paper from the viewpoint of knowledge and expertise where it has particular benefits.</p>
+      <p>It should initially be said that professions are normally defined at root by neo-Weberians in terms of exclusionary social closure in the marketplace sanctioned by the state. As such, the neo-Weberian approach is centred on the tenet that we live in a dynamic and competitive world of macro political power and interests, in which occupational groups gain and/or maintain professional standing based on the creation of legal boundaries that mark out the position of specific occupational groups – be they in accountancy and architecture or law and medicine. Professionalisation in this sense is centred on attaining a particular form of formal legal regulation with registers creating bodies of insiders and excluding outsiders. This, moreover, is typically linked to improved life chances for members of professional groups in the wider society – not least in terms of enhanced income, status and power (<xref ref-type="bibr" rid="S2003b">Saks 2003b</xref>). </p>
+      <p>As with other approaches, there are differences within the neo-Weberian perspective as to how exactly a profession is conceived and defined. The definitions themselves span from control by the producer over the consumer (<xref ref-type="bibr" rid="J1972">Johnson 1972</xref>) and market control of particular services by a body of self-governing equals (<xref ref-type="bibr" rid="PP1976">Parry and Parry 1976</xref>) to legitimate, organised autonomy over technical judgements and the organisation of work (<xref ref-type="bibr" rid="F1994">Freidson 1994</xref>). Intriguingly in this context, none of these interpretations put knowledge and expertise at the heart of the definition – although they may be used ideologically as political weapons in both winning and legitimating their much coveted professional standing. Rather, the key to the definition of a profession remains the sheltered position of professions in the marketplace, with entry to the professions usually gained through obtaining relevant higher education credentials. This concept also has the potential to be adapted to encompass more state-led models of the professions where market control is less central in certain national contexts, including in Nordic countries (see, for example, <xref ref-type="bibr" rid="E1995">Erichsen 1995</xref>).</p>
+      <p>The advantages of the neo-Weberian approach in defining professions are manifold. In the first place it avoids the unduly complimentary assumptions of many taxonomic writers by providing the basis for empirically assessing the role of knowledge and expertise, as well as other factors traditionally linked to professions. Moreover, unlike interactionism, this approach considers the macro structural and historical processes underpinning professionalisation. It also avoids the restrictive assumptions about the state inevitably acting in capitalist interests in relation to knowledge and expertise typically incorporated in the Marxist perspective, while sidestepping the methodological problems associated with conflating the state and professions in Foucauldian conceptualisations. Finally, a neo-Weberian approach provides greater precision in delineating professional boundaries and more policy leverage in its focus on state underwriting than discourse analysis in considering the control of knowledge and expertise (<xref ref-type="bibr" rid="S2010">Saks 2010</xref>). The benefits of the neo-Weberian approach to professions can also be illustrated in practice – not least in relation to taxonomy – as highlighted in the next section, which focuses primarily on a range of examples drawn from the health arena to provide greater coherence to the argument.</p>
+    </sec>
+    <sec>
+      <title>The benefits of neo-Weberianism in practice</title>
+      <p>In relation to knowledge and expertise, one advantage of neo-Weberianism is that it shows that professionalisation does not always follow the linear process based on knowledge and expertise as depicted by <xref ref-type="bibr" rid="W1964">Wilensky (1964)</xref> in his classic functionalist overview of professions. <xref ref-type="bibr" rid="F1970">Freidson (1970)</xref>, for instance, in comparing pharmacy and optometry in the United States, found that members of these occupational groups had similar training and specialisation, but different legal diagnostic and prescription powers. However, if this suggests that the process of professionalisation has differential socio-political dimensions, so too does the fact that not all learned occupations necessarily become professions. This point is more recently underlined by the comparison of herbalism and acupuncture in England, where herbalists alone have been earmarked by government to gain legal closure through statutory regulation given a perceived need for greater public protection in this area – despite having equivalent knowledge and expertise and arguably less rigorous and unified occupational organisational structures to those of the acupuncturists (<xref ref-type="bibr" rid="S2011">Saks 2011</xref>).</p>
+      <p>These examples indicate that professionalisation is a socio-political process, involving power and interests in the market at a macro level. For neo-Weberians, then, definitions of professions cannot be pivoted on knowledge and expertise per se. Although it may be important to demonstrate some knowledge or expertise related to educational certification in making a successful case for professionalisation, this is seen more as part of the credentialist ideology linked to professional projects than a claim necessarily reflecting substance. This is exemplified by the professionalisation of medicine in 1858 in Britain before asepsis, anaesthesia and effective medical knowledge and expertise – at a time when hospitals were gateways to death, fifty years ahead of parallel trends in the United States (<xref ref-type="bibr" rid="S2003c">&gt;Saks 2003c</xref>). Explanations of professionalisation therefore are sought less in concrete knowledge and expertise and more in a profession’s tactics of competition and the prevailing socio-economic conditions – which in the case cited led the British medical profession to seek a de facto, as opposed to a de jure, monopoly in face of nineteenth liberal attacks to ride the waves of the political sea (<xref ref-type="bibr" rid="B1975">Berlant 1975</xref>).</p>
+      <p>For neo-Weberians, attention also needs to be paid to the ideological dimensions of professions above and beyond knowledge and expertise in understanding the success and failure of professionalisation in defining professions. This can be illustrated with reference to altruism, so often put forward by taxonomic writers as a distinctive actual professional characteristic (<xref ref-type="bibr" rid="S1995">Saks 1995</xref>). The case of herbalism and acupuncture underlines its potential importance, as the British government has placed a heavy emphasis on the protection of the public in modernising the health professions (<xref ref-type="bibr" rid="B2004">Baggott 2004</xref>). However, the level of altruism of professions relative to other occupations – as distinct from the legitimating ideological claim itself – has rarely been systematically scrutinised. Interestingly, while a recent replicated Swedish survey of a range of professions, semi-professions and pre-professions – from lawyers to graphic designers – unusually analysed the amount of public trust given to such groups, it did not examine the relative position of non-professionalised occupations (<xref ref-type="bibr" rid="Sv2011">Svensson 2011</xref>).</p>
+    </sec>
+    <sec>
+      <title>Flexing the neo-Weberian definition of a profession </title>
+      <p>Although the view that knowledge and expertise is a sine qua non in professional formation can therefore be challenged from a neo-Weberian perspective in light of the foregoing discussion, it should be stressed that the definition of a profession within this approach is much wider than just outlining what is a profession. Professional definition can also be conceptually considered in terms of boundaries within a neo-Weberian perspective in a range of other ways – which may be more or less strongly related to knowledge and expertise. These can be illustrated within a neo-Weberian frame of reference by the definition of the boundaries of some specific professions in terms of dual closure. This concept refers to semi-professional groups which contain elements of exclusionary closure of a classic profession like law or medicine, but are also mixed with aspects of usurpationary closure based on the collective action taken by groups of industrial workers (<xref ref-type="bibr" rid="P1979">Parkin 1979</xref>).</p>
+      <p>This kind of differentiation of professional boundaries can be exemplified further by work inspired by a neo-Weberian approach on the divisions in some countries with greater devolution like the United States between federal and state-level professionalism (<xref ref-type="bibr" rid="F1986">Freidson 1986</xref>); the differential historical and contemporary gender base of certain professions (<xref ref-type="bibr" rid="W1992">Witz 1992</xref>); the ongoing interplay of the system of professions and their various jurisdictions (<xref ref-type="bibr" rid="A1988">Abbott 1988</xref>); interprofessional working that may make for more or less permeable professional boundaries (<xref ref-type="bibr" rid="BST2005">Barrett, Sellman and Thomas 2005</xref>); organisational professionalism as distinct from occupational professionalism with the rise of powerful corporations and greater managerial accountability (<xref ref-type="bibr" rid="E2006">Evetts 2006</xref>); and international as opposed to national patterns of professionalism related to the development of the European Union and more global points of political reference  (<xref ref-type="bibr" rid="KS2008">Kuhlmann and Saks 2008</xref>).</p>
+      <p>Although <xref ref-type="bibr" rid="B1994">Brint (1994)</xref> has argued that there has been a shift towards expert professionalism in contemporary society, these and other cases of how professional boundaries can be flexed underline that the way a profession is defined is more than just a primary function of its knowledge base. They also highlight that the boundaries of such occupational groups are fluid and in a state of on-going flux. The direction and rapidity of this flux is influenced by many factors spanning from technological change and the historical position of specific professions to political lobbying by professions themselves and the stance of representatives of the state (<xref ref-type="bibr" rid="M1995">Macdonald 1995</xref>). Part of this process may of course also involve shifts in the basis of professional knowledge and expertise, but the role and pace of such movement should not be assumed; rather, it should be seen in a more holistic perspective centred on empirical investigation within the clear theoretical and methodological parameters of the neo-Weberian approach.</p>
+    </sec>
+    <sec>
+      <title>Conclusion</title>
+      <p>This is not of course to say that neo-Weberian analyses in defining professions have always been meticulously carried out when considering knowledge and expertise and other areas of professionalism. The limits of neo-Weberianism in defining professions are underlined by, amongst other things, its lack of empirical rigour in practice, which has on occasion involved substituting one ill-founded conventional wisdom for another (<xref ref-type="bibr" rid="S1983">Saks 1983</xref>); its sometimes excessive and unjustifiably critical stance on professional groups, including its own assumptions about the negative role of professional self-interests and the lack of public benefit of professionally driven outcomes (<xref ref-type="bibr" rid="S1998">Saks 1998</xref>); and its frequent failure to link analyses to the wider occupational division of labour in examining professionalising and/or marginal occupational groups (<xref ref-type="bibr" rid="S2003c">Saks 2003c</xref>).</p>
+      <p>For all the critiques, though, we should not accept the claim by <xref ref-type="bibr" rid="E2003">Evetts (2003)</xref> that the neo-Weberian approach is of limited relevance and it is now time to move on from definitions of professions based on market closure which neglect other occupations and issues – whether in terms of knowledge and expertise or any other axes in this area. These weaknesses in fact relate to the inappropriate operationalisation of neo-Weberianism in practice and are not intrinsic to the approach. As has been seen, there is no reason in principle why a neo-Weberian study of the role of knowledge and expertise in professions cannot be suitably scoped and empirically grounded. More enlightened neo-Weberian writers, moreover, acknowledge not only that professions can have very positive influences on clients and/or the wider society, but also that this may sometimes be entirely compatible with the pursuit of group interests (<xref ref-type="bibr" rid="S1995">Saks 1995</xref>). Moreover, the whole essence of the neo-Weberian approach is based on a wider concept of closure, covering both positively and negatively privileged classes (<xref ref-type="bibr" rid="P1972">Parkin 1972</xref>). It thereby prompts the examination of a much wider vista than simply those occupational groups that have formally achieved professional standing.</p>
+      <p>While other perspectives – including those centred on a looser categorisation of professions – offer useful insights, we should not ‘throw the baby out with the bath water’. This is underlined by the many exemplary neo-Weberian analyses that have been produced, not least in relation to knowledge and expertise in a range of fields from the examination by <xref ref-type="bibr" rid="H1987">Halliday (1987)</xref> of the governance of the legal profession in the United States to the consideration by <xref ref-type="bibr" rid="L2002">Larkin (2002)</xref> of the establishment of the professions allied to medicine in Britain, in addition to other studies referred to in this paper. The conclusion therefore is that neo-Weberianism remains one of the most incisive approaches for understanding how professions are both defined and define themselves, including in terms of the role of knowledge and expertise. But, whatever the perspective adopted, it is vital to have these debates about this subject as they are at the heart of addressing in the most incisive way key issues related to the definition of professions and the role of knowledge and expertise in their construction.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <title>Acknowledgement</title>
+      <p>This paper is a part of two larger research projects on the professions in progress, funded by The Swedish Research Council and The Swedish Council for Working Life and Social Research.</p>
+    </ack>
+    <fn-group>
+      <fn id="fn1">
+        <p>This paper was originally given as the keynote address at the Annual Conference of the Swedish Network for Profession Studies on Knowledge, Professions and Expertise, held at Linnaeus University in Växjö in Sweden in September 2011. It has subsequently been developed further in elaborating its main themes.</p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <ref id="A1988">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Abbott</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <source>The system of professions: an essay on the division of expert labour</source>
+          <publisher-name>University of Chicago Press</publisher-name>
+          <publisher-loc>Chicago</publisher-loc>
+          <year>1988</year>
+        </element-citation>
+      </ref>
+      <ref id="B2004">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Baggott</surname>
+              <given-names>R</given-names>
+            </name>
+          </person-group>
+          <source>Health and health care</source>
+          <publisher-name>Palgrave Macmillan</publisher-name>
+          <publisher-loc>Basingstoke</publisher-loc>
+          <year>2004</year>
+          <edition>3</edition>
+        </element-citation>
+      </ref>
+      <ref id="B1963">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Barber</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>Some problems in the sociology of professions</article-title>
+          <source>Daedalus</source>
+          <volume>92</volume>
+          <fpage>669</fpage>
+          <lpage>88</lpage>
+          <year>1963</year>
+        </element-citation>
+      </ref>
+      <ref id="BST2005">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Barrett</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Sellman</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Thomas</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <source>Interprofessional working in health and social care: professional perspectives</source>
+          <publisher-name>Palgrave Macmillan</publisher-name>
+          <publisher-loc>Basingstoke</publisher-loc>
+          <year>2005</year>
+        </element-citation>
+      </ref>
+      <ref id="B1962">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Becker</surname>
+            <given-names>H</given-names>
+          </name>
+          <chapter-title>The nature of a profession</chapter-title>
+          <person-group>
+            <collab>National society for the study of education</collab>
+          </person-group>
+          <source>Education for the professions</source>
+          <publisher-name>University of Chicago Press</publisher-name>
+          <publisher-loc>Chicago</publisher-loc>
+          <fpage>27</fpage>
+          <lpage>46</lpage>
+          <year>1962</year>
+        </element-citation>
+      </ref>
+      <ref id="B1975">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Berlant</surname>
+              <given-names>J. L</given-names>
+            </name>
+          </person-group>
+          <source>Profession and monopoly: a study of medicine in the United States and Great Britain</source>
+          <publisher-name>University of California Press</publisher-name>
+          <publisher-loc>Berkeley</publisher-loc>
+          <year>1975</year>
+        </element-citation>
+      </ref>
+      <ref id="B2010">
+        <element-citation publication-type="journal" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Brante</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <article-title>Professional fields and truth regimes: In search of alternative approaches</article-title>
+          <source>Comparative Sociology</source>
+          <volume>9</volume>
+          <year>2010</year>
+          <fpage>843</fpage>
+          <lpage>86</lpage>
+          <uri>http://dx.doi.org/10.1163/156913310X522615</uri>
+        </element-citation>
+      </ref>
+      <ref id="B2011">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Brante</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <article-title>Professions as science-based occupations</article-title>
+          <source>Professions and Professionalism</source>
+          <volume>1</volume>
+          <year>2011</year>
+          <issue>1</issue>
+          <fpage>4</fpage>
+          <lpage>20</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B1974">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Braverman</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <source>Labor and monopoly capital: the degradation of work in the twentieth century</source>
+          <publisher-name>Monthly Review Press</publisher-name>
+          <publisher-loc>New York</publisher-loc>
+          <year>1974</year>
+        </element-citation>
+      </ref>
+      <ref id="B1994">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Brint</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <source>In an age of experts: the changing role of professionals in politics and professional life</source>
+          <publisher-name>Princeton University Press</publisher-name>
+          <publisher-loc>Princeton</publisher-loc>
+          <year>1994</year>
+        </element-citation>
+      </ref>
+      <ref id="CW1933">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Carr-Saunders</surname>
+              <given-names>A. M</given-names>
+            </name>
+            <name>
+              <surname>Wilson</surname>
+              <given-names>P. A</given-names>
+            </name>
+          </person-group>
+          <source>The professions</source>
+          <publisher-name>Clarendon Press</publisher-name>
+          <publisher-loc>Oxford</publisher-loc>
+          <year>1933</year>
+        </element-citation>
+      </ref>
+      <ref id="CWAF2005">
+        <element-citation publication-type="journal" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cohen</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Wilkinson</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Arnold</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Finn</surname>
+              <given-names>R</given-names>
+            </name>
+          </person-group>
+          <article-title>‘Remember I’m the bloody architect!’ Architects, organizations and discourses of profession</article-title>
+          <source>Work, Employment and Society</source>
+          <volume>19</volume>
+          <fpage>775</fpage>
+          <lpage>96</lpage>
+          <year>2005</year>
+          <uri xlink:href="http://dx.doi.org/10.1177/0950017005058065">http://dx.doi.org/10.1177/0950017005058065</uri>
+        </element-citation>
+      </ref>
+      <ref id="EE1979">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Ehrenreich</surname>
+            <given-names>B</given-names>
+          </name>
+          <name>
+            <surname>Ehrenreich</surname>
+            <given-names>J</given-names>
+          </name>
+          <chapter-title>The professional-managerial class</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Walker</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <source>Between capital and labour </source>
+          <publisher-name>Harvester Press</publisher-name>
+          <publisher-loc>Brighton</publisher-loc>
+          <fpage>5</fpage>
+          <lpage>45</lpage>
+          <year>1979</year>
+        </element-citation>
+      </ref>
+      <ref id="E1995">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Erichsen</surname>
+            <given-names>V</given-names>
+          </name>
+          <chapter-title>State traditions and medical professionalization in Scandinavia</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Johnson</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Larkin</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Health professions and the state in Europe</source>
+          <publisher-name>Routledge</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <fpage>187</fpage>
+          <lpage>99</lpage>
+          <year>1995</year>
+        </element-citation>
+      </ref>
+      <ref id="E2003">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Evetts</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>The sociology of professional groups: New questions and different explanations</article-title>
+          <source>Knowledge, Work and Society</source>
+          <volume>1</volume>
+          <fpage>33</fpage>
+          <lpage>55</lpage>
+          <year>2003</year>
+        </element-citation>
+      </ref>
+      <ref id="E2006">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Evetts</surname>
+            <given-names>J</given-names>
+          </name>
+          <chapter-title>Organizational and occupational professionalism: The legacies of Weber and Durkheim for knowledge society</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Marcuello</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Fados</surname>
+              <given-names>J. L</given-names>
+            </name>
+          </person-group>
+          <source>Sociological essays for a global society: cultural change, social problems and knowledge society </source>
+          <publisher-name>Prenas Universitarias de Zaragoza</publisher-name>
+          <publisher-loc>Zaragoza</publisher-loc>
+          <fpage>61</fpage>
+          <lpage>79</lpage>
+          <year>2006</year>
+        </element-citation>
+      </ref>
+      <ref id="F1973">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Foucault</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Madness and civilization: a history of insanity in the age of reason</source>
+          <publisher-name>Random House</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1973</year>
+        </element-citation>
+      </ref>
+      <ref id="F1979">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Foucault</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Discipline and punish: the birth of the prison</source>
+          <publisher-name>Penguin</publisher-name>
+          <publisher-loc>Harmondsworth</publisher-loc>
+          <year>1979</year>
+        </element-citation>
+      </ref>
+      <ref id="F1999">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fournier</surname>
+              <given-names>V</given-names>
+            </name>
+          </person-group>
+          <article-title>The appeal to ‘professionalism’ as a disciplinary mechanism</article-title>
+          <source>Social Review</source>
+          <volume>47</volume>
+          <fpage>656</fpage>
+          <lpage>73</lpage>
+          <year>1999</year>
+        </element-citation>
+      </ref>
+      <ref id="F1970">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Freidson</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <source>Profession of medicine: a study in the sociology of applied knowledge</source>
+          <publisher-name>Dodd, Mead &amp; Co</publisher-name>
+          <publisher-loc>New York</publisher-loc>
+          <year>1970</year>
+        </element-citation>
+      </ref>
+      <ref id="F1986">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Freidson</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <source>Professional powers: a study of the institutionalization of formal knowledge</source>
+          <publisher-name>Chicago University Press</publisher-name>
+          <publisher-loc>Chicago</publisher-loc>
+          <year>1986</year>
+        </element-citation>
+      </ref>
+      <ref id="F1994">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Freidson</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <source>Professionalism reborn: theory, prophecy and policy</source>
+          <publisher-name>Chicago University Press</publisher-name>
+          <publisher-loc>Chicago</publisher-loc>
+          <year>1994</year>
+        </element-citation>
+      </ref>
+      <ref id="G1960">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Goode</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <article-title>Encroachment, charlatanism and the emerging profession</article-title>
+          <source>American Sociological Review</source>
+          <volume>25</volume>
+          <fpage>902</fpage>
+          <lpage>14</lpage>
+          <year>1960</year>
+        </element-citation>
+      </ref>
+      <ref id="G1957">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Greenwood</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <article-title>The attributes of a profession</article-title>
+          <source>Social Work</source>
+          <volume>2</volume>
+          <fpage>45</fpage>
+          <lpage>55</lpage>
+          <year>1957</year>
+        </element-citation>
+      </ref>
+      <ref id="H1987">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Halliday</surname>
+              <given-names>T. C</given-names>
+            </name>
+          </person-group>
+          <source>Beyond monopoly: lawyers, state crises and professional empowerment</source>
+          <publisher-name>Chicago University Press</publisher-name>
+          <publisher-loc>Chicago</publisher-loc>
+          <year>1987</year>
+        </element-citation>
+      </ref>
+      <ref id="H1963">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hughes</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <article-title>Professions</article-title>
+          <source>Daedalus</source>
+          <volume>92</volume>
+          <fpage>655</fpage>
+          <lpage>68</lpage>
+          <year>1963</year>
+        </element-citation>
+      </ref>
+      <ref id="J1972">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Johnson</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <source>Professions and power</source>
+          <publisher-name>Macmillan</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1972</year>
+        </element-citation>
+      </ref>
+      <ref id="J1995">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Johnson</surname>
+            <given-names>T</given-names>
+          </name>
+          <chapter-title>Governmentality and the institutionalization of expertise</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Johnson</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Larkin</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Health professions and the state in Europe</source>
+          <publisher-name>Routledge</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <fpage>7</fpage>
+          <lpage>24</lpage>
+          <year>1995</year>
+        </element-citation>
+      </ref>
+      <ref id="KS2008">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Kuhlmann</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Rethinking professional governance: international directions in healthcare</source>
+          <publisher-name>Policy Press</publisher-name>
+          <publisher-loc>Bristol</publisher-loc>
+          <year>2008</year>
+        </element-citation>
+      </ref>
+      <ref id="L2002">
+        <element-citation publication-type="book-chapter" publication-format="web">
+          <name>
+            <surname>Larkin</surname>
+            <given-names>G</given-names>
+          </name>
+          <chapter-title>The regulation of the professions allied to medicine</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Allsop</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Regulating the health professions</source>
+          <publisher-name>Sage</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>2002</year>
+          <uri xlink:href="http://dx.doi.org/10.4135/9781446220047.n9">http://dx.doi.org/10.4135/9781446220047.n9</uri>
+        </element-citation>
+      </ref>
+      <ref id="M1995">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Macdonald</surname>
+              <given-names>K</given-names>
+            </name>
+          </person-group>
+          <source>The sociology of the professions</source>
+          <publisher-name>Sage</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1995</year>
+        </element-citation>
+      </ref>
+      <ref id="MA1985">
+        <element-citation publication-type="journal" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>McKinlay</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Arches</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Towards the proletarianization of physicians</article-title>
+          <source>International Journal of Health Services</source>
+          <volume>18</volume>
+          <fpage>161</fpage>
+          <lpage>95</lpage>
+          <year>1985</year>
+          <uri xlink:href="http://dx.doi.org/10.2190/JBMN-C0W6-9WFQ-Q5A6">http://dx.doi.org/10.2190/JBMN-C0W6-9WFQ-Q5A6</uri>
+        </element-citation>
+      </ref>
+      <ref id="M1964">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Millerson</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <source>The qualifying associations</source>
+          <publisher-name>Routledge &amp; Kegan Paul</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1964</year>
+        </element-citation>
+      </ref>
+      <ref id="P1972">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Parkin</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <source>Class inequality and political order</source>
+          <publisher-name>Paladin</publisher-name>
+          <publisher-loc>St Albans</publisher-loc>
+          <year>1972</year>
+        </element-citation>
+      </ref>
+      <ref id="P1979">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Parkin</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <source>Marxism and class theory: a bourgeois critique</source>
+          <publisher-name>Tavistock</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1972</year>
+        </element-citation>
+      </ref>
+      <ref id="PP1976">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Parry</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Parry</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <source>The rise of the medical profession</source>
+          <publisher-name>Croom Helm</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1976</year>
+        </element-citation>
+      </ref>
+      <ref id="P1952">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Parsons</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <source>The social system</source>
+          <publisher-name>Tavistock</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1952</year>
+        </element-citation>
+      </ref>
+      <ref id="R1974">
+        <element-citation publication-type="journal" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Roth</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Professionalism: The sociologist’s decoy</article-title>
+          <source>Sociology of Work and Occupations</source>
+          <volume>1</volume>
+          <year>1974</year>
+          <fpage>6</fpage>
+          <lpage>23</lpage>
+          <uri xlink:href="http://dx.doi.org/10.1177/073088847400100102">http://dx.doi.org/10.1177/073088847400100102</uri>
+        </element-citation>
+      </ref>
+      <ref id="S1983">
+        <element-citation publication-type="journal" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Removing the blinkers? A critique of recent contributions to the sociology of professions</article-title>
+          <source>Sociological Review</source>
+          <volume>31</volume>
+          <year>1983</year>
+          <fpage>1</fpage>
+          <lpage>21</lpage>
+          <uri xlink:href="http://dx.doi.org/10.1111/j.1467-954X.1983.tb00677.x">http://dx.doi.org/10.1111/j.1467-954X.1983.tb00677.x</uri>
+        </element-citation>
+      </ref>
+      <ref id="S1995">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Professions and the public interest: medical power, altruism and alternative medicine</source>
+          <publisher-name>Routledge</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1995</year>
+        </element-citation>
+      </ref>
+      <ref id="S1998">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Saks</surname>
+            <given-names>M</given-names>
+          </name>
+          <chapter-title>Deconstructing or reconstructing professions? Interpreting the role of professional groups in society</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Olgiati</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Orzack</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Professions, identity and order in comparative perspective </source>
+          <publisher-name>Onati International Institute for the Sociology of Law</publisher-name>
+          <publisher-loc>Onati</publisher-loc>
+          <fpage>351</fpage>
+          <lpage>64</lpage>
+          <year>1998</year>
+        </element-citation>
+      </ref>
+      <ref id="S2003a">
+        <element-citation publication-type="journal" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>The limitations of the Anglo-American sociology of the professions: A critique of the current neo-Weberian orthodoxy</article-title>
+          <source>Knowledge, Work and Society</source>
+          <volume>1</volume>
+          <fpage>11</fpage>
+          <lpage>31</lpage>
+          <year>2003a</year>
+        </element-citation>
+      </ref>
+      <ref id="S2003b">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Saks</surname>
+            <given-names>M</given-names>
+          </name>
+          <chapter-title>The neo-Weberian approach to the sociology of the professions</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Verpraet</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Cadea</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Milburn</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Vervaeke</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Charles</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <source>Les professions face aux mutations internationales: les contributions récentes de la sociologie des groupes professionnels</source>
+          <publisher-name>IRESCO/CNRS</publisher-name>
+          <publisher-loc>Paris</publisher-loc>
+          <fpage>27</fpage>
+          <lpage>41</lpage>
+          <year>2003b</year>
+        </element-citation>
+      </ref>
+      <ref id="S2003c">
+        <element-citation publication-type="book" publication-format="print">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <source>Orthodox and alternative medicine: politics, professionalization and health care</source>
+          <publisher-name>Sage</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>2003c</year>
+        </element-citation>
+      </ref>
+      <ref id="S2010">
+        <element-citation publication-type="journal" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Saks</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Analyzing the professions: The case for the Neo-Weberian approach</article-title>
+          <source>Comparative Sociology</source>
+          <volume>9</volume>
+          <fpage>887</fpage>
+          <lpage>915</lpage>
+          <year>2010</year>
+          <uri xlink:href="http://dx.doi.org/10.1163/156913310X522624">http://dx.doi.org/10.1163/156913310X522624</uri>
+        </element-citation>
+      </ref>
+      <ref id="S2011">
+        <element-citation publication-type="paper">
+          <name>
+            <surname>Saks</surname>
+            <given-names>M</given-names>
+          </name>
+          <year>2011</year>
+          <source>Power and professionalization in CAM: Historical and contemporary perspectives</source>
+          <comment>Keynote address</comment>
+          <conf-name>Conference on Professionalization and Regulation in Complementary and Alternative Medicine</conf-name>
+          <conf-loc>University of Birmingham</conf-loc>
+          <conf-date>May</conf-date>
+        </element-citation>
+      </ref>
+      <ref id="Sc2010">
+        <element-citation publication-type="book-chapter" publication-format="print">
+          <name>
+            <surname>Sciulli</surname>
+            <given-names>D</given-names>
+          </name>
+          <chapter-title>Structural and institutional invariance in professions and professionalism</chapter-title>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Svensson</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Evetts</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <source>Sociology of professions: continental and Anglo-Saxon traditions</source>
+          <publisher-name>Bokförlaget Daidalos</publisher-name>
+          <publisher-loc>Göteborg</publisher-loc>
+          <fpage>33</fpage>
+          <lpage>74</lpage>
+          <year>2010</year>
+        </element-citation>
+      </ref>
+      <ref id="Sv2011">
+        <element-citation publication-type="paper">
+          <name>
+            <surname>Svensson</surname>
+            <given-names>L</given-names>
+          </name>
+          <source>The professional landscape of trust: the Swedish case</source>
+          <comment>Paper</comment>
+          <conf-name>European Sociological Association Conference on Social Relations in Turbulent Times</conf-name>
+          <conf-date>September</conf-date>
+          <year>2011</year>
+        </element-citation>
+      </ref>
+      <ref id="W1964">
+        <element-citation publication-type="journal" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wilensky</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <article-title>The professionalization of everyone? </article-title>
+          <source>American Journal of Sociology</source>
+          <volume>70</volume>
+          <fpage>137</fpage>
+          <lpage>58</lpage>
+          <year>1964</year>
+          <uri xlink:href="http://dx.doi.org/10.1086/223790">http://dx.doi.org/10.1086/223790</uri>
+        </element-citation>
+      </ref>
+      <ref id="W1992">
+        <element-citation publication-type="book" publication-format="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Witz</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <source>Professions and patriarchy</source>
+          <publisher-name>Routledge</publisher-name>
+          <publisher-loc>London</publisher-loc>
+          <year>1992</year>
+          <uri xlink:href="http://dx.doi.org/10.4324/9780203167786">http://dx.doi.org/10.4324/9780203167786</uri>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>

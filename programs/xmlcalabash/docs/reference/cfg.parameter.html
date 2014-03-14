@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>12. Parameter</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.binding.html" title="11 .  Binding"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="13 .  Input" href="cfg.input.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.parameter" class="section">
+                  <div class="section-titlepage">
+                     <h3>12. Parameter</h3>
+                  </div>
+                  <p>There are three ways to specify a parameter in the configuration:</p>
+                  <figure id="cfg.parameter.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Command line (long):</td>
+                                 <td><code class="literal">--with-param</code> <em class="replaceable"><code>port@</code></em><em class="replaceable"><code>name</code></em>=<em class="replaceable"><code>value</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>Command line (short):</td>
+                                 <td><code class="literal">-p</code><em class="replaceable"><code>port@</code></em><em class="replaceable"><code>name</code></em>=<em class="replaceable"><code>value</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-emptytag">&lt;cc:with-param
+                                       <em class="replaceable"><code>port</code></em>="<em class="replaceable"><code>portname</code></em>"
+                                       name="<em class="replaceable"><code>paramname</code></em>"
+                                       value="<em class="replaceable"><code>string</code></em>"/&gt;</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Ant task:</td>
+                                 <td><code class="tag-starttag">&lt;calabash&gt;</code>
+                                    <code class="tag-emptytag">&lt;parameter
+                                       port="<em class="replaceable"><code>portname</code></em>"
+                                       name="<em class="replaceable"><code>paramname</code></em>"
+                                       value="<em class="replaceable"><code>string</code></em>"
+                                       /&gt;</code>
+                                    <code class="tag-endtag">&lt;/calabash&gt;</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>All parameters specified will be bound to either the specified
+                     parameter input port or the the primary parameter input port if no
+                     explicit port is specified.
+                  </p>
+                  <p>If the name attribute contains an at sign, the port specification must be
+                     given explicitly. To specify the primary parameter input port explicitly,
+                     write "<code class="literal">*</code>" as the port.
+                  </p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="11 .  Binding" href="cfg.binding.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="13 .  Input" href="cfg.input.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">11 .  Binding </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 13 .  Input</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

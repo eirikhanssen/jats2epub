@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Standard XProc Steps</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="using-piperack.html" title="2 .  Using Piperack"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="XML Calabash Reference" href="index.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="p:add-attribute" href="p-add-attribute.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="p-steps" class="reference">
+                  <header class="reference-titlepage">
+                     <h1>Standard XProc Steps</h1>
+                  </header>
+                  <div class="toc">
+                     <p><b>Table of Contents</b></p>
+                     <ul class="toc">
+                        <li><span class="refentrytitle"><a href="p-add-attribute.html">p:add-attribute</a></span><span class="refpurpose"> - The standard p:add-attribute step</span></li>
+                        <li><span class="refentrytitle"><a href="p-add-xml-base.html">p:add-xml-base</a></span><span class="refpurpose"> - The standard p:add-xml-base step</span></li>
+                        <li><span class="refentrytitle"><a href="p-compare.html">p:compare</a></span><span class="refpurpose"> - The standard p:compare step</span></li>
+                        <li><span class="refentrytitle"><a href="p-count.html">p:count</a></span><span class="refpurpose"> - The standard p:count step</span></li>
+                        <li><span class="refentrytitle"><a href="p-delete.html">p:delete</a></span><span class="refpurpose"> - The standard p:delete step</span></li>
+                        <li><span class="refentrytitle"><a href="p-directory-list.html">p:directory-list</a></span><span class="refpurpose"> - The standard p:directory-list step</span></li>
+                        <li><span class="refentrytitle"><a href="p-error.html">p:error</a></span><span class="refpurpose"> - The standard p:error step</span></li>
+                        <li><span class="refentrytitle"><a href="p-escape-markup.html">p:escape-markup</a></span><span class="refpurpose"> - The standard p:escape-markup step</span></li>
+                        <li><span class="refentrytitle"><a href="p-exec.html">p:exec</a></span><span class="refpurpose"> - The standard p:exec step</span></li>
+                        <li><span class="refentrytitle"><a href="p-filter.html">p:filter</a></span><span class="refpurpose"> - The standard p:filter step</span></li>
+                        <li><span class="refentrytitle"><a href="p-hash.html">p:hash</a></span><span class="refpurpose"> - The standard p:hash step</span></li>
+                        <li><span class="refentrytitle"><a href="p-http-request.html">p:http-request</a></span><span class="refpurpose"> - The standard p:http-request step</span></li>
+                        <li><span class="refentrytitle"><a href="p-identity.html">p:identity</a></span><span class="refpurpose"> - The standard p:identity step</span></li>
+                        <li><span class="refentrytitle"><a href="p-in-scope-names.html">p:in-scope-names</a></span><span class="refpurpose"> - The standard p:in-scope-names step</span></li>
+                        <li><span class="refentrytitle"><a href="p-insert.html">p:insert</a></span><span class="refpurpose"> - The standard p:insert step</span></li>
+                        <li><span class="refentrytitle"><a href="p-label-elements.html">p:label-elements</a></span><span class="refpurpose"> - The standard p:label-elements step</span></li>
+                        <li><span class="refentrytitle"><a href="p-load.html">p:load</a></span><span class="refpurpose"> - The standard p:load step</span></li>
+                        <li><span class="refentrytitle"><a href="p-make-absolute-uris.html">p:make-absolute-uris</a></span><span class="refpurpose"> - The standard p:make-absolute-uris step</span></li>
+                        <li><span class="refentrytitle"><a href="p-namespace-rename.html">p:namespace-rename</a></span><span class="refpurpose"> - The standard p:namespace-rename step</span></li>
+                        <li><span class="refentrytitle"><a href="p-pack.html">p:pack</a></span><span class="refpurpose"> - The standard p:pack step</span></li>
+                        <li><span class="refentrytitle"><a href="p-parameters.html">p:parameters</a></span><span class="refpurpose"> - The standard p:parameters step</span></li>
+                        <li><span class="refentrytitle"><a href="p-rename.html">p:rename</a></span><span class="refpurpose"> - The standard p:rename step</span></li>
+                        <li><span class="refentrytitle"><a href="p-replace.html">p:replace</a></span><span class="refpurpose"> - The standard p:replace step</span></li>
+                        <li><span class="refentrytitle"><a href="p-set-attributes.html">p:set-attributes</a></span><span class="refpurpose"> - The standard p:set-attributes step</span></li>
+                        <li><span class="refentrytitle"><a href="p-sink.html">p:sink</a></span><span class="refpurpose"> - The standard p:sink step</span></li>
+                        <li><span class="refentrytitle"><a href="p-split-sequence.html">p:split-sequence</a></span><span class="refpurpose"> - The standard p:split-sequence step</span></li>
+                        <li><span class="refentrytitle"><a href="p-store.html">p:store</a></span><span class="refpurpose"> - The standard p:store step</span></li>
+                        <li><span class="refentrytitle"><a href="p-string-replace.html">p:string-replace</a></span><span class="refpurpose"> - The standard p:string-replace step</span></li>
+                        <li><span class="refentrytitle"><a href="p-template.html">p:template</a></span><span class="refpurpose"> - The standard p:template step</span></li>
+                        <li><span class="refentrytitle"><a href="p-unescape-markup.html">p:unescape-markup</a></span><span class="refpurpose"> - The standard p:unescape-markup step</span></li>
+                        <li><span class="refentrytitle"><a href="p-unwrap.html">p:unwrap</a></span><span class="refpurpose"> - The standard p:unwrap step</span></li>
+                        <li><span class="refentrytitle"><a href="p-uuid.html">p:uuid</a></span><span class="refpurpose"> - The standard p:uuid step</span></li>
+                        <li><span class="refentrytitle"><a href="p-validate-with-relax-ng.html">p:validate-with-relax-ng</a></span><span class="refpurpose"> - The standard p:validate-with-relax-ng step</span></li>
+                        <li><span class="refentrytitle"><a href="p-validate-with-schematron.html">p:validate-with-schematron</a></span><span class="refpurpose"> - The standard p:validate-with-schematron step</span></li>
+                        <li><span class="refentrytitle"><a href="p-validate-with-xml-schema.html">p:validate-with-xml-schema</a></span><span class="refpurpose"> - The standard p:validate-with-xml-schema step</span></li>
+                        <li><span class="refentrytitle"><a href="p-wrap-sequence.html">p:wrap-sequence</a></span><span class="refpurpose"> - The standard p:wrap-sequence step</span></li>
+                        <li><span class="refentrytitle"><a href="p-wrap.html">p:wrap</a></span><span class="refpurpose"> - The standard p:wrap step</span></li>
+                        <li><span class="refentrytitle"><a href="p-www-form-urldecode.html">p:www-form-urldecode</a></span><span class="refpurpose"> - The standard p:www-form-urldecode step</span></li>
+                        <li><span class="refentrytitle"><a href="p-www-form-urlencode.html">p:www-form-urlencode</a></span><span class="refpurpose"> - The standard p:www-form-urlencode step</span></li>
+                        <li><span class="refentrytitle"><a href="p-xinclude.html">p:xinclude</a></span><span class="refpurpose"> - The standard p:xinclude step</span></li>
+                        <li><span class="refentrytitle"><a href="p-xquery.html">p:xquery</a></span><span class="refpurpose"> - The standard p:xquery step</span></li>
+                        <li><span class="refentrytitle"><a href="p-xsl-formatter.html">p:xsl-formatter</a></span><span class="refpurpose"> - The standard p:xsl-formatter step</span></li>
+                        <li><span class="refentrytitle"><a href="p-xslt.html">p:xslt</a></span><span class="refpurpose"> - The standard p:xslt step</span></li>
+                     </ul>
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="2 .  Using Piperack" href="using-piperack.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="p:add-attribute" href="p-add-attribute.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">2 .  Using Piperack </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> p:add-attribute</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

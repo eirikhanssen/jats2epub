@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>5. Safe mode</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.debug.html" title="4 .  Debug"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="6 .  Alternate configuration file" href="cfg.config.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.safe-mode" class="section">
+                  <div class="section-titlepage">
+                     <h3>5. Safe mode</h3>
+                  </div>
+                  <p>There are three ways to enable safe mode:</p>
+                  <figure id="cfg.safe-mode.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Command line (long):</td>
+                                 <td><code class="literal">--safe-mode</code>[=<em class="replaceable"><code>boolean</code></em>]
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>Command line (short):</td>
+                                 <td><code class="literal">-S</code></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-starttag">&lt;cc:safe-mode&gt;</code><em class="replaceable"><code>boolean</code></em><code class="tag-endtag">&lt;/cc:safe-mode&gt;</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Ant task:</td>
+                                 <td><code class="tag-emptytag">&lt;calabash safeMode="<em class="replaceable"><code>Ant boolean</code></em>"/&gt;</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>If safe-mode is enabled, only XProc standard steps can be instantiated and any attempt
+                     to
+                     access the local filesystem will result in a dynamic error.
+                  </p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="4 .  Debug" href="cfg.debug.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="6 .  Alternate configuration file" href="cfg.config.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">4 .  Debug </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 6 .  Alternate configuration file</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

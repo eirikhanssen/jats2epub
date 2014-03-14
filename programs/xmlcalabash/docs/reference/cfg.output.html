@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>15. Output</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.data-input.html" title="14 .  Data input"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="16 .  Library" href="cfg.library.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.output" class="section">
+                  <div class="section-titlepage">
+                     <h3>15. Output</h3>
+                  </div>
+                  <p>There are three ways to specify an output binding in the configuration:</p>
+                  <figure id="cfg.output.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Command line (long):</td>
+                                 <td><code class="literal">--output</code> <em class="replaceable"><code>port</code></em>=<em class="replaceable"><code>uri</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>Command line (short):</td>
+                                 <td><code class="literal">-o</code><em class="replaceable"><code>port</code></em>=<em class="replaceable"><code>uri</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-emptytag">&lt;cc:output
+                                       port="<em class="replaceable"><code>portname</code></em>"
+                                       href="<em class="replaceable"><code>uri</code></em>"/&gt;</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Ant task:</td>
+                                 <td>For detailed information on how to specify input and output files in the Ant task,
+                                    see <a href="chunk-section-d17e1040.html#ant.input-and-output">Section 2.2, “Input and output files and filesets”</a> and <a href="chunk-section-d17e1964.html#ant.output">Section 4.3, “output”</a></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>The result(s) that appear on the named output port will be written to
+                     the specified URI. The string
+                     “<code class="literal">-</code>” may be used for exactly one output URI to bind
+                     that output to <code class="literal">stdout</code>.
+                  </p>
+                  <p>If the uri does not contain an equals sign, the port specification can be
+                     left out and the output will be applied to the primary output port.
+                  </p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="14 .  Data input" href="cfg.data-input.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="16 .  Library" href="cfg.library.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">14 .  Data input </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 16 .  Library</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

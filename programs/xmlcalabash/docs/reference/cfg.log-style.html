@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>7. Logging style</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.config.html" title="6 .  Alternate configuration file"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="8 .  Entity resolver" href="cfg.entity-resolver.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.log-style" class="section">
+                  <div class="section-titlepage">
+                     <h3>7. Logging style</h3>
+                  </div>
+                  <p>There are two ways to specify the logging style:</p>
+                  <figure id="cfg.log-style.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Command line (long):</td>
+                                 <td><code class="literal">--log-style</code>=<em class="replaceable"><code>style</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>Command line (short):</td>
+                                 <td><code class="literal">-G</code><em class="replaceable"><code>style</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>Ant task:</td>
+                                 <td><code class="tag-emptytag">&lt;calabash logStyle="<em class="replaceable"><code>style</code></em>"/&gt;</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>The default logging style for p:log output is
+                     “<code class="literal">wrapped</code>”. You can specify alternate styles of
+                     “<code class="literal">plain</code>”, “<code class="literal">directory</code>”,
+                     or “<code class="literal">off</code>” to suppress all p:log output. The value
+                     “<code class="literal">off</code>” disables all logging, even if individual
+                     <code class="tag-element">p:log</code>
+                     elements specify an alternate style with
+                     <code class="tag-attribute">cx:logstyle</code>.
+                     
+                  </p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="6 .  Alternate configuration file" href="cfg.config.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="8 .  Entity resolver" href="cfg.entity-resolver.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">6 .  Alternate configuration file </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 8 .  Entity resolver</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>8. Entity resolver</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.log-style.html" title="7 .  Logging style"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="9 .  URI resolver" href="cfg.uri-resolver.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.entity-resolver" class="section">
+                  <div class="section-titlepage">
+                     <h3>8. Entity resolver</h3>
+                  </div>
+                  <p>There are four ways to specify the entity resolver:</p>
+                  <figure id="cfg.entity-resolver.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Command line (long):</td>
+                                 <td><code class="literal">--entity-resolver</code>=<em class="replaceable"><code>classname</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>Command line (short):</td>
+                                 <td><code class="literal">-E<em class="replaceable"><code>classname</code></em></code></td>
+                              </tr>
+                              <tr>
+                                 <td>Java system property:</td>
+                                 <td><span class="property">com.xmlcalabash.entity-resolver</span>=<em class="replaceable"><code>classname</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-starttag">&lt;cc:entity-resolver&gt;</code><em class="replaceable"><code>classname</code></em><code class="tag-endtag">&lt;/cc:entity-resolver&gt;</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Ant task:</td>
+                                 <td><code class="tag-emptytag">&lt;calabash entityResolver="<em class="replaceable"><code>classname</code></em>"/&gt;</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>The class specified will be instantiated and used as the entity resolver
+                     for all XML documents accessed.
+                  </p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="7 .  Logging style" href="cfg.log-style.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="9 .  URI resolver" href="cfg.uri-resolver.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">7 .  Logging style </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 9 .  URI resolver</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

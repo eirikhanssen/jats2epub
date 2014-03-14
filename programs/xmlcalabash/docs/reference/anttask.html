@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Chapter 2. Calabash Ant Task</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="help.html" title="3 .  What do I do if it all goes wrong?"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="XML Calabash Reference" href="index.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="1 .  Setting up the Ant Task and Types" href="antsetup.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="anttask" class="chapter">
+                  <header class="chapter-titlepage">
+                     <h2>Chapter 2. Calabash Ant Task</h2>
+                  </header>
+                  <div class="toc">
+                     <p><b>Table of Contents</b></p>
+                     <ul class="toc">
+                        <li><span><a href="antsetup.html">1. Setting up the Ant Task and Types</a></span></li>
+                        <li><span><a href="chunk-section-d17e1040.html">2. Description</a></span><ul class="toc">
+                              <li><span><a href="chunk-section-d17e1040.html#anttask.4.4">2.1. Custom Task and Types</a></span></li>
+                              <li><span><a href="chunk-section-d17e1040.html#ant.input-and-output">2.2. Input and output files and filesets</a></span></li>
+                              <li><span><a href="chunk-section-d17e1040.html#anttask.4.6">2.3. Ports</a></span></li>
+                           </ul>
+                        </li>
+                        <li><span><a href="chunk-section-d17e1412.html">3. Parameters</a></span></li>
+                        <li><span><a href="chunk-section-d17e1964.html">4. Parameters specified as nested elements</a></span><ul class="toc">
+                              <li><span><a href="chunk-section-d17e1964.html#ant.input">4.1. input</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#ant.pipeline">4.2. pipeline</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#ant.output">4.3. output</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.5">4.4. any Ant resource</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.6">4.5. mapper</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.7">4.6. namespace</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#ant.option">4.7. option</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#ant.parameter">4.8. parameter</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.10">4.9. sysproperty</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.11">4.10. syspropertyset</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.12">4.11. profile</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.13">4.12. saxonConfig</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#anttask.6.14">4.13. config</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#ant.library">4.14. library</a></span></li>
+                              <li><span><a href="chunk-section-d17e1964.html#ant.step">4.15. step</a></span></li>
+                           </ul>
+                        </li>
+                        <li><span><a href="chunk-section-d17e3218.html">5. Examples</a></span><ul class="toc">
+                              <li><span><a href="chunk-section-d17e3218.html#anttask.7.2">5.1. Single input, single output</a></span></li>
+                              <li><span><a href="chunk-section-d17e3218.html#anttask.7.3">5.2. <code class="tag-element">pipeline</code></a></span></li>
+                              <li><span><a href="chunk-section-d17e3218.html#anttask.7.4">5.3. Implicit fileset plus mapper on additional input port</a></span></li>
+                              <li><span><a href="chunk-section-d17e3218.html#anttask.7.5">5.4. Fixed input, multiple mapped outputs</a></span></li>
+                              <li><span><a href="chunk-section-d17e3218.html#anttask.7.6">5.5. QNames</a></span></li>
+                           </ul>
+                        </li>
+                        <li><span><a href="chunk-section-d17e3294.html">6. What not to do</a></span></li>
+                     </ul>
+                  </div>
+                  <p>This chapter describes how to run <em class="citetitle">XML
+                        Calabash</em> from Apache Ant using the
+                     <code class="code">CalabashTask</code> custom task.
+                  </p>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="3 .  What do I do if it all goes wrong?" href="help.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="1 .  Setting up the Ant Task and Types" href="antsetup.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">3 .  What do I do if it all goes wrong? </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 1 .  Setting up the Ant Task and Types</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

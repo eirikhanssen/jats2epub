@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>10. Extension</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.uri-resolver.html" title="9 .  URI resolver"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="11 .  Binding" href="cfg.binding.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.extension" class="section">
+                  <div class="section-titlepage">
+                     <h3>10. Extension</h3>
+                  </div>
+                  <p>There are four ways to specify extensions:</p>
+                  <figure id="cfg.extension.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Command line (long):</td>
+                                 <td><code class="literal">--extension</code>=<em class="replaceable"><code>extname</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>Command line (short):</td>
+                                 <td><code class="literal">-X</code><em class="replaceable"><code>extname</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td rowspan="5" valign="top">Java system properties:</td>
+                                 <td><span class="property">com.xmlcalabash.general-values</span>=<em class="replaceable"><code>boolean</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="property">com.xmlcalabash.xpointer-on-text</span>=<em class="replaceable"><code>boolean</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="property">com.xmlcalabash.transparent-json</span>=<em class="replaceable"><code>boolean</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="property">com.xmlcalabash.json-flavor</span>=<em class="replaceable"><code>flavor</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="property">com.xmlcalabash.use-xslt-10</span>=<em class="replaceable"><code>boolean</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-emptytag">&lt;cc:extension name="<em class="replaceable"><code>extensions-names</code></em>" value="<em class="replaceable"><code>boolean</code></em>"/&gt;</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Ant task:</td>
+                                 <td><code class="tag-emptytag">&lt;calabash
+                                       generalValues="<em class="replaceable"><code>Ant boolean</code></em>"
+                                       xPointerOnText="<em class="replaceable"><code>Ant boolean</code></em>"
+                                       transparentJSON="<em class="replaceable"><code>Ant boolean</code></em>"
+                                       jsonFlavor="<em class="replaceable"><code>flavor</code></em>"
+                                       useXslt10="<em class="replaceable"><code>Ant boolean</code></em>"
+                                       /&gt;</code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>Valid extension names are
+                     “<code class="literal"><a href="langext.html#ext.general-values">general-values</a></code>”,
+                     “<code class="literal"><a href="langext.html#ext.xpointer-on-text">xpointer-on-text</a></code>”,
+                     “<code class="literal"><a href="langext.html#ext.transparent-json">transparent-json</a></code>”,
+                     “<code class="literal">json-flavor</code>”,
+                     and “<code class="literal"><a href="langext.html#ext.use-xslt-10">use-xslt-10</a></code>”.
+                  </p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="9 .  URI resolver" href="cfg.uri-resolver.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="11 .  Binding" href="cfg.binding.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">9 .  URI resolver </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 11 .  Binding</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

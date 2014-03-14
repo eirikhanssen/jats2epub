@@ -1,0 +1,86 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>20. Profile File</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cfg.option.html" title="19 .  Option"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="21 .  Version" href="cfg.version.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="cfg.profile-file" class="section">
+                  <div class="section-titlepage">
+                     <h3>20. Profile File</h3>
+                  </div>
+                  <p>There are three ways to specify the profile file in the configuration:</p>
+                  <figure id="cfg.profile-file.3" class="informaltable-wrapper cfgprop">
+                     <div class="informaltable cfgprop">
+                        <table border="0" style="border-collapse: collapse;">
+                           <colgroup>
+                              <col class="tcol1" />
+                              <col class="tcol2" />
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <td>Command line:</td>
+                                 <td><code class="literal">--profile</code>=<em class="replaceable"><code>filename</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>Java system property:</td>
+                                 <td><span class="property">com.xmlcalabash.profile</span>=<em class="replaceable"><code>filename</code></em></td>
+                              </tr>
+                              <tr>
+                                 <td>XML configuration:</td>
+                                 <td><code class="tag-starttag">&lt;cc:profile&gt;</code><em class="replaceable"><code>filename</code></em><code class="tag-endtag">&lt;/cc:profile&gt;</code></td>
+                              </tr>
+                              <tr>
+                                 <td>Ant task:</td>
+                                 <td>
+                                    <code class="tag-emptytag">&lt;calabash profileFile="<em class="replaceable"><code>filename</code></em>"/&gt;</code>
+                                    or
+                                    <code class="tag-starttag">&lt;calabash&gt;</code><code class="tag-starttag">&lt;profile&gt;</code><em class="replaceable"><code>profile resource</code></em><code class="tag-endtag">&lt;/profile&gt;</code><code class="tag-endtag">&lt;/calabash&gt;</code>
+                                    
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </figure>
+                  <p>If this parameter is set, the execution time for all executed steps is recorded and
+                     written to the specified XML file. The filename can also be "<code class="literal">-</code>" which causes the profile information to be written to stdout.
+                  </p>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="19 .  Option" href="cfg.option.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="21 .  Version" href="cfg.version.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">19 .  Option </td>
+                  <td width="20%" align="center"><a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 21 .  Version</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

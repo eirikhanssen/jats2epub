@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>1. Running Piperack</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="piperack.html" title="Chapter  5 .  Piperack"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  5 .  Piperack" href="piperack.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="2 .  Using Piperack" href="using-piperack.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="runpiperack" class="section">
+                  <div class="section-titlepage">
+                     <h3>1. Running Piperack</h3>
+                  </div>
+                  <p><span class="application">Piperack</span> is a simple wrapper around
+                     <span class="application">XML Calabash</span>; everything in
+                     <a href="javasetup.html">Section 1, “Setting up the environment”</a> applies. The Java class name for
+                     <span class="application">Piperack</span> is
+                     <code class="literal">com.xmlcalabash.drivers.Piperack</code>.
+                  </p>
+                  <section id="piperack-cmdline" class="section">
+                     <div class="section-titlepage">
+                        <h4>1.1. The Piperack command line</h4>
+                     </div>
+                     <p>The following synopsis describes the
+                        <span class="application">Piperack</span> command line:
+                     </p>
+                     <div class="cmdsynopsis" style="margin-top: 1em; text-indent: -0.66in; margin-left: 0.66in;"><code class="command"><em class="replaceable"><code>piperack</code></em></code>  [
+                        { -P  |   --saxon-processor }
+                        { he  |   pe  |   ee }
+                        ] [--saxon-configuration <em class="replaceable"><code>file</code></em>] [
+                        { -a  |   --schema-aware }
+                        ] [
+                        { -D  |   --debug }
+                        ] [
+                        { -v  |   --version }
+                        ] [--profile <em class="replaceable"><code>file</code></em>] [
+                        { -S  |   --safe-mode }
+                        ] [
+                        { -c  |   --config }
+                        <em class="replaceable"><code>configfile</code></em>
+                        ] [
+                        { -G  |   --log-style }
+                        { off  |   plain  |   wrapped  |   directory }
+                        ]<br /> [
+                        { -E  |   --entity-resolver }
+                        <em class="replaceable"><code>className</code></em>
+                        ] [
+                        { -U  |   --uri-resolver }
+                        <em class="replaceable"><code>className</code></em>
+                        ] [
+                        { -X  |   --extension }
+                        { general-values  |   xpointer-on-text  |   
+                        { use-xslt-1.0  |   use-xslt-10 }
+                        |   transparent-json  |   json-flavor=<em class="replaceable"><code>flavor</code></em> }
+                        ...] [
+                        --piperack-port 
+                        <em class="replaceable"><code>port-number</code></em>
+                        ] [
+                        --piperack-default-expires 
+                        <em class="replaceable"><code>seconds</code></em>
+                        ]
+                     </div>
+                     <p>See <a href="configuration.html">Chapter 3, <i>Configuration</i></a> for a description of these arguments and what they
+                        mean.
+                     </p>
+                  </section>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="Chapter  5 .  Piperack" href="piperack.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="2 .  Using Piperack" href="using-piperack.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">Chapter  5 .  Piperack </td>
+                  <td width="20%" align="center"><a title="Chapter  5 .  Piperack" href="piperack.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> 2 .  Using Piperack</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

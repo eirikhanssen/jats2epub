@@ -1,0 +1,268 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>cx:css-formatter</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="cx-collection-manager.html" title="cx:collection-manager"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="XML Calabash Extension Steps" href="cx-steps.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="cx:delta-xml" href="cx-delta-xml.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <article id="cx-css-formatter" class="refentry">
+                  <div class="refnamediv">
+                     <h2>Name</h2>
+                     <p><span class="refname">cx:css-formatter</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">Format a document using CSS</span><span class="refpurpose-punc">.</span></span></p>
+                  </div>
+                  <div class="refsynopsisdiv">
+                     <h2>Synopsis</h2>
+                     <p class="element-syntax element-syntax-declare-step-opt"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">cx:css-formatter</code><code>"</code> <code class="attr xmlns-attr">xmlns:cx</code><code>="</code><code class="value xmlns-value">http://xmlcalabash.com/ns/extensions</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">source</code><code>"</code> <code class="attr primary-attr">primary</code><code>="</code><code class="value primary-value">true</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">css</code><code>"</code> <code class="attr sequence-attr">sequence</code><code>="</code><code class="value sequence-value">true</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">parameters</code><code>"</code> <code class="attr kind-attr">kind</code><code>="</code><code class="value kind-value">parameter</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code> <code class="attr primary-attr">primary</code><code>="</code><code class="value primary-value">false</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-req"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">href</code><code>"</code> <code class="attr required-attr">required</code><code>="</code><code class="value required-value">true</code><code>"</code><code>/&gt;</code><code>                       </code><code class="comment">&lt;!-- </code><span class="opt-type">anyURI</span><code class="comment"> --&gt;</code></span><br />     <span class="opt-opt"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">content-type</code><code>"</code><code>/&gt;</code><code>                               </code><code class="comment">&lt;!-- </code><span class="opt-type">string</span><code class="comment"> --&gt;</code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
+                  </div>
+                  <div class="refsection">
+                     <div class="refsection-titlepage">
+                        <h2>Description</h2>
+                     </div>
+                     
+                     
+                     
+                     <p>This method calls the underlying CSS formatter. Two formatters are supported,
+                        the <a href="http://www.antennahouse.com/">Antenna House</a> formatter
+                        and <a href="http://www.princexml.com/">Prince</a>.
+                     </p>
+                     
+                     
+                     <p><em class="citetitle">XML Calabash</em> does not provide a license for either
+                        of these products. You must have the relevant classes on your classpath in order
+                        to use them. You may also need to purchase a license.
+                     </p>
+                     
+                     
+                     <div class="refsection">
+                        <div class="refsection-titlepage">
+                           <h3>Antenna House Formatter</h3>
+                        </div>
+                        
+                        
+                        
+                        <p>To specify the <span class="application">Antenna House Formatter</span>, use the value
+                           <code class="literal">com.xmlcalabash.util.CssAH</code> for the <code class="literal">css-processor</code>
+                           configuration item.
+                        </p>
+                        
+                        
+                        <p>The following parameters are supported:</p>
+                        
+                        
+                        <div class="itemizedlist">
+                           <ul>
+                              <li>
+                                 <p><code class="literal">OptionsFileURI</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">ExitLevel</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">EmbedAllFontsEx</code></p>
+                                 <p>The accepted values are “<code class="literal">part</code>”,
+                                    “<code class="literal">base14</code>”, and “<code class="literal">all</code>”.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">ImageCompression</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">NoAccessibility</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">NoAddingOrChangingComments</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">NoAssembleDoc</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">NoChanging</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">NoContentCopying</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">NoFillForm</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">NoPrinting</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">OwnersPassword</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">TwoPassFormatting</code></p>
+                              </li>
+                           </ul>
+                        </div>
+                        
+                        
+                        <p>For further information on the value of these parameters and
+                           their meanings, consult the <span class="orgname">Antenna House</span> documentation.
+                        </p>
+                        
+                     </div>
+                     
+                     
+                     <div class="refsection">
+                        <div class="refsection-titlepage">
+                           <h3>Prince Formatter</h3>
+                        </div>
+                        
+                        
+                        
+                        <p>To specify the <span class="application">Prince</span> Formatter, use the value
+                           <code class="literal">com.xmlcalabash.util.CssPrince</code> for the <code class="literal">css-processor</code>
+                           configuration item.
+                        </p>
+                        
+                        
+                        <p>The following parameters are supported:</p>
+                        
+                        
+                        <div class="itemizedlist">
+                           <ul>
+                              <li>
+                                 <p><code class="literal">exePath</code></p>
+                                 <p>The <code class="literal">exePath</code> must be specified to identify the location
+                                    of the <span class="application">Prince</span> formatter. It can also be specified using the
+                                    <code class="literal">com.xmlcalabash.css.prince.exepath</code> Java system property.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">baseURL</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">compress</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">debug</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">embedFonts</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">encrypt</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">keyBits</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">userPassword</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">ownerPassword</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">disallowPrint</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">disallowModify</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">disallowCopy</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">disallowAnnotate</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">fileRoot</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">html</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">httpPassword</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">httpUsername</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">httpProxy</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">inputType</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">javascript</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">log</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">network</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">subsetFonts</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">verbose</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">XInclude</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="literal">scripts</code></p>
+                                 <p><span class="application">Prince</span> accepts an arbitrary number of
+                                    JavaScript files. In order to support that in a parameter, this value
+                                    is treated as a space-delimited list of URIs.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                        
+                        
+                        <p>For further information on the value of these parameters and
+                           their meanings, consult the <span class="application">Prince</span> documentation.
+                        </p>
+                        
+                        
+                        <p>As of <span class="application">Prince</span> 9.0, there's still
+                           <a href="http://www.princexml.com/forum/topic/379/princeevents-java-api-not-functioning-prince-5.1?p=1&amp;a#7749">a bug</a>
+                           that prevents the formatter from producing error and warning messages.
+                           Your best bet until this bug is fixed is to specify a
+                           <em class="parameter"><code>log</code></em> parameter.
+                        </p>
+                        
+                     </div>
+                     
+                     
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="cx:collection-manager" href="cx-collection-manager.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="cx:delta-xml" href="cx-delta-xml.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">cx:collection-manager </td>
+                  <td width="20%" align="center"><a title="XML Calabash Extension Steps" href="cx-steps.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> cx:delta-xml</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

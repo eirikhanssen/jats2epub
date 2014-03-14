@@ -1,0 +1,341 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>2. Using Piperack</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="runpiperack.html" title="1 .  Running Piperack"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  5 .  Piperack" href="piperack.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="Standard XProc Steps" href="p-steps.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="using-piperack" class="section">
+                  <div class="section-titlepage">
+                     <h3>2. Using Piperack</h3>
+                  </div>
+                  <p>Running pipelines with <span class="application">Piperack</span> is
+                     performed through a RESTful web services API. The examples that follow
+                     use <span class="application">curl</span>, but any tool that supports the ability to
+                     GET and POST resources to a web service will work.
+                  </p>
+                  <div class="important admonition">
+                     <h3>Important</h3>
+                     <p>When running, <span class="application">Piperack</span> has all of the
+                        privileges of the user who started it. Just because you <em>could</em>
+                        allow the public to access it, doesn't mean you should. Your gun, your bullet,
+                        your foot.
+                     </p>
+                  </div>
+                  <p>When started, <span class="application">Piperack</span> listens for requests
+                     on the configured port. In the examples that follow, it is running on
+                     “<code class="literal">localhost</code>” on port “<code class="literal">8088</code>”. If you're running
+                     it on a different machine or port, adjust the examples accordingly.
+                  </p>
+                  <p>For most endpoints, content negotiation is used to determine how the
+                     results should be returned. XML, HTML, plain text, and JSON are all supported.
+                     Endpoints that return the outputs of a pipeline after it has been run
+                     always return XML.
+                  </p>
+                  <p>Our example pipeline for this section is <code class="filename">pipe.xpl</code>:
+                  </p>
+                  <div class="programlisting"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span>&lt;p:declare-step xmlns:p="http://www.w3.org/ns/xproc"
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span>                xmlns:ex="http://example.com/ns/example"
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>                name="main" version="1.0" exclude-inline-prefixes="ex"&gt;
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span>   &lt;p:input port="source" sequence="true"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;p:input port="parameters" kind="parameter"/&gt;
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span>   &lt;p:output port="result" sequence="true" primary="true"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;p:output port="result2" sequence="true"&gt;
+<span class="linenumber">  8</span><span class="linenumber-separator"> </span>     &lt;p:pipe step="id" port="result"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;/p:output&gt;
+<span class="linenumber"> 10</span><span class="linenumber-separator"> </span>   &lt;p:option name="opt1" select="'default'"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>   &lt;p:option name="ex:opt2" select="'default'"/&gt;
+<span class="linenumber"> 12</span><span class="linenumber-separator"> </span>   &lt;p:serialization port="result" indent="true"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>
+<span class="linenumber"> 14</span><span class="linenumber-separator"> </span>   &lt;p:identity name="id"/&gt;
+<span class="linenumber">   </span><span class="linenumber-separator"> </span>&lt;/p:declare-step&gt;</pre></div>
+                  <p>It doesn't do anything useful, it simply copies its input to two different
+                     output ports.
+                  </p>
+                  <section id="pr-status" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.1. <code class="uri">/status</code></h4>
+                     </div>
+                     <p>The <code class="uri">/status</code> endpoint just returns information about the
+                        status of the server. Only GET is supported.
+                     </p>
+                     <div class="screen"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span><code class="prompt">$ </code><strong class="userinput"><code>curl -H "Accept: text/plain" http://localhost:8088/status</code></strong>
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span><code class="computeroutput">XML Calabash version 1.0.14a, an XProc processor.</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">Running on Saxon version 9.5.1.1, EE edition.</code>
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span><code class="computeroutput">Copyright © 2007-2013 Norman Walsh</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">See docs/notices/NOTICES in the distribution for licensing.</code>
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span><code class="computeroutput">See also http://xmlcalabash.com/ for more information.</code></pre></div>
+                  </section>
+                  <section id="pr-help" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.2. <code class="uri">/help</code> (or just <code class="uri">/</code>)
+                        </h4>
+                     </div>
+                     <p>The <code class="uri">/help</code> endpoint returns a summary of the valid endpoints
+                        only GET is supported.
+                     </p>
+                  </section>
+                  <section id="pr-pipelines" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.3. <code class="uri">/pipelines</code></h4>
+                     </div>
+                     <p>A new pipeline is added to the server by POSTing it to the
+                        <code class="uri">/pipelines</code> endpoint. The user can suggest an ID with the
+                        <em class="parameter"><code>name</code></em> parameter. (If the requested name is in use,
+                        a different, unique name will be returned.)
+                     </p>
+                     <div class="screen"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span><code class="prompt">$ </code><strong class="userinput"><code>curl -X POST -d@pipe.xpl http://localhost:8088/pipelines?name=mypipe</code></strong>
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;response xmlns="http://xmlcalabash.com/ns/piperack"&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;code&gt;201&lt;/code&gt;</code>
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;expires&gt;2013-10-25T15:49:04Z&lt;/expires&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;uri&gt;http://localhost:8088/pipelines/mypipe&lt;/uri&gt;</code>
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;message&gt;Created http://localhost:8088/pipelines/mypipe&lt;/message&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;/response&gt;</code></pre></div>
+                     <p>The response also includes the HTTP Location header, pointing to the
+                        newly minted URI for the pipeline.
+                     </p>
+                     <p>All pipelines get an expiration time when they are created. Periodically,
+                        the server will delete any pipelines that are past their expiration time.
+                     </p>
+                     <p>The default expiration time can be set in several ways, see
+                        <a href="cfg.piperack.html">Section 32, “Piperack configuration”</a>. The <em class="parameter"><code>expires</code></em> parameter
+                        can be used to specify a different expiration time for any particular pipeline
+                        when it is created. If -1 is specified, the pipeline will never expire.
+                     </p>
+                     <p>Performing a GET on <code class="uri">/pipelines</code> returns a list of the pipelines
+                        available.
+                     </p>
+                     <div class="screen"><pre><code class="prompt">$ </code><strong class="userinput"><code>curl -H "Accept: application/json" http://localhost:8088/pipelines</code></strong>
+<code class="computeroutput">{"pipelines":["http://localhost:8088/pipelines/mypipe"]}</code></pre></div>
+                  </section>
+                  <section id="pr-pipelines-id" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.4. <code class="uri">/pipelines/{id}</code></h4>
+                     </div>
+                     <p>Performing a GET on <code class="uri">/pipelines/{id}</code> returns information
+                        about the pipeline:
+                     </p>
+                     <div class="screen"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span><code class="prompt">$ </code><strong class="userinput"><code>curl http://localhost:8088/pipelines/mypipe</code></strong>
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;pipeline xmlns="http://xmlcalabash.com/ns/piperack"&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;uri&gt;http://localhost:8088/pipelines/mypipe&lt;/uri&gt;</code>
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;has-run&gt;false&lt;/has-run&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;input documents="0"&gt;source&lt;/input&gt;</code>
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;input primary="true" documents="0"&gt;parameters&lt;/input&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;option&gt;</code>
+<span class="linenumber">  8</span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;name&gt;opt1&lt;/name&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;value default="true"/&gt;</code>
+<span class="linenumber"> 10</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;/option&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;option&gt;</code>
+<span class="linenumber"> 12</span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;name xmlns:ex="http://example.com/ns/example"&gt;ex:opt2&lt;/name&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;value default="true"/&gt;</code>
+<span class="linenumber"> 14</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;/option&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;/pipeline&gt;</code></pre></div>
+                     <p>The exact information returned varies depending on the state of the pipeline
+                        (before or after it has been run) and on the state of the various inputs, outputs,
+                        options, and parameters.
+                     </p>
+                     <p>As we shall see, there are individual endpoints for sending documents to the
+                        pipeline, setting options, setting parameters, and running the pipeline. However,
+                        for the very common case where a pipeline has a single input port, you can post
+                        directly to the pipeline URI.
+                     </p>
+                     <p>POSTing to <code class="uri">/pipelines/{id}</code> has the following effects:
+                     </p>
+                     <div class="orderedlist">
+                        <ol style="list-style: decimal;">
+                           <li>
+                              <p>The POSTed document is delivered to the pipeline's primary input port.
+                                 It is an error if the pipeline does not have a primary input port.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Any parameters passed as part of the URI are delivered to the pipeline
+                                 as the values of named options. (Use parameters of the form
+                                 <code class="code">xmlns:<em class="replaceable"><code>prefix</code></em></code> to specify namespace bindings,
+                                 if necessary.)
+                              </p>
+                           </li>
+                           <li>
+                              <p>The pipeline is run.</p>
+                           </li>
+                           <li>
+                              <p>If the pipeline runs successfully, the first document on the pipeline's
+                                 primary output port is returned. If the pipeline has no primary output port,
+                                 nothing is returned.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <div class="screen"><pre><code class="prompt">$ </code><strong class="userinput"><code>curl -X POST -H "Content-type: application/xml" -d @doc.xml http://localhost:8088/pipelines/mypipe</code></strong>
+<code class="computeroutput">&lt;doc/&gt;</code></pre></div>
+                  </section>
+                  <section id="pr-pipelines-id-inputs-port" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.5. <code class="uri">/pipelines/{id}/inputs/{port}</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/pipelines/{id}/inputs/{port}</code> delivers the POSTed
+                        document to the specified port.
+                     </p>
+                  </section>
+                  <section id="pr-piplines-id-options" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.6. <code class="uri">/pipelines/{id}/options</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/pipelines/{id}/options</code> delivers the POSTed
+                        parameters (from the <code class="literal">application/x-www-form-urlencoded</code>
+                        body or from the URI) to the pipeline as options.
+                     </p>
+                     <div class="screen"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span><code class="prompt">$ </code><strong class="userinput"><code>curl -X POST "http://localhost:8088/pipelines/mypipe/options?xmlns:x=http://example.com/ns/example&amp;x:opt2=two&amp;opt1=one"</code></strong>
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;response xmlns="http://xmlcalabash.com/ns/piperack"&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;code&gt;202&lt;/code&gt;</code>
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;message&gt;Options added: opt1, x:opt2&lt;/message&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;/response&gt;</code></pre></div>
+                     <p>The pipeline information endpoint will now show that those values have
+                        been specified.
+                     </p>
+                     <div class="screen"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span><code class="prompt">$ </code><strong class="userinput"><code>curl http://localhost:8088/pipelines/mypipe</code></strong>
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;pipeline xmlns="http://xmlcalabash.com/ns/piperack"&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;uri&gt;http://localhost:8088/pipelines/mypipe&lt;/uri&gt;</code>
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;has-run&gt;false&lt;/has-run&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;input primary="true" documents="0"&gt;source&lt;/input&gt;</code>
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;input documents="0"&gt;parameters&lt;/input&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;option&gt;</code>
+<span class="linenumber">  8</span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;name&gt;opt1&lt;/name&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;value&gt;one&lt;/value&gt;</code>
+<span class="linenumber"> 10</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;/option&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;option&gt;</code>
+<span class="linenumber"> 12</span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;name xmlns:ex="http://example.com/ns/example"&gt;ex:opt2&lt;/name&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">      &lt;value&gt;two&lt;/value&gt;</code>
+<span class="linenumber"> 14</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;/option&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;/pipeline&gt;</code></pre></div>
+                  </section>
+                  <section id="pr-pipelines-id-options-option" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.7. <code class="uri">/pipelines/{id}/options/{option}</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/pipelines/{id}/options/{option}</code> sets the value
+                        of the option named “<em class="replaceable"><code>{option}</code></em>” to the POSTed
+                        content. This option exists to support the “general values” extension; it's
+                        otherwise not necessary.
+                     </p>
+                     <p>If the option name is in a namespace, use a parameter of the form
+                        <code class="code">xmlns:<em class="replaceable"><code>prefix</code></em></code> on the URI to specify
+                        the namespace binding.
+                     </p>
+                  </section>
+                  <section id="pr-pipelines-id-parameters" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.8. <code class="uri">/pipelines/{id}/parameters</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/pipelines/{id}/parameters</code> delivers the POSTed
+                        parameters (from the <code class="literal">application/x-www-form-urlencoded</code>
+                        body or from the URI) to the pipeline as parameters.
+                     </p>
+                     <p>This endpoint uses the primary parameter input port.</p>
+                  </section>
+                  <section id="pr-pipelines-id-parameters-port" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.9. <code class="uri">/pipelines/{id}/parameters/{port}</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/pipelines/{id}/parameters/{port}</code> delivers the POSTed
+                        parameters (from the <code class="literal">application/x-www-form-urlencoded</code>
+                        body or from the URI) to the pipeline as parameters on the
+                        “<em class="replaceable"><code>{port}</code></em>” parameter input port.
+                     </p>
+                  </section>
+                  <section id="pr-pipelines-id-parameters-port-param" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.10. <code class="uri">/pipelines/{id}/parameters/{port}/{param}</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/pipelines/{id}/parameters/{port}/{param}</code> sets the value
+                        of the option named “<em class="replaceable"><code>{param}</code></em>” to the POSTed
+                        content. This option exists to support the “general values” extension; it's
+                        otherwise not necessary.
+                     </p>
+                     <p>If the parameter name is in a namespace, use a parameter of the form
+                        <code class="code">xmlns:<em class="replaceable"><code>prefix</code></em></code> on the URI to specify
+                        the namespace binding.
+                     </p>
+                  </section>
+                  <section id="pr-pipelines-id-run" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.11. <code class="uri">/pipelines/{id}/run</code></h4>
+                     </div>
+                     <p>POSTing to the <code class="uri">/pipelines/{id}/run</code> endpoint runs
+                        the pipeline and returns the first document on the primary output port.
+                     </p>
+                     <p>The pipeline information endpoint will now show outputs instead of
+                        inputs.
+                     </p>
+                     <div class="screen"><pre><span class="linenumber">  1</span><span class="linenumber-separator"> </span><code class="prompt">$ </code><strong class="userinput"><code>curl http://localhost:8088/pipelines/mypipe</code></strong>
+<span class="linenumber">  2</span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;pipeline xmlns="http://xmlcalabash.com/ns/piperack"&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;uri&gt;http://localhost:8088/pipelines/mypipe&lt;/uri&gt;</code>
+<span class="linenumber">  4</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;has-run&gt;true&lt;/has-run&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;output primary="true" documents="0"&gt;result&lt;/output&gt;</code>
+<span class="linenumber">  6</span><span class="linenumber-separator"> </span><code class="computeroutput">   &lt;output documents="1"&gt;result2&lt;/output&gt;</code>
+<span class="linenumber">   </span><span class="linenumber-separator"> </span><code class="computeroutput">&lt;/pipeline&gt;</code></pre></div>
+                  </section>
+                  <section id="pr-pipelines-id-outputs-port" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.12. <code class="uri">/pipelines/{id}/outputs/{port}</code></h4>
+                     </div>
+                     <p>After a pipeline has been run, a GET request to
+                        <code class="uri">/pipelines/{id}/outputs/{port}</code> returns the next document
+                        from the specified port.
+                     </p>
+                     <div class="screen"><pre><code class="prompt">$ </code><strong class="userinput"><code>curl http://localhost:8088/pipelines/mypipe/outputs/result2</code></strong>
+<code class="computeroutput">&lt;doc/&gt;</code></pre></div>
+                  </section>
+                  <section id="pr-pipelines-id-reset" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.13. <code class="uri">/pipelines/{id}/reset</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/pipelines/{id}/reset</code> resets the pipeline: deletes
+                        all inputs, outputs, options, and parameters.
+                     </p>
+                  </section>
+                  <section id="pr-stop" class="section">
+                     <div class="section-titlepage">
+                        <h4>2.14. <code class="uri">/stop</code></h4>
+                     </div>
+                     <p>POSTing to <code class="uri">/stop</code> stops <span class="application">Piperack</span>.
+                     </p>
+                  </section>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="1 .  Running Piperack" href="runpiperack.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="Standard XProc Steps" href="p-steps.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">1 .  Running Piperack </td>
+                  <td width="20%" align="center"><a title="Chapter  5 .  Piperack" href="piperack.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> Standard XProc Steps</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

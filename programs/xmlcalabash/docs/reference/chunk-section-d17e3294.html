@@ -1,0 +1,142 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>6. What not to do</title>
+      <meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.3" />
+      <link rel="stylesheet" type="text/css" href="css/default.css" />
+      <link rel="stylesheet" href="css/xproc.css" type="text/css" /><script type="text/javascript" src="js/dbmodnizr.js"></script></head>
+   <body>
+      <div class="page">
+         <div class="content">
+            <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navheader">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table">
+                  <tr>
+                     <td align="left"> <a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a> <a href="chunk-section-d17e3218.html" title="5 .  Examples"><img src="img/prev.png" alt="Prev" border="0" /></a> <a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+                     <td align="right"><i>XML Calabash Reference</i> (Version 0.10)
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="body">
+               <section id="anttask.8" class="section">
+                  <div class="section-titlepage">
+                     <h3>6. What not to do</h3>
+                  </div>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">Multiple pipelines</span></dt>
+                        <dd>
+                           <p>Too conflicted</p>
+                        </dd>
+                        <dt><span class="term">Non-existent file for <code class="tag-attribute">in</code> or
+                              <code class="tag-attribute">pipeline</code> (or <code class="tag-element">pipeline</code>)</span></dt>
+                        <dd>
+                           <p>When there's only one of each, it's a problem if
+                              they don't actually exist
+                           </p>
+                        </dd>
+                        <dt><span class="term"><code class="tag-attribute">in</code> and / or <code class="tag-attribute">out</code> and an implicit
+                              fileset</span></dt>
+                        <dd>
+                           <p>The implicit fileset is ignored (and, when the
+                              log level is <code class="literal">verbose</code>, a message
+                              is emitted)
+                           </p>
+                        </dd>
+                        <dt><span class="term">Two or more of <code class="tag-attribute">out</code>, a
+                              resource for <code class="tag-attribute">outPort</code>, a
+                              mapper for <code class="tag-attribute">outPort</code>, and
+                              <code class="tag-attribute">extension</code></span></dt>
+                        <dd>
+                           <p>Too conflicted</p>
+                        </dd>
+                        <dt><span class="term">Duplicate parameter QNames for the same port or duplicate
+                              option QNames</span></dt>
+                        <dd>
+                           <p>Too conflicted</p>
+                        </dd>
+                        <dt><span class="term">Pipeline input port with no explicit binding (or more than
+                              one when one <code class="tag-element">calabash</code> input
+                              port is unnamed)</span></dt>
+                        <dd>
+                           <p>No input is applied to the port.</p>
+                           <p>When one <code class="tag-element">calabash</code> port
+                              is unnamed and more than one pipeline input port
+                              has no explicit binding, one of the unbound
+                              pipeline ports is mapped to the unnamed port, but
+                              you can't control which pipeline port.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Pipeline output port with no explicit binding (or more
+                              than one when one <code class="tag-element">calabash</code>
+                              output port is unnamed)</span></dt>
+                        <dd>
+                           <p>The pipeline output on that port is
+                              discarded
+                           </p>
+                           <p>When one <code class="tag-element">calabash</code>
+                              output port is unnamed and more than one pipeline
+                              output port has no explicit binding, one of the
+                              unbound pipeline ports is mapped to the unnamed
+                              port, but you can't control which pipeline
+                              port.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Resources and mapper on same port</span></dt>
+                        <dd>
+                           <p>Too conflicted</p>
+                        </dd>
+                        <dt><span class="term">Multiple mappers for one port</span></dt>
+                        <dd>
+                           <p>Too conflicted</p>
+                        </dd>
+                        <dt><span class="term">Mapper on main input port</span></dt>
+                        <dd>
+                           <p>The file(s) on the main input port, determined by
+                              the <code class="tag-attribute">inPort</code> value,
+                              provides the name that other mappers use as their
+                              basis. A mapper on the main input port has nothing
+                              to use as a basis, so it's not allowed.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Multiple specifications for an output port or output port
+                              resource collections or mappers that resolve to more
+                              than one filename</span></dt>
+                        <dd>
+                           <p>The outputs of a pipeline run are each directed
+                              to at most one file
+                           </p>
+                        </dd>
+                        <dt><span class="term"><code class="tag-element">namespace</code> without <code class="tag-attribute">prefix</code> or without <code class="tag-attribute">uri</code></span></dt>
+                        <dd>
+                           <p><code class="tag-element">namespace</code> is for
+                              mapping prefixes to URIs
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+               </section>
+            </div>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="navfooter">
+            <table width="100%" summary="Navigation table">
+               <tr>
+                  <td width="40%" align="left"><a title="5 .  Examples" href="chunk-section-d17e3218.html"><img src="img/prev.png" alt="Prev" border="0" /></a> 
+                  </td>
+                  <td width="20%" align="center"><a title="XML Calabash Reference" href="index.html"><img src="img/home.png" alt="Home" border="0" /></a></td>
+                  <td width="40%" align="right"> <a title="Chapter  3 .  Configuration" href="configuration.html"><img src="img/next.png" alt="Next" border="0" /></a></td>
+               </tr>
+               <tr>
+                  <td width="40%" align="left">5 .  Examples </td>
+                  <td width="20%" align="center"><a title="Chapter  2 .  Calabash Ant Task" href="anttask.html"><img src="img/up.png" alt="Up" border="0" /></a></td>
+                  <td width="40%" align="right"> Chapter  3 .  Configuration</td>
+               </tr>
+            </table>
+         </div>
+         <div xmlns:tmpl="http://docbook.org/xslt/titlepage-templates" class="copyrightfooter">
+            <p><a href="dbcpyright.html">Copyright</a> © 2011, 2012, 2013 Norman Walsh.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>
