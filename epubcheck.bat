@@ -5,11 +5,11 @@ rem	This is a windows batch file used to run epubcheck to validate a created
 rem	ePub file. It requires java to be installed and epubcheck-3.0.1.jar to 
 rem be installed in the correct folder.
 rem
-rem Optionally:
+rem	Optionally:
 rem
-rem For system wide installation this script can be put somewere in windows PATH
+rem	For system wide installation this script can be put somewere in windows PATH
 rem	and the path to epubcheck-3.0.1.jar here must be changed to the absolute 
-rem file path on your file system.
+rem	file path on your file system.
 rem
 rem	License:
 rem	
