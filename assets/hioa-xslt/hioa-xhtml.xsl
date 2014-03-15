@@ -63,7 +63,7 @@
 -->
 	
   <xsl:import href="../jats-xslt/main/jats-html.xsl"/>
-  <!-- TAD og TE 2012-03-30: EPUB vil ha XHTML 1.1 -->
+  <!-- TAD and TE 2012-03-30: EPUB requires XHTML 1.1 doctype -->
   <xsl:output indent="yes" method="xml" 
   	doctype-public="-//W3C//DTD XHTML 1.1//EN" 
   	doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" encoding="UTF-8"/>
