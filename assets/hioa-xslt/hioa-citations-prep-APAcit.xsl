@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
+	Overview:
+	
+	This xslt stylesheet imports jats-APAcit.xsl from the JATS tools package
+	and adds some overrides.
+	
+	Author: Tor Arne Dahl, Oslo and Akershus University College of Applied Sciences
+	
 	License:
 	
 	This file is part of jats2epub.
@@ -28,7 +35,7 @@
 <!-- handled with the preceding-sibling edition -->
   <xsl:template match="volume" mode="article-item">
     <xsl:document>
-      <!-- TAD 2012-08-03: volume i kursiv for tidsskriftartikler -->
+      <!-- TAD 2012-08-03: volume in italics for journal articles -->
       <italic>
         <xsl:apply-templates select="." mode="format"/>
       </italic>
