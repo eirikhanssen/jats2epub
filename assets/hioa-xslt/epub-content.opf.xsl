@@ -5,6 +5,8 @@
 	This stylesheet generates content.opf, a required file in the ePub format.
 	It copies over relevant data from a journal article tagged using NISO jats xml.
 	
+	Author: Trude Eikebrokk, Oslo and Akershus University College of Applied Sciences
+	
 	License:
 	
 	This file is part of jats2epub.
