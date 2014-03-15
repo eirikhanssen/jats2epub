@@ -4,7 +4,8 @@
 	
 	This stylesheet imports xhtml-ns.xsl from the JATS tools package - a 
 	stylesheet developed by Wendell Piez for National Library of Medicine (NLM).
-	The purpose of the stylesheet is to cast any xml input into the xhtml namespace. 
+	The purpose of the stylesheet is to cast any xml input into the xhtml namespace
+	(handled by the importet stylesheet).
 	Just a few local changes here to override the defaults in xhtml-ns.xs
 	
 	Author (this ovveride stylesheet): 
