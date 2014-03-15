@@ -10,6 +10,9 @@
 	Wendell Piez for NLM. The purpose of the stylesheet is to cast any xml input 
 	into the xhtml namespace. Just a few local changes here to override the 
 	defaults in xhtml-ns.xsl.
+	
+	Author (this stylesheet): 
+	Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
 
 	License:
 	
