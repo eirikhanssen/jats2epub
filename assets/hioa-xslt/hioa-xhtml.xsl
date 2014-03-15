@@ -50,7 +50,7 @@
 	in the resulting xhtml document) -->
 <!-- 
 	EH 2014-03-15: In the end, we still haven't found the exact cause of the problem of why the empty namespace nodes 
-	occur on 	elements in the resulting xhtml document.
+	occur on elements in the resulting xhtml document.
 	
 	Even if we haven't discovered the reason why, what happens is that during transformation the xslt processor thinks
 	some nodes don't have namespaces. Since this is illegal, the xslt processor adds empty namespace nodes (xmlns="")
