@@ -8,6 +8,21 @@
 	version="1.0" 
 	exclude-result-prefixes="xlink mml">
 <!--
+	Overview:
+	
+	This stylesheet imports jats-html.xsl from the JATS tools package, developed
+	by Wendel Piez for National Library of Medicine. jats-html.xsl transforms a 
+	jats tagged xml article to a html preview.
+	
+	This stylesheet override many rules to suit our needs to produce a valid xhtml 1.1 document
+	that is required by the EPUB 2.0.1 standards. This is because the resulting xhtml document
+	is to be used as part of an epub package.
+	
+	Authors: 
+	Tor Arne Dahl, Oslo and University College of Applied Sciences
+	Trude Eikebrokk, Oslo and University College of Applied Sciences
+	Eirik Hanssen, Oslo and University College of Applied Sciences
+	
 	License:
 	
 	This file is part of jats2epub.
@@ -40,7 +55,7 @@
   <!-- 2011-01-22, TAD: Custom CSS stylesheet that imports the provided JATS-CSS -->
   <!-- EH 2013-06-14: commenting out this rule to change stylesheet -->
   <!--<xsl:param name="css">css/professions_and_professionalism-web.css</xsl:param> -->
-  <!-- EH 2013-06-14: changing the included stylesheets to -->
+  <!-- EH 2013-06-14: changing the included css stylesheets -->
   <xsl:param name="css">css/hioa-epub.css</xsl:param>
   <!-- ============================================================= -->
   <!--  ROOT TEMPLATE - HANDLES HTML FRAMEWORK                       -->
@@ -291,15 +306,17 @@
   <!-- ============================================================= -->
   <!--  REGULAR (DEFAULT) MODE                                       -->
   <!-- ============================================================= -->
+  
+	<!--
+		EH 2014-03-15: Here we change the way references will be marked up in the
+		resulting xhtml. They will be marked up as an unordered list, instead of divs. 
+	-->
   <xsl:template match="ref-list" name="ref-list">
-    <!-- EH 2013.06.21: The title References should be inserted by some other mechanism using generated title, see template match="back/ref-list" -->
-    <!-- Until I can find the cause of this error, I am hard-coding it in -->
+    <!-- EH 2013.06.21: The title "References" should be inserted by some other mechanism using generated title, see template match="back/ref-list" -->
+    <!-- Since this doesn't happen, until I can find the cause of this error, I am hard-coding it in -->
      <h2 class="main-title">References</h2> 
-    <!-- <div class="section ref-list"> -->
-    <ul class="section references">
-      <!-- EH 2013.06.21: Anchor not needed here -->
-      <!--<xsl:call-template name="named-anchor"/>-->
-      <!--<xsl:apply-templates select="." mode="label"/>-->
+        <ul class="section references">
+      <!-- EH 2013.06.21: Anchor and label not needed here, removed. -->
       <xsl:apply-templates select="*[not(self::ref | self::ref-list)]"/>
       <xsl:if test="ref">
         <!-- TAD 2012-08-10: No table for the references. Make a div section instead -->
@@ -346,14 +363,11 @@
       <xsl:apply-templates/>
     </div>
   </xsl:template>
-<!-- EH2014.03.13: testing italics on source. Book chapter didn't get italics. -->  
 
   <!-- ============================================================= -->
   <!--  TABLES                                                       -->
   <!-- ============================================================= -->
-  <!--  Tables are already in XHTML, and can simply be copied
-
-        through                                                      -->
+  <!--  Tables are already in XHTML, and can simply be copied through -->
   <xsl:template match="table | thead | tbody | tfoot | col | colgroup | tr | th | td">
     <xsl:copy>
       <xsl:apply-templates select="@*" mode="table-copy"/>
