@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
 	Overview:
-	This stylesheet imports xhtml-ns.xsl, a stylesheet developed by Wendell Piez 
-	for National Library of Medicine (NLM). The purpose of the stylesheet is to 
-	cast any xml input into the xhtml namespace. Just a few local changes here 
-	to override the defaults in xhtml-ns.xs
+	
+	This stylesheet imports xhtml-ns.xsl from the JATS tools package - a 
+	stylesheet developed by Wendell Piez for National Library of Medicine (NLM).
+	The purpose of the stylesheet is to cast any xml input into the xhtml namespace. 
+	Just a few local changes here to override the defaults in xhtml-ns.xs
+	
+	Author (this ovveride stylesheet): 
+	Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
 
 	License:
 	
@@ -23,7 +27,8 @@
 	You should have received a copy of the GNU General Public License
 	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 	
-	Contact: eirik dot hanssen at hioa dot no, trude dot eikebrokk at hioa dot no, tor-arne dot dahl at hioa dot no
+	Contact: eirik dot hanssen at hioa dot no, trude dot eikebrokk at hioa dot no, 
+	tor-arne dot dahl at hioa dot no
 -->
 
 <xsl:stylesheet version="1.0"
