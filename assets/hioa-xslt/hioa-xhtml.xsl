@@ -43,10 +43,23 @@
 	Contact: tor-arne dot dahl at hioa dot no, trude dot eikebrokk at hioa dot no, eirik hanssen at hioa dot no
 -->
 
-<!-- TAD og TE, 2012-03-30: Default-navnerom lagt til for å unngå tomme namespace-attributter i resultatdokumentet -->
-<!-- TAD 2012-08-09: La til xmlns:xsi for å unngå at dette legges til starttaggen for tabeller -->
-<!-- TAD 2012-08-09: Forsøkte å legge til oasis-namespace, men det fungerte ikke (for å bli kvitt tomme namespace-attributter) -->
-
+<!-- TAD and TE, 2012-03-30: Default namespace added to avoid empty namespace attributes in the result xhtml document -->
+<!-- TAD 2012-08-09: Added  xmlns:xsi to make sure this is not added to the opening tag in tables -->
+<!-- TAD 2012-08-09: Tried to add oasis-namespace, but it didn't work (trying to get rid of empty namespace-attributes in the resulting xhtml document) -->
+<!-- 
+	EH 2014-03-15: In the end, we still haven't found the exact cause of the problem of why the empty namespace nodes occur on 
+	elements in the resulting xhtml document.
+	
+	Even if we haven't discovered the reason why, what happens is that during transformation the xslt processor thinks
+	some nodes don't have namespaces. Since this is illegal, the xslt processor adds empty namespace nodes (xmlns="")
+	to several elements in the resulting xhtml document during what is a called namespace fixup process.
+	
+	Empty namespace nodes on xhtml elements means that the xhtml-file (and also the epub-document) will not validate.
+	
+	However, we did solve this problem downstream in the XProc pipeline by adding another xslt transformation that 
+	casts the whole document into the xhtml namespace, that way, no element have no namespace.
+-->
+	
   <xsl:import href="../jats-xslt/main/jats-html.xsl"/>
   <!-- TAD og TE 2012-03-30: EPUB vil ha XHTML 1.1 -->
   <xsl:output indent="yes" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" encoding="UTF-8"/>
