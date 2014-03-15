@@ -45,10 +45,12 @@
 
 <!-- TAD and TE, 2012-03-30: Default namespace added to avoid empty namespace attributes in the result xhtml document -->
 <!-- TAD 2012-08-09: Added  xmlns:xsi to make sure this is not added to the opening tag in tables -->
-<!-- TAD 2012-08-09: Tried to add oasis-namespace, but it didn't work (trying to get rid of empty namespace-attributes in the resulting xhtml document) -->
 <!-- 
-	EH 2014-03-15: In the end, we still haven't found the exact cause of the problem of why the empty namespace nodes occur on 
-	elements in the resulting xhtml document.
+	TAD 2012-08-09: Tried to add oasis-namespace, but it didn't work (trying to get rid of empty namespace-attributes 
+	in the resulting xhtml document) -->
+<!-- 
+	EH 2014-03-15: In the end, we still haven't found the exact cause of the problem of why the empty namespace nodes 
+	occur on 	elements in the resulting xhtml document.
 	
 	Even if we haven't discovered the reason why, what happens is that during transformation the xslt processor thinks
 	some nodes don't have namespaces. Since this is illegal, the xslt processor adds empty namespace nodes (xmlns="")
@@ -62,7 +64,10 @@
 	
   <xsl:import href="../jats-xslt/main/jats-html.xsl"/>
   <!-- TAD og TE 2012-03-30: EPUB vil ha XHTML 1.1 -->
-  <xsl:output indent="yes" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" encoding="UTF-8"/>
+  <xsl:output indent="yes" method="xml" 
+  	doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+  	doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" encoding="UTF-8"/>
+
   <!-- EH 2013.06.14: adding output method to produce html-output -->
   <!--<xsl:output method="html" indent="yes"/>-->
   <!-- 2011-01-22, TAD: Custom CSS stylesheet that imports the provided JATS-CSS -->
