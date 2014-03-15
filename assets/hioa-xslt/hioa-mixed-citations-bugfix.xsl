@@ -4,23 +4,27 @@
 	
 	This XSLT stylesheet is just a quick fix to a problem resulting from what
 	we think is a bug with the original jats-APAcit.xsl. When using the <element-citation>
-	markup style in the reflist and a reference of the type publication-type="book-chapter",
-	the jats-APAcit.xsl transformation incorrectly doesn't wrap the contents of the resulting <ref> 
-	element in a <mixed-citation> element. This in turn causes the source of a reference not to be
-	italicized in the reference list.
+	markup style in the JATS-xml tagged article, and a reference of the type 
+	publication-type="book-chapter", the jats-APAcit.xsl transformation incorrectly 
+	doesn't wrap the contents of the resulting <ref> element in a <mixed-citation> 
+	element. This in turn causes the source of a reference not to be italicized in 
+	the reference list when the document is later transformed to xhtml.
 
 	The problem should be avoided in the first place by fixing the jats-APAcit.xsl
 	or using best practice (vertical customization) to override some rules in the 
-	xslt stylesheet importing jats-APAcit.xsl
+	xslt stylesheet that is importing jats-APAcit.xsl, namely in hioa-APAcit.xsl.
 
-	But since we're using an xproc pipeline, it is easy to insert a fix in the document flow.
+	But since we're using an xproc pipeline, it is easy to insert a quick fix in the 
+	document flow.
 
 	I added publication-type and publication-format attributes with 
 	hardcoded values. This is not optimal, and we're sure there is a better 
 	way to get the correct attributes, but we only observed this error
 	when publication-type="book-chapter" was used. 
 
-	This is just a temporary fix until we find a better way 
+	This is just a temporary fix until we find a better way
+	
+	Author: Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
 
 	License:
 	
