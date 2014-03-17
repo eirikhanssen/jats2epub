@@ -1,3 +1,6 @@
 #!/bin/sh
-java -Xmx1024m -jar C:\Users\eirikh\xproc-pipeline\programs\xmlcalabash/calabash.jar "$@"
+# To be able to run calabash from any folder, put this script in $PATH
+# This assumes that you unpacked to your user home directory.
+# If needed, change the path to calabash.jar to reflect the actual path on your system. 
+java -Xmx1024m -jar ~/jats2epub/programs/xmlcalabash/calabash.jar "$@"
     
