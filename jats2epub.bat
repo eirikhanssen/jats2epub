@@ -150,8 +150,8 @@ setlocal
 	echo:
 	echo # DONE # Preparing and processing files
 	echo:
-	echo Copying output_working\article.html to output_final\%htmlfilename%
-	copy output_working\article.html output_final\%htmlfilename% /Y
+	echo Copying output_working\article-webversion.html to output_final\%htmlfilename%
+	copy output_working\article-webversion.html output_final\%htmlfilename% /Y
 endlocal && exit /b
 
 :create-if-not-exists-output_final
@@ -238,7 +238,7 @@ if not exist "programs\kindlegen\kindlegen.exe" (
 ) else (
 	echo # START # Converting %1 to %2 with KindleGen
 	echo:
-	call kindlegen output_final\%1 -o %2
+	call programs\kindlegen\kindlegen.exe output_final\%1 -o %2
 	echo:
 	echo # DONE # Converting %1 to %2 with KindleGen
 )
