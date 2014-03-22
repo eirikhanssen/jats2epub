@@ -1,11 +1,20 @@
 #!/bin/bash
 #	Overview:
 #	
-#	This is a linux bash script that can be used to generate .epub, .mobi 
+#	This is a linux bash script that can be used to generate .epub, .html, .mobi 
 #	(and in a later version also .pdf output) from NISO JATS tagged .xml input
+#	This script relies on the XProc pipeline process-jats.xpl to do the xml
+#	transformation work. This bash script takes care of all the steps that couldn't 
+#	be implemented in the XProc pipeline process-jats.xpl alone.
 #
-#	Created by Eirik Hanssen, Oslo and Akershus University College
-#	
+#	Author: 
+#
+#	Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
+#
+#	Contact:
+#
+#	eirik dot hanssen at hioa dot no
+#
 #	License:
 #	
 #	This file is part of jats2epub.
@@ -22,10 +31,9 @@
 #
 #	You should have received a copy of the GNU General Public License
 #	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
-#	
-#	Contact: eirik dot hanssen at hioa dot no
 
-# display usage help'
+
+# display usage
 function displayUsage {
 	echo ""
 	echo "Usage: ./jats2epub xmlfile [required] assetfolder [optional]"
@@ -60,7 +68,7 @@ function displayOperation {
 	echo "(5) Attempt to process the source xml article with the XProc pipeline \"process-jats-xml.xpl\" with the following command:"
 	echo "	calabash -i source=[path-to-xml-source-article] process-jats-xml.xpl"
 	echo ""
-	echo "If all goes well the output/epub folder is correctly populated and can be made into an ePub"
+	echo "If all goes well the output_working/epub folder is correctly populated and can be made into an ePub"
 	echo "This script will then attempt to pack the ePub by using zip-commands."
 	echo ""
 	echo "(6) Creating a zip archive with the same name as the xml-file, excluding the extension and adding a timestamp and the \".epub\" extension"
@@ -132,25 +140,41 @@ function displayHelp {
 	echo ""
 	echo "You don't have to use absolute paths, you can use relative paths as well."
 	echo ""
-	echo "Component Requirements"
-	echo "   See install info to find out how to install these components using this command:"
-	echo "      ./jats2epub -i"
-	echo ""
-	echo "This script relies on the following components:"
-	echo "   XML Calabash [REQUIRED]"
-	echo "      An XProc processor capable of processing pipelines written in XProc. "
-	echo "	    XProc is an XML pipeline language. XML Calabash Supports XPath 2.0, as well as XSL-documents written in XSLT2.0 and XSLT1.0 "
-	echo "	    the source article will be processed with \"process-jats-xml.xpl\" which means a chain of XSLT stylesheets are used to produce"
-	echo "	    the different components needed for ePub production."
-	echo ""
-	echo "   zip (commandline) [REQUIRED]"
-	echo "      The zip utility is used to pack the files and folders in the ePub bundle. It is normally included in your GNU/Linux environment."
-	echo ""
-	echo "   epubchecker [OPTIONAL] (but important nonetheless)"
-	echo "      The epubchecker utility is used to validate the epub-file after creation"
-	echo ""
 }
 
+function ePubValidation {
+	if [ -f programs/epubcheck-3.0.1/epubcheck-3.0.1.jar ]
+	then
+		echo ""
+		echo "Validating $epubname with epubcheck:"
+		echo ""
+		java -jar programs/epubcheck-3.0.1/epubcheck-3.0.1.jar output_final/$epubname
+		echo ""
+		echo "If epubcheck returned no errors, it means the generated ePub passed validation check."
+		echo "You still need open it with an ePub reader (calibre for instance) to see if it is as you expected."
+		echo ""
+		echo "If epubcheck returned with errors, try to fix them and rerun this script"
+		echo ""
+	else
+		echo ""
+		echo "NOTICE: Validation attempt unsuccessful! Can't find programs/epubcheck-3.0.1/epubcheck-3.0.1.jar"
+		echo ""
+	fi
+}
+
+function mobiGen {
+	if [ -f programs/kindlegen/kindlegen ]
+	then
+		echo "Trying to generate kindle .mobi with kindlegen:"
+		programs/kindlegen/kindlegen output_final/$epubname -o $mobiname
+		echo ""
+	else
+		echo "NOTICE: kindlegen is not installed. If you want added .mobi functionality, please see programs/kindlegen/README-kindlegen.txt"
+		echo ""
+	fi
+}
+
+# main 'program'
 # check if there is one or two  parameters
 if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 	filepath=$1
@@ -172,17 +196,17 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		pdfname=$filename_base$timestamp.pdf
 		htmlname=$filename_base$timestamp.html
 		echo ""
-		echo "Clearing old contents of output/epub .."
-		rm -rf output_working/epub/
-		echo "Creating folders (if they don't exist): output/epub ..."
+		echo "Clearing old contents of output_working .."
+		rm -rf output_working/*
+		echo "Creating folders (if they don't exist): output_working/epub ..."
 		mkdir -p output_working/epub/
-		echo "Copying over epub-template from assets/epub-template to output/epub/ ..."
+		echo "Copying over epub-template from assets/epub-template to output_working/epub/ ..."
 		cp -r assets/epub-template/* output_working/epub/
 		# copying assets for one article
 		# should I check this before running?
 		if [ "$#" = "2"  ]; then
 			resources=$2
-			echo "cp -r $resources/* output/epub/OEBPS"
+			echo "cp -r $resources/* output_working/epub/OEBPS"
 			cp -r $resources/* output_working/epub/OEBPS
 		fi
 		echo "Processing \"$filename\" in \"$dirname\" with \"process-jats-xml.xpl\" (XProc pipeline) using XML Calabash ..."
@@ -191,7 +215,7 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		echo ""
 		echo "If the processing went well, you will see <c:result ...>...</c:result> elements above, one for each created file, if not, calabash will output error messages."
 		echo ""
-		echo "Creating $epubname (packing with zip)..."
+		echo "Creating $epubname (packing contents of output_working/epub with zip)..."
 		cd output_working/epub
 		zip -0Xq $epubname mimetype
 		zip -Xr9Dq $epubname *
@@ -200,17 +224,11 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		echo ""
 		echo "Moving web-version of article to output_final/$htmlname"
 		echo ""
-		mv output_working/article.html output_final/$htmlname
-		echo ""
-		echo "Validating $epubname with epubcheck:"
-		echo ""
-		java -jar programs/epubcheck-3.0.1/epubcheck-3.0.1.jar output_final/$epubname
-		echo ""
-		echo "If epubcheck returned no errors, congratulations! If epubcheck returned with errors, try to fix them and rerun this script"
-		echo ""
-		echo "Trying to generate kindle .mobi"
-		programs/kindlegen/kindlegen output_final/$epubname -o $mobiname
-		echo "DONE"
+		mv output_working/article-webversion.html output_final/$htmlname
+		ePubValidation
+		mobiGen
+		echo "DONE! Script has completed."
+		echo "Please check messages output from the script as well as created files in output_final and output_working."
 	else
 		echo "Error: The file '$filepath' was not found."
 		displayUsage
