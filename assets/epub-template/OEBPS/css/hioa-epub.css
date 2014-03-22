@@ -260,3 +260,6 @@ ul.references {
 	padding-left: 0;
 	list-style-type: none;
 }
+/* tables */
+table {border: 1px solid black; width: 100%;}
+td + td {text-align: center;}
