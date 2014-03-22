@@ -4,7 +4,7 @@ rem
 rem	This is a windows batch script that can be used to generate .epub, .html, .mobi 
 rem	(and in a later version also .pdf output) from NISO JATS tagged .xml input
 rem	This script relies on the XProc pipeline process-jats.xpl to do the xml
-rem	transformation work. This bash script takes care of all the steps that couldn't 
+rem	transformation work. This script takes care of all the steps that couldn't 
 rem	be implemented in the XProc pipeline process-jats.xpl alone.
 rem
 rem	Author: 
