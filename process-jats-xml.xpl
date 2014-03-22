@@ -52,20 +52,29 @@
 -->
 
   <p:output port="result" sequence="true">
-    <p:pipe step="article-original" port="result"/>
-    <p:pipe step="article-APAcit-formatted" port="result"/>
-    <p:pipe step="article-APAcit-formatted-mixed-citation-bugfix" port="result"/>
-    <p:pipe step="article-idfix" port="result"/>
-    <p:pipe step="article-xhtml" port="result"/>
-    <p:pipe step="article-xhtml-namespace-fixed" port="result"/>
-    <p:pipe step="article-xhtml-web-version" port="result"/>
+    <p:pipe step="step-00-original-xml" port="result"/>
+    <p:pipe step="step-10-xml-article-APAcit-preprocessed" port="result"/>
+    <p:pipe step="step-20-xml-article-bugfix-book-chapter-mixed-citation" port="result"/>
+    <p:pipe step="step-30-xml-article-bugfix-graphic-missing-id" port="result"/>
+    <p:pipe step="step-40-xhtml-article-display" port="result"/>
+	<!-- html-file used in the epub -->
+    <p:pipe step="epub-index-html" port="result"/>
+	<!-- Storing a copy for inspection -->
+    <p:pipe step="step-50-xhtml-namespace-fixed-epub-version" port="result"/>
+	<!-- html-file for upload in OJS -->
+    <p:pipe step="article-webversion" port="result"/>
+	<!-- Storing a copy for inspection -->
+    <p:pipe step="step-60-webversion" port="result"/>
     <p:pipe step="content-opf" port="result"/>
+	<!-- Storing a copy for inspection -->
+	<p:pipe step="step-70-content-opf" port="result"/>
     <p:pipe step="toc-ncx" port="result"/>
-    <p:empty/>
+	<!-- Storing a copy for inspection -->
+    <p:pipe step="step-80-toc-ncx" port="result"/>
   </p:output>
   
 <!-- EH 2013-11-25: Stores the unchanged xml-->
-<p:store href="output_working/00-original.xml" name="article-original"/>
+<p:store href="output_working/00-original.xml" name="step-00-original-xml"/>
 
   <p:xslt name="format-APA-citations" version="2.0">
     <!-- EH 24.11.2013: Citations are APA-formatted. -->
@@ -79,7 +88,7 @@
   </p:xslt>
 
 <!-- Stores the APAcit formatted xml-document -->
-  <p:store href="output_working/10-article-APAcit-formatted.xml" name="article-APAcit-formatted"/>
+  <p:store href="output_working/10-xml-article-APAcit-preprocessed.xml" name="step-10-xml-article-APAcit-preprocessed"/>
 
 <!--
 	EH 2014-03-14: Fix <ref>elements that stem from book-chapter type references, 
@@ -99,7 +108,7 @@
   </p:xslt>
 
 <!-- Stores the APAcit formatted mixed-citation-bugfixed xml-document -->
-<p:store href="output_working/20-article-APAcit-formatted-mixed-citation-bugfix.xml" name="article-APAcit-formatted-mixed-citation-bugfix"/>
+<p:store href="output_working/20-xml-article-bugfix-book-chapter-mixed-citation.xml" name="step-20-xml-article-bugfix-book-chapter-mixed-citation"/>
 
 <!-- 
 	EH 2014-03-14: The xml arriving at this stage potentially has a problem with missing id on graphics.
@@ -154,7 +163,7 @@
 </p:xslt>
 
 <!-- Stores xml where potential missing id is fixed on graphic elements ) -->
-<p:store href="output_working/30-article-APAcit-formatted-mixed-citations-bugfix-idfix.xml" name="article-idfix"/>
+<p:store href="output_working/30-xml-article-bugfix-graphic-missing-id.xml" name="step-30-xml-article-bugfix-graphic-missing-id"/>
 
   <p:xslt name="display-xhtml" version="2.0">
   <p:input port="source">
@@ -167,7 +176,7 @@
   </p:xslt>
 
 <!-- Stores the xhtml display document for use in ePub ( at this stage we have problems with elements that have no namespace - xmlns="" ) -->
-<p:store href="output_working/40-article-display.html" name="article-xhtml"/>
+<p:store omit-xml-declaration="true" indent="true" href="output_working/40-xhtml-article-display.html" name="step-40-xhtml-article-display"/>
 
 <!-- Casts all elements to xhtml namespace. This remedies the problem where some elements get no namespace (xmlns="").-->
 <p:xslt name="cast-to-xhtml" version="1.0">
@@ -182,7 +191,18 @@
   
 <!-- EH 2013.11.25: Stores the xhtml-casted display document for use in ePub in the ePub-folder-structure-->
 <!-- EH 2013.11.25: Adding the correct doctype required for the ePub format-->
-<p:store omit-xml-declaration="true" indent="true" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" href="output_working/epub/OEBPS/index.html" name="article-xhtml-namespace-fixed"/>
+<p:store omit-xml-declaration="true" indent="true" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" href="output_working/epub/OEBPS/index.html" name="epub-index-html"/>
+<!-- EH 2014-03-22: Storing a copy for inspeciton -->
+<p:store omit-xml-declaration="true" 
+	indent="true" encoding="utf-8" 
+	doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+	doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" 
+	href="output_working/50-xhtml-namespace-fixed-epub-version.html" 
+	name="step-50-xhtml-namespace-fixed-epub-version">
+	<p:input port="source">
+		<p:pipe step="cast-to-xhtml" port="result"/>
+	</p:input>
+</p:store>
 
 <!-- EH 2014-03-14: For the web-version we don't want the xml processing instruction at the beginning -->
 <p:xslt name="cast-to-xhtml-and-remove-xml-processing-instruction" version="1.0">
@@ -196,9 +216,26 @@
   </p:xslt>
   
   <!-- Saves a version for web display -->
-<p:store omit-xml-declaration="true" indent="true" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" href="output_working/article.html" name="article-xhtml-web-version"/>
+<p:store omit-xml-declaration="true"
+	indent="true" encoding="utf-8"
+	doctype-public="-//W3C//DTD XHTML 1.1//EN"
+	doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
+	href="output_working/article-webversion.html"
+	name="article-webversion"/>
 
-<!-- EH 2013-12-02: Generate content.opf-->
+<!-- EH 2014-03-22: Storing a copy for inspeciton -->
+<p:store omit-xml-declaration="true" 
+	indent="true" encoding="utf-8" 
+	doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+	doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" 
+	href="output_working/60-webversion.html" 
+	name="step-60-webversion">
+	<p:input port="source">
+		<p:pipe step="cast-to-xhtml" port="result"/>
+	</p:input>
+</p:store>
+
+<!-- EH 2013-12-02: Generate content.opf, a required file in an epub publication -->
 <p:xslt name="generate-content-opf" version="1.0">
   <p:input port="source">
     <p:pipe step="fix-missing-id-on-graphics" port="result"/>
@@ -207,10 +244,16 @@
       <p:document href="assets/hioa-xslt/epub-content.opf.xsl"/>
     </p:input>
   </p:xslt>
+
+<!-- EH 2014-03-22: storing content.opf in epub structure -->
+<p:store href="output_working/epub/OEBPS/content.opf" indent="true" name="content-opf"/>
+
+<!-- EH 2014-03-22: storing a copy for inspection -->
+<p:store href="output_working/70-content.opf" indent="true" name="step-70-content-opf">
+	<p:input port="source"><p:pipe step="generate-content-opf" port="result"/></p:input>
+</p:store>
   
-  <p:store href="output_working/epub/OEBPS/content.opf" indent="true" name="content-opf"/>
-  
-  <!-- EH 2013-12-02: Generate content.opf-->
+  <!-- EH 2013-12-02: Generate toc.ncx, a required file in an epub publication -->
 <p:xslt name="generate-toc-ncx" version="1.0">
   <p:input port="source">
     <p:pipe step="format-APA-citations" port="result"/>
@@ -219,8 +262,14 @@
       <p:document href="assets/hioa-xslt/epub-toc.ncx.xsl"/>
     </p:input>
   </p:xslt>
-  
-  <p:store href="output_working/epub/OEBPS/toc.ncx" indent="true" name="toc-ncx"/>
-  
+
+<!-- EH 2014-03-22: storing content.opf in epub structure -->
+<p:store href="output_working/epub/OEBPS/toc.ncx" indent="true" name="toc-ncx"/>
+
+<!-- EH 2014-03-22: storing a copy for inspection -->
+<p:store href="output_working/80-toc.ncx" indent="true" name="step-80-toc-ncx">
+	<p:input port="source"><p:pipe step="generate-toc-ncx" port="result"/></p:input>
+</p:store>
+
 </p:declare-step>
 
