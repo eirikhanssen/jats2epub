@@ -1,8 +1,37 @@
 @echo off && PUSHD "%~dp0" && SETLOCAL EnableExtensions EnableDelayedExpansion
+rem	Overview:
+rem	
+rem	This is a windows batch script that can be used to generate .epub, .html, .mobi 
+rem	(and in a later version also .pdf output) from NISO JATS tagged .xml input
+rem	This script relies on the XProc pipeline process-jats.xpl to do the xml
+rem	transformation work. This bash script takes care of all the steps that couldn't 
+rem	be implemented in the XProc pipeline process-jats.xpl alone.
+rem
+rem	Author: 
+rem
+rem	Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
+rem
+rem	Contact:
+rem
+rem	eirik dot hanssen at hioa dot no
+rem
+rem	License:
+rem	
+rem	This file is part of jats2epub.
+rem
+rem	jats2epub is free software: you can redistribute it and/or modify
+rem	it under the terms of the GNU General Public License as published by
+rem	the Free Software Foundation, either version 3 of the License, or
+rem	(at your option) any later version.
+rem
+rem	jats2epub is distributed in the hope that it will be useful,
+rem	but WITHOUT ANY WARRANTY; without even the implied warranty of
+rem	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+rem	GNU General Public License for more details.
+rem
+rem	You should have received a copy of the GNU General Public License
+rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 
-rem Batch Script to create .epub and optionally also .mobi format from jats xml input.
-rem Created by Eirik Hanssen - email: eirik dot hanssen at hioa dot no, Oslo and Akershus University College
-rem Released under GPL V3 licence
 cd .\
 rem find number of argments passed to this script
 set /a args_count=0
