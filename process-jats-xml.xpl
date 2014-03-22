@@ -214,24 +214,42 @@
       <p:document href="assets/hioa-xslt/hioa-fix-ns-and-remove-xml-processing-instruction.xsl"/>
     </p:input>
   </p:xslt>
-  
-  <!-- Saves a version for web display -->
+
+<!-- Removing xhtml namespace -->
+<p:namespace-rename from="http://www.w3.org/1999/xhtml" to="" name="namespace-removed">
+	<p:input port="source">
+		<p:pipe step="cast-to-xhtml-and-remove-xml-processing-instruction" port="result"/>
+	</p:input>
+</p:namespace-rename>
+
+<!-- Have to add an id to the body of the document that will be used to target css rules. I -->
+<!-- This is because the html-file will be included in another webpage in OJS system. -->
+<!-- Prefixing all css rules of the css stylesheet with this id ensures that the rules -->
+<!-- in the stylesheet won't afffect the rest of the webpage this html-file is embedded in  -->
+
+<p:add-attribute match="/html/body" attribute-name="id" attribute-value="pp-ojs-article"/>
+
+<p:identity name="webversion-for-ojs-upload"/>
+
+<!-- Saves a version for web display in OJS with html4.01 doctype -->
 <p:store omit-xml-declaration="true"
 	indent="true" encoding="utf-8"
-	doctype-public="-//W3C//DTD XHTML 1.1//EN"
-	doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
+	method="html"
+	version="4.0"
+	doctype-system="about:legacy-compat"
 	href="output_working/article-webversion.html"
 	name="article-webversion"/>
 
-<!-- EH 2014-03-22: Storing a copy for inspeciton -->
+<!-- EH 2014-03-22: Storing a copy for inspeciton --> 	
 <p:store omit-xml-declaration="true" 
-	indent="true" encoding="utf-8" 
-	doctype-public="-//W3C//DTD XHTML 1.1//EN" 
-	doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" 
+	indent="true" encoding="utf-8"
+	method="html"
+	version="4.0"
+	doctype-system="about:legacy-compat"
 	href="output_working/60-webversion.html" 
 	name="step-60-webversion">
 	<p:input port="source">
-		<p:pipe step="cast-to-xhtml" port="result"/>
+		<p:pipe step="webversion-for-ojs-upload" port="result"/>
 	</p:input>
 </p:store>
 
