@@ -10,7 +10,7 @@
       </publisher>
     </journal-meta>
     <article-meta>
-      <article-id pub-id-type="doi">	10.7577/pp.v2i1.178</article-id>
+      <article-id pub-id-type="doi">10.7577/pp.v2i1.178</article-id>
       <article-id pub-id-type="doaj">1084722</article-id>
       <article-id pub-id-type="other">URN:NBN:no-30973</article-id>
       <article-categories>
@@ -141,7 +141,7 @@
               <italic>Professional background of department managers from 2005 to 2009 </italic>
             </p>
           </caption>
-          <table frame="box" width="100%">
+          <table>
             <thead>
               <tr style="border-bottom: solid thin border-top: solid thin">
                 <th/>
@@ -187,7 +187,7 @@
               <italic>Professional background of division managers from 2003 to 2009</italic>
             </p>
           </caption>
-          <table frame="box" width="100%">
+          <table>
             <thead>
               <tr style="border-bottom: solid thin border-top: solid thin">
                 <th/>
@@ -259,7 +259,7 @@
               <italic>Formalization of management positions</italic>
             </p>
           </caption>
-          <table frame="box" width="100%">
+          <table>
             <thead>
               <tr style="border-bottom: solid thin border-top: solid thin">
                 <th/>
