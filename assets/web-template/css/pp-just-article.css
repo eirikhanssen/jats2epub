@@ -117,11 +117,13 @@
     That's why #content is added in the beginning. It appears in markup from the OJS 
     site that appears as ancestor to the fulltext html article 
     (which is embedded in a div-tag)  */
-#content #pp-ojs-article h1 {font-size: 2.5em;}
-#content #pp-ojs-article h2.main-title {font-size: 2em; border-bottom: 1px solid midnightblue;}
-#content #pp-ojs-article h3 {font-size: 1.7em; font-family: serif; text-transform: none;}
-#content #pp-ojs-article h4 {font-size: 1em;font-family: sans-serif;}
-#content #pp-ojs-article h5 {font-size: 1em; font-family: serif; font-weight: normal;}
+
+/* Here #content prefix is removed, but it must be present in the css used on OJS website */
+#pp-ojs-article h1 {font-size: 2.5em;}
+#pp-ojs-article h2.main-title {font-size: 2em; border-bottom: 1px solid midnightblue;}
+#pp-ojs-article h3 {font-size: 1.7em; font-family: serif; text-transform: none;}
+#pp-ojs-article h4 {font-size: 1em;font-family: sans-serif;}
+#pp-ojs-article h5 {font-size: 1em; font-family: serif; font-weight: normal;}
 
 #pp-ojs-article .document-title {
    text-align: center;
