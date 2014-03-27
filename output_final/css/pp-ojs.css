@@ -1,0 +1,372 @@
+@charset "UTF-8";
+/** Professions and professionalism */
+
+#container {
+    width:100% !important;
+    width: 940px !important;
+    margin: 0px auto;
+    text-align: center;
+}
+
+
+#navbar {
+    background-color:#FFFFFF;
+}
+
+#navbar a {
+    color: black;
+       font-size: 0.65em;
+       letter-spacing: 0.05em;
+}
+
+
+#navbar a:hover {
+    color: white;
+}
+
+table.tocArticle + table.tocArticle {margin-top: 1em;}
+
+
+a {text-decoration: underline;}
+
+#main {width: 70%;
+}
+
+#footer {
+    background-color: #FFFFFF;
+    color: black;
+   }
+
+#header h1{
+    padding: 0.5em 0 0.25em 0;
+    background-color: #FFFFFF;
+}
+
+#content { 
+    font-size: 0.85em;
+    padding: 0.5em 0 0;
+}
+
+body {margin: 0;
+    width: 100%;
+}
+#leftSidebar {
+    display: none;
+}
+
+#main{
+    border: 0 none;}
+
+#main h2 {
+    display: block;
+}
+
+/*    EH 2014-03-24: All rules below are for displaying html-articles: */
+
+/*  Stylesheet for NLM/NCBI  Journal Publishing 3.0 Preview EPUB
+    January 2009
+
+    ~~~~~~~~~~~~~~
+    National Center for Biotechnology Information (NCBI)
+    National Library of Medicine (NLM)
+   
+    ~~~~~~~~~~~~~~
+    TAD & TE 2012-08-14: Forking the main CSS stylesheet into a version suited 
+    for e-book readers
+    
+    EH 2014-03-24: Making some adjustments to make the stylesheet better suited
+    for web display
+    
+    Prefixed all css rules with #pp-ojs-article. This allows us to include these 
+    stylesheet rules within the same stylesheet as the journal's css stylesheet 
+    and we can be sure that the rules here will only affect the html-article pages
+*/
+
+
+/* --------------- Page setup ------------------------ */
+
+/* page and text defaults */
+
+#pp-ojs-article { text-align: left; margin-left: 0; margin-right: 0; }
+
+
+#pp-ojs-article div > *:first-child, #pp-ojs-article td > *:first-child { margin-top:0em }
+
+#pp-ojs-article div { margin-top: 0.5em }
+
+#pp-ojs-articlediv.front, #pp-ojs-article div.footer { }
+
+#pp-ojs-article .back, #pp-ojs-article .body { font-family: serif }
+
+
+#pp-ojs-article table.metadata td {
+    vertical-align: top }
+
+#pp-ojs-article table.two-column td {
+    width: 50% }
+
+
+#pp-ojs-article div.metadata-group { margin-top: 0.5em;
+  font-family: sans-serif; font-size: 75% }
+
+#pp-ojs-article div.metadata-group > p, #pp-ojs-article div.metadata-group > div { margin-top: 0.5em }
+
+#pp-ojs-article div.metadata-area * { margin: 0em }
+
+#pp-ojs-article div.metadata-area > div.metadata-area { margin-left: 1em; margin-top: 0em }
+#pp-ojs-article div.metadata-chunk > div.metadata-area { margin-left: 1em; margin-top: 0em }
+
+#pp-ojs-article div.metadata-chunk { margin-left: 1em }
+
+#pp-ojs-article div.branding { text-align: center }
+
+#pp-ojs-article div.document-title-notes {
+   text-align: center;
+   width: 60%;
+   margin-left: auto;
+   margin-right: auto
+   }
+
+/* rules */
+#pp-ojs-article hr.part-rule {
+    color: red;
+    width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    }
+
+#pp-ojs-article hr.section-rule {
+    color: black;
+    width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    }
+
+/* superior numbers which are cross-references */
+#pp-ojs-article .xref {
+    color: red;
+    }
+    
+/* generated text */     
+#pp-ojs-article .generated { color: gray; }
+
+#pp-ojs-article .warning, #pp-ojs-article tex-math {
+    font-size:80%; font-family: sans-serif }
+
+#pp-ojs-article .warning {
+    color: red }
+
+#pp-ojs-article .tex-math { color: green }
+
+#pp-ojs-article .data {
+    color: black;
+    }
+
+#pp-ojs-article .formula {
+    font-family: sans-serif;
+    font-size: 90% }
+    
+/* --------------- Titling levels -------------------- */
+
+
+#pp-ojs-article h1, #pp-ojs-article h2, #pp-ojs-article h3, #pp-ojs-article h4, #pp-ojs-article h5, #pp-ojs-article h6 {
+   display: block;
+   margin-top: 0em;
+   margin-bottom: 0.5em;
+   font-family: helvetica, sans-serif;
+   font-weight: bold;
+   color: midnightblue;
+  }
+/* titling level 1: document title */
+#pp-ojs-article .document-title {
+   text-align: center;
+   }
+
+/* callout titles appear in a left column (table cell)
+   opposite what they head */
+#pp-ojs-article .callout-title { text-align: right;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  font-size: 140% }
+  
+
+
+#pp-ojs-article div.section, #pp-ojs-article div.back-section {
+  margin-top: 1em; margin-bottom: 0.5em }
+
+#pp-ojs-article div.panel { background-color: white;
+  font-size: 90%;
+  border: thin solid black;
+  padding-left: 0.5em; padding-right: 0.5em;
+  padding-top: 0.5em; padding-bottom: 0.5em;
+  margin-top: 0.5em; margin-bottom: 0.5em }
+
+#pp-ojs-article div.blockquote { font-size: 90%;
+  margin-left: 1em; margin-right: 1em;
+  margin-top: 0.5em; margin-bottom: 0.5em }
+
+#pp-ojs-article div.caption {
+  margin-top: 0.5em; margin-bottom: 0.5em }
+
+#pp-ojs-article div.speech {
+  margin-left: 1em; margin-right: 1em;
+  margin-top: 0.5em; margin-bottom: 0.5em }
+
+#pp-ojs-article div.verse-group {
+  margin-left: 1em;
+  margin-top: 0.5em; margin-bottom: 0.5em }
+
+#pp-ojs-article div.verse-group div.verse-group {
+  margin-left: 1em;
+  margin-top: 0em; margin-bottom: 0em }
+
+#pp-ojs-article div.note { margin-top: 0em; margin-left: 1em;
+  font-size: 85% }
+
+#pp-ojs-article .ref-label { margin-top: 0em; vertical-align: top }
+
+#pp-ojs-article .ref-content { margin-top: 0em; padding-left: 0.25em }
+
+#pp-ojs-article h5.label { margin-top: 0em; margin-bottom: 0em }
+
+#pp-ojs-article p { margin-top: 0.5em; margin-bottom: 0em }
+
+#pp-ojs-article p.first { margin-top: 0em }
+
+#pp-ojs-article p.verse-line, #pp-ojs-article p.citation { margin-top: 0em; margin-bottom: 0em; margin-left: 2em; text-indent: -2em }
+
+#pp-ojs-article p.address-line { margin-top: 0em; margin-bottom: 0em; margin-left: 2em }
+
+#pp-ojs-article ul, #pp-ojs-article ol { margin-top: 0.5em }
+
+#pp-ojs-article li { margin-top: 0.5em; margin-bottom: 0em }
+#pp-ojs-article li > p { margin-top: 0.2em; margin-bottom: 0em  }
+
+#pp-ojs-article table.def-list { border-spacing: 0.25em;
+  border-top: thin solid black }
+
+#pp-ojs-article table.def-list td { vertical-align: top;
+  border-bottom: thin solid black;
+  padding-bottom: 0.5em }
+
+#pp-ojs-article table.def-list th { vertical-align: top;
+  text-align: left;
+  border-bottom: thin solid black;
+  padding-bottom: 0.5em }
+
+/* text decoration */
+#pp-ojs-article .label { font-weight: bold; font-family: sans-serif; font-size: 80% }
+
+#pp-ojs-article .monospace {
+    font-family: monospace;
+    }
+
+#pp-ojs-article .overline{
+    text-decoration: overline;
+    }
+ 
+#pp-ojs-article a       { text-decoration: none }
+#pp-ojs-article a:hover { text-decoration: underline }
+
+/* ---------------- End ------------------------------ */
+
+/* Added by HiOA */
+
+#pp-ojs-article h2 {
+    margin-top: 1.5em;
+}
+
+#pp-ojs-article p.logo {
+    text-align: center;
+}
+
+#pp-ojs-article h2.author {
+    clear: both;
+    text-align: center;
+    margin-top: 2em;
+}
+
+#pp-ojs-article div.abstract { 
+    margin-top: 0.5em;
+    font-family: sans-serif;
+    margin-bottom: 2em;
+}
+
+#pp-ojs-article div.footer {
+    margin-top: 2em;
+    border-top: thin solid gray;
+    
+}
+
+#pp-ojs-article div.branding {
+    border-top: thin solid black;
+    padding-top: 1em;
+    margin-top: 1em;
+    font-size: 75%;
+    font-family: sans-serif;
+    color: gray;
+}
+
+
+#pp-ojs-article p.license {
+    padding-top: 1em;
+    padding-bottom: 2em;
+    border-top: thin solid black;
+    border-bottom: thin solid black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+#pp-ojs-article p.license img {
+    float: left;
+    margin-right: 1em;
+}
+
+/* EH 2013.06.21: Make hyperlinks stand out more*/
+
+#pp-ojs-article a:link {color: blue; text-decoration: underline; background-color: white;}
+#pp-ojs-article a:visited {color: purple;}
+#pp-ojs-article a:hover {text-decoration: underline;}
+#pp-ojs-article a:active {color: orange;}
+
+/* reference-list - remove bullets*/
+#pp-ojs-article ul.references {
+    padding-left: 0;
+    list-style-type: none;
+}
+/* tables - setting table widh in css intead of in html */
+#pp-ojs-article table {border: 1px solid black; width: 100%;}
+#pp-ojs-article td + td {text-align: center;}
+
+/* EH 2014-03-22: highlighting the row below the cursor with 
+ * a light yellow bg, makes it easier to read tables  */
+#pp-ojs-article tr:hover {background-color: #FFFB9D;}
+
+/* Hiding the logo for web-display since the branding is already present on the web page. It was only needed in the ePub-version.*/
+#pp-ojs-article #article1-front p.logo {display: none;}
+
+@media screen {
+/*    
+    EH 2014-03-24: 
+    Hiding the metadata on top for screen, since it is also present in the web user interface
+*/
+    #pp-ojs-article #article1-front div.metadata-group {display: none;}
+    
+}
+/* If someone wants to print the web-version, we should make sure it is properly formatted */
+@media print {
+    #pp-ojs-article {font-size: 1.3em;}
+    /* Hiding sidebars to make more room for the article */
+    /* Removing sidebars to make room for the article */
+    div#leftSidebar, div#rightSidebar, div#navbar, div#breadcrumb {display:none;}
+    div#content {border: 0pt dashed red;}
+    div#main {border: 0pt solid green; width: 100%;}
+    /*establishing position context*/
+    div#headerTitle {border: 0pt solid yellow; position: relative;}
+    div#headerTitle * {margin: auto; border: 0pt dotted gray; padding: 0; background-color: black;}
+    div#headerTitle img {margin: auto; display: block;}
+}
+
+
+
