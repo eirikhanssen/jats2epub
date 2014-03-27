@@ -213,9 +213,10 @@ p.logo {
 }
 
 h2.author {
+	font-size: 1em;
 	clear: both;
 	text-align: center;
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 div.abstract { 
