@@ -110,11 +110,11 @@
   <xsl:template match="front | front-stub">
     <!-- TAD 2012-08-10: No tables. We only need ISSN, volumw, issue, publication year, page number and DOI from the metadata elements -->
     <div class="metadata-group">
-      <p>
+      <p class="issn">
         <xsl:text>ISSN: </xsl:text>
         <xsl:value-of select="journal-meta/issn"/>
       </p>
-      <p>
+      <p class="vol-no-pp">
         <xsl:text>Volume </xsl:text>
         <xsl:value-of select="article-meta/volume"/>
         <xsl:text>, No </xsl:text>
@@ -126,7 +126,8 @@
         <xsl:text>-</xsl:text>
         <xsl:value-of select="article-meta/lpage"/>
       </p>
-      <p>Doi: <a href="http://dx.doi.org/{article-meta/article-id[@pub-id-type='doi']}"><xsl:value-of select="article-meta/article-id[@pub-id-type='doi']"/></a>
+      <!-- EH 2014-03-26: added class="doi" to be able to target this with css. This is because we want to hide the metadata-group at the top of the article in html-fulltext view in OJS, but we still want to display the doi. -->
+      <p class="doi">Doi: <a href="http://dx.doi.org/{article-meta/article-id[@pub-id-type='doi']}"><xsl:value-of select="article-meta/article-id[@pub-id-type='doi']"/></a>
       </p>
     </div>
     <!-- TAD 2012-08-10: Logo -->
@@ -243,6 +244,8 @@
         <div class="history">
           <!-- TAD 2012-08-13: Use the provided template for handling article history -->
           <xsl:apply-templates select="history/date" mode="metadata"/>
+              <!-- EH 2014-03-26: Trying to insert published date here! -->
+              <xsl:apply-templates select="pub-date" mode="metadata"/>
         </div>
         <!-- Affiliations -->
         <div class="address">
@@ -321,6 +324,21 @@
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
+
+  <xsl:template match="pub-date" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">
+      <!-- EH 2014-03-26: changing text from "Publication date" to: "Published"-->
+        <xsl:text>Published</xsl:text>
+        <!-- EH 2014-03-26: removing append-pub-type. It adds (pup) after Published, which is not needed. -->
+        <!--<xsl:call-template name="append-pub-type"/>-->
+      </xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:call-template name="format-date"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>  
+  
   <!-- ============================================================= -->
   <!--  REGULAR (DEFAULT) MODE                                       -->
   <!-- ============================================================= -->
