@@ -37,7 +37,7 @@
 	Contact: eirik hanssen at hioa dot no
 -->
 
-<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" name="process-jats-xml" version="1.0">
+<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" name="process-jats-xml" version="1.0">
 
 <!-- 
 	EH 2013-11-25: the source input to this xproc pipeline is given in the command prompt that calls the pipeline. 
@@ -222,12 +222,74 @@
 	</p:input>
 </p:namespace-rename>
 
-<!-- Have to add an id to the body of the document that will be used to target css rules. I -->
-<!-- This is because the html-file will be included in another webpage in OJS system. -->
-<!-- Prefixing all css rules of the css stylesheet with this id ensures that the rules -->
-<!-- in the stylesheet won't afffect the rest of the webpage this html-file is embedded in  -->
 
-<p:add-attribute match="/html/body" attribute-name="id" attribute-value="pp-ojs-article"/>
+<!--
+	EH 2014-03-24: OJS-compatibility complicates things. Have to add an id that will 
+	be used to target css rules. This is because the html-file will be included 
+	in another webpage in the OJS system.
+	
+	Prefixing all css rules of the css stylesheet with this id ensures that the rules
+	in the stylesheet won't afffect the rest of the webpage this html-file is embedded in
+	
+	First I tried adding this id to body. When the DOM is created, however, it will be in 
+	'tag-soup' mode since the OJS webpage won't validate.
+	
+	(OJS version 2.3.8 simply includes the whole uploaded html-file witin a div 
+	tag in the webpage). I tried a solution where I extracted the body from the 
+	article html file and renamed it to a div tag and uploaded this html-fragment file.
+	This works in OJS 2.3.8, because OJS recognizes it as a html-file based on the filename ending.
+	However, when I tried in the latest stable version of OJS, OJS seems to check for 
+	<!DOCTYPE ..> tag also. Therefore, a html-fragment like I tried first is detected 
+	as plaintext by the OJS system. When viewing a file OJS recognizes as text/plain,
+	OJS simply displays this file fragment without embedding it in its own page.
+	
+	Because of this inconsistent behaviour with OJS, I have decided to abandon 
+	trying to make the OJS webpage with the HTML file validate for now. The HTML
+	file uploaded to OJS should still validate by itself though.
+	
+	But still the css needs to be targeted right, so I decided to add this div to 
+	the first child div of the article html version intended for display in OJS.
+-->
+
+<p:xslt name="wrap-body-contents-in-div">
+	<p:input port="source"/>
+	<p:input port="stylesheet">
+		<p:inline>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+	<!-- Special treatment of body-element, need to wrap contents in a div with id (for OJS compatibility reasons) -->
+	<xsl:template match="html/body">
+	<body>
+		<div id="pp-ojs-article">
+			<xsl:apply-templates/>
+		</div>
+	</body>
+	</xsl:template>
+
+	<!-- Copy over all other elements unchanged (identity transform) -->
+	<xsl:template match="*">
+		<xsl:element name="{local-name()}" namespace="{namespace-uri(.)}">
+			<xsl:copy-of select="@*"/>
+				<xsl:apply-templates/>
+		</xsl:element>
+	</xsl:template>
+</xsl:stylesheet>
+		</p:inline>
+	</p:input>
+</p:xslt>
+
+<!-- Removing css-reference from the html file for web upload. The rules will be in 
+the same css as in OJS for that journal. This is to prevent a bug with OJS handling 
+of relative url referenced css in the html fulltext that will make css validation fail and 
+prevent css from functioning. -->
+<p:delete match="//link[contains(@href,'css/hioa-epub.css')]"/>
+
+<!-- EH 2014-03-24: changing the reference to image to the same folder as html file -->
+<p:replace match="//img[@src='images/cc-license.png']">
+	<p:input port="replacement">
+		<p:inline><img alt="Attribution 3.0 Unported (CC BY 3.0)" src="cc-license.png"/></p:inline>
+	</p:input>
+</p:replace>
 
 <p:identity name="webversion-for-ojs-upload"/>
 
@@ -236,16 +298,16 @@
 	indent="true" encoding="utf-8"
 	method="html"
 	version="4.0"
-	doctype-system="about:legacy-compat"
+	doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
+	doctype-system="http://www.w3.org/TR/html4/loose.dtd"
 	href="output_working/article-webversion.html"
 	name="article-webversion"/>
 
-<!-- EH 2014-03-22: Storing a copy for inspeciton --> 	
+<!-- EH 2014-03-22: Storing a copy for inspeciton -->
 <p:store omit-xml-declaration="true" 
 	indent="true" encoding="utf-8"
-	method="html"
-	version="4.0"
-	doctype-system="about:legacy-compat"
+	doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
+	doctype-system="http://www.w3.org/TR/html4/loose.dtd"
 	href="output_working/60-webversion.html" 
 	name="step-60-webversion">
 	<p:input port="source">
