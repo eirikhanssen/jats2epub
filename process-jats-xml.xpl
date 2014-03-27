@@ -310,29 +310,25 @@ prevent css from functioning. -->
     it in a way that represents the way it is displayed in the OJS context. Therefore
     I change the reference to the css and images used in the article so that 
     the fulltext html copy can be viewed in a browser in output_working.  -->
+    
+<p:identity><p:input port="source"><p:pipe step="wrap-body-contents-in-div" port="result"/></p:input></p:identity>
 
 <!-- EH 2014-03-27: changing the css stylesheet reference. -->
-<p:replace match="//link[contains(@href,'css/hioa-epub.css')]">
-    <p:input port="source">
-        <p:pipe step="wrap-body-contents-in-div" port="result"/>
-    </p:input>
-	<p:input port="replacement">
-		<p:inline><link rel="stylesheet" href="../assets/web-template/css/pp-just-article.css"/></p:inline>
-	</p:input>
-</p:replace>
+<p:string-replace match="//link[contains(@href,'css/hioa-epub.css')]/@href" replace="'../assets/web-template/css/pp-just-article.css'"/>
 
 <!--EH 2014-03-27: changing the image references to the html fulltext copy to 
     facilitate easier troubleshooting -->
 
 <!-- EH 2014-03-27: changing the img src references. -->
-<p:string-replace match="*[exists(//div[@id='article1-body']//img/@src)]/@src"
-replace="concat('epub/OEBPS/', .)"/>
+<p:string-replace match="*[exists(//div[@id='article1-body']//img/@src)]/@src" replace="concat('epub/OEBPS/', .)"/>
 
 <p:identity name="webversion-for-ojs-upload-copy-with-css-and-image-ref"/>
 
 <!-- EH 2014-03-22: Storing the html fulltext copy for inspeciton -->
 <p:store omit-xml-declaration="true" 
 	indent="true" encoding="utf-8"
+	method="html"
+	version="4.0"
 	doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
 	doctype-system="http://www.w3.org/TR/html4/loose.dtd"
 	href="output_working/60-webversion.html" 
