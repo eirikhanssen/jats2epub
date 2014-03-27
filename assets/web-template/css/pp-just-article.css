@@ -1,0 +1,324 @@
+/*  EH 2014-03-24: All rules below are for displaying html fulltext-articles: */
+
+/*  Stylesheet for NLM/NCBI  Journal Publishing 3.0 Preview EPUB
+    January 2009
+
+    ~~~~~~~~~~~~~~
+    National Center for Biotechnology Information (NCBI)
+    National Library of Medicine (NLM)
+   
+    ~~~~~~~~~~~~~~
+    TAD & TE 2012-08-14: Forking the main CSS stylesheet into a version suited 
+    for e-book readers
+    
+    EH 2014-03-24: Making some adjustments to make the stylesheet better suited
+    for html fulltext in web display context
+    
+    Prefixed all css rules with #pp-ojs-article. This allows us to include these 
+    stylesheet rules within the same stylesheet as the journal's css stylesheet 
+    and we can be sure that the rules here will only affect the html-article pages
+*/
+
+
+/* --------------- Page setup ------------------------ */
+
+#pp-ojs-article { text-align: left; margin-left: 0; margin-right: 0;}
+
+#pp-ojs-article div, #pp-ojs-article p, #pp-ojs-article table, #pp-ojs-article caption {font-size: 1em;}
+
+#pp-ojs-article div > *:first-child, #pp-ojs-article td > *:first-child { margin-top:0em; }
+
+#pp-ojs-article div { margin-top: 0.5em; }
+
+#pp-ojs-articlediv.front, #pp-ojs-article div.footer {}
+
+#pp-ojs-article .back, #pp-ojs-article .body { font-family: serif; }
+
+#pp-ojs-article table.metadata td {
+    vertical-align: top;}
+
+#pp-ojs-article table.two-column td {
+    width: 50%;
+}
+
+#pp-ojs-article div.metadata-group { margin-top: 0.5em;
+    font-family: sans-serif; font-size: 75%; }
+
+#pp-ojs-article div.metadata-group > p, #pp-ojs-article div.metadata-group > div { margin-top: 0.5em; }
+
+#pp-ojs-article div.metadata-area * { margin: 0em; }
+
+#pp-ojs-article div.metadata-area > div.metadata-area { margin-left: 1em; margin-top: 0em; }
+#pp-ojs-article div.metadata-chunk > div.metadata-area { margin-left: 1em; margin-top: 0em; }
+
+#pp-ojs-article div.metadata-chunk { margin-left: 1em; }
+
+#pp-ojs-article div.branding { text-align: center; }
+
+#pp-ojs-article div.document-title-notes {
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* rules */
+#pp-ojs-article hr.part-rule {
+    color: red;
+    width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#pp-ojs-article hr.section-rule {
+    color: black;
+    width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* superior numbers which are cross-references */
+#pp-ojs-article .xref {
+    color: red;
+}
+
+/* generated text */
+#pp-ojs-article .generated { color: gray; }
+
+#pp-ojs-article .warning, #pp-ojs-article tex-math {
+    font-size:80%; font-family: sans-serif; }
+
+#pp-ojs-article .warning {
+    color: red; }
+
+#pp-ojs-article .tex-math { color: green; }
+
+#pp-ojs-article .data {
+    color: black;
+}
+
+#pp-ojs-article .formula {
+    font-family: sans-serif;
+    font-size: 90%;
+}
+
+/* --------------- Titling levels -------------------- */
+#pp-ojs-article h1, #pp-ojs-article h2, #pp-ojs-article h3, #pp-ojs-article h4, #pp-ojs-article h5, #pp-ojs-article h6 {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+/*  EH 2014-03-27: had to make these rules more specific to override other rules 
+    in the css cascade in the html fulltext inside the OJS website context. 
+    That's why #content is added in the beginning. It appears in markup from the OJS 
+    site that appears as ancestor to the fulltext html article 
+    (which is embedded in a div-tag)  */
+#content #pp-ojs-article h1 {font-size: 2.5em;}
+#content #pp-ojs-article h2.main-title {font-size: 2em; border-bottom: 1px solid midnightblue;}
+#content #pp-ojs-article h3 {font-size: 1.7em; font-family: serif; text-transform: none;}
+#content #pp-ojs-article h4 {font-size: 1em;font-family: sans-serif;}
+#content #pp-ojs-article h5 {font-size: 1em; font-family: serif; font-weight: normal;}
+
+#pp-ojs-article .document-title {
+   text-align: center;
+   font-family: helvetica, sans-serif;
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+
+#pp-ojs-article div.section, #pp-ojs-article div.back-section {
+  margin-top: 1em; margin-bottom: 0.5em;}
+
+#pp-ojs-article h2 + div.section {margin-top: 0;}
+
+#pp-ojs-article div.section + div.section > h4 {margin-top: 1em;}
+
+#pp-ojs-article div.caption {
+  margin-top: 0.5em; margin-bottom: 0.5em; }
+
+#pp-ojs-article .callout-title { text-align: right;
+    margin-top: 0.5em;
+    margin-right: 1em;
+    font-size: 140%;
+}
+
+#pp-ojs-article div.blockquote { font-size: 90%;
+  margin-left: 2.25em; margin-right: 2.25em;
+  margin-top: 1em; margin-bottom: 1em; }
+
+#pp-ojs-article div.speech {
+  margin-left: 1em; margin-right: 1em;
+  margin-top: 0.5em; margin-bottom: 0.5em; }
+
+#pp-ojs-article div.verse-group {
+  margin-left: 1em;
+  margin-top: 0.5em; margin-bottom: 0.5em; }
+
+#pp-ojs-article div.verse-group div.verse-group {
+  margin-left: 1em;
+  margin-top: 0em; margin-bottom: 0em; }
+
+#pp-ojs-article div.note {
+    margin-top: 0em; margin-left: 1em;
+    font-size: .85em;
+}
+
+#pp-ojs-article .ref-label { margin-top: 0em; vertical-align: top; background-color: magenta; }
+
+#pp-ojs-article .ref-content { margin-top: 0em; padding-left: 0.25em; background-color: cyan; }
+
+#pp-ojs-article h5.label { margin-top: 0em; margin-bottom: 0em; background-color: yellow; }
+
+#pp-ojs-article p { margin-top: 0.5em; margin-bottom: 0em;}
+
+#pp-ojs-article h2 + p, #pp-ojs-article h3 + p, #pp-ojs-article h4 + p, #pp-ojs-article h5 + p, #pp-ojs-article h6 + p {margin-top: 0;}
+
+#pp-ojs-article p + p {margin-top: 1em;}
+
+#pp-ojs-article p.first { margin-top: 0em; }
+
+#pp-ojs-article p.verse-line, #pp-ojs-article p.citation { margin-top: 0em; margin-bottom: 0em; margin-left: 2em; text-indent: -2em; }
+
+#pp-ojs-article p.address-line { margin-top: 0em; margin-bottom: 0em; margin-left: 2em; }
+
+#pp-ojs-article div.panel { background-color: white;
+    font-size: 90%;
+    border: thin solid black;
+    padding-left: 0.5em; padding-right: 0.5em;
+    padding-top: 0.5em; padding-bottom: 0.5em;
+    margin-top: 1em; margin-bottom: 1em
+}
+
+#pp-ojs-article ul, #pp-ojs-article ol { margin-top: 0.5em; }
+
+#pp-ojs-article li { margin-top: 0.5em; margin-bottom: 0em; }
+#pp-ojs-article li > p { margin-top: 0.2em; margin-bottom: 0em ; }
+
+#pp-ojs-article table.def-list { border-spacing: 0.25em;
+  border-top: thin solid black; }
+
+#pp-ojs-article table.def-list td { vertical-align: top;
+  border-bottom: thin solid black;
+  padding-bottom: 0.5em; }
+
+#pp-ojs-article table.def-list th { vertical-align: top;
+  text-align: left;
+  border-bottom: thin solid black;
+  padding-bottom: 0.5em; }
+
+#pp-ojs-article .label { font-weight: bold; font-family: sans-serif; font-size: 80%; }
+
+#pp-ojs-article .monospace {
+    font-family: monospace;
+}
+
+#pp-ojs-article .overline{
+    text-decoration: overline;
+}
+
+#pp-ojs-article h2 {
+    margin-top: 1.5em;
+}
+
+#pp-ojs-article h2.author {
+    display: block;
+    clear: both;
+    text-align: center;
+    margin-top: 2em;
+}
+
+#pp-ojs-article div.abstract { 
+    margin-top: 0.5em;
+    font-family: sans-serif;
+    margin-bottom: 2em;
+}
+
+#pp-ojs-article div.footer {
+    margin-top: 2em;
+    border-top: thin solid black;
+}
+
+#pp-ojs-article #article1-footer div.history {margin-top: 1.5em; margin-bottom: 1.5em;}
+
+#pp-ojs-article div.branding {
+    border-top: 1px solid black;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    border-bottom: thin solid black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 75%;
+    font-family: sans-serif;
+    color: gray;
+    text-align: center;
+}
+
+#pp-ojs-article p.license {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: .5em; padding-right: .5em;
+    border: thin solid black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#pp-ojs-article p.license img {
+    float: left;
+    margin-right: 1em;
+}
+
+/* EH 2013.06.21: Make hyperlinks stand out more*/
+#pp-ojs-article a:link {color: blue; background-color: white;}
+#pp-ojs-article a:visited {color: purple;}
+#pp-ojs-article a:hover {text-decoration: underline;}
+#pp-ojs-article a:active {color: orange;}
+
+#pp-ojs-article hr.part-rule {border: none; border-top: 1px solid black; display:none;}
+
+/* reference-list - remove bullets*/
+#pp-ojs-article ul.references {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+/* vertical space between references */
+#pp-ojs-article ul.references li + li {margin-top: 1.125em;}
+
+/* tables - setting table widh in css instead of in html */
+#pp-ojs-article table {border: 1px solid black; width: 100%;}
+#pp-ojs-article td + td {text-align: center;}
+#pp-ojs-article th + td {text-align: center;}
+#pp-ojs-article th + th {text-align: center;}
+#pp-ojs-article th:first-child {text-align: left;}
+
+/* EH 2014-03-22: highlighting the row below the cursor with 
+ * a light yellow bg, makes it easier to read tables  */
+#pp-ojs-article tr:hover {background-color: #FFFB9D;}
+
+/*  Hiding the logo for web-display since the branding is already present in the 
+    HTML fulltext on web context. It was only needed in the ePub-version.*/
+#pp-ojs-article #article1-front p.logo {display: none;}
+
+/*  Hiding issn, vol, issue, pages for HTML fulltext on screen. (it will still show when printing)*/
+@media screen {
+    #pp-ojs-article #article1-front div.metadata-group .issn,
+    #pp-ojs-article #article1-front div.metadata-group .vol-no-pp {display: none;}
+    #pp-ojs-article #article1-front div.metadata-group .doi {display: block;}
+    
+}
+/*  Hide content that is irrelevant when printing the article to give the fulltext
+    more space on the paper printout */
+@media print {
+    #pp-ojs-article {font-size: 1.3em;}
+    div#leftSidebar, div#rightSidebar, div#navbar, div#breadcrumb {display:none;}
+    div#content {border: 0pt dashed red;}
+    div#main {border: 0pt solid green; width: 100%;}
+    div#headerTitle {border: 0pt solid yellow; position: relative;}
+    div#headerTitle * {margin: auto; border: 0pt dotted gray; padding: 0; background-color: black;}
+    div#headerTitle img {margin: auto; display: block;}
+}
