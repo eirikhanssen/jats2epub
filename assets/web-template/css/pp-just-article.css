@@ -22,6 +22,17 @@
 
 /* --------------- Page setup ------------------------ */
 
+/* General readability settings following line and paragraph spacing guidelines from WAI */
+#pp-ojs-article p, #pp-ojs-article li  {line-height: 1.55em;}
+
+#pp-ojs-article p + p, 
+#pp-ojs-article div.table-wrap + p, 
+#pp-ojs-article p + div.table-wrap, 
+#pp-ojs-article ul.references li + li, 
+#pp-ojs-article p + div.fn-group,
+#pp-ojs-article table + div {margin-top: 1.55em;}
+#pp-ojs-article div.footnote + div.footnote {margin-top: 0;}
+
 #pp-ojs-article { text-align: left; margin-left: 0; margin-right: 0;}
 
 #pp-ojs-article div, #pp-ojs-article p, #pp-ojs-article table, #pp-ojs-article caption {font-size: 1em;}
@@ -35,11 +46,9 @@
 #pp-ojs-article .back, #pp-ojs-article .body { font-family: serif; }
 
 #pp-ojs-article table.metadata td {
-    vertical-align: top;}
+    vertical-align: top; }
 
-#pp-ojs-article table.two-column td {
-    width: 50%;
-}
+#pp-ojs-article table.two-column td { width: 50%; }
 
 #pp-ojs-article div.metadata-group { margin-top: 0.5em;
     font-family: sans-serif; font-size: 75%; }
@@ -49,6 +58,7 @@
 #pp-ojs-article div.metadata-area * { margin: 0em; }
 
 #pp-ojs-article div.metadata-area > div.metadata-area { margin-left: 1em; margin-top: 0em; }
+
 #pp-ojs-article div.metadata-chunk > div.metadata-area { margin-left: 1em; margin-top: 0em; }
 
 #pp-ojs-article div.metadata-chunk { margin-left: 1em; }
@@ -110,6 +120,8 @@
     margin-right: 0;
     color: midnightblue;
     font-weight: bold;
+    margin-bottom: 0.25em;
+    margin-top: 1.125em;
 }
 
 /*  EH 2014-03-27: had to make these rules more specific to override other rules 
@@ -120,10 +132,16 @@
 
 /* Here #content prefix is removed, but it must be present in the css used on OJS website */
 #pp-ojs-article h1 {font-size: 2.5em;}
-#pp-ojs-article h2.main-title {font-size: 2em; border-bottom: 1px solid midnightblue;}
-#pp-ojs-article h3 {font-size: 1.7em; font-family: serif; text-transform: none;}
-#pp-ojs-article h4 {font-size: 1em;font-family: sans-serif;}
-#pp-ojs-article h5 {font-size: 1em; font-family: serif; font-weight: normal;}
+#pp-ojs-article h2.main-title {font-size: 2em; border-bottom: 1px solid midnightblue; font-family: sans-serif;}
+#pp-ojs-article h3 {font-size: 1.75em; font-family: "Times New Roman", "Times", serif; text-transform: none; font-weight: bold; margin-bottom: 0.25em;}
+#pp-ojs-article h4 {font-size: 1em; font-family: sans-serif;}
+#pp-ojs-article h5 {font-size: 1em; font-family: "Times New Roman", "Times", serif; font-weight: normal;}
+
+#pp-ojs-article h2 + p, 
+#pp-ojs-article h3 + p, 
+#pp-ojs-article h4 + p, 
+#pp-ojs-article h5 + p, 
+#pp-ojs-article h6 + p {margin-top: 0;}
 
 #pp-ojs-article .document-title {
    text-align: center;
@@ -136,9 +154,9 @@
 #pp-ojs-article div.section, #pp-ojs-article div.back-section {
   margin-top: 1em; margin-bottom: 0.5em;}
 
-#pp-ojs-article h2 + div.section {margin-top: 0;}
+#pp-ojs-article h2 + div.section, #pp-ojs-article h3 + div.section  {margin-top: 0;}
 
-#pp-ojs-article div.section + div.section > h4 {margin-top: 1em;}
+#pp-ojs-article div.section + div.section > h4 {margin-top: 1.25em;}
 
 #pp-ojs-article div.caption {
   margin-top: 0.5em; margin-bottom: 0.5em; }
@@ -178,10 +196,6 @@
 
 #pp-ojs-article p { margin-top: 0.5em; margin-bottom: 0em;}
 
-#pp-ojs-article h2 + p, #pp-ojs-article h3 + p, #pp-ojs-article h4 + p, #pp-ojs-article h5 + p, #pp-ojs-article h6 + p {margin-top: 0;}
-
-#pp-ojs-article p + p {margin-top: 1em;}
-
 #pp-ojs-article p.first { margin-top: 0em; }
 
 #pp-ojs-article p.verse-line, #pp-ojs-article p.citation { margin-top: 0em; margin-bottom: 0em; margin-left: 2em; text-indent: -2em; }
@@ -213,7 +227,9 @@
   border-bottom: thin solid black;
   padding-bottom: 0.5em; }
 
-#pp-ojs-article .label { font-weight: bold; font-family: sans-serif; font-size: 80%; }
+#pp-ojs-article .label { font-weight: bold; font-family: sans-serif; font-size: 1em; color: midnightblue;}
+#pp-ojs-article div.caption p {font-family: sans-serif; font-size: 1em; font-weight: bold; }
+
 
 #pp-ojs-article .monospace {
     font-family: monospace;
@@ -288,15 +304,20 @@
     list-style-type: none;
 }
 
-/* vertical space between references */
-#pp-ojs-article ul.references li + li {margin-top: 1.125em;}
-
 /* tables - setting table widh in css instead of in html */
-#pp-ojs-article table {border: 1px solid black; width: 100%;}
+#pp-ojs-article table {border: 0px solid black; width: 100%; border-collapse: collapse;}
+#pp-ojs-article tr.header-row td, 
+#pp-ojs-article tr.header-row th {border: none; padding-top: 2em;}
+#pp-ojs-article td, #pp-ojs-article th {padding: .5em; border: 1px solid gray;}
 #pp-ojs-article td + td {text-align: center;}
 #pp-ojs-article th + td {text-align: center;}
 #pp-ojs-article th + th {text-align: center;}
 #pp-ojs-article th:first-child {text-align: left;}
+/* Some tables have very long table header cells, that should not be bold (size constraints) */
+#pp-ojs-article tr.normal th {font-weight: normal; color: midnightblue;}
+
+/* Adding rules for tables with lots of text */
+#pp-ojs-article table.long-text td, #pp-ojs-article table.long-text th {text-align: left;}
 
 /* EH 2014-03-22: highlighting the row below the cursor with 
  * a light yellow bg, makes it easier to read tables  */
