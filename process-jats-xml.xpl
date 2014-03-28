@@ -320,7 +320,7 @@ prevent css from functioning. -->
     facilitate easier troubleshooting -->
 
 <!-- EH 2014-03-27: changing the img src references. -->
-<p:string-replace match="*[exists(//div[@id='article1-body']//img/@src)]/@src" replace="concat('epub/OEBPS/', .)"/>
+<p:string-replace match="*[exists(//img/@src)]/@src" replace="concat('epub/OEBPS/', .)"/>
 
 <p:identity name="webversion-for-ojs-upload-copy-with-css-and-image-ref"/>
 
