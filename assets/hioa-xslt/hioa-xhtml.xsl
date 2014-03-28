@@ -403,6 +403,35 @@
   <!-- ============================================================= -->
   <!--  TABLES                                                       -->
   <!-- ============================================================= -->
+
+  <xsl:template match="boxed-text | chem-struct-wrap | fig |
+                       table-wrap | chem-struct-wrapper">
+    <!-- chem-struct-wrapper is from NLM 2.3 -->
+    <xsl:variable name="gi">
+      <xsl:choose>
+        <xsl:when test="self::chem-struct-wrapper">chem-struct-wrap</xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="local-name(.)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <div class="{$gi} panel">
+      <xsl:if test="not(@position != 'float')">
+        <!-- the test respects @position='float' as the default -->
+        <xsl:attribute name="style">display: float; clear: both</xsl:attribute>
+      </xsl:if>
+
+    <!-- EH 2014-03-28. Adding missing label -->
+    <p class="label"><xsl:value-of select="label"/></p>
+    
+      <xsl:call-template name="named-anchor"/>
+      <xsl:apply-templates select="." mode="label"/>
+      <xsl:apply-templates/>
+      <xsl:apply-templates mode="footnote"
+        select="self::table-wrap//fn[not(ancestor::table-wrap-foot)]"/>
+    </div>
+  </xsl:template>  
+  
   <!--  Tables are already in XHTML, and can simply be copied through -->
   <xsl:template match="table | thead | tbody | tfoot | col | colgroup | tr | th | td">
     <xsl:copy>
