@@ -127,7 +127,9 @@
         <xsl:value-of select="article-meta/lpage"/>
       </p>
       <!-- EH 2014-03-26: added class="doi" to be able to target this with css. This is because we want to hide the metadata-group at the top of the article in html-fulltext view in OJS, but we still want to display the doi. -->
-      <p class="doi">Doi: <a href="http://dx.doi.org/{article-meta/article-id[@pub-id-type='doi']}"><xsl:value-of select="article-meta/article-id[@pub-id-type='doi']"/></a>
+      <!-- EH 2014-04-01: instead of displaying doi like Doi: 10.7577/pp.567, they shall be displayed as the url: http://dx.doi.org/10.7577/pp.567 . This is 
+       especially mportant for printed versions. Crossref had hoped that browsers would understand the doi: syntax natively, but this is not the case. -->
+      <p class="doi"><a href="http://dx.doi.org/{article-meta/article-id[@pub-id-type='doi']}">http://dx.doi.org/<xsl:value-of select="article-meta/article-id[@pub-id-type='doi']"/></a>
       </p>
     </div>
     <!-- TAD 2012-08-10: Logo -->
