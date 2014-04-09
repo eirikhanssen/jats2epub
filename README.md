@@ -46,6 +46,6 @@ Future possible additions to the project:
     with the full contents of the footnote / reference in question. This could be implemented using JavaScript/CSS.
   - Generate a clickable linked list with a table of contents (TOC) based on the document layout for easier navigation.       The linked list TOC could be accessible as a drop-down menu with fixed CSS positioning. 
     This could be implemented using JavaScript/CSS.
-  - ePub enhancements:
-      - review ePub css based on WAI guidelines for readability. Speficically look at line height and space between              pharagraphs/tables.
-      - Look at css for displaying tables.
+- ePub enhancements:
+  - review ePub css based on WAI guidelines for readability. Speficically look at line height and space between              pharagraphs/tables.
+  - Look at css for displaying tables.
