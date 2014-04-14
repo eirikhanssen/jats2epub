@@ -98,7 +98,7 @@
 	with <mixed-citation> element if it is not already done
 -->
 
-  <p:xslt name="fix-mixed-citation-bug" version="1.0">
+  <p:xslt name="fix-element-citation-to-mixed-citation-bug" version="1.0">
     <p:input port="source">
       <p:pipe step="format-APA-citations" port="result"/>
     </p:input>
@@ -106,6 +106,16 @@
       <p:document href="assets/hioa-xslt/hioa-mixed-citations-bugfix.xsl"/>
     </p:input>
   </p:xslt>
+
+<!-- EH 2014-04-14: Applying regex to fix some punctuation errors in <mixed-citation> elements where there are uri's at the end. -->
+  
+<!-- EH 2014-04-14: Delete only the last text nodes containing "." followed only by whitespace in <mixed-citation> elements following directly after <uri> -->
+<p:delete match="//mixed-citation/text()[position() = last()][preceding-sibling::uri][matches(., '^\.\s')]"/>
+
+<!-- EH 2014-04-14: Replace the ", " with ". " _in_the_end_ of the text-node immediately followed by <uri>...</uri> in <mixed-citation> elements -->
+<p:string-replace match="//mixed-citation/text()[following-sibling::*[1][self::uri]][matches(., ',\s$')]" replace="replace(., ',\s$', '. ')"/>
+
+<p:identity name="fixed-mixed-citation-elements"/>
 
 <!-- Stores the APAcit formatted mixed-citation-bugfixed xml-document -->
 <p:store href="output_working/20-xml-article-bugfix-book-chapter-mixed-citation.xml" name="step-20-xml-article-bugfix-book-chapter-mixed-citation"/>
@@ -122,7 +132,7 @@
 <p:xslt name="fix-missing-id-on-graphics">
   <p:input port="source">
 <!--    <p:pipe step="format-APA-citations" port="result"/> -->
-    <p:pipe step="fix-mixed-citation-bug" port="result"/>
+    <p:pipe step="fixed-mixed-citation-elements" port="result"/>
   </p:input>
   <p:input port="stylesheet">
     <p:inline>
