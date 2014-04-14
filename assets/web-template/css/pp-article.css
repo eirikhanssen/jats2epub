@@ -377,6 +377,10 @@ body {margin: 0;
     list-style-type: none;
 }
 
+/* make links in reference lists display on their own line and yellow bg on hover. */
+#pp-ojs-article ul.references a {display: block;}
+#pp-ojs-article ul.references li a:hover {background-color: #FFFB9D;}
+
 /* tables - setting table widh in css instead of in html */
 #pp-ojs-article table {border: 0px solid black; width: 100%; border-collapse: collapse;}
 #pp-ojs-article tr.header-row td, 

@@ -326,6 +326,9 @@ body {margin: 0;
     list-style-type: none;
 }
 
+#pp-ojs-article ul.references a {display: block;}
+#pp-ojs-article ul.references li a:hover {background-color: #FFFB9D;}
+
 #pp-ojs-article table {border: 0px solid black; width: 100%; border-collapse: collapse;}
 #pp-ojs-article tr.header-row td, 
 #pp-ojs-article tr.header-row th {border: none; padding-top: 2em;}
