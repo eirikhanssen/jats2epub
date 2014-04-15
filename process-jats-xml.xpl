@@ -110,7 +110,7 @@
 <!-- EH 2014-04-14: Applying regex to fix some punctuation errors in <mixed-citation> elements where there are uri's at the end. -->
   
 <!-- EH 2014-04-14: Delete only the last text nodes containing "." followed only by whitespace in <mixed-citation> elements following directly after <uri> -->
-<p:delete match="//mixed-citation/text()[position() = last()][preceding-sibling::uri][matches(., '^\.\s')]"/>
+<p:delete match="//mixed-citation/text()[position() = last()][preceding-sibling::uri][matches(., '^\.\s$')]"/>
 
 <!-- EH 2014-04-14: Replace the ", " with ". " _in_the_end_ of the text-node immediately followed by <uri>...</uri> in <mixed-citation> elements -->
 <p:string-replace match="//mixed-citation/text()[following-sibling::*[1][self::uri]][matches(., ',\s$')]" replace="replace(., ',\s$', '. ')"/>
