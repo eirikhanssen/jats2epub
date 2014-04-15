@@ -364,9 +364,9 @@ body {margin: 0;
 }
 
 /* EH 2013.06.21: Make hyperlinks stand out more*/
-#pp-ojs-article a:link {color: blue; background-color: white;}
-#pp-ojs-article a:visited {color: purple;}
-#pp-ojs-article a:hover {text-decoration: underline;}
+#pp-ojs-article a:link {color: blue; background-color: white; text-decoration: none;}
+#pp-ojs-article a:visited {color: purple; text-decoration: none;}
+#pp-ojs-article a:hover {text-decoration: underline; background-color: white;}
 #pp-ojs-article a:active {color: orange;}
 
 #pp-ojs-article hr.part-rule {border: none; border-top: 1px solid black; display:none;}
@@ -379,7 +379,7 @@ body {margin: 0;
 
 /* make links in reference lists display on their own line and yellow bg on hover. */
 #pp-ojs-article ul.references a {display: block;}
-#pp-ojs-article ul.references li a:hover {background-color: #FFFB9D;}
+#pp-ojs-article ul.references li a:hover {background-color: white;}
 
 /* tables - setting table widh in css instead of in html */
 #pp-ojs-article table {border: 0px solid black; width: 100%; border-collapse: collapse;}
