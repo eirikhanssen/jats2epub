@@ -7,7 +7,7 @@ This package was created in a project to create a new, xml-based workflow to pub
 
 As input it takes an article tagged in the Journal Archive Tag Suite (JATS) XML format, and optionally a folder with extra content to be copied into to the epub-structure (such as images). As output an ePub file and html-file is generated and optionally also a .mobi file converted from the epub file.
 
-You might be interested in reading about this project in the article that is submitted to Code4lib: EPUB as publication format in Open Access journals: Tools and workflow. By Trude Eikebrokk, Tor Arne Dahl and Siri Kessel, Oslo and Akershus University College of Applied Sciences. Uri: http://journal.code4lib.org/articles/9462
+You might be interested in reading about this project in the article that is submitted to Code4lib: EPUB as publication format in Open Access journals: Tools and workflow. By Trude Eikebrokk, Tor Arne Dahl and Siri Kessel, Oslo and Akershus University College of Applied Sciences. Read the article at code4lib: http://journal.code4lib.org/articles/9462
 
 This package uses XML Calabash (XProc processor) to process an XProc pipeline, process-jats.xpl that in turn transforms the xml-document in stages using a mix of xslt and xproc steps. Since a full automation can't be done in XProc yet, calling the XProc pipeline has been wrapped in a script. For windows, a .bat batchfile and for linux a shellscript. By running the command: jats2epub path-to-xmlfile path-to-folder[optional], the whoe process is automated. Please see html readmes for more information.
 
