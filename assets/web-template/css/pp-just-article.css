@@ -37,8 +37,8 @@
 
 #pp-ojs-article div, #pp-ojs-article p, #pp-ojs-article table, #pp-ojs-article caption {font-size: 1em;}
 
-#pp-ojs-article div > *:first-child, #pp-ojs-article td > *:first-child { margin-top:0em; }
-
+/*#pp-ojs-article div > *:first-child, #pp-ojs-article td > *:first-child { margin-top:0em; }*/
+/*#pp-ojs-article div > *:first-child, #pp-ojs-article td > *:first-child { margin-top:0em; }*/
 #pp-ojs-article div { margin-top: 0.5em; }
 
 #pp-ojs-articlediv.front, #pp-ojs-article div.footer {}
@@ -316,6 +316,13 @@
 #pp-ojs-article th + td {text-align: center;}
 #pp-ojs-article th + th {text-align: center;}
 #pp-ojs-article th:first-child {text-align: left;}
+#pp-ojs-article table.figure {border: 1px solid gray;}
+#pp-ojs-article table.borderless {border: none;}
+#pp-ojs-article table.figure td, #pp-ojs-article table.borderless td, #pp-ojs-article table.figure th, #pp-ojs-article table.borderless th {border: none; text-align: center; vertical-align: top;}
+#pp-ojs-article .five-col-equal-width td, #pp-ojs-article .five-col-equal-width th {width: 19%;}
+#pp-ojs-article .three-col-equal-width td, #pp-ojs-article .three-col-equal-width th {width: 33%;}
+#pp-ojs-article .bigtext {font-size: 2em;}
+
 /* Some tables have very long table header cells, that should not be bold (size constraints) */
 #pp-ojs-article tr.normal th {font-weight: normal; color: midnightblue;}
 
