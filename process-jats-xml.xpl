@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
 	Overview:
 	
@@ -54,6 +54,7 @@
   <p:output port="result" sequence="true">
     <p:pipe step="step-00-original-xml" port="result"/>
     <p:pipe step="step-10-xml-article-APAcit-preprocessed" port="result"/>
+    <p:pipe step="step-15-xml-book-chapter-bugfixed" port="result"/>
     <p:pipe step="step-20-xml-article-bugfix-book-chapter-mixed-citation" port="result"/>
     <p:pipe step="step-30-xml-article-bugfix-graphic-missing-id" port="result"/>
     <p:pipe step="step-40-xhtml-article-display" port="result"/>
@@ -107,13 +108,26 @@
     </p:input>
   </p:xslt>
 
+<p:store name="step-15-xml-book-chapter-bugfixed" href="output_working/15-xml-article-APAcit-preprocessed-book-chapter-refs-bugfixed.xml"/>
+
+<p:identity name="fixed-book-chapter-references">
+  <p:input port="source">
+    <p:pipe step="fix-element-citation-to-mixed-citation-bug" port="result"/>
+  </p:input>
+</p:identity>
+
 <!-- EH 2014-04-14: Applying regex to fix some punctuation errors in <mixed-citation> elements where there are uri's at the end. -->
   
-<!-- EH 2014-04-14: Delete only the last text nodes containing "." followed only by whitespace in <mixed-citation> elements following directly after <uri> -->
-<p:delete match="//mixed-citation/text()[position() = last()][preceding-sibling::uri][matches(., '^\.\s$')]"/>
-
+<!-- EH 2014-04-14: Delete only the last text nodes containing "." followed only by any number of whitespace in <mixed-citation> elements following directly after <uri> -->
+<p:delete match="//mixed-citation/text()[position() = last()][preceding-sibling::uri][matches(., '^\.\s*$')]"/>
 <!-- EH 2014-04-14: Replace the ", " with ". " _in_the_end_ of the text-node immediately followed by <uri>...</uri> in <mixed-citation> elements -->
 <p:string-replace match="//mixed-citation/text()[following-sibling::*[1][self::uri]][matches(., ',\s$')]" replace="replace(., ',\s$', '. ')"/>
+
+<!--
+    EH 2014.04.23: We still have an issue with references with more than 7 authors. 
+    According to the apa style APA Formatting and Style guide, there should be no more than 7 authors listed.
+    After the sixth author's name, an ellipsis should be used, followed by the final author's name.
+     -->
 
 <p:identity name="fixed-mixed-citation-elements"/>
 
