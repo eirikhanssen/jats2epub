@@ -38,6 +38,8 @@
 
 table.tocArticle + table.tocArticle {margin-top: 1em;}
 
+/* Hide the galley file download links from the pain page and issue table of contents reached from Archives in OJS. */
+td.tocGalleys {display:none; width: 0%;} table.tocArticle td.tocTitle {width: 100%;}
 
 a {text-decoration: underline;}
 

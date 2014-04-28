@@ -24,6 +24,7 @@
 
 table.tocArticle + table.tocArticle {margin-top: 1em;}
 
+td.tocGalleys {display:none; width: 0%;} table.tocArticle td.tocTitle {width: 100%;}
 
 a {text-decoration: underline;}
 
