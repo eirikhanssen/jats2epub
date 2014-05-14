@@ -291,12 +291,13 @@
 	</xsl:template>
 
 	<!-- Copy over all other elements unchanged (identity transform) -->
-	<xsl:template match="*">
-		<xsl:element name="{local-name()}" namespace="{namespace-uri(.)}">
-			<xsl:copy-of select="@*"/>
-				<xsl:apply-templates/>
-		</xsl:element>
-	</xsl:template>
+	<!-- EH: 2014-05-14: Trying a different identity transform to keep comments -->
+	  <xsl:template match="@*|*|comment()">
+      <xsl:copy>
+        <xsl:apply-templates select="*|@*|text()|comment()"/>
+      </xsl:copy>
+  </xsl:template>
+  
 </xsl:stylesheet>
 		</p:inline>
 	</p:input>
