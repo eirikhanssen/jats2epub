@@ -15,7 +15,7 @@ The xslt-scripts used in this package are created by Tor-Arne Dahl, Trude Eikebr
 
 The windows batch-files, GNU/Linux shellscripts, and the xproc-pipeline are written by Eirik Hanssen. 
 
-This package also uses xslt stylesheets developed by Piez Wendell for National Library of Medicine, stylesheets that are part of the JATS tools package. These scripts from the JATS tools package are located in the assets\jats-xslt folder.
+This package also uses xslt stylesheets developed by Wendell Piez for National Library of Medicine, stylesheets that are part of the JATS tools package. These scripts from the JATS tools package are located in the assets\jats-xslt folder.
 
 This package is hosted on github: https://github.com/eirikhanssen/jats2epub
 
