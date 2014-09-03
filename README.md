@@ -35,7 +35,7 @@ To preview html-file that will be used for upload to html fulltext, just open ou
 href/src links to stylesheets and images have been altered to work from this location.
 
 Future possible additions to the project:
-- process <given-names> elements with regexp to make sure the initials are properly punctuated. 
+- Process <given-names> elements with regexp to make sure the initials are properly punctuated. 
     If the xml file is tagged using only letters with no punctuation, if there is only one author, a dot is added to the end of the initial in the reference list, but if there are more authors, only the last author's initial will get a dot after the initial. This is a bug. Now it is important that the initials in <given-names> are given proper punctuation by the person tagging the xml-file. It would be better if the process_jats.xpl pipeline took care of it. Also we could allow to markup initials where an author has several given names using only initials and no punctuation, and let process_jats.xpl take care of the rest.
 - Further code cleanup:
     Some issues have been fixed downstream instead of upstream. (A problem that has been fixed by modifying the 
