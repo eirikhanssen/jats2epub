@@ -286,7 +286,7 @@
 	<body>
 		<div id="pp-ojs-article">
 			<xsl:apply-templates/>
-		</div>
+		</div><!-- pp-ojs-article -->
 	</body>
 	</xsl:template>
 
@@ -309,10 +309,10 @@ of relative url referenced css in the html fulltext that will make css validatio
 prevent css from functioning. -->
 <p:delete match="//link[contains(@href,'css/hioa-epub.css')]"/>
 
-<!-- EH 2014-03-24: changing the reference to image to the same folder as html file -->
+<!-- EH 2014-09-03: for the html-file that will be uploaded to a server, we're linking to the cc by image hosted from creativecommons.org as well as linking to the license. -->
 <p:replace match="//img[@src='images/cc-license.png']">
 	<p:input port="replacement">
-		<p:inline><img alt="Attribution 3.0 Unported (CC BY 3.0)" src="cc-license.png"/></p:inline>
+		<p:inline><a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons - Attribution 3.0 Unported  (CC BY 3.0)"><img alt="Attribution 3.0 Unported (CC BY 3.0)" src="http://i.creativecommons.org/l/by/3.0/88x31.png"/></a></p:inline>
 	</p:input>
 </p:replace>
 
