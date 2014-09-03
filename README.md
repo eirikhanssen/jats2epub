@@ -41,17 +41,23 @@ Future possible additions to the project:
     Some issues have been fixed downstream instead of upstream. (A problem that has been fixed by modifying the 
     erronous document instead of preventing the error from happening in the first place).
     It would be better to make sure the error didn't happen in the first place:
+
       - Problem with empty namespaces.
       - Problem with using element-citation elements for book-chapter type references.
+
 - Implement a module to generate PDF from the base xml-file by using XSL-FO and ApacheFOP.
     This was in scope for the original project proposal, but has been put on hold for now. The journals provide PDF which
     they have converted from the .docx version of the article. Later with time permitting, a PDF-module could 
     improve the consistency of the generated PDFs.
+
 - Enhancements to html fulltext display:
-  - In the web browser context: When hovering above a footnote reference or a cited reference in the text, display a popup
-    with the full contents of the footnote / reference in question. This could be implemented using JavaScript/CSS.
+
+  - In the web browser context: When hovering above a footnote reference or a cited reference in the text, display a popup with the full contents of the footnote / reference in question. This could be implemented using JavaScript/CSS.
+
   - Generate a clickable linked list with a table of contents (TOC) based on the document layout for easier navigation.       The linked list TOC could be accessible as a drop-down menu with fixed CSS positioning. 
     This could be implemented using JavaScript/CSS.
+
 - ePub enhancements:
   - review ePub css based on WAI guidelines for readability. Speficically look at line height and space between              pharagraphs/tables.
+
   - Look at css for displaying tables.
