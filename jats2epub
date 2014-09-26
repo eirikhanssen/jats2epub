@@ -167,7 +167,7 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		echo ""
 		echo "NOTICE: Starting XProc pipeline processing using XML Calabash"
 		echo ""
-		echo "        Processing \"$filename\" in \"$dirname\" with the pipeline \"process-jats-xml.xpl\""
+		echo "        Processing \"$dirname/$filename\" with the pipeline \"process-jats-xml.xpl\""
 		echo ""
 		echo "NOTICE: XML Calabash output BEGIN"
 		echo ""
