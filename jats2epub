@@ -94,7 +94,7 @@ function displayHelp {
 
 function ePubValidation {
 	if command -v epubcheck >/dev/null; then
-        	echo "NOTICE: Found epubcheck - validating $epubname:"
+        	echo "NOTICE: Found epubcheck - validating output_final/$epubname:"
 		echo ""
 		echo "NOTICE: epubcheck output BEGIN"
 		echo ""
@@ -112,6 +112,7 @@ function ePubValidation {
 function mobiGen {
 	if command -v kindlegen >/dev/null; then
         	echo "NOTICE: Found kindlegen - trying to generate .mobi version:"
+		echo "        kindlegen output_final/$epubname -o $mobiname"
 		echo ""
 		echo "NOTICE: kindlegen output BEGIN"
 		kindlegen output_final/$epubname -o $mobiname
@@ -184,7 +185,7 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		zip -0Xq $epubname mimetype
 		zip -Xr9Dq $epubname *
 		echo ""
-		echo "NOTICE: Moving $epubname to output_final/"
+		echo "NOTICE: Moving $epubname to output_final/$epubname"
 		mv $epubname ../../output_final/
 		cd ../../
 		echo ""
