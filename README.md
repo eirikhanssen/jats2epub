@@ -41,13 +41,21 @@ Contact: eirik dot hanssen at hioa dot no
 ### 0.9 pre-release.
 This is the working version that was ready at the time of submitting the article.
 
-### Current
+## Current status
 Several improvements have been made: Code has been cleaned up for better readability and several bugs have been fixed.
 It is now easier to troubleshoot, because all intermediate documents are saved in output_working folder after each run.
 To preview html-file that will be used for upload to html fulltext, just open output_working/60-webversion.html. All 
 href/src links to stylesheets and images have been altered to work from this location.
 
-## Future possible addons/changes
+## Related projects
+I am also working on an automatic tagging solution where after finishing the manuscript it can be automatically tagged to JATS XML.
+
+I am currently working with two xml-based formats for the automatic tagging solution:
+
+- https://github.com/eirikhanssen/odf2jats - automatic tagging using Open Document Format as a base
+- https://github.com/eirikhanssen/ooxml2jats - automatic tagging using Office Open XML as a base
+
+## Future possible addons/changes to jats2epub
 - Process <given-names> elements with regexp to make sure the initials are properly punctuated. 
     - If the xml file is tagged using only letters with no punctuation, if there is only one author, a dot is added to the end of the initial in the reference list, but if there are more authors, only the last author's initial will get a dot after the initial. This is a bug. Now it is important that the initials in <given-names> are given proper punctuation by the person tagging the xml-file. It would be better if the process_jats.xpl pipeline took care of it. Also we could allow to markup initials where an author has several given names using only initials and no punctuation, and let process_jats.xpl take care of the rest.
 - Further code cleanup:
