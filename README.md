@@ -11,11 +11,18 @@ You might be interested in reading about this project in the article that is pub
 ## Input and output
 As input it takes an article tagged in the Journal Archive Tag Suite (JATS) XML format, and optionally a folder with extra content to be copied into to the epub-structure (such as images). As output an ePub file and html-file is generated and optionally also a .mobi file converted from the epub file.
 
+### JATS
+JATS or Journal Archiving Tag Suite (Publishing) is an xml-based tagset for describing journal articles. See the following resources:
+- http://jats.nlm.nih.gov/publishing/ - Journal Publishing Tag Set
+- http://jats.nlm.nih.gov/publishing/tag-library/ - Journal Publishing Tag Library
+
 ## Technical overview
 This package uses XML Calabash (a java-based XProc processor built on top of saxon) to process the XProc pipeline, process-jats.xpl, that transforms the xml-document in stages using a mix of XSLT and XProc steps. Since a full automation from JATS xml to final ePub can't be done in XProc yet, calling the XProc pipeline has been wrapped in a script. 
 For windows, a .bat batchfile and for linux a shellscript. 
 The whole process is automated, all you need to type to use the jats2epub tool is this single command: 
+
 ```jats2epub path-to-xmlfile path-to-folder[optional]```
+
 Please see html readmes for more information.
 
 ## Authors
