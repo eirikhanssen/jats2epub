@@ -72,26 +72,34 @@
       <manifest>
         <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
         <!-- CSS-name from parameter, using default value if no parameter is supplied to the stylesheet -->
-        <item id="style" media-type="text/css"><xsl:attribute name="href" select="concat('css/', $css-stylesheet)"/></item>
+        <item id="style" media-type="text/css">
+          <xsl:attribute name="href" >
+            <xsl:value-of select="concat('css/', $css-stylesheet)"/>
+          </xsl:attribute>
+        </item>
         <!-- Article source from parameter, default value used if no parameter is supplied to the stylesheet -->
         <item id="article" media-type="application/xhtml+xml">
-          <xsl:attribute name="href" select="$article-xhtml"/>
+          <xsl:attribute name="href" >
+            <xsl:value-of select="$article-xhtml"/>
+          </xsl:attribute>
         </item>
-        <!--Dependency: graphic ID needs to be present -->
-        <xsl:for-each select="article/body/sec/sec/fig">
-        <!--<xsl:for-each select="//fig">-->
-          <item>
-            <xsl:attribute name="id">
-              <xsl:value-of select="graphic/@id"/>
-            </xsl:attribute>
-            <xsl:attribute name="media-type">
-              <xsl:text>image/</xsl:text>
-              <xsl:value-of select="substring-after(graphic/@xlink:href, '.')"/>
-            </xsl:attribute>
-            <xsl:attribute name="href">
-              <xsl:value-of select="graphic/@xlink:href"/>
-            </xsl:attribute>
-          </item>
+
+        <xsl:for-each select="article/body//fig">
+          <!--Dependency: graphic ID needs to be present. -->
+          <xsl:for-each select="graphic">
+            <item>
+              <xsl:attribute name="id">
+                <xsl:value-of select="graphic/@id"/>
+              </xsl:attribute>
+              <xsl:attribute name="media-type">
+                <xsl:text>image/</xsl:text>
+                <xsl:value-of select="substring-after(graphic/@xlink:href, '.')"/>
+              </xsl:attribute>
+              <xsl:attribute name="href">
+                <xsl:value-of select="graphic/@xlink:href"/>
+              </xsl:attribute>
+            </item>
+          </xsl:for-each>
         </xsl:for-each>
         <item id="cc-licence" media-type="image/png" href="images/cc-license.png"/>
         <item id="pp-logo" media-type="image/png" href="images/pp-logo_trans.png"/>

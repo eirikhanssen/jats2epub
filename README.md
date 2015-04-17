@@ -76,6 +76,19 @@ I am currently working with two xml-based formats for the automatic tagging solu
     - Review ePub css based on WAI guidelines for readability. Speficically look at line height and space between pharagraphs/tables.
     - Look at css for displaying tables.
 
+## Todo
+- style footnote links better to improve visibility and click-/touchability
+    ```sup a[href^='#ftn']:link, sup a[href^='#ftn']:visited {
+           border-radius: 25%;
+           width: 2em; 
+           font-weight: bold; 
+           padding: .1em .25em; 
+           background-color: yellow; border: 1px solid blue;
+       }
+       sup a[href^='#ftn']:link:hover {
+           box-shadow: 0 0 .5em gray;
+       }```
+
 ## Known bugs
 - Issue is formatted within square brackets [issue] when it should be in paranthesis (issue)
     - **Condition that trigger the bug**: element citation for journal articles where issue is marked up, but no volume.
