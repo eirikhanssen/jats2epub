@@ -107,6 +107,7 @@
   <!-- ============================================================= -->
   <!--  TOP LEVEL                                                    -->
   <!-- ============================================================= -->
+  
   <xsl:template match="front | front-stub">
     <!-- TAD 2012-08-10: No tables. We only need ISSN, volumw, issue, publication year, page number and DOI from the metadata elements -->
     <div class="metadata-group">
@@ -153,25 +154,32 @@
     </h2>
     <!-- TAD 2012-08-15: Use provided templates for article-title -->
     <xsl:apply-templates select="article-meta/title-group/article-title" mode="metadata"/>
-    <div class="abstract">
-      <p>
-        <strong>Abstract:</strong>
-        <xsl:text> </xsl:text>
-        <xsl:value-of select="article-meta/abstract"/>
-      </p>
-      <p>
-        <strong>Keywords:</strong>
-        <xsl:text> </xsl:text>
-        <xsl:for-each select="article-meta/kwd-group[@kwd-group-type='author-generated']/kwd">
-          <xsl:value-of select="."/>
-          <xsl:if test="position()!= last()">
-            <xsl:text>; </xsl:text>
-          </xsl:if>
-        </xsl:for-each>
-      </p>
-    </div>
+    <xsl:if test="article-meta/abstract or article-meta/kwd-group/kwd">
+      <div class="abstract">
+        <xsl:if test="article-meta/abstract">
+        <p>
+          <strong>Abstract:</strong>
+          <xsl:text> </xsl:text>
+          <xsl:value-of select="article-meta/abstract"/>
+        </p>
+      </xsl:if>
+        <xsl:if test="article-meta/kwd-group/kwd">
+        <p>
+          <strong>Keywords:</strong>
+          <xsl:text> </xsl:text>
+          <xsl:for-each select="article-meta/kwd-group[@kwd-group-type='author-generated']/kwd">
+            <xsl:value-of select="."/>
+            <xsl:if test="position()!= last()">
+                <xsl:text>; </xsl:text>
+            </xsl:if>
+          </xsl:for-each>
+        </p>
+        </xsl:if>
+      </div>
+    </xsl:if>
     <!-- end of big front-matter pull -->
   </xsl:template>
+  
   <xsl:template mode="metadata" match="contrib-group">
     <!-- 2012-08-10, TAD: No tables. We only need ISSN, volume, issue, publication year, page number and DOI from the metadata elements -->
     <div class="metadata-group">
@@ -218,23 +226,6 @@
     </h2>
     <!-- TAD 2012-08-15: Use provided templates for article-title -->
     <xsl:apply-templates select="article-meta/title-group/article-title" mode="metadata"/>
-    <div class="abstract">
-      <p>
-        <strong>Abstract:</strong>
-        <xsl:text> </xsl:text>
-        <xsl:value-of select="article-meta/abstract"/>
-      </p>
-      <p>
-        <strong>Keywords:</strong>
-        <xsl:text> </xsl:text>
-        <xsl:for-each select="article-meta/kwd-group[@kwd-group-type='author-generated']/kwd">
-          <xsl:value-of select="."/>
-          <xsl:if test="position()!= last()">
-            <xsl:text>; </xsl:text>
-          </xsl:if>
-        </xsl:for-each>
-      </p>
-    </div>
     <!-- end of big front-matter pull -->
   </xsl:template>
   <xsl:template name="footer-metadata">
@@ -440,7 +431,9 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" mode="table-copy"/>
       <xsl:if test="@content-type">
-      	<xsl:attribute name="class" select="@content-type"/>
+      	<xsl:attribute name="class">
+      	  <xsl:value-of select="@content-type"/>
+      	</xsl:attribute>
       </xsl:if>
       <!-- TAD 2012-08-09: Ankrene trengs ikke, og plasserer seg dessuten på ulovlige steder i tabellen -->
       <!-- xsl:call-template name="named-anchor"/ -->
