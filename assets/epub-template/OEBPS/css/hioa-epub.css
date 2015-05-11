@@ -14,8 +14,8 @@
 
 /* page and text defaults */
 
-body { margin-left: 2%;
-     margin-right: 2%;
+body { margin-left: .25em;
+     margin-right: .25em;
      text-align: left;
 }
 
