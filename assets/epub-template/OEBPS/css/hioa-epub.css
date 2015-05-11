@@ -19,7 +19,6 @@ body { margin-left: 2%;
      text-align: left;
 }
 
-
 div > *:first-child, td > *:first-child { margin-top:0em }
 
 div { margin-top: 0.5em }
@@ -118,8 +117,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.5em;
   margin-right: 1em;
   font-size: 140% }
-  
-
 
 div.section, div.back-section {
   margin-top: 1em; margin-bottom: 0.5em }
@@ -262,5 +259,17 @@ ul.references {
 	list-style-type: none;
 }
 /* tables */
-table {border: 1px solid black; width: 100%;}
-td + td {text-align: center;}
+table { border-collapse: collapse; border: 1px solid black; width: 100%;}
+td, th {text-align: left; border: 1px solid gray; padding: .25em;}
+
+/* set alignment on the table, default is left */
+
+table.align-left td + td,
+table.align-left  th + td,
+table.align-left  th + th {text-align: left;}
+table.align-right td + td,
+table.align-right  th + td,
+table.align-right  th + th {text-align: right;}
+table.align-center  td + td,
+table.align-center th + td,
+table.align-center th + th {text-align: center;}

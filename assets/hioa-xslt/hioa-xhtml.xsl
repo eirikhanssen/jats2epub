@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
 	xmlns:mml="http://www.w3.org/1998/Math/MathML" 
@@ -433,12 +433,15 @@
       <xsl:apply-templates mode="footnote"
         select="self::table-wrap//fn[not(ancestor::table-wrap-foot)]"/>
     </div>
-  </xsl:template>  
+  </xsl:template>
   
   <!--  Tables are already in XHTML, and can simply be copied through -->
   <xsl:template match="table | thead | tbody | tfoot | col | colgroup | tr | th | td">
     <xsl:copy>
       <xsl:apply-templates select="@*" mode="table-copy"/>
+      <xsl:if test="@content-type">
+      	<xsl:attribute name="class" select="@content-type"/>
+      </xsl:if>
       <!-- TAD 2012-08-09: Ankrene trengs ikke, og plasserer seg dessuten på ulovlige steder i tabellen -->
       <!-- xsl:call-template name="named-anchor"/ -->
       <xsl:apply-templates/>
