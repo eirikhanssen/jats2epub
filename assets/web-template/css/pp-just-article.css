@@ -308,13 +308,25 @@
 #pp-ojs-article ul.references li a:hover {background-color: white;}
 
 /* tables - setting table widh in css instead of in html */
-#pp-ojs-article table {border: 0px solid black; width: 100%; border-collapse: collapse;}
+
+/* tables */
+/*#pp-ojs-article table {border: 0px solid black; width: 100%; border-collapse: collapse;}*/
+#pp-ojs-article table { border-collapse: collapse; border: 1px solid black; width: 100%;}
+#pp-ojs-article td, #pp-ojs-article th {text-align: left; border: 1px solid gray; padding: .25em;}
+#pp-ojs-article th {font-family: sans-serif;}
+/* set alignment on the table, default is left */
+
+#pp-ojs-article table.align-left td + td,
+#pp-ojs-article table.align-left  th + td,
+#pp-ojs-article table.align-left  th + th {text-align: left;}
+#pp-ojs-article table.align-right td + td,
+#pp-ojs-article table.align-right  th + td,
+#pp-ojs-article table.align-right  th + th {text-align: right;}
+#pp-ojs-article table.align-center  td + td,
+#pp-ojs-article table.align-center th + td,
+#pp-ojs-article table.align-center th + th {text-align: center;}
 #pp-ojs-article tr.header-row td, 
 #pp-ojs-article tr.header-row th {border: none; padding-top: 2em;}
-#pp-ojs-article td, #pp-ojs-article th {padding: .5em; border: 1px solid gray;}
-#pp-ojs-article td + td {text-align: center;}
-#pp-ojs-article th + td {text-align: center;}
-#pp-ojs-article th + th {text-align: center;}
 #pp-ojs-article th:first-child {text-align: left;}
 #pp-ojs-article table.figure {border: 1px solid gray;}
 #pp-ojs-article table.borderless {border: none;}
@@ -322,6 +334,7 @@
 #pp-ojs-article .five-col-equal-width td, #pp-ojs-article .five-col-equal-width th {width: 19%;}
 #pp-ojs-article .three-col-equal-width td, #pp-ojs-article .three-col-equal-width th {width: 33%;}
 #pp-ojs-article .bigtext {font-size: 2em;}
+
 
 /* Some tables have very long table header cells, that should not be bold (size constraints) */
 #pp-ojs-article tr.normal th {font-weight: normal; color: midnightblue;}
