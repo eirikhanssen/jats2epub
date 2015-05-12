@@ -149,6 +149,7 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		mobiname=$filename_base$timestamp.mobi
 		pdfname=$filename_base$timestamp.pdf
 		htmlname=$filename_base$timestamp.html
+		xmlname=$filename_base$timestamp.xml
 		echo ""
 		echo "NOTICE: Clearing old contents of output_working/"
 		rm -rf output_working/*
@@ -194,6 +195,7 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		mv output_working/article-webversion.html output_final/$htmlname
 		ePubValidation
 		mobiGen
+		cp $filepath output_final/$xmlname
 		echo "NOTICE: DONE! Script has completed."
 		echo "        Please check the script output as well as files created in the folders output_final/ and output_working/"
 		echo ""
