@@ -89,14 +89,22 @@
           <xsl:for-each select="graphic">
             <item>
               <xsl:attribute name="id">
-                <xsl:value-of select="graphic/@id"/>
+                <xsl:value-of select="@id"/>
               </xsl:attribute>
               <xsl:attribute name="media-type">
                 <xsl:text>image/</xsl:text>
-                <xsl:value-of select="substring-after(graphic/@xlink:href, '.')"/>
+                <xsl:variable name="ext" select="substring-after(@xlink:href, '.')"/>
+                <xsl:choose>
+                  <xsl:when test="$ext = 'svg'">
+                    <xsl:text>svg+xml</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="$ext"/>
+                  </xsl:otherwise>
+                </xsl:choose>
               </xsl:attribute>
               <xsl:attribute name="href">
-                <xsl:value-of select="graphic/@xlink:href"/>
+                <xsl:value-of select="@xlink:href"/>
               </xsl:attribute>
             </item>
           </xsl:for-each>
