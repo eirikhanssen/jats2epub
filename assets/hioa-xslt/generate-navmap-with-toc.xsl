@@ -42,7 +42,7 @@
                 <text><xsl:value-of select="."/></text>
             </navLabel>
             <content><xsl:attribute name="src" select="concat($article-xhtml, '#' , @id)"/></content>
-            <xsl:apply-templates select="following-sibling::h2[preceding-sibling::h1 is $this]"/>
+            <xsl:apply-templates select="following-sibling::h2[preceding-sibling::h1[1] is $this]"/>
         </navPoint>
     </xsl:template>
     <xsl:template match="h2">
@@ -53,7 +53,7 @@
                 <text><xsl:value-of select="."/></text>
             </navLabel>
             <content><xsl:attribute name="src" select="concat($article-xhtml, '#' , @id)"/></content>
-            <xsl:apply-templates select="following-sibling::h3[preceding-sibling::h2 is $this]"/>
+            <xsl:apply-templates select="following-sibling::h3[preceding-sibling::h2[1] is $this]"/>
         </navPoint>
     </xsl:template>
     <xsl:template match="h3">
@@ -64,7 +64,7 @@
                 <text><xsl:value-of select="."/></text>
             </navLabel>
             <content><xsl:attribute name="src" select="concat($article-xhtml, '#' , @id)"/></content>
-            <xsl:apply-templates select="following-sibling::h4[preceding-sibling::h3 is $this]"/>
+            <xsl:apply-templates select="following-sibling::h4[preceding-sibling::h3[1] is $this]"/>
         </navPoint>
     </xsl:template>
     <xsl:template match="h4">
@@ -75,7 +75,7 @@
                 <text><xsl:value-of select="."/></text>
             </navLabel>
             <content><xsl:attribute name="src" select="concat($article-xhtml, '#' , @id)"/></content>
-            <xsl:apply-templates select="following-sibling::h5[preceding-sibling::h4 is $this]"/>
+            <xsl:apply-templates select="following-sibling::h5[preceding-sibling::h4[1] is $this]"/>
         </navPoint>
     </xsl:template>
     <xsl:template match="h5">
@@ -86,7 +86,7 @@
                 <text><xsl:value-of select="."/></text>
             </navLabel>
             <content><xsl:attribute name="src" select="concat($article-xhtml, '#' , @id)"/></content>
-            <xsl:apply-templates select="following-sibling::h6[preceding-sibling::h5 is $this]"/>
+            <xsl:apply-templates select="following-sibling::h6[preceding-sibling::h5[1] is $this]"/>
         </navPoint>
     </xsl:template>
     <xsl:template match="h6">
