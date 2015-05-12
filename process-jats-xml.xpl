@@ -390,7 +390,7 @@ prevent css from functioning. -->
       <p:document href="assets/hioa-xslt/generate-navmap-with-toc.xsl"/>
     </p:input>
   </p:xslt>
-  
+
   <!-- EH 2013-12-02: Generate toc.ncx, a required file in an epub publication -->
 <p:xslt name="generate-toc-ncx" version="1.0">
   <p:input port="source">
@@ -400,8 +400,8 @@ prevent css from functioning. -->
       <p:document href="assets/hioa-xslt/epub-toc.ncx.xsl"/>
     </p:input>
   </p:xslt>
-  
-  <!-- Replace  navMap with a new navMap where all headings are listed -->
+
+  <!-- Replace  navMap with a new navMap where all headings are represented -->
   <p:replace name="replace-navMap" match="/ncx:ncx/ncx:navMap">
     <p:input port="source">
       <p:pipe port="result" step="generate-toc-ncx"/>
@@ -422,4 +422,3 @@ prevent css from functioning. -->
 </p:store>
 
 </p:declare-step>
-

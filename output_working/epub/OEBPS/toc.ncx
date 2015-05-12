@@ -9,49 +9,47 @@
       <text>Alienation and Stress among Doctors: Dilemmas and Possible Solutions</text>
    </docTitle>
    <navMap>
-      <ncx:navPoint xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
-                    id="d324e2"
-                    playOrder="1">
-         <ncx:navLabel>
-            <ncx:text>Alienation and Stress among Doctors: Dilemmas and Possible Solutions</ncx:text>
-         </ncx:navLabel>
-         <ncx:content src="index.html#d180e54"/>
-         <ncx:navPoint id="d324e4" playOrder="2">
-            <ncx:navLabel>
-               <ncx:text>Unclear concepts and relationships</ncx:text>
-            </ncx:navLabel>
-            <ncx:content src="index.html#d180e168"/>
-         </ncx:navPoint>
-         <ncx:navPoint id="d324e6" playOrder="3">
-            <ncx:navLabel>
-               <ncx:text>A consumerist perspective</ncx:text>
-            </ncx:navLabel>
-            <ncx:content src="index.html#d180e189"/>
-         </ncx:navPoint>
-         <ncx:navPoint id="d324e8" playOrder="4">
-            <ncx:navLabel>
-               <ncx:text>Inherent problems using market competition</ncx:text>
-            </ncx:navLabel>
-            <ncx:content src="index.html#d180e569"/>
-         </ncx:navPoint>
-         <ncx:navPoint id="d324e10" playOrder="5">
-            <ncx:navLabel>
-               <ncx:text>Other basic contributors</ncx:text>
-            </ncx:navLabel>
-            <ncx:content src="index.html#d180e797"/>
-         </ncx:navPoint>
-         <ncx:navPoint id="d324e12" playOrder="6">
-            <ncx:navLabel>
-               <ncx:text>Addressing alienation through collaboration</ncx:text>
-            </ncx:navLabel>
-            <ncx:content src="index.html#d180e833"/>
-         </ncx:navPoint>
-         <ncx:navPoint id="d324e14" playOrder="7">
-            <ncx:navLabel>
-               <ncx:text>References</ncx:text>
-            </ncx:navLabel>
-            <ncx:content src="index.html#d180e864"/>
-         </ncx:navPoint>
-      </ncx:navPoint>
+      <navPoint id="d324e2" playOrder="1">
+         <navLabel>
+            <text>Alienation and Stress among Doctors: Dilemmas and Possible Solutions</text>
+         </navLabel>
+         <content src="index.html#d180e54"/>
+         <navPoint id="d324e4" playOrder="2">
+            <navLabel>
+               <text>Unclear concepts and relationships</text>
+            </navLabel>
+            <content src="index.html#d180e168"/>
+         </navPoint>
+         <navPoint id="d324e6" playOrder="3">
+            <navLabel>
+               <text>A consumerist perspective</text>
+            </navLabel>
+            <content src="index.html#d180e189"/>
+         </navPoint>
+         <navPoint id="d324e8" playOrder="4">
+            <navLabel>
+               <text>Inherent problems using market competition</text>
+            </navLabel>
+            <content src="index.html#d180e569"/>
+         </navPoint>
+         <navPoint id="d324e10" playOrder="5">
+            <navLabel>
+               <text>Other basic contributors</text>
+            </navLabel>
+            <content src="index.html#d180e797"/>
+         </navPoint>
+         <navPoint id="d324e12" playOrder="6">
+            <navLabel>
+               <text>Addressing alienation through collaboration</text>
+            </navLabel>
+            <content src="index.html#d180e833"/>
+         </navPoint>
+         <navPoint id="d324e14" playOrder="7">
+            <navLabel>
+               <text>References</text>
+            </navLabel>
+            <content src="index.html#d180e864"/>
+         </navPoint>
+      </navPoint>
    </navMap>
 </ncx>
