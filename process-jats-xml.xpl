@@ -37,7 +37,10 @@
 	Contact: eirik hanssen at hioa dot no
 -->
 
-<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" name="process-jats-xml" version="1.0">
+<p:declare-step 
+  xmlns:p="http://www.w3.org/ns/xproc"
+  xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
+  name="process-jats-xml" version="1.0">
 
 <!-- 
 	EH 2013-11-25: the source input to this xproc pipeline is given in the command prompt that calls the pipeline. 
@@ -378,6 +381,15 @@ prevent css from functioning. -->
 <p:store href="output_working/70-content.opf" indent="true" name="step-70-content-opf">
 	<p:input port="source"><p:pipe step="generate-content-opf" port="result"/></p:input>
 </p:store>
+
+  <p:xslt name="generate-navmap-with-toc" version="2.0">
+    <p:input port="source">
+      <p:pipe port="result" step="xhtml-ready-for-epub"></p:pipe>
+    </p:input>
+    <p:input port="stylesheet">
+      <p:document href="assets/hioa-xslt/generate-navmap-with-toc.xsl"/>
+    </p:input>
+  </p:xslt>
   
   <!-- EH 2013-12-02: Generate toc.ncx, a required file in an epub publication -->
 <p:xslt name="generate-toc-ncx" version="1.0">
@@ -388,13 +400,25 @@ prevent css from functioning. -->
       <p:document href="assets/hioa-xslt/epub-toc.ncx.xsl"/>
     </p:input>
   </p:xslt>
+  
+  <!-- Replace  navMap with a new navMap where all headings are listed -->
+  <p:replace name="replace-navMap" match="/ncx:ncx/ncx:navMap">
+    <p:input port="source">
+      <p:pipe port="result" step="generate-toc-ncx"/>
+    </p:input>
+    <p:input port="replacement">
+      <p:pipe port="result" step="generate-navmap-with-toc"/>
+    </p:input>
+  </p:replace>
+  
+  <p:identity name="toc-ncx-ready"/>
 
 <!-- EH 2014-03-22: storing content.opf in epub structure -->
 <p:store href="output_working/epub/OEBPS/toc.ncx" indent="true" name="toc-ncx"/>
 
 <!-- EH 2014-03-22: storing a copy for inspection -->
 <p:store href="output_working/80-toc.ncx" indent="true" name="step-80-toc-ncx">
-	<p:input port="source"><p:pipe step="generate-toc-ncx" port="result"/></p:input>
+	<p:input port="source"><p:pipe step="toc-ncx-ready" port="result"/></p:input>
 </p:store>
 
 </p:declare-step>

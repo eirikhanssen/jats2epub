@@ -138,6 +138,7 @@
       <img src="images/pp-logo_trans.png" alt="Professions &amp; Professionalism"/>
     </p>
     <h2 class="author">
+      <xsl:call-template name="generate-id"/>
       <xsl:for-each select="article-meta/contrib-group/contrib[@contrib-type='author']">
         <xsl:choose>
           <xsl:when test="position() != 1 and position() != last()">
@@ -210,6 +211,7 @@
       </p>
     </div>
     <h2 class="author">
+      <xsl:call-template name="generate-id"/>
       <xsl:for-each select="article-meta/contrib-group/contrib[@contrib-type='author']">
         <xsl:choose>
           <xsl:when test="position() != 1 and position() != last()">
@@ -343,7 +345,11 @@
   <xsl:template match="ref-list" name="ref-list">
     <!-- EH 2013.06.21: The title "References" should be inserted by some other mechanism using generated title, see template match="back/ref-list" -->
     <!-- Since this doesn't happen, until I can find the cause of this error, I am hard-coding it in -->
-     <h2 class="main-title">References</h2> 
+     <h2 class="main-title">
+       <xsl:call-template name="generate-id"/>
+       <xsl:text>References</xsl:text>
+     </h2>
+        
         <ul class="section references">
       <!-- EH 2013.06.21: Anchor and label not needed here, removed. -->
       <xsl:apply-templates select="*[not(self::ref | self::ref-list)]"/>
