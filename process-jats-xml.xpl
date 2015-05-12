@@ -212,10 +212,13 @@
       <p:document href="assets/hioa-xslt/hioa-xhtml-namespace-fix.xsl"/>
     </p:input>
   </p:xslt>
+
+  <p:identity name="xhtml-ready-for-epub"/>
   
 <!-- EH 2013.11.25: Stores the xhtml-casted display document for use in ePub in the ePub-folder-structure-->
 <!-- EH 2013.11.25: Adding the correct doctype required for the ePub format-->
 <p:store omit-xml-declaration="true" indent="true" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" href="output_working/epub/OEBPS/index.html" name="epub-index-html"/>
+  
 <!-- EH 2014-03-22: Storing a copy for inspeciton -->
 <p:store omit-xml-declaration="true" 
 	indent="true" encoding="utf-8" 
@@ -224,7 +227,7 @@
 	href="output_working/50-xhtml-namespace-fixed-epub-version.html" 
 	name="step-50-xhtml-namespace-fixed-epub-version">
 	<p:input port="source">
-		<p:pipe step="cast-to-xhtml" port="result"/>
+	  <p:pipe step="xhtml-ready-for-epub" port="result"/>
 	</p:input>
 </p:store>
 
@@ -245,7 +248,6 @@
 		<p:pipe step="cast-to-xhtml-and-remove-xml-processing-instruction" port="result"/>
 	</p:input>
 </p:namespace-rename>
-
 
 <!--
 	EH 2014-03-24: OJS-compatibility complicates things. Have to add an id that will 

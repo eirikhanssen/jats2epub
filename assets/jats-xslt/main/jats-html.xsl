@@ -300,6 +300,7 @@ or pipeline) parameterized.
                 issn+, issn-l?, isbn*, publisher?, notes*, self-uri*)         -->
           <div class="cell">
             <h4 class="generated">
+              <xsl:call-template name="generate-id"/>
               <xsl:text>Journal Information</xsl:text>
             </h4>
             <div class="metadata-group">
@@ -385,6 +386,7 @@ or pipeline) parameterized.
 
           <div class="cell">
             <h4 class="generated">
+              <xsl:call-template name="generate-id"/>
               <xsl:text>Article Information</xsl:text>
             </h4>
             <div class="metadata-group">
@@ -475,6 +477,7 @@ or pipeline) parameterized.
               <div class="row">
               <div class="cell" style="text-align: right">
                 <h4 class="callout-title">
+                  <xsl:call-template name="generate-id"/>
                   <xsl:apply-templates select="title/node()"/>
                   <xsl:if test="not(normalize-space(string(title)))">
                     <span class="generated">
@@ -518,6 +521,7 @@ or pipeline) parameterized.
        <hr class="part-rule"/>
         <div class="metadata">
             <h4 class="generated">
+              <xsl:call-template name="generate-id"/>
               <xsl:text>Article Information (continued)</xsl:text>
             </h4>
             <div class="metadata-group">
@@ -549,6 +553,7 @@ or pipeline) parameterized.
         <div class="row">
           <div class="cell spanning">
             <h4 class="generated">
+              <xsl:call-template name="generate-id"/>
               <xsl:text>Process warnings</xsl:text>
             </h4>
             <p>Warnings reported by the processor due to problematic markup follow:</p>
@@ -1380,6 +1385,7 @@ or pipeline) parameterized.
 
   <xsl:template match="title-group/article-title" mode="metadata">
     <h1 class="document-title">
+      <xsl:call-template name="generate-id"/>
       <xsl:apply-templates/>
       <xsl:if test="../subtitle">:</xsl:if>
     </h1>
@@ -1389,6 +1395,7 @@ or pipeline) parameterized.
   <xsl:template match="title-group/subtitle | trans-title-group/subtitle"
     mode="metadata">
     <h2 class="document-title">
+      <xsl:call-template name="generate-id"/>
       <xsl:apply-templates/>
     </h2>
   </xsl:template>
@@ -1982,6 +1989,7 @@ or pipeline) parameterized.
     <xsl:if test="normalize-space(string($contents))">
       <!-- coding defensively since empty titles make glitchy HTML -->
       <h2 class="main-title">
+        <xsl:call-template name="generate-id"/>
         <xsl:copy-of select="$contents"/>
       </h2>
     </xsl:if>
@@ -1997,6 +2005,7 @@ or pipeline) parameterized.
     <xsl:if test="normalize-space(string($contents))">
       <!-- coding defensively since empty titles make glitchy HTML -->
       <h3 class="section-title">
+        <xsl:call-template name="generate-id"/>
         <xsl:copy-of select="$contents"/>
       </h3>
     </xsl:if>
@@ -2012,6 +2021,7 @@ or pipeline) parameterized.
     <xsl:if test="normalize-space(string($contents))">
       <!-- coding defensively since empty titles make glitchy HTML -->
       <h4 class="subsection-title">
+        <xsl:call-template name="generate-id"/>
         <xsl:copy-of select="$contents"/>
       </h4>
     </xsl:if>
@@ -2027,6 +2037,7 @@ or pipeline) parameterized.
     <xsl:if test="normalize-space(string($contents))">
       <!-- coding defensively since empty titles make glitchy HTML -->
       <h4 class="block-title">
+        <xsl:call-template name="generate-id"/>
         <xsl:copy-of select="$contents"/>
       </h4>
     </xsl:if>
@@ -2037,6 +2048,7 @@ or pipeline) parameterized.
   <xsl:template match="title">
     <xsl:if test="normalize-space(string(.))">
       <h3 class="title">
+        <xsl:call-template name="generate-id"/>
         <xsl:apply-templates/>
       </h3>
     </xsl:if>
@@ -2046,6 +2058,7 @@ or pipeline) parameterized.
   <xsl:template match="subtitle">
     <xsl:if test="normalize-space(string(.))">
       <h5 class="subtitle">
+        <xsl:call-template name="generate-id"/>
         <xsl:apply-templates/>
       </h5>
     </xsl:if>
@@ -2567,6 +2580,7 @@ or pipeline) parameterized.
   <xsl:template match="label" name="label">
     <!-- other labels are displayed as blocks -->
     <h5 class="label">
+      <xsl:call-template name="generate-id"/>
       <xsl:apply-templates/>
     </h5>
   </xsl:template>
@@ -3167,6 +3181,7 @@ or pipeline) parameterized.
     <xsl:if test="normalize-space(string($contents))">
       <!-- not to create an h5 for nothing -->
       <h5 class="label">
+        <xsl:call-template name="generate-id"/>
         <xsl:copy-of select="$contents"/>
       </h5>
     </xsl:if>
@@ -4016,6 +4031,11 @@ or pipeline) parameterized.
     </xsl:if>
   </xsl:template>
 
+  <xsl:template name="generate-id">
+    <xsl:attribute name="id">
+      <xsl:value-of select="generate-id()"/>
+    </xsl:attribute>
+  </xsl:template>
 
 <!-- ============================================================= -->
 <!--  End stylesheet                                               -->

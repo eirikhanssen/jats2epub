@@ -5,7 +5,7 @@
 	This stylesheet generates toc.ncx, a required file in the ePub format.
 	It copies over relevant data from a journal article tagged using NISO jats xml.
 	
-	Author: Trude Eikebrokk, Oslo and Akershus University College of Applied Sciences
+	Authors: Trude Eikebrokk and Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
 	
 	License:
 	
@@ -27,7 +27,7 @@
 	Contact: trude dot eikebrokk at hioa dot no, tor-arne dot dahl at hioa dot no, eirik dot hanssen at hioa dot no
 -->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
 <xsl:param name="article-xhtml" select="'index.html'"/>
 
   <xsl:template match="/">
