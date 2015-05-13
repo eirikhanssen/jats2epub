@@ -14,8 +14,7 @@
 
 /* page and text defaults */
 
-body { margin-left: .25em;
-     margin-right: .25em;
+body { margin: .5em;
      text-align: left;
 }
 
@@ -223,7 +222,10 @@ h2 {
 
 p.logo {
 	text-align: center;
+	display: block;
 }
+
+p.logo img {display: inline;}
 
 .author {
 	font-family: Helvetica, sans-serif;
