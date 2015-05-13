@@ -86,7 +86,7 @@
 
         <xsl:for-each select="article/body//fig">
           <!--Dependency: graphic ID needs to be present. -->
-          <xsl:for-each select="graphic">
+          <xsl:for-each select="graphic|alternatives/graphic">
             <item>
               <xsl:attribute name="id">
                 <xsl:value-of select="@id"/>

@@ -34,7 +34,6 @@
 #	You should have received a copy of the GNU General Public License
 #	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 
-
 # display usage
 function displayUsage {
 	echo ""
@@ -173,7 +172,7 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		echo ""
 		echo "NOTICE: XML Calabash output BEGIN"
 		echo ""
-		calabash -i source=$filepath process-jats-xml.xpl
+		calabash -i source=$filepath -p transform="jats2epub – built on top of github.com/ncbi/JATSPreviewStylesheets" process-jats-xml.xpl
 		echo ""
 		echo "NOTICE: XML Calabash output END"
 		echo ""

@@ -40,6 +40,7 @@
 <p:declare-step 
   xmlns:p="http://www.w3.org/ns/xproc"
   xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
   name="process-jats-xml" version="1.0">
 
 <!-- 
@@ -47,7 +48,8 @@
 -->
 
   <p:input port="source"/>
-  <p:input port="parameters" kind="parameter"/>
+  
+  <p:input port="transform" kind="parameter"/>
 
 <!-- 
 	EH 2013-11-25: <p:output> displays all files that were saved to disk in <c:result> 
@@ -80,10 +82,19 @@
 <!-- EH 2013-11-25: Stores the unchanged xml-->
 <p:store href="output_working/00-original.xml" name="step-00-original-xml"/>
 
+<p:identity name="document-source">
+  <p:input port="source">
+    <p:pipe port="source" step="process-jats-xml"></p:pipe>
+  </p:input>
+</p:identity>
+
+<!-- until we transit to html5 and epub3, rely on alternative representation of equations. -->
+<p:delete name="remove-mml" match="//mml:math"/>
+
   <p:xslt name="format-APA-citations" version="2.0">
     <!-- EH 24.11.2013: Citations are APA-formatted. -->
     <p:input port="source">
-      <p:pipe step="process-jats-xml" port="source"/>
+      <p:pipe port="result" step="remove-mml"></p:pipe>
     </p:input>
     <p:input port="stylesheet">
       <!-- hioa-APAcit.xsl imports jats-APAcit.xsl -->
@@ -193,12 +204,16 @@
 <p:store href="output_working/30-xml-article-bugfix-graphic-missing-id.xml" name="step-30-xml-article-bugfix-graphic-missing-id"/>
 
   <p:xslt name="display-xhtml" version="2.0">
+    <p:with-param name="current-date" select="concat('This display was generated: ' , current-date())"></p:with-param>
   <p:input port="source">
     <p:pipe step="fix-missing-id-on-graphics" port="result"/>
   </p:input>
     <p:input port="stylesheet">
       <!-- hioa-xhtml.xsl imports jats-html.xsl -->
       <p:document href="assets/hioa-xslt/hioa-xhtml.xsl"/>
+    </p:input>
+    <p:input port="parameters">
+      <p:pipe step="process-jats-xml" port="transform"/>
     </p:input>
   </p:xslt>
 

@@ -75,6 +75,7 @@
   <!--<xsl:param name="css">css/professions_and_professionalism-web.css</xsl:param> -->
   <!-- EH 2013-06-14: changing the included css stylesheets -->
   <xsl:param name="css">css/hioa-epub.css</xsl:param>
+  <xsl:param name="current-date"/>
   <!-- ============================================================= -->
   <!--  ROOT TEMPLATE - HANDLES HTML FRAMEWORK                       -->
   <!-- ============================================================= -->
@@ -582,6 +583,23 @@
       </ul>
     </xsl:if -->
   </xsl:template>
+  
+  <xsl:template name="footer-branding">
+    <div class="branding">
+      <p>
+        <xsl:text>This display is generated from </xsl:text>
+        <xsl:text>NISO JATS XML with </xsl:text>
+        <b>
+          <xsl:value-of select="$transform"/>
+        </b>
+        <xsl:text>. The XSLT engine is </xsl:text>
+        <xsl:value-of select="system-property('xsl:vendor')"/>
+        <xsl:text>.</xsl:text>
+      </p>
+      <xsl:if test="$current-date"><p><em><xsl:value-of select="$current-date"/></em></p></xsl:if>
+    </div>
+  </xsl:template>
+  
   <!-- 2011-01-22, TAD: Turns off xref warnings (important for missing labels for author aff's. See this article: <http://www.ncbi.nlm.nih.gov/books/NBK47104/>  -->
   <xsl:template name="make-label-text">
     <xsl:param name="auto" select="false()"/>
