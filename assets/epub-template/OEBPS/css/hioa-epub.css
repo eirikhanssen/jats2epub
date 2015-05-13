@@ -275,9 +275,14 @@ img {display: block; margin: .5em auto;}
 /*reference-list*/
 ul.references {
 	padding-left: 0;
+	margin-left: 0;
 	list-style-type: none;
 }
-ul.references li+li {margin-top: .85em;}
+ul.references li {
+	margin-left: 0; padding-left: 0;
+}
+
+ul.references li+li {margin-top: .85em; }
 /* tables */
 table { border-collapse: collapse; border: 1px solid black; width: 100%;}
 td, th {text-align: left; border: 1px solid gray; padding: .25em;}
