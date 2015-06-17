@@ -46,14 +46,16 @@
 					<dc:title>
 						<xsl:value-of select="article-meta/title-group/article-title"/>
 					</dc:title>
-					<dc:date opf:event="publication">
-						<xsl:value-of
-							select="
+					<xsl:if test="article-meta/pub-date/year and article-meta/pub-date/month and article-meta/pub-date/day">
+						<dc:date opf:event="publication">
+							<xsl:value-of
+								select="
 								string-join(
 								(article-meta/pub-date/year,
 								article-meta/pub-date/month,
 								article-meta/pub-date/day), '-')"/>
-					</dc:date>
+						</dc:date>
+					</xsl:if>
 					<dc:language>
 						<xsl:value-of select="/article/@xml:lang"/>
 					</dc:language>
