@@ -110,24 +110,33 @@
   <!-- ============================================================= -->
   
   <xsl:template match="front | front-stub">
-    <!-- TAD 2012-08-10: No tables. We only need ISSN, volumw, issue, publication year, page number and DOI from the metadata elements -->
+    <!-- TAD 2012-08-10: No tables. We only need ISSN, volume, issue, publication year, page number and DOI from the metadata elements -->
     <div class="metadata-group">
       <p class="issn">
         <xsl:text>ISSN: </xsl:text>
         <xsl:value-of select="journal-meta/issn"/>
       </p>
-      <p class="vol-no-pp">
-        <xsl:text>Volume </xsl:text>
-        <xsl:value-of select="article-meta/volume"/>
-        <xsl:text>, No </xsl:text>
-        <xsl:value-of select="article-meta/issue"/>
-        <xsl:text> (</xsl:text>
-        <xsl:value-of select="article-meta/pub-date[@pub-type='pub']/year"/>
-        <xsl:text>), pp. </xsl:text>
-        <xsl:value-of select="article-meta/fpage"/>
-        <xsl:text>-</xsl:text>
-        <xsl:value-of select="article-meta/lpage"/>
-      </p>
+	<xsl:choose><!-- EH 2015-06-17 check if volume and issue have been entered -->
+		<xsl:when test="article-meta/volume and article-meta/issue">
+			<p class="vol-no-pp">
+				<xsl:text>Volume </xsl:text>
+				<xsl:value-of select="article-meta/volume"/>
+				<xsl:text>, No </xsl:text>
+				<xsl:value-of select="article-meta/issue"/>
+				<xsl:text> (</xsl:text>
+				<xsl:value-of select="article-meta/pub-date[@pub-type='pub']/year"/>
+				<xsl:text>)</xsl:text>
+				<xsl:if test="article-meta/fpage and article-meta/lpage">
+					<xsl:text>, pp. </xsl:text>
+					<xsl:value-of select="article-meta/fpage"/>
+					<xsl:text>-</xsl:text>
+					<xsl:value-of select="article-meta/lpage"/>
+				</xsl:if>
+			</p>
+		</xsl:when>
+		<!-- If volume and issue haven't been assigned, output no text for volume, year, issue and page number. -->
+		<xsl:otherwise/>
+	</xsl:choose>
       <!-- EH 2014-03-26: added class="doi" to be able to target this with css. This is because we want to hide the metadata-group at the top of the article in html-fulltext view in OJS, but we still want to display the doi. -->
       <!-- EH 2014-04-01: instead of displaying doi like Doi: 10.7577/pp.567, they shall be displayed as the url: http://dx.doi.org/10.7577/pp.567 . This is 
        especially mportant for printed versions. Crossref had hoped that browsers would understand the doi: syntax natively, but this is not the case. -->
