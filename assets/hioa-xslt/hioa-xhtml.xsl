@@ -270,7 +270,7 @@
           <xsl:for-each select="contrib-group/contrib[@contrib-type='author']">
             <xsl:if test="address">
               <!-- This author has a contact address -->
-              <p>
+              <p class="contact">
                 <strong>Contact:</strong>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="name/given-names"/>

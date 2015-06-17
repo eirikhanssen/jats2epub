@@ -270,6 +270,10 @@ p.license img {
 	margin-right: .75em;
 }
 
+.address p.contact {
+	margin-top: 1.25em;
+}
+
 img {display: block; margin: .5em auto;}
 
 /*reference-list*/
