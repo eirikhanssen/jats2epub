@@ -125,8 +125,11 @@ function mobiGen {
 }
 
 # main 'program'
+# Find where we’re running from.
+base_dir="$(dirname -- "$0")"
+target_dir="$PWD"
 # append our programs directory copy of calabash
-PATH=$PATH:"$(dirname -- "$0")/programs/xmlcalabash"
+PATH=$PATH:"$base_dir/programs/xmlcalabash"
 
 # check if java is installed - print error and exit if not found
 command -v java >/dev/null 2>&1 || { echo "FATAL ERROR: JAVA runtime not found - Please install a java runtime environment and try again." >&2; exit 1; }
@@ -142,7 +145,6 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		displayHelp
 	elif [ -f "$filepath" ]
 	then
-		dirname=${filepath%/*}
 		filename=${filepath##*/}
 		filename_base=${filename%%.*}
 		filename_ext=${filename##*.}
@@ -154,28 +156,30 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		xmlname=$filename_base$timestamp.xml
 		echo ""
 		echo "NOTICE: Clearing old contents of output_working/"
-		rm -rf output_working/*
+		rm -rf $target_dir/output_working/*
 		echo ""
-		echo "NOTICE: Creating folders (if they don't exist): output_working/epub/"
-		mkdir -p output_working/epub/
+		echo "NOTICE: Creating folders (if they don't exist): output_working/epub/, output_final"
+		mkdir -p $target_dir/output_working/epub/
+		mkdir -p $target_dir/output_final
 		echo ""
 		echo "NOTICE: Copying over epub-template from assets/epub-template to output_working/epub/"
-		cp -r assets/epub-template/* output_working/epub/
+		cp -r $base_dir/assets/epub-template/* $target_dir/output_working/epub/
 		# copying assets for one article
 		# should I check this before running?
 		if [ "$#" = "2"  ]; then
 			resources=$2
-			echo "cp -r $resources/* output_working/epub/OEBPS"
-			cp -r $resources/* output_working/epub/OEBPS
+			echo "cp -r $resources/* $target_dir/output_working/epub/OEBPS"
+			cp -r $resources/* $target_dir/output_working/epub/OEBPS
 		fi
 		echo ""
 		echo "NOTICE: Starting XProc pipeline processing using XML Calabash"
 		echo ""
-		echo "        Processing \"$dirname/$filename\" with the pipeline \"process-jats-xml.xpl\""
+		echo "        Processing \"$filepath\" with the pipeline \"process-jats-xml.xpl\""
 		echo ""
+		cp $base_dir/process-jats-xml.xpl $target_dir/output_working/
 		echo "NOTICE: XML Calabash output BEGIN"
 		echo ""
-		calabash -i source=$filepath -p transform="jats2epub – built on top of github.com/ncbi/JATSPreviewStylesheets" process-jats-xml.xpl
+		calabash -i source=$filepath -p transform="jats2epub – built on top of github.com/ncbi/JATSPreviewStylesheets" jats2epub="$base_dir" $target_dir/output_working/process-jats-xml.xpl
 		echo ""
 		echo "NOTICE: XML Calabash output END"
 		echo ""
@@ -184,20 +188,20 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		echo "        If not, the XML Calabash output will contain error messages to help you troubleshoot."
 		echo ""
 		echo "NOTICE: Packing contents of output_working/epub/ with zip to $epubname"
-		cd output_working/epub
+		pushd $target_dir/output_working/epub
 		zip -0Xq $epubname mimetype
 		zip -Xr9Dq $epubname *
 		echo ""
 		echo "NOTICE: Moving $epubname to output_final/$epubname"
-		mv $epubname ../../output_final/
-		cd ../../
+		mv $epubname $target_dir/output_final/
+		popd
 		echo ""
 		echo "NOTICE: Moving html-version of article to output_final/$htmlname"
 		echo ""
-		mv output_working/article-webversion.html output_final/$htmlname
+		mv $target_dir/output_working/article-webversion.html $target_dir/output_final/$htmlname
 		ePubValidation
 		mobiGen
-		cp $filepath output_final/$xmlname
+		cp $filepath $target_dir/output_final/$xmlname
 		echo "NOTICE: DONE! Script has completed."
 		echo "        Please check the script output as well as files created in the folders output_final/ and output_working/"
 		echo ""
