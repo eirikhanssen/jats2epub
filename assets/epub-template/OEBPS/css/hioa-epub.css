@@ -288,7 +288,7 @@ ul.references li {
 
 ul.references li+li {margin-top: .85em; }
 /* tables */
-table { border-collapse: collapse; border: 1px solid black; width: 100%;}
+table { border-collapse: collapse; border: 1px solid black; width: 100%; font-family: sans-serif;}
 td, th {text-align: left; border: 1px solid gray; padding: .25em;}
 
 /* set alignment on the table, default is left */
@@ -302,3 +302,5 @@ table.align-right  th + th {text-align: right;}
 table.align-center  td + td,
 table.align-center th + td,
 table.align-center th + th {text-align: center;}
+.numeric td {text-align: right;}
+th[colspan], td[colspan] {text-align: center;}
