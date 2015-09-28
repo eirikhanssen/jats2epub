@@ -7,6 +7,7 @@
 
     ~~~~~~~~~~~~~~
     TAD & TE 2012-08-14: Forking the main CSS stylesheet into a version suited for e-book readers
+	EH 2013-2015: Tweak CSS stylesheet to improve readability and visuals
 */
 
 
@@ -103,7 +104,6 @@ h2+p, h3+p, h4+p, h5+p, h6+p {
 	margin-top: 0.25em;
 }
 
-
 /* titling level 1: document title */
 .document-title {
    text-align: center;
@@ -136,7 +136,7 @@ div.blockquote { font-size: 90%;
   margin-top: 0.5em; margin-bottom: 0.5em }
 
 div.caption {
-  margin-top: 0.5em; margin-bottom: 0.5em }
+  margin-top: 0.5em; margin-bottom: 0.5em; font-family: sans-serif; font-style: italic;}
 
 div.speech {
   margin-left: 1em; margin-right: 1em;
@@ -283,10 +283,8 @@ ul.references {
 	list-style-type: none;
 }
 ul.references li {
-	margin-left: 0; padding-left: 0;
+	margin-left: 0; padding-left: 2em; text-indent: -2em; line-height: 1.75em;
 }
-
-ul.references li+li {margin-top: .85em; }
 /* tables */
 table { border-collapse: collapse; border: 1px solid black; width: 100%; font-family: sans-serif;}
 td, th {text-align: left; border: 1px solid gray; padding: .25em;}
