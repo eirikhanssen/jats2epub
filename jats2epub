@@ -125,6 +125,9 @@ function mobiGen {
 }
 
 # main 'program'
+# append our programs directory copy of calabash
+PATH=$PATH:"$(dirname -- "$0")/programs/xmlcalabash"
+
 # check if java is installed - print error and exit if not found
 command -v java >/dev/null 2>&1 || { echo "FATAL ERROR: JAVA runtime not found - Please install a java runtime environment and try again." >&2; exit 1; }
 
