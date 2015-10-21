@@ -1,21 +1,22 @@
 #!/bin/bash
 #	Overview:
 #	
-#	This is a linux bash script that can be used to generate .epub, .html, .mobi 
-#	(and in a later version also .pdf output) from NISO JATS tagged .xml input
-#	This script relies on the XProc pipeline process-jats.xpl to do the xml
-#	transformation work. This bash script takes care of all the steps that couldn't 
-#	be implemented in the XProc pipeline process-jats.xpl alone.
+#	This is a shellscript that can be used to generate .epub, .html, .mobi
+#	(and possibly in a later version also .pdf output) from NISO JATS tagged .xml input
+#
+#	This script relies on the XProc pipeline jats2epub.xpl to do the xml
+#	transformation work. This shellscript takes care of all the steps that couldn't
+#	be implemented in the XProc pipeline jats2epub.xpl alone.
 #	
-#	It requires java and calabash to be installed on the system, or it will exit.
+#	It requires java and calabash (xmlcalabash) to be installed on the system and available in the PATH, or it will exit.
+#       Optional but recommended: epubcheck - validate and pack epub archive
+#	If epubcheck is not installed, zip will be used to pack the epub archive, but then it will not be validated
+#	java is required in order to run calabash (XProc processor) epubcheck
+#       Optional: amazon kindlegen for epub > .mobi generation
 #
-#	Author: 
+#	Author: Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
 #
-#	Eirik Hanssen, Oslo and Akershus University College of Applied Sciences
-#
-#	Contact:
-#
-#	eirik dot hanssen at hioa dot no
+#	Contact: eirik dot hanssen at hioa dot no
 #
 #	License:
 #	
@@ -34,6 +35,32 @@
 #	You should have received a copy of the GNU General Public License
 #	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 
+# unset $CDPATH in case it is set
+unset CDPATH
+
+# save path of current dir for later
+current_dir=$PWD
+
+# create working dir if not exists
+work_dir=~/.jats2epub
+mkdir -p $work_dir/latest-run
+mkdir -p $work_dir/converted
+latest_run_dir=$work_dir/latest-run
+converted_dir=$work_dir/converted
+
+# resolve script_dir (folder where this script is stored)
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was loc$
+done
+script_dir="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# set jats2epub xproc pipeline path
+jats2epub_xpl=$script_dir/pipeline/jats2epub.xpl
+
+
 # display usage
 function displayUsage {
 	echo ""
@@ -43,68 +70,86 @@ function displayUsage {
 	echo "   -h,   --help			Display Help/Troubleshooting"
 	echo ""
 	echo "Examples"
-	echo "   To process \"article.xml\" in the \"xml-source folder\":"
-	echo "   (1)	./jats2epub xml-source/article.xml"
+	echo "   To process \"article.xml\":"
+	echo "   (1)	jats2epub article.xml"
 	echo ""
-	echo "   To process \"article.xml\" in the \"xml-source folder\" and also copy images from \"xml-source/article-extras/images\" into epub-structure:"
-	echo "   (2)	./jats2epub xml-source-folder/article.xml xml-source-folder/article-extras"
+	echo "   Process \"article.xml\" and also copy images from \"article-extras/images\" into epub-structure"
+	echo "   (2)	jats2epub article.xml article-extras"
 	echo ""
-	echo "Display Help/Troubleshooting/Install-info:"
-	echo "   (3)	./jats2epub		Display this usage"
-	echo "   (4)	./jats2epub -h		Display Help/Troubleshooting"
+	echo "Display Help"
+	echo "   (3)	jats2epub		Display this usage"
+	echo "   (4)	jats2epub -h		Display more verbose Help/Troubleshooting"
 
 }
 
 
 function displayHelp {
 	echo""
-	echo "jats2epub help/troubleshooting"
+	echo "jats2epub Help/Troubleshooting"
 	echo ""
 	echo "This is a script to automate ePub creation from an article tagged and validated against the NISO JATS 1.0 XML tagset"
 	echo ""
 	echo "To begin with, the input xml-file needs to be tagged according to the JATS1.0 tagset and validated against jats xsd or DTD."
 	echo ""
-	echo "The first parameter to the script is required: the xml-file to be processed"
+	echo "The first parameter to the script is required: the JATS-tagged xml-file to be processed"
 	echo "If no images or extra files are used in the article or needed in the epub, you only need to use the first parameter"
 	echo ""
-	echo "Example 1"
+	echo "Example 1 - the minimal example"
 	echo ""
-	echo "(1)	./jats2epub xml-source/article.xml"
+	echo "(1)	jats2epub article.xml"
 	echo ""
-	echo "The second parameter is optional: a folder. It must be used if the article contains images or other files or folders to be copied inside the epub"
+	echo "The second parameter, a folder, is optional."
+	echo "It must be used if the article contains images or other files or folders to be copied inside the epub structure."
+	echo "This content will be placed in the EPUB folder within the epub archive."
 	echo ""
 	echo "Example 2"
 	echo ""
-	echo "Article is located at this path:"
-	echo "	/home/username/xml-source/article01.xml"
+	echo "    Article is located at this relative path:"
+	echo "	      article.xml"
 	echo ""
-	echo "Images are located at this path:"
-	echo "	/home/username/xml-source/article_extras/images/figure01.png"
-	echo "	/home/username/xml-source/article_extras/images/figure02.png"
-	echo "	/home/username/xml-source/article_extras/images/figure03.png"
+	echo "    Images are located at this path:"
+	echo "	      article_extras/images/figure01.png"
+	echo "	      article_extras/images/figure02.png"
+	echo "	      article_extras/images/figure03.png"
 	echo ""
-	echo "To process article01.xml and also copy the \"images\" folder as well as any other files or folders in article_extras/ to the epub:"
+	echo "To process article.xml and recursively add the contents of the folder article_extras to the EPUB folder in the epub archive:"
 	echo ""
-	echo "(2)	./jats2epub /home/username/xml-source/article.xml /home/username/xml-source/article_extras"
+	echo "(2)     jats2epub article.xml article_extras"
 	echo ""
-	echo "You don't have to use absolute paths, you can use relative paths as well."
+	echo "    You can use absolute or relative paths as you wish."
+	echo ""
+	echo "Log-file tip:"
+	echo ""
+	echo "    To save all the script output in a logfile for later inspection, append '| tee log.txt':"
+	echo ""
+	echo "(3)     jats2epub article.xml article_extras | tee log.txt"
 	echo ""
 }
 
-function ePubValidation {
+function ePubValidateAndSave {
 	if command -v epubcheck >/dev/null; then
-        	echo "NOTICE: Found epubcheck - validating output_final/$epubname:"
+        	echo "NOTICE: Found epubcheck - check $latest_run_dir/epub and if valid, save to $epubname"
 		echo ""
 		echo "NOTICE: epubcheck output BEGIN"
 		echo ""
-		epubcheck output_final/$epubname
+		epubcheck $latest_run_dir/epub/ -mode exp -save
+		cp $latest_run_dir/epub.epub $current_dir/$epubname
+		mv $latest_run_dir/epub.epub $converted_dir/$epubname
 		echo ""
 		echo "NOTICE: epubcheck output END"
 		echo ""
 
 	else
-        	echo "WARNING: epubcheck not found - skipping .epub validation!"
+        	echo "WARNING: epubcheck not found! Skipping .epub validation!"
+		echo "WARNING: packing UNVALIDATED epub archive in $latest_run_dir/epub"
 		echo ""
+		cd $latest_run_dir/epub
+		zip -0Xq $epubname mimetype
+		zip -Xr9Dq $epubname *
+		echo ""
+		echo "WARNING: Copying/Moving UNVALIDATED $epubname to $converted_dir and $current_dir"
+		cp $latest_run_dir/epub/$epubname $current_dir
+		mv $latest_run_dir/epub/$epubname $converted_dir
 	fi
 }
 
@@ -114,7 +159,7 @@ function mobiGen {
 		echo "        kindlegen output_final/$epubname -o $mobiname"
 		echo ""
 		echo "NOTICE: kindlegen output BEGIN"
-		kindlegen output_final/$epubname -o $mobiname
+		kindlegen $converted_dir/$epubname -o $mobiname
 		echo ""
 		echo "NOTICE: kindlegen output END"
 		echo ""
@@ -151,28 +196,28 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		xmlname=$filename_base$timestamp.xml
 		echo ""
 		echo "NOTICE: Clearing old contents of output_working/"
-		rm -rf output_working/*
+		rm -rf $latest_run_dir/*
 		echo ""
 		echo "NOTICE: Creating folders (if they don't exist): output_working/epub/"
-		mkdir -p output_working/epub/
+		mkdir -p $latest_run_dir/epub/EPUB
 		echo ""
 		echo "NOTICE: Copying over epub-template from assets/epub-template to output_working/epub/"
-		cp -r assets/epub-template/* output_working/epub/
+		cp -r $script_dir/assets/epub-template/* $latest_run_dir/epub/
 		# copying assets for one article
 		# should I check this before running?
 		if [ "$#" = "2"  ]; then
 			resources=$2
-			echo "cp -r $resources/* output_working/epub/OEBPS"
-			cp -r $resources/* output_working/epub/OEBPS
+			echo "cp -r $resources/* output_working/epub/EPUB"
+			cp -r $resources/* $latest_run_dir/epub/EPUB
 		fi
 		echo ""
 		echo "NOTICE: Starting XProc pipeline processing using XML Calabash"
 		echo ""
-		echo "        Processing \"$dirname/$filename\" with the pipeline \"process-jats-xml.xpl\""
+		echo "        Processing \"$dirname/$filename\" with the pipeline \"jats2epub.xpl\""
 		echo ""
 		echo "NOTICE: XML Calabash output BEGIN"
 		echo ""
-		calabash -i source=$filepath -p transform="jats2epub – built on top of github.com/ncbi/JATSPreviewStylesheets" process-jats-xml.xpl
+		calabash -i source=$filepath -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=$latest_run_dir $jats2epub_xpl
 		echo ""
 		echo "NOTICE: XML Calabash output END"
 		echo ""
@@ -180,25 +225,27 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		echo "        <c:result>...</c:result> element with the location of each file created by the pipeline."
 		echo "        If not, the XML Calabash output will contain error messages to help you troubleshoot."
 		echo ""
-		echo "NOTICE: Packing contents of output_working/epub/ with zip to $epubname"
-		cd output_working/epub
-		zip -0Xq $epubname mimetype
-		zip -Xr9Dq $epubname *
+		ePubValidateAndSave
 		echo ""
-		echo "NOTICE: Moving $epubname to output_final/$epubname"
-		mv $epubname ../../output_final/
-		cd ../../
+		echo "NOTICE: Copying $htmlname to $current_dir and $latest_run_dir"
 		echo ""
-		echo "NOTICE: Moving html-version of article to output_final/$htmlname"
-		echo ""
-		mv output_working/article-webversion.html output_final/$htmlname
-		ePubValidation
+		cp $latest_run_dir/article-webversion.html $converted_dir/$htmlname
+		cp $latest_run_dir/article-webversion.html $current_dir/$htmlname
 		mobiGen
-		cp $filepath output_final/$xmlname
+		cp $converted_dir/$mobiname $current_dir
+		cd $current_dir
+		cp $filepath $converted_dir/$xmlname
+		cp $filepath $xmlname
 		echo "NOTICE: DONE! Script has completed."
-		echo "        Please check the script output as well as files created in the folders output_final/ and output_working/"
+		echo "    If successful the following files have been stored in $converted_dir and $current_dir:"
+		echo "        $epubname"
+ 		echo "        $xmlname"
+                echo "        $mobiname"
+                echo "        $htmlname"
 		echo ""
-
+		echo "    If something went wrong, try to inspect the terminal output, the input xml-file and files in"
+		echo "    $latest_run_dir"
+		echo ""
 	else
 		echo ""
 		echo "ERROR: The file '$filepath' was not found."
