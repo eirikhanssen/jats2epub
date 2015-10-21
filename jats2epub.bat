@@ -3,9 +3,9 @@ rem	Overview:
 rem	
 rem	This is a windows batch script that can be used to generate .epub, .html, .mobi 
 rem	(and in a later version also .pdf output) from NISO JATS tagged .xml input
-rem	This script relies on the XProc pipeline process-jats.xpl to do the xml
+rem	This script relies on the XProc pipeline jats2epub.xpl to do the xml
 rem	transformation work. This script takes care of all the steps that couldn't 
-rem	be implemented in the XProc pipeline process-jats.xpl alone.
+rem	be implemented in the XProc pipeline jats2epub.xpl alone.
 rem
 rem	Author: 
 rem
@@ -44,13 +44,10 @@ for /f "tokens=*" %%i in ('programs\UnxUtils\date.exe +"%%Y%%m%%d-%%H%%M%%S"') d
 rem echo datetime: %datetime%
 
 set epubfilename=%~n1-%datetime%.epub
-rem echo epubfilename was set to: %epubfilename%
 set mobifilename=%~n1-%datetime%.mobi
-rem echo mobifilename was set to: %mobifilename%
 set pdffilename=%~n1-%datetime%.pdf
-rem echo PDFfilename was set to: %pdffilename%
 set htmlfilename=%~n1-%datetime%.html
-rem echo htmlfilename was set to: %htmlfilename%
+set xmlfilename=%~n1-%datetime%.xml
 
  
 :main
@@ -119,8 +116,8 @@ setlocal
 	echo 	Must be a valid xmlfile according to the NISO JATS 1.0 xml dtd or xsd
 	echo:
 	echo folder-with-extras  ^(optional^)
-	echo 	If used should be the path to a folder with folders and files that needs to be copied into the OEBPS folder 
-	echo 	in the epub file structure. Script will copy folder-with-extras\* to output_working\epub\OEBPS\
+	echo 	If used should be the path to a folder with folders and files that needs to be copied into the EPUB folder 
+	echo 	in the epub file structure. Script will copy folder-with-extras\* to latest-run\epub\EPUB\
 	echo 	Use the folder parameter if the article uses images for figures. 
 	echo 	Images should be placed inside an images folder that is child of this folder.
 	echo:
@@ -153,8 +150,8 @@ endlocal && exit /b
 :get-user-confirmation
 setlocal
 	echo:
-	echo WARNING^^! Script needs to clear out ^(DELETE^) files from output_working to continue
-	echo This is normal operation, but if you need to back up the files in output_working ^(after a previous run^), please abort.
+	echo WARNING^^! Script needs to clear out ^(DELETE^) files from latest-run to continue
+	echo This is normal operation, but if you need to back up the files in latest-run ^(after a previous run^), please abort.
 	echo:
 set /p confirm_value=Type Y to continue or N to abort ^(Y/N^):%=%
 if "%confirm_value%" == "y" (
@@ -172,15 +169,15 @@ endlocal && exit /b
 setlocal
 	echo:
 	echo # START # Preparing and processing files
-	call :clear-output_working
+	call :clear-latest-run
 	call :create-if-not-exists-output_final
 	call :epub-template-copy %2
 	call :process-xproc-pipeline %1
 	echo:
 	echo # DONE # Preparing and processing files
 	echo:
-	echo Copying output_working\article-webversion.html to output_final\%htmlfilename%
-	copy output_working\article-webversion.html output_final\%htmlfilename% /Y
+	echo Copying latest-run\article-webversion.html to output_final\%htmlfilename%
+	copy latest-run\article-webversion.html output_final\%htmlfilename% /Y
 endlocal && exit /b
 
 :create-if-not-exists-output_final
@@ -194,22 +191,22 @@ endlocal && exit /b
 :epub-template-copy
 setlocal
 	echo:
-	echo # START # Copying over epub-template from assets\epub-template to output_working\epub
+	echo # START # Copying over epub-template from assets\epub-template to latest-run\epub
 	echo:
-	xcopy assets\epub-template output_working\epub\ /S /F /I
+	xcopy assets\epub-template latest-run\epub\ /S /F /I
 	echo:
-	echo # DONE # Copying over epub-template from assets\epub-template to output_working\epub
+	echo # DONE # Copying over epub-template from assets\epub-template to latest-run\epub
 endlocal && exit /b
 
-:clear-output_working
+:clear-latest-run
 setlocal
 	echo:
 	echo # START # Clearing out old files
 	echo:
-	echo deleting folder output_working
-	rmdir /S /Q output_working
-	echo creating folder output_working
-	mkdir output_working
+	echo deleting folder latest-run
+	rmdir /S /Q latest-run
+	echo creating folder latest-run
+	mkdir latest-run
 	echo:
 	echo # DONE # Clearing out old files
 endlocal && exit /b
@@ -217,11 +214,11 @@ endlocal && exit /b
 :copy-extra-folder
 setlocal
 	echo:
-	echo # START # Copying over extra files from %1 to output_working\epub\OEBPS
+	echo # START # Copying over extra files from %1 to latest-run\epub\EPUB
 	echo:
-	xcopy %1\* output_working\epub\OEBPS\ /S /F /I
+	xcopy %1\* latest-run\epub\EPUB\ /S /F /I
 	echo:
-	echo # DONE # Copying over extra files from %1 to output_working\epub\OEBPS
+	echo # DONE # Copying over extra files from %1 to latest-run\epub\EPUB
 endlocal && exit /b
 
 :process-xproc-pipeline
@@ -229,7 +226,7 @@ setlocal
 	echo:
 	echo # START # XProc pipeline processing with XMLCalabash on %1
 	echo:
-	call calabash -i source=%1 process-jats-xml.xpl
+	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=latest-run pipeline\jats2epub.xpl
 	echo:
 	echo # DONE # XProc pipeline processing with XMLCalabash on %1
 endlocal && exit /b
@@ -239,16 +236,17 @@ setlocal
 	echo:
 	echo # START # Packing epub archive: %1
 	echo:
-	cd output_working\epub
-	echo creating %1 and adding mimetype with 0 compression
-	call ..\..\programs\zip3-win32\zip.exe -0 -X %1 mimetype
-	echo adding the remaining files to %1
-	call ..\..\programs\zip3-win32\zip.exe -r -9 -X %1 .\* -x mimetype *Thumbs.db
+	cd latest-run\epub
+rem	echo creating %1 and adding mimetype with 0 compression
+rem	call ..\..\programs\zip3-win32\zip.exe -0 -X %1 mimetype
+rem	echo adding the remaining files to %1
+rem	call ..\..\programs\zip3-win32\zip.exe -r -9 -X %1 .\* -x mimetype *Thumbs.db
+    call epubcheck ./ -mode exp -save
 	echo:
 	echo # DONE # Packing epub archive
 	echo:
 	echo moving %1 to output_final\%1
-	move %1 ..\..\output_final
+	move epub.epub ..\..\output_final\%1
 	cd ..\..
 endlocal && exit /b
 
@@ -267,7 +265,7 @@ if not exist "programs\kindlegen\kindlegen.exe" (
 ) else (
 	echo # START # Converting %1 to %2 with KindleGen
 	echo:
-	call programs\kindlegen\kindlegen.exe output_final\%1 -o %2
+	call programs\kindlegen\kindlegen.exe output-final\%1 -o %2
 	echo:
 	echo # DONE # Converting %1 to %2 with KindleGen
 )
@@ -308,8 +306,8 @@ setlocal
 	rem if it exists output message about those files being there.
 	rem if not, something went wrong
 	echo:
-	echo You might also want to browse files in output_working, as all intermediate files created by the pipeline are there.
-	echo ALL intermediate files in output_working WILL BE ERASED after a warning on the next run.
+	echo You might also want to browse files in latest-run, as all intermediate files created by the pipeline are there.
+	echo ALL intermediate files in latest-run WILL BE ERASED after a warning on the next run.
 	echo:
 	echo If something went wrong, please read the output from the script and consult readme-win.html.
 endlocal && exit /b
