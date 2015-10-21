@@ -1,0 +1,26 @@
+epubcheck is required in order to validate and pack epub archives
+epubcheck is distributed as a java .jar archive and therefore requires a java runtime environment to run
+
+epubcheck can be downloaded from:
+https://github.com/idpf/epubcheck
+
+Latest release: https://github.com/IDPF/epubcheck/releases/latest
+At time of writing:
+https://github.com/IDPF/epubcheck/releases/tag/v4.0.0
+Download link: https://github.com/IDPF/epubcheck/releases/download/v4.0.0/epubcheck-4.0.0.zip
+
+Windows users: Please unzip to this folder and rename the epubcheck-version-folder to epubcheck.
+
+Unix/Gnu/Linux/MacOSX users: please unzip to /usr/local/ or for instance ~/bin/programs
+Put shellscript called epubcheck in /usr/bin or ~/bin with the following contents (modify paths as needed):
+
+If you have root acces, unzip epubcheck to /usr/local/programs/ and put a script called epubcheck in /usr/local/bin with these two lines:
+
+#!/bin/sh
+java -jar /usr/local/programs/epubcheck-4.0.0/epubcheck.jar "$@"
+
+
+If you don't have root access, unzip to ~/bin/programs and put a script called epubcheck in ~/bin/ with these two lines:
+
+#!/bin/sh
+java -jar ~/bin/programs/epubcheck-4.0.0/epubcheck.jar "$@"
