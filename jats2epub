@@ -217,7 +217,7 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		echo ""
 		echo "NOTICE: XML Calabash output BEGIN"
 		echo ""
-		calabash -i source=$filepath -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=$latest_run_dir $jats2epub_xpl
+		calabash -i source=$filepath -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=$latest_run_dir/ $jats2epub_xpl
 		echo ""
 		echo "NOTICE: XML Calabash output END"
 		echo ""

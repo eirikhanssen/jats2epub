@@ -43,7 +43,7 @@
 	<p:input port="source"/>
 	<p:input port="transform" kind="parameter"/>
 	<!-- work_dir - where the files will be saved. defaults to latest-run folder in folder where jats2epub is located -->
-	<p:option name="work_dir" select="'../latest-run'"/>
+	<p:option name="work_dir" select="'latest-run'"/>
 
 	<!-- EH 2013-11-25: <p:output> displays all files that were saved to disk in <c:result> elements -->
 	<p:output port="result" sequence="true">
@@ -67,7 +67,7 @@
 
 	<!-- EH 2013-11-25: Stores the unchanged xml-->
 	<p:store name="step-00-original-xml">
-		<p:with-option name="href" select="concat($work_dir, '/00-original.xml')"/>
+		<p:with-option name="href" select="concat($work_dir, '00-original.xml')"/>
 	</p:store>
 
 	<p:identity name="document-source">
@@ -92,7 +92,7 @@
 
 	<!-- Stores the APAcit formatted xml-document -->
 	<p:store name="step-10-xml-article-APAcit-preprocessed">
-		<p:with-option name="href" select="concat($work_dir, '/10-xml-article-APAcit-preprocessed.xml')"
+		<p:with-option name="href" select="concat($work_dir, '10-xml-article-APAcit-preprocessed.xml')"
 		/>
 	</p:store>
 
@@ -115,7 +115,7 @@
 
 	<p:store name="step-15-xml-book-chapter-bugfixed">
 		<p:with-option name="href"
-			select="concat($work_dir, '/15-xml-article-APAcit-preprocessed-book-chapter-refs-bugfixed.xml')"
+			select="concat($work_dir, '15-xml-article-APAcit-preprocessed-book-chapter-refs-bugfixed.xml')"
 		/>
 	</p:store>
 
@@ -146,7 +146,7 @@
 	<!-- Store the APAcit formatted mixed-citation-bugfixed xml-document -->
 	<p:store name="step-20-xml-article-bugfix-book-chapter-mixed-citation">
 		<p:with-option name="href"
-			select="concat($work_dir, '/20-xml-article-bugfix-book-chapter-mixed-citation.xml')"/>
+			select="concat($work_dir, '20-xml-article-bugfix-book-chapter-mixed-citation.xml')"/>
 	</p:store>
 
 	<!-- 
@@ -204,7 +204,7 @@
 	<!-- Stores xml where potential missing id is fixed on graphic elements ) -->
 	<p:store name="step-30-xml-article-bugfix-graphic-missing-id">
 		<p:with-option name="href"
-			select="concat($work_dir, '/30-xml-article-bugfix-graphic-missing-id.xml')"/>
+			select="concat($work_dir, '30-xml-article-bugfix-graphic-missing-id.xml')"/>
 	</p:store>
 
 	<p:xslt name="display-xhtml" version="2.0">
@@ -224,7 +224,7 @@
 
 	<!-- Stores the xhtml display document for use in ePub ( at this stage we have problems with elements that have no namespace - xmlns="" ) -->
 	<p:store omit-xml-declaration="true" indent="true" name="step-40-xhtml-article-display">
-		<p:with-option name="href" select="concat($work_dir, '/40-xhtml-article-display.html')"/>
+		<p:with-option name="href" select="concat($work_dir, '40-xhtml-article-display.html')"/>
 	</p:store>
 
 	<!-- Casts all elements to xhtml namespace. This remedies the problem where some elements get no namespace (xmlns="").-->
@@ -245,7 +245,7 @@
 	<p:store omit-xml-declaration="true" indent="true" encoding="utf-8"
 		doctype-public="-//W3C//DTD XHTML 1.1//EN"
 		doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" name="epub-index-html">
-		<p:with-option name="href" select="concat($work_dir, '/epub/EPUB/index.html')"/>
+		<p:with-option name="href" select="concat($work_dir, 'epub/EPUB/index.html')"/>
 	</p:store>
 
 	<!-- EH 2014-03-22: Storing a copy for inspeciton -->
@@ -254,7 +254,7 @@
 		doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
 		name="step-50-xhtml-namespace-fixed-epub-version">
 		<p:with-option name="href"
-			select="concat($work_dir, '/50-xhtml-namespace-fixed-epub-version.html')"/>
+			select="concat($work_dir, '50-xhtml-namespace-fixed-epub-version.html')"/>
 		<p:input port="source">
 			<p:pipe step="xhtml-ready-for-epub" port="result"/>
 		</p:input>
@@ -360,7 +360,7 @@ prevent css from functioning. -->
 	<p:store omit-xml-declaration="true" indent="true" encoding="utf-8" method="html" version="4.0"
 		doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
 		doctype-system="http://www.w3.org/TR/html4/loose.dtd" name="article-webversion">
-		<p:with-option name="href" select="concat($work_dir, '/article-webversion.html')"/>
+		<p:with-option name="href" select="concat($work_dir, 'article-webversion.html')"/>
 	</p:store>
 
 	<!-- 
@@ -393,7 +393,7 @@ prevent css from functioning. -->
 	<p:store omit-xml-declaration="true" indent="true" encoding="utf-8" method="html" version="4.0"
 		doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
 		doctype-system="http://www.w3.org/TR/html4/loose.dtd" name="step-60-webversion">
-		<p:with-option name="href" select="concat($work_dir, '/60-webversion.html')"/>
+		<p:with-option name="href" select="concat($work_dir, '60-webversion.html')"/>
 	</p:store>
 
 	<!-- EH 2013-12-02: Generate content.opf, a required file in an epub publication -->
@@ -408,12 +408,12 @@ prevent css from functioning. -->
 
 	<!-- EH 2014-03-22: storing content.opf in epub structure -->
 	<p:store indent="true" name="content-opf">
-		<p:with-option name="href" select="concat($work_dir, '/epub/EPUB/content.opf')"/>
+		<p:with-option name="href" select="concat($work_dir, 'epub/EPUB/content.opf')"/>
 	</p:store>
 
 	<!-- EH 2014-03-22: storing a copy for inspection -->
 	<p:store indent="true" name="step-70-content-opf">
-		<p:with-option name="href" select="concat($work_dir, '/70-content.opf')"/>
+		<p:with-option name="href" select="concat($work_dir, '70-content.opf')"/>
 		<p:input port="source">
 			<p:pipe step="generate-content-opf" port="result"/>
 		</p:input>
@@ -452,12 +452,12 @@ prevent css from functioning. -->
 
 	<!-- EH 2014-03-22: storing content.opf in epub structure -->
 	<p:store indent="true" name="toc-ncx">
-		<p:with-option name="href" select="concat($work_dir, '/epub/EPUB/toc.ncx')"/>
+		<p:with-option name="href" select="concat($work_dir, 'epub/EPUB/toc.ncx')"/>
 	</p:store>
 
 	<!-- EH 2014-03-22: storing a copy for inspection -->
 	<p:store indent="true" name="step-80-toc-ncx">
-		<p:with-option name="href" select="concat($work_dir, '/80-toc.ncx')"/>
+		<p:with-option name="href" select="concat($work_dir, '80-toc.ncx')"/>
 		<p:input port="source">
 			<p:pipe step="toc-ncx-ready" port="result"/>
 		</p:input>
