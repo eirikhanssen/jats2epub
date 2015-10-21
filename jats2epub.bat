@@ -33,6 +33,7 @@ rem	You should have received a copy of the GNU General Public License
 rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 
 cd .\
+set current_dir=%cd%
 rem find number of argments passed to this script
 set /a args_count=0
 for %%a in (%*) do set /a args_count+=1
@@ -48,6 +49,7 @@ set mobifilename=%~n1-%datetime%.mobi
 set pdffilename=%~n1-%datetime%.pdf
 set htmlfilename=%~n1-%datetime%.html
 set xmlfilename=%~n1-%datetime%.xml
+set latest_run_dir=%cd%\latest-run\
 
  
 :main
@@ -65,7 +67,6 @@ if "%args_count%" == "0" (
 		call :get-user-confirmation
 		call :prepare-and-process-files %1
 		call :pack-epub-archive %epubfilename%
-		call :validate-epub %epubfilename%
 		call :mobiconvert %epubfilename% %mobifilename%
 		call :pdf-generation %pdffilename%
 		call :endnotice
@@ -94,7 +95,6 @@ if "%args_count%" == "0" (
 		call :prepare-and-process-files %1 %2
 		call :copy-extra-folder %2
 		call :pack-epub-archive %epubfilename%
-		call :validate-epub %epubfilename%
 		call :mobiconvert %epubfilename% %mobifilename%
 		call :pdf-generation %pdffilename%
 		call :endnotice
@@ -226,7 +226,7 @@ setlocal
 	echo:
 	echo # START # XProc pipeline processing with XMLCalabash on %1
 	echo:
-	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=latest-run pipeline\jats2epub.xpl
+	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=latest-run/ jats2epub.xpl
 	echo:
 	echo # DONE # XProc pipeline processing with XMLCalabash on %1
 endlocal && exit /b
@@ -236,12 +236,8 @@ setlocal
 	echo:
 	echo # START # Packing epub archive: %1
 	echo:
-	cd latest-run\epub
-rem	echo creating %1 and adding mimetype with 0 compression
-rem	call ..\..\programs\zip3-win32\zip.exe -0 -X %1 mimetype
-rem	echo adding the remaining files to %1
-rem	call ..\..\programs\zip3-win32\zip.exe -r -9 -X %1 .\* -x mimetype *Thumbs.db
-    call epubcheck ./ -mode exp -save
+	cd %current_dir%
+    call epubcheck .\latest-run\epub -mode exp -save
 	echo:
 	echo # DONE # Packing epub archive
 	echo:
