@@ -58,7 +58,7 @@ done
 script_dir="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 # set jats2epub xproc pipeline path
-jats2epub_xpl=$script_dir/pipeline/jats2epub.xpl
+jats2epub_xpl=$script_dir/jats2epub.xpl
 
 
 # display usage
