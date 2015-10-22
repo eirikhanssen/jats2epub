@@ -25,28 +25,30 @@ rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 rem	
 rem	Contact: eirik dot hanssen at hioa dot no
 echo NOTICE:
-echo:
-echo		All commands here work in this folder ONLY!
-echo		To make these commands work in any folder, please read the Install section in readme-win.html
-echo:
+echo    As long as you started the command shell by using the batch file ClickMeToStart.bat,
+echo    the folder %bin% has been added to the path variable and some new commands can be used.
 echo:
 echo AVAILABLE COMMANDS:
 echo:
-echo jats2epub								^<-- try this command^!
-echo:
-echo		Use this script to create .epub and .mobi from a JATS tagged .xml file.
-echo		When called with no parameters, will display usage of this script
+echo jats2epub
+echo    Use this script to create .epub and .mobi from a JATS tagged .xml file.
+echo    When called with no parameters, will display usage of this script
 echo:
 echo startupguide
-echo:
-echo		Display this screen.
+echo    Display this screen.
 echo:
 echo commandhelp
-echo:
-echo		Display useful commands for cmd.exe ^(like how to change dir and copy files etc ...^)
+echo    Display some useful commands for cmd.exe ^(like how to change dir and copy files etc ...^)
 echo:
 echo epubcheck [filename]
+echo    Validate an epub using epubcheck. ^(Done automatically by jats2epub^).
+echo    Note that you must also download epubcheck.jar for this command to work. Consult the README.
 echo:
-echo		Validate an epub using epubcheck.
-echo		This is done automatically by jats2epub.
+echo calabash [filename]
+echo    Run an XProc pipeline. ^(Done automatically by jats2epub^)..
+echo    Note that you must also download calabash.jar this command to work. Consult the README.
+echo:
+echo kindlegen [filename]
+echo    Convert an epub file to a mobi file. ^(Done automatically by jats2epub^).
+echo    Note that you must also download kindlegen.exe for this command to work. Consult the README.
 echo:

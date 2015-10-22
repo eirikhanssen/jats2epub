@@ -29,4 +29,6 @@ rem	You should have received a copy of the GNU General Public License
 rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 rem	
 rem	Contact: eirik dot hanssen at hioa dot no
+set bin=%cd%\programs\bin
+set path=%bin%;%path%
 call cmd /K startupguide.bat

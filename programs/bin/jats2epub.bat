@@ -1,4 +1,5 @@
-@echo off && PUSHD "%~dp0" && SETLOCAL EnableExtensions EnableDelayedExpansion
+@echo off && SETLOCAL EnableExtensions EnableDelayedExpansion
+rem @echo off && PUSHD "%~dp0" && SETLOCAL EnableExtensions EnableDelayedExpansion
 rem	Overview:
 rem	
 rem	This is a windows batch script that can be used to generate .epub, .html, .mobi 
@@ -107,7 +108,7 @@ setlocal
 	echo:
 	echo:
 	echo USAGE:
-	echo 	jats2epub xmlfile [folder-with-extras]
+	echo 	jats2epub xmlfile [required] folder-with-extras [optional]
 	echo:
 	echo:
 	echo PARAMETERS:
@@ -116,35 +117,25 @@ setlocal
 	echo 	Must be a valid xmlfile according to the NISO JATS 1.0 xml dtd or xsd
 	echo:
 	echo folder-with-extras  ^(optional^)
-	echo 	If used should be the path to a folder with folders and files that needs to be copied into the EPUB folder 
-	echo 	in the epub file structure. Script will copy folder-with-extras\* to latest-run\epub\EPUB\
-	echo 	Use the folder parameter if the article uses images for figures. 
-	echo 	Images should be placed inside an images folder that is child of this folder.
-	echo:
-	echo 	See examples below and inspect files and folders inside the folder source-xml\
+	echo 	Contents of this folder will be put directly in the EPUB folder within the epub archive.
+	echo    This is needed if the article has figures such as images.
 	echo:
 	echo:
 	echo EXAMPLES:
 	echo:
-	echo A test case using an article by Mike Saks, located in the source-xml folder
-	echo (^includes no extra images to be copied^)
+	echo Try converting these two sample documents to epub. 
 	echo:
-	echo Example 1:
+	echo ^(1^) Convert a paper by Mike Saks, located in the source-xml folder:
 	echo:
-	echo 	jats2epub source-xml\saks.xml				^<-- try this command^!
-	echo:
-	echo:
-	echo A test case using the provided article by Ivan Spehar and Lars Ivar Kjekshus, located in the source-xml folder
-	echo ^(includes extra images to be copied into epub structure^)
-	echo:
-	echo Example 2:
-	echo:
-	echo 	jats2epub source-xml\spehar.xml source-xml\spehar		^<-- try this command^!
+	echo 	jats2epub source-xml\saks.xml
 	echo:
 	echo:
-	echo You will see output messages from this script and the components used.
+	echo ^(2^) Convert a paper with images by Ivan Spehar and Lars Ivar Kjekshus ^(need to use the second parameter^):
 	echo:
-	echo If all goes well .epub and .mobi ^(if enabled^) files will appear in the folder output_final\
+	echo 	jats2epub source-xml\spehar.xml source-xml\spehar
+	echo:
+	echo:
+	echo If all goes well, the converted .epub and .mobi ^(if enabled^) files will appear in the folder converted-files\
 endlocal && exit /b
 
 :get-user-confirmation
@@ -170,21 +161,21 @@ setlocal
 	echo:
 	echo # START # Preparing and processing files
 	call :clear-latest-run
-	call :create-if-not-exists-output_final
+	call :create-if-not-exists-converted-files
 	call :epub-template-copy %2
 	call :process-xproc-pipeline %1
 	echo:
 	echo # DONE # Preparing and processing files
 	echo:
-	echo Copying latest-run\article-webversion.html to output_final\%htmlfilename%
-	copy latest-run\article-webversion.html output_final\%htmlfilename% /Y
+	echo Copying latest-run\article-webversion.html to converted-files\%htmlfilename%
+	copy latest-run\article-webversion.html converted-files\%htmlfilename% /Y
 endlocal && exit /b
 
-:create-if-not-exists-output_final
+:create-if-not-exists-converted-files
 setlocal
-	if not exist "output_final" (
-		echo Creating directory to hold finished ebooks: output_final
-		mkdir output_final
+	if not exist "converted-files" (
+		echo Creating directory to hold finished ebooks: converted-files
+		mkdir converted-files
 	)
 endlocal && exit /b
 
@@ -234,34 +225,38 @@ endlocal && exit /b
 :pack-epub-archive
 setlocal
 	echo:
-	echo # START # Packing epub archive: %1
+	echo # START # Epub validation and packing of epub archive if valid: %1
 	echo:
 	cd %current_dir%
     call epubcheck .\latest-run\epub -mode exp -save
 	echo:
-	echo # DONE # Packing epub archive
+	echo # DONE # Epub validation and packing attempt
 	echo:
-	echo moving %1 to output_final\%1
-	move epub.epub ..\..\output_final\%1
+	echo moving %1 to converted-files\%1
+	move epub.epub ..\..\converted-files\%1
 	cd ..\..
 endlocal && exit /b
 
 :mobiconvert
 setlocal
 echo:
-if not exist "programs\kindlegen\kindlegen.exe" (
-	echo ######################################################################
-	echo ###                                                                ###
-	echo ### NOTICE:                                                        ###
-	echo ### Amazon Kindlegen is disabled by default due to licencing.      ###
-	echo ### See readme if you want to enable kindlegen for .mobi creation. ###
-	echo ### .mobi format for kindle was NOT created^^!                       ###
-	echo ###                                                                ###
-	echo ######################################################################
+if not exist "%bin%\..\kindlegen\kindlegen.exe" (
+	echo #######################################################################
+	echo ###                                                                 ###
+	echo ### NOTICE:                                                         ###
+	echo ### Amazon Kindlegen is disabled by default due to licencing.       ###
+	echo ### Please download kindlegen and put kindlegen.exe in              ###
+	echo ### jats2epub\programs\kindlegen to be able to generate mobi format.###
+	echo ### Search google for amazon kindlegen or try this url:             ###
+	echo ### http://www.amazon.com/gp/feature.html?docId=1000765211          ###
+	echo ###                                                                 ###
+	echo ### .mobi format was NOT created due to missing kindlegen           ###
+	echo ###                                                                 ###
+	echo #######################################################################
 ) else (
 	echo # START # Converting %1 to %2 with KindleGen
 	echo:
-	call programs\kindlegen\kindlegen.exe output-final\%1 -o %2
+	call kindlegen output-final\%1 -o %2
 	echo:
 	echo # DONE # Converting %1 to %2 with KindleGen
 )
@@ -288,7 +283,7 @@ setlocal
 	echo # START # Epub validation
 	echo:
 	echo Validating epub: %1 using epubcheck ...
-	call epubcheck output_final\%1
+	call epubcheck converted-files\%1
 	echo:
 	echo # DONE # Epub validation
 endlocal && exit /b
@@ -297,8 +292,8 @@ endlocal && exit /b
 setlocal
 	echo:
 	echo SCRIPT HAS COMPLETED^^!
-	echo Check out the output_final folder for newly created files if all went well.
-	rem check if output_final\%epubfilename% and output_final\%mobifilename% exists
+	echo Check out the converted-files folder for newly created files if all went well.
+	rem check if converted-files\%epubfilename% and converted-files\%mobifilename% exists
 	rem if it exists output message about those files being there.
 	rem if not, something went wrong
 	echo:
