@@ -19,6 +19,12 @@ Install for Windows users:
   3) rename this new folder simply to kindlegen (stripping away the version part)
   4) kindlegen.exe should then be located in jats2epub\programs\kindlegen\kindlegen.exe 
   (then it will be found by the kindlegen.bat file used by jats2epub script)
+  
+  Note for windows users and kindlegen:
+  I have experienced not being able to run kindlegen.exe on a Windows PC in a work environment. You may or may not experience this issue.
+  This is the error message I have got:
+  This program is blocked by group policy. For more information, contact your system administrator.
+  
 
 Install for Unix, Gnu/Linux and MacOSX users: 
     put kindlegen in a folder in path, or create a symlink to it there:
