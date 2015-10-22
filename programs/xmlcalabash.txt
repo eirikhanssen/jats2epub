@@ -25,5 +25,11 @@ At time of writing this is xmlcalabash-1.1.9-96.zip, but any later version shoul
 
 5) Do not reaname any of the other files :)
 
-The reason for this renaming is that the calabash.bat script located in the jats2epub\bin folder will then find the jarfile.
+The reason for this renaming is that the calabash.bat script located in the jats2epub\bin folder will then find the jarfile in:
+jats2epub\programs\xmlcalbash\xmlcalabash.jar
+
 And then the calabash command used by jats2epub will be working.
+
+At any case, the folder containing the xmlcalabash.jar file should be renamed to xmlcalabash, and 
+it should be placed directly in the jats2epub/programs folder, so you might have to move this folder
+depending on how it was extracted.

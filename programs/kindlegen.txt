@@ -1,0 +1,42 @@
+Amazon kindlegen is used to convert epub to mobi for use on kindle devices.
+
+Because of licencing restrictions, I can't include Amazon kindlegen in this package.
+You can however, download it yourself legally and for free from amazon.
+
+If you wish to automatically create .mobi format for use with kindle devices aswell do the following steps:
+
+Download kindlegen from amazon.
+  - Search google: amazon kindlegen
+	At time of writing: http://www.amazon.com/gp/feature.html?docId=1000765211
+    Direct download (at time of writing):
+        - Win32: http://kindlegen.s3.amazonaws.com/kindlegen_win32_v2_9.zip
+        - Mac OS 10.5 and above i386: http://kindlegen.s3.amazonaws.com/KindleGen_Mac_i386_v2_9.zip
+        - Gnu/Linux 2.6 i386: http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz
+
+Install for Windows users:
+  1) download kindlegen_win32_v2_9.zip (or any later version) to this folder (jats2epub\programs)
+  2) extract the downloaded zip archive this folder (jats2epub\programs)
+  3) rename this new folder simply to kindlegen (stripping away the version part)
+  4) kindlegen.exe should then be located in jats2epub\programs\kindlegen\kindlegen.exe 
+  (then it will be found by the kindlegen.bat file used by jats2epub script)
+
+Install for Unix, Gnu/Linux and MacOSX users: 
+    put kindlegen in a folder in path, or create a symlink to it there:
+    Some popular suggestions:
+	
+    Have root access - make system available in /usr/local:
+	1) Extract the kindlegen archive to /usr/local/
+	2) Make symlink to kindlegen executable from /usr/local/bin: sudo ln -s full/path/to/kindlegen-executable /usr/local/bin/kindlegen
+
+    No root access - you can install somewhere in your home directory: 
+	1) suggestion: extract the kindlegen archive to ~/bin/programs/
+	2) create symlink from your home directory's bin (~/bin) to kindlegen executable: ln -s ~/bin/programs/kindlegen/kindlegen ~/bin/kindlegen
+    
+	Notes:
+	1) For newbies: ~/ is your home folder, such as /home/username or /Users/username
+	2) You might have to do some folder renaming or sym linking to make this work, and make sure the path is correct for your system.
+	3) For no root access, this also assumes that the folder ~/bin is in PATH, i.e. it will show up if you type:
+	   echo $PATH
+	   if unsure on how to do this, do a google search on adding folder to path
+
+Now when you run jats2epub, a .mobi file of the article will also be created

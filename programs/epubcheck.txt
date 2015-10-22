@@ -9,7 +9,7 @@ At time of writing:
 https://github.com/IDPF/epubcheck/releases/tag/v4.0.0
 Download link: https://github.com/IDPF/epubcheck/releases/download/v4.0.0/epubcheck-4.0.0.zip
 
-Windows users: Please unzip to this folder and rename the epubcheck-version-folder to epubcheck.
+Windows users: Please unzip to this folder and rename the folder epubcheck-4.0.0 (or later version) to epubcheck.
 
 Unix/Gnu/Linux/MacOSX users: please unzip to /usr/local/ or for instance ~/bin/programs
 Put shellscript called epubcheck in /usr/bin or ~/bin with the following contents (modify paths as needed):
@@ -17,10 +17,14 @@ Put shellscript called epubcheck in /usr/bin or ~/bin with the following content
 If you have root acces, unzip epubcheck to /usr/local/programs/ and put a script called epubcheck in /usr/local/bin with these two lines:
 
 #!/bin/sh
-java -jar /usr/local/programs/epubcheck-4.0.0/epubcheck.jar "$@"
+java -jar /usr/local/programs/epubcheck/epubcheck.jar "$@"
 
 
 If you don't have root access, unzip to ~/bin/programs and put a script called epubcheck in ~/bin/ with these two lines:
 
 #!/bin/sh
-java -jar ~/bin/programs/epubcheck-4.0.0/epubcheck.jar "$@"
+java -jar ~/bin/programs/epubcheck/epubcheck.jar "$@"
+
+Note that for this to work, you need to either rename the folder "epubcheck-4.0.0" (or later version) to "epubcheck" (without quotes), 
+Or you can also make a symlink called epubcheck that points to this folder:
+ln -s epubcheck-4.0.0 epubcheck
