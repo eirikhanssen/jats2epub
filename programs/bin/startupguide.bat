@@ -24,6 +24,7 @@ rem	You should have received a copy of the GNU General Public License
 rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 rem	
 rem	Contact: eirik dot hanssen at hioa dot no
+mode con:cols=140 lines=1000
 echo NOTICE:
 echo    As long as you started the command shell by using the batch file ClickMeToStart.bat,
 echo    the folder %bin% has been added to the path variable and some new commands can be used.

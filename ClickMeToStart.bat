@@ -36,4 +36,5 @@ set converted_dir=%cd%\converted-files
 set latest_run_dir=%cd%\latest-run
 set j2e_programs_dir=%cd%\programs
 set path=%bin%;%path%
-call cmd /K startupguide.bat
+START /MAX cmd /K startupguide.bat
+
