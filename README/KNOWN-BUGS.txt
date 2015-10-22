@@ -1,0 +1,32 @@
+Known Limitations and bugs
+
+Windows:
+if the path name leading to the source-xml-file given on the commandline contains backslashes,
+the script will fail.
+
+The solution is:
+a) run jats2epub from the same folder as the input xml-file or
+b) use a forward slash in the path to the input xml-file
+
+Note that if you use two parameters, one for a folder to be copied, you have to use backslashes in the path of the folder to be added.
+
+Example that should have worked, but fails in windows:
+
+in jats2epub folder:
+
+jats2epub source-xml\saks.xml
+jats2epub source-xml\spehar.xml source-xml\spehar
+
+Temporary workaround
+ - change the backslash in the path to the input xml-filename to a forward slash:
+
+jats2epub source-xml/saks.xml
+jats2epub source-xml/spehar.xml source-xml\spehar
+
+This problem is not present in OS that use forward slash such as Unix, Gnu/Linux and MacOSX.
+
+Windows - problems running kindlegen:
+Sometimes when using a windows PC in a managed environment such as at work, it might not be possible to run kindlegen.exe because
+of restriction policies enforced by the administrators. Then mobi-conversion might not be possible.
+
+Again, this problem has not been reported on Unix, Gnu/Linux and MacOSX.
