@@ -1,0 +1,29 @@
+Install info for Windows users
+
+XMLCalabash is an XProc processor that is required for jats2epub to operate.
+XMLCalabash is distributed as a java .jar archive and therefore requires a java runtime environment to run
+
+If you open cmd.exe (from the start menu > run), type java, and this command is recognized, you should be good to go.
+If this command is unrecognized, then you need to install a java runtime environment, and the java executable also needs to 
+be in the path variable.
+
+QUICK INSTALL for Windows users:
+
+xmlcalabash can be downloaded from: http://xmlcalabash.com/download/
+
+The latest version can be downloaded here: 
+https://github.com/ndw/xmlcalabash1/releases/latest
+
+1) Download the zip-archive and put in this folder (jats2epub/programs). 
+At time of writing this is xmlcalabash-1.1.9-96.zip, but any later version should be good.
+
+2) Extract this folder.
+
+3) Rename the extracted folder simply to xmlcalabash (stripping away the version part)
+
+4) Rename the jar-file simply to xmlcalabash.jar (also stripping away the version part)
+
+5) Do not reaname any of the other files :)
+
+The reason for this renaming is that the calabash.bat script located in the jats2epub\bin folder will then find the jarfile.
+And then the calabash command used by jats2epub will be working.
