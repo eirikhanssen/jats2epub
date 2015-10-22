@@ -86,7 +86,7 @@
 		</p:input>
 		<p:input port="stylesheet">
 			<!-- hioa-APAcit.xsl imports jats-APAcit.xsl -->
-			<p:document href="pipeline/hioa-xslt/hioa-citations-prep-APAcit.xsl"/>
+			<p:document href="hioa-xslt/hioa-citations-prep-APAcit.xsl"/>
 		</p:input>
 	</p:xslt>
 
@@ -109,7 +109,7 @@
 			<p:pipe step="format-APA-citations" port="result"/>
 		</p:input>
 		<p:input port="stylesheet">
-			<p:document href="pipeline/hioa-xslt/hioa-mixed-citations-bugfix.xsl"/>
+			<p:document href="hioa-xslt/hioa-mixed-citations-bugfix.xsl"/>
 		</p:input>
 	</p:xslt>
 
@@ -215,7 +215,7 @@
 		</p:input>
 		<p:input port="stylesheet">
 			<!-- hioa-xhtml.xsl imports jats-html.xsl -->
-			<p:document href="pipeline/hioa-xslt/hioa-xhtml.xsl"/>
+			<p:document href="hioa-xslt/hioa-xhtml.xsl"/>
 		</p:input>
 		<p:input port="parameters">
 			<p:pipe step="jats2epub" port="transform"/>
@@ -234,7 +234,7 @@
 		</p:input>
 		<p:input port="stylesheet">
 			<!-- hioa-xhtml-namespace-fix.xsl imports the default xhtml-ns.xsl -->
-			<p:document href="pipeline/hioa-xslt/hioa-xhtml-namespace-fix.xsl"/>
+			<p:document href="hioa-xslt/hioa-xhtml-namespace-fix.xsl"/>
 		</p:input>
 	</p:xslt>
 
@@ -267,7 +267,7 @@
 		</p:input>
 		<p:input port="stylesheet">
 			<!-- this xslt stylesheet removes xml processing instruction and imports assets/jats-xhtml/post/xhtml-ns.xsl -->
-			<p:document href="pipeline/hioa-xslt/hioa-fix-ns-and-remove-xml-processing-instruction.xsl"/>
+			<p:document href="hioa-xslt/hioa-fix-ns-and-remove-xml-processing-instruction.xsl"/>
 		</p:input>
 	</p:xslt>
 
@@ -402,7 +402,7 @@ prevent css from functioning. -->
 			<p:pipe step="fix-missing-id-on-graphics" port="result"/>
 		</p:input>
 		<p:input port="stylesheet">
-			<p:document href="pipeline/hioa-xslt/epub-content.opf.xsl"/>
+			<p:document href="hioa-xslt/epub-content.opf.xsl"/>
 		</p:input>
 	</p:xslt>
 
@@ -424,7 +424,7 @@ prevent css from functioning. -->
 			<p:pipe port="result" step="xhtml-ready-for-epub"/>
 		</p:input>
 		<p:input port="stylesheet">
-			<p:document href="pipeline/hioa-xslt/generate-navmap-with-toc.xsl"/>
+			<p:document href="hioa-xslt/generate-navmap-with-toc.xsl"/>
 		</p:input>
 	</p:xslt>
 
@@ -434,7 +434,7 @@ prevent css from functioning. -->
 			<p:pipe step="format-APA-citations" port="result"/>
 		</p:input>
 		<p:input port="stylesheet">
-			<p:document href="pipeline/hioa-xslt/epub-toc.ncx.xsl"/>
+			<p:document href="hioa-xslt/epub-toc.ncx.xsl"/>
 		</p:input>
 	</p:xslt>
 

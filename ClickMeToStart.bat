@@ -30,5 +30,10 @@ rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 rem	
 rem	Contact: eirik dot hanssen at hioa dot no
 set bin=%cd%\programs\bin
+set jats2epub_xpl=%cd%\pipeline\jats2epub.xpl
+set work_dir=../latest-run/
+set converted_dir=%cd%\converted-files
+set latest_run_dir=%cd%\latest-run
+set j2e_programs_dir=%cd%\programs
 set path=%bin%;%path%
 call cmd /K startupguide.bat

@@ -42,7 +42,8 @@ rem echo %args_count% arguments were passed!
 
 rem setting datetime using output from date.exe in UnxUtils. We can't reliably use windows command builtin date because the output is locale dependent, and might break this script.
 rem source: http://stackoverflow.com/questions/203090/how-to-get-current-datetime-on-windows-command-line-in-a-suitable-format-for-us
-for /f "tokens=*" %%i in ('programs\UnxUtils\date.exe +"%%Y%%m%%d-%%H%%M%%S"') do set datetime=%%i
+rem for /f "tokens=*" %%i in ('%j2e_programs_dir%\UnixUtils\date.exe +"%%Y%%m%%d-%%H%%M%%S"') do set datetime=%%i
+for /f "delims=" %%i in ('timestamp') do @set datetime=%%i
 rem echo datetime: %datetime%
 
 set epubfilename=%~n1-%datetime%.epub
@@ -50,7 +51,7 @@ set mobifilename=%~n1-%datetime%.mobi
 set pdffilename=%~n1-%datetime%.pdf
 set htmlfilename=%~n1-%datetime%.html
 set xmlfilename=%~n1-%datetime%.xml
-set latest_run_dir=%cd%\latest-run\
+rem set latest_run_dir=latest-run/
 
  
 :main
@@ -69,7 +70,7 @@ if "%args_count%" == "0" (
 		call :prepare-and-process-files %1
 		call :pack-epub-archive %epubfilename%
 		call :mobiconvert %epubfilename% %mobifilename%
-		call :pdf-generation %pdffilename%
+		rem call :pdf-generation %pdffilename%
 		call :endnotice
 	)
 	exit /b
@@ -217,7 +218,7 @@ setlocal
 	echo:
 	echo # START # XProc pipeline processing with XMLCalabash on %1
 	echo:
-	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=latest-run/ jats2epub.xpl
+	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=%work_dir% %jats2epub_xpl%
 	echo:
 	echo # DONE # XProc pipeline processing with XMLCalabash on %1
 endlocal && exit /b
