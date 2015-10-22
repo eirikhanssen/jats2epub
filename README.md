@@ -18,7 +18,7 @@ JATS or Journal Archiving Tag Suite (Publishing) is an xml-based tagset for desc
 
 ## Technical overview
 This package uses XML Calabash (a java-based XProc processor built on top of saxon) to process the XProc pipeline, process-jats.xpl, that transforms the xml-document in stages using a mix of XSLT and XProc steps. Since a full automation from JATS xml to final ePub can't be done in XProc yet, calling the XProc pipeline has been wrapped in a script. 
-For windows, a .bat batchfile and for linux a shellscript. 
+For windows, a jats2epub.bat (batchfile) and for Gnu/Linux, Unix and MacOSX, jats2epub (shellscript).
 The whole process is automated, all you need to type to use the jats2epub tool is this single command: 
 
 ```jats2epub path-to-xmlfile path-to-folder[optional]```
@@ -41,7 +41,48 @@ Contact: eirik dot hanssen at hioa dot no
 ### 0.9 pre-release.
 This is the working version that was ready at the time of submitting the article.
 
-## Current status
+### 1.0-RC1 
+This is the first release where it is possible to run jats2epub from any folder.
+Version 1.0, Release Candidate 1, there are still some quirks that should be figured out, and the documentation needs updating.
+
+# Status 2015-10-22
+## New 'version': 1.0-RC1
+
+### Run from any folder
+jats2epub has now been reworked so that it can be run from any folder on linux and windows if the installation instructions are followed.
+
+Windows users MUST use the ClickMeToStart.bat file to set up their environment and open the cmd.exe terminal.
+
+Gnu/Linux, unix and MacOSX users simply need to open a shell/terminal to start using jats2epub provided jats2epub install instructions are followed.
+
+### Removed 3rd party programs from the package
+I have also removed 3rd party tools from the package, and instead I have provided instrucitons on how to install on windows and Gnu/Linux like systems.
+This means that xmlcalabash, epubcheck and UnixUtils date.exe is no longer distributed in this package.
+
+The user has to download and set up xmlcalabash, epubcheck and kindlegen according to instructions to get jats2epub working.
+
+I met a problem where I couldn't run UnixUtils date.exe on windows because of group policies enforced by the system admins. 
+Unix Utils date.exe was used to provide a proper timestamp for filename generation. I have since learned to create executable java jar files,
+and created a short simple jar program to generate this timestamp string for use in Windows since that OS doesn't have a standard sane way of 
+generating a timestamp. This jar is included for the benefit of Windows users, and is automatically used by jats2epub.bat.
+
+### Changes in where files are stored
+Since jats2epub no longer has to be run from the folder where it is installed, I have changed where files are stored.
+
+#### Windows
+converted files are stored in jats2epub\converted
+temporary files are stored in jats2epub\latest-run (these are cleaned out when a new conversion run is initiated)
+
+#### Gnu/Linux, unix, MacOSX
+converted files will be copied to two places:
+
+1) to the current directory where you run the command from
+2) a backup of the files is copied to ~/.jats2epub/converted
+
+temporary files will be stored in ~/.jats2epub/latest-run (these will be cleaned out when a new conversion run is initiated)
+
+
+## Status 2015-04-17
 Several improvements have been made: Code has been cleaned up for better readability and several bugs have been fixed.
 It is now easier to troubleshoot, because all intermediate documents are saved in output_working folder after each run.
 To preview html-file that will be used for upload to html fulltext, just open output_working/60-webversion.html. All 
@@ -92,3 +133,6 @@ I am currently working with two xml-based formats for the automatic tagging solu
 ## Known bugs
 - Issue is formatted within square brackets [issue] when it should be in paranthesis (issue)
     - **Condition that trigger the bug**: element citation for journal articles where issue is marked up, but no volume.
+- Windows only: if using backslashes in the first parameter in the path for the input xml-file, there will be a java-error, the backslash will be reported as an illegal character.
+    - workaround is to replace backslashes in path to the input-xml file with forward slashes or to run jats2epub from the same folder as the xml input file.
+    - note that windows users must still use backslashes in the path of the asset folder when using two parameters

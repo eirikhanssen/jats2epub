@@ -32,7 +32,7 @@ rem	Contact: eirik dot hanssen at hioa dot no
 set bin=%cd%\programs\bin
 set jats2epub_xpl=%cd%\pipeline\jats2epub.xpl
 set work_dir=../latest-run/
-set converted_dir=%cd%\converted-files
+set converted_dir=%cd%\converted
 set latest_dir=%cd%\latest-run
 set j2e_programs_dir=%cd%\programs
 set j2e_dir=%cd%
