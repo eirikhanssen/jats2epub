@@ -58,7 +58,7 @@ done
 script_dir="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 # set jats2epub xproc pipeline path
-jats2epub_xpl=$script_dir/jats2epub.xpl
+jats2epub_xpl=$script_dir/pipeline/jats2epub.xpl
 
 
 # display usage
@@ -195,19 +195,19 @@ if [ "$#" = "1" ] || [ "$#" = "2" ]; then
 		htmlname=$filename_base$timestamp.html
 		xmlname=$filename_base$timestamp.xml
 		echo ""
-		echo "NOTICE: Clearing old contents of output_working/"
+		echo "NOTICE: Clearing out contents of $latest_run_dir"
 		rm -rf $latest_run_dir/*
 		echo ""
-		echo "NOTICE: Creating folders (if they don't exist): output_working/epub/"
+		echo "NOTICE: Creating folders (if they don't exist): $latest_run_dir/epub/"
 		mkdir -p $latest_run_dir/epub/EPUB
 		echo ""
-		echo "NOTICE: Copying over epub-template from assets/epub-template to output_working/epub/"
+		echo "NOTICE: Copying over epub-template from $script_dir/assets/epub-template to $latest_run_dir/epub/"
 		cp -r $script_dir/assets/epub-template/* $latest_run_dir/epub/
 		# copying assets for one article
 		# should I check this before running?
 		if [ "$#" = "2"  ]; then
 			resources=$2
-			echo "cp -r $resources/* output_working/epub/EPUB"
+			echo "cp -r $resources/* $latest_run_dir/epub/EPUB"
 			cp -r $resources/* $latest_run_dir/epub/EPUB
 		fi
 		echo ""
