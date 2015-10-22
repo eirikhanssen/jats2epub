@@ -1,5 +1,4 @@
 @echo off && SETLOCAL EnableExtensions EnableDelayedExpansion
-rem @echo off && PUSHD "%~dp0" && SETLOCAL EnableExtensions EnableDelayedExpansion
 rem	Overview:
 rem	
 rem	This is a windows batch script that can be used to generate .epub, .html, .mobi 
@@ -33,26 +32,21 @@ rem
 rem	You should have received a copy of the GNU General Public License
 rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 
-cd .\
-set current_dir=%cd%
 rem find number of argments passed to this script
+set current_dir=%cd%
+set input_file=%1%
 set /a args_count=0
 for %%a in (%*) do set /a args_count+=1
 rem echo %args_count% arguments were passed!
 
-rem setting datetime using output from date.exe in UnxUtils. We can't reliably use windows command builtin date because the output is locale dependent, and might break this script.
-rem source: http://stackoverflow.com/questions/203090/how-to-get-current-datetime-on-windows-command-line-in-a-suitable-format-for-us
-rem for /f "tokens=*" %%i in ('%j2e_programs_dir%\UnixUtils\date.exe +"%%Y%%m%%d-%%H%%M%%S"') do set datetime=%%i
+rem using timestamp.bat that runs jats2epub\programs\j2etimestamp.jar with java to generate a timestamp to be used in the generated filenames
 for /f "delims=" %%i in ('timestamp') do @set datetime=%%i
-rem echo datetime: %datetime%
 
 set epubfilename=%~n1-%datetime%.epub
 set mobifilename=%~n1-%datetime%.mobi
 set pdffilename=%~n1-%datetime%.pdf
 set htmlfilename=%~n1-%datetime%.html
 set xmlfilename=%~n1-%datetime%.xml
-rem set latest_run_dir=latest-run/
-
  
 :main
 if "%args_count%" == "0" (
@@ -71,6 +65,7 @@ if "%args_count%" == "0" (
 		call :pack-epub-archive %epubfilename%
 		call :mobiconvert %epubfilename% %mobifilename%
 		rem call :pdf-generation %pdffilename%
+		call :copy-input-xml
 		call :endnotice
 	)
 	exit /b
@@ -98,7 +93,8 @@ if "%args_count%" == "0" (
 		call :copy-extra-folder %2
 		call :pack-epub-archive %epubfilename%
 		call :mobiconvert %epubfilename% %mobifilename%
-		call :pdf-generation %pdffilename%
+		rem call :pdf-generation %pdffilename%
+		call :copy-input-xml
 		call :endnotice
 	)
 )
@@ -136,7 +132,7 @@ setlocal
 	echo 	jats2epub source-xml\spehar.xml source-xml\spehar
 	echo:
 	echo:
-	echo If all goes well, the converted .epub and .mobi ^(if enabled^) files will appear in the folder converted-files\
+	echo If all goes well, the converted .epub and .mobi ^(if enabled^) files will appear in %converted_dir%
 endlocal && exit /b
 
 :get-user-confirmation
@@ -168,15 +164,15 @@ setlocal
 	echo:
 	echo # DONE # Preparing and processing files
 	echo:
-	echo Copying latest-run\article-webversion.html to converted-files\%htmlfilename%
-	copy latest-run\article-webversion.html converted-files\%htmlfilename% /Y
+	echo Copying %latest_dir%\article-webversion.html to %converted_dir%\%htmlfilename%
+	copy %latest_dir%\article-webversion.html %converted_dir%\%htmlfilename% /Y
 endlocal && exit /b
 
 :create-if-not-exists-converted-files
 setlocal
-	if not exist "converted-files" (
+	if not exist "%converted_dir%" (
 		echo Creating directory to hold finished ebooks: converted-files
-		mkdir converted-files
+		mkdir %converted_dir%
 	)
 endlocal && exit /b
 
@@ -185,9 +181,9 @@ setlocal
 	echo:
 	echo # START # Copying over epub-template from assets\epub-template to latest-run\epub
 	echo:
-	xcopy assets\epub-template latest-run\epub\ /S /F /I
+	xcopy %j2e_dir%\assets\epub-template %latest_dir%\epub\ /S /F /I
 	echo:
-	echo # DONE # Copying over epub-template from assets\epub-template to latest-run\epub
+	echo # DONE # Copying over epub-template from assets\epub-template to %latest_dir%\epub
 endlocal && exit /b
 
 :clear-latest-run
@@ -195,10 +191,10 @@ setlocal
 	echo:
 	echo # START # Clearing out old files
 	echo:
-	echo deleting folder latest-run
-	rmdir /S /Q latest-run
-	echo creating folder latest-run
-	mkdir latest-run
+	echo deleting folder %latest_dir%
+	rmdir /S /Q %latest_dir%
+	echo creating folder %latest_dir%
+	mkdir %latest_dir%
 	echo:
 	echo # DONE # Clearing out old files
 endlocal && exit /b
@@ -206,11 +202,11 @@ endlocal && exit /b
 :copy-extra-folder
 setlocal
 	echo:
-	echo # START # Copying over extra files from %1 to latest-run\epub\EPUB
+	echo # START # Copying over extra files from %1 to %latest_dir%\epub\EPUB
 	echo:
-	xcopy %1\* latest-run\epub\EPUB\ /S /F /I
+	xcopy %1\* %latest_dir%\epub\EPUB\ /S /F /I
 	echo:
-	echo # DONE # Copying over extra files from %1 to latest-run\epub\EPUB
+	echo # DONE # Copying over extra files from %1 to %latest_dir%\epub\EPUB
 endlocal && exit /b
 
 :process-xproc-pipeline
@@ -218,7 +214,7 @@ setlocal
 	echo:
 	echo # START # XProc pipeline processing with XMLCalabash on %1
 	echo:
-	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub – based on github.com/ncbi/JATSPreviewStylesheets" work_dir=%work_dir% %jats2epub_xpl%
+	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub - based on github.com/ncbi/JATSPreviewStylesheets" work_dir=%work_dir% %jats2epub_xpl%
 	echo:
 	echo # DONE # XProc pipeline processing with XMLCalabash on %1
 endlocal && exit /b
@@ -226,15 +222,14 @@ endlocal && exit /b
 :pack-epub-archive
 setlocal
 	echo:
-	echo # START # Epub validation and packing of epub archive if valid: %1
+	echo # START # Epub validation and packing attempt
 	echo:
-	cd %current_dir%
-    call epubcheck .\latest-run\epub -mode exp -save
+    call epubcheck %latest_dir%\epub -mode exp -save
 	echo:
 	echo # DONE # Epub validation and packing attempt
 	echo:
-	echo moving %1 to converted-files\%1
-	move epub.epub ..\..\converted-files\%1
+	echo moving %latest_dir%\epub.epub to converted-files\%1
+	move %latest_dir%\epub.epub %converted_dir%\%1
 	cd ..\..
 endlocal && exit /b
 
@@ -257,7 +252,7 @@ if not exist "%bin%\..\kindlegen\kindlegen.exe" (
 ) else (
 	echo # START # Converting %1 to %2 with KindleGen
 	echo:
-	call kindlegen output-final\%1 -o %2
+	call kindlegen %converted_dir%\%1 -o %2
 	echo:
 	echo # DONE # Converting %1 to %2 with KindleGen
 )
@@ -278,25 +273,11 @@ setlocal
 	echo:
 endlocal && exit /b
 
-:validate-epub
-setlocal
-	echo:
-	echo # START # Epub validation
-	echo:
-	echo Validating epub: %1 using epubcheck ...
-	call epubcheck converted-files\%1
-	echo:
-	echo # DONE # Epub validation
-endlocal && exit /b
-
 :endnotice
 setlocal
 	echo:
 	echo SCRIPT HAS COMPLETED^^!
 	echo Check out the converted-files folder for newly created files if all went well.
-	rem check if converted-files\%epubfilename% and converted-files\%mobifilename% exists
-	rem if it exists output message about those files being there.
-	rem if not, something went wrong
 	echo:
 	echo You might also want to browse files in latest-run, as all intermediate files created by the pipeline are there.
 	echo ALL intermediate files in latest-run WILL BE ERASED after a warning on the next run.
@@ -308,4 +289,10 @@ endlocal && exit /b
 setlocal
 rem generates a syntax error and forces the script to exit immediately
 ()
+endlocal && exit /b
+
+:copy-input-xml
+setlocal
+	copy %latest_dir%\00-original.xml %converted_dir%\%xmlfilename%
+	echo copying original xml file to %converted_dir%\%xmlfilename%
 endlocal && exit /b

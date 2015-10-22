@@ -15,8 +15,8 @@ Download kindlegen from amazon.
 
 Install for Windows users:
   1) download kindlegen_win32_v2_9.zip (or any later version) to this folder (jats2epub\programs)
-  2) extract the downloaded zip archive this folder (jats2epub\programs)
-  3) rename this new folder simply to kindlegen (stripping away the version part)
+  2) create a folder named kindlegen (in jats2epub\programs)
+  3) extract the downloaded zip archive to this folder (jats2epub\programs\kindlegen)
   4) kindlegen.exe should then be located in jats2epub\programs\kindlegen\kindlegen.exe 
   (then it will be found by the kindlegen.bat file used by jats2epub script)
   

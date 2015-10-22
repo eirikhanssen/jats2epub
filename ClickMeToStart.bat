@@ -33,8 +33,9 @@ set bin=%cd%\programs\bin
 set jats2epub_xpl=%cd%\pipeline\jats2epub.xpl
 set work_dir=../latest-run/
 set converted_dir=%cd%\converted-files
-set latest_run_dir=%cd%\latest-run
+set latest_dir=%cd%\latest-run
 set j2e_programs_dir=%cd%\programs
+set j2e_dir=%cd%
 set path=%bin%;%path%
 START /MAX cmd /K startupguide.bat
 
