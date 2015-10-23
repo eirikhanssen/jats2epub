@@ -2,13 +2,14 @@ Install instructions - Windows users
 ====================================
 Contents:
 
-1. jats2epub (required)
+1. Jats2epub (required)
 2. Java (required)
-3. xmlcalabash (required)
-4. epubcheck (required)
-5. kindlegen (optional)
+3. XMLCalabash (required)
+4. Epubcheck (required)
+5. Kindlegen (optional)
+6. First run
 
-## 1. jats2epub
+## 1. Jats2epub
 There are two options in getting jats2epub on windows:
 
     1) download a zip archive
