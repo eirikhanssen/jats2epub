@@ -69,9 +69,9 @@ The user will need to download and and install the following if not present on t
 - kindlegen
 
 Find detalied install instructions in the install files:
-- README/install-windows.txt
-- README/install-linux-all-users.txt
-- README/install-linux-single-user.txt
+- README/install-windows.md
+- README/install-linux-all-users.md
+- README/install-linux-single-user.md
 
 ## Authors
 - The initial XSLT-stylesheets were written by Tor-Arne Dahl, Trude Eikebrokk and Eirik Hanssen at Oslo and Akershus University College of Applied Sciences.
