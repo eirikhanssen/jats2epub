@@ -101,8 +101,10 @@ The kindlegen zip archive has all the files at the top level, so to avoid litter
 
 ## 6. First run
 If you made it this far, you're ready to start using jats2epub on windows.
-PS: Don't be scared of all the text that flows on the screen ;)
-    It can be helpful for troubleshooting
+
+Don't be scared of all the text that flows on the screen ;)
+
+It can be helpful for troubleshooting
 
 - Navigate to the jats2epub folder with windows explorer
 - Double click the file **ClickMeToStart.bat**
@@ -119,5 +121,5 @@ Try this command to convert an article with figures to epub::
 ``` jats2epub source-xml\spehar.xml source-xml\spehar ```
 
 ### 6.3 Converted files
-The converted files will be in jats2epub\converted
-Temporary files will be in jats2epub\latest-run
+- The converted files will be in jats2epub\converted
+- Temporary files will be in jats2epub\latest-run
