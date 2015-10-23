@@ -134,14 +134,14 @@ setlocal
 	echo 	jats2epub source-xml\spehar.xml source-xml\spehar
 	echo:
 	echo:
-	echo If all goes well, the converted .epub and .mobi ^(if enabled^) files will appear in %converted_dir%
+	echo If succesful, converted files appear in %converted_dir%
 endlocal && exit /b
 
 :get-user-confirmation
 setlocal
 	echo:
-	echo WARNING^^! Script needs to clear out ^(DELETE^) files from latest-run to continue
-	echo This is normal operation, but if you need to back up the files in latest-run ^(after a previous run^), please abort.
+	echo WARNING^^! Script needs to clear out ^(DELETE^) files from %latest_dir%
+	echo This is normal. If you need to back up temporary files from last run, press N.
 	echo:
 set /p confirm_value=Type Y to continue or N to abort ^(Y/N^):%=%
 if "%confirm_value%" == "y" (
@@ -149,7 +149,7 @@ if "%confirm_value%" == "y" (
 ) else if "%confirm_value%" == "Y" (
 	echo Confirmed^^! && exit /b
 ) else (
-	echo Aborting script^^!
+	echo Abort script^^!
 	rem exit-script generates a syntax error. Script aborts. std err redirects to nul
 	call:exit-script 2> nul
 )
@@ -158,22 +158,22 @@ endlocal && exit /b
 :prepare-and-process-files
 setlocal
 	echo:
-	echo # START # Preparing and processing files
+	echo # START # Prepare and process files
 	call :clear-latest-run
 	call :create-if-not-exists-converted-files
 	call :epub-template-copy %2
 	call :process-xproc-pipeline %1
 	echo:
-	echo # DONE # Preparing and processing files
+	echo # DONE # Prepare and process files
 	echo:
-	echo Copying %latest_dir%\article-webversion.html to %converted_dir%\%htmlfilename%
+	echo Copy %latest_dir%\article-webversion.html to %converted_dir%\%htmlfilename%
 	copy %latest_dir%\article-webversion.html %converted_dir%\%htmlfilename% /Y
 endlocal && exit /b
 
 :create-if-not-exists-converted-files
 setlocal
 	if not exist "%converted_dir%" (
-		echo Creating directory to hold finished ebooks: converted-files
+		echo Create directory to store converted files: %converted_dir%
 		mkdir %converted_dir%
 	)
 endlocal && exit /b
@@ -181,34 +181,34 @@ endlocal && exit /b
 :epub-template-copy
 setlocal
 	echo:
-	echo # START # Copying over epub-template from %assets_dir%\epub-template to %latest_dir%\epub
+	echo # START # Copy %assets_dir%\epub-template to %latest_dir%\epub
 	echo:
 	xcopy %j2e_dir%\assets\epub-template %latest_dir%\epub\ /S /F /I
 	echo:
-	echo # DONE # Copying over epub-template from assets\epub-template to %latest_dir%\epub
+	echo # DONE # Copy %assets_dir%\epub-template to %latest_dir%\epub
 endlocal && exit /b
 
 :clear-latest-run
 setlocal
 	echo:
-	echo # START # Clearing out old files
+	echo # START # Clear out temporary files
 	echo:
-	echo deleting folder %latest_dir%
+	echo delete folder %latest_dir%
 	rmdir /S /Q %latest_dir%
-	echo creating folder %latest_dir%
+	echo create folder %latest_dir%
 	mkdir %latest_dir%
 	echo:
-	echo # DONE # Clearing out old files
+	echo # DONE # Clear out temporary files
 endlocal && exit /b
 
 :copy-extra-folder
 setlocal
 	echo:
-	echo # START # Copying over extra files from %1 to %latest_dir%\epub\EPUB
+	echo # START # Copy extra files from %1 to %latest_dir%\epub\EPUB
 	echo:
 	xcopy %1\* %latest_dir%\epub\EPUB\ /S /F /I
 	echo:
-	echo # DONE # Copying over extra files from %1 to %latest_dir%\epub\EPUB
+	echo # DONE # Copy extra files from %1 to %latest_dir%\epub\EPUB
 endlocal && exit /b
 
 :process-xproc-pipeline
@@ -230,7 +230,7 @@ setlocal
 	echo:
 	echo # DONE # Epub validation and packing attempt
 	echo:
-	echo moving %latest_dir%\epub.epub to converted-files\%1
+	echo moving %latest_dir%\epub.epub to %converted_dir%\%1
 	move %latest_dir%\epub.epub %converted_dir%\%1
 	cd ..\..
 endlocal && exit /b
@@ -278,13 +278,13 @@ endlocal && exit /b
 :endnotice
 setlocal
 	echo:
-	echo SCRIPT HAS COMPLETED^^!
-	echo Check out the converted-files folder for newly created files if all went well.
+	echo jats2epub has completed^^!
+	echo If successful, converted files are in: %converted_dir%
 	echo:
-	echo You might also want to browse files in latest-run, as all intermediate files created by the pipeline are there.
-	echo ALL intermediate files in latest-run WILL BE ERASED after a warning on the next run.
+	echo Temporary files from latest conversion are in: %latest_dir%
+	echo These temporary files will be deleted on the next run.
 	echo:
-	echo If something went wrong, please read the output from the script and consult readme-win.html.
+	echo Troubleshooting clues can be found in the script output and readme files.
 endlocal && exit /b
 
 :exit-script
@@ -296,5 +296,5 @@ endlocal && exit /b
 :copy-input-xml
 setlocal
 	copy %latest_dir%\00-original.xml %converted_dir%\%xmlfilename%
-	echo copying original xml file to %converted_dir%\%xmlfilename%
+	echo Copy original xml file to %converted_dir%\%xmlfilename%
 endlocal && exit /b
