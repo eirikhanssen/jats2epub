@@ -99,21 +99,24 @@ The kindlegen zip archive has all the files at the top level, so to avoid litter
 - Move kindlegen_win32_v2_9.zip to jats2epub\programs\kindlegen
 - Extract here
 
-# First run
+## 6. First run
 If you made it this far, you're ready to start using jats2epub on windows.
 
 - Navigate to the jats2epub folder with windows explorer
 - Double click the file **ClickMeToStart.bat**
 - Then you should se cmd.exe, a black window with command line popping up.
 
-First try this command to convert an article with no figures to epub:
+### 6.1 Convert an article with no figures
+Try this command to convert an article with no figures to epub:
 
 ``` jats2epub source-xml\saks.xml ```
 
-Second, try to convert an article that has images with this command:
+### 6.2 Convert an article with figures
+Try this command to convert an article with figures to epub::
 
 ``` jats2epub source-xml\spehar.xml source-xml\spehar ```
 
+### 6.3 Converted files
 The converted files will be in jats2epub\converted
 Temporary files will be in jats2epub\latest-run
 
