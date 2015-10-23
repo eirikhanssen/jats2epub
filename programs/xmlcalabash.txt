@@ -1,35 +1,121 @@
-Install info for Windows users
+XMLCalabash install instrucitons
+
+
+
+QUICK OVERVIEW
 
 XMLCalabash is an XProc processor that is required for jats2epub to operate.
 XMLCalabash is distributed as a java .jar archive and therefore requires a java runtime environment to run
 
-If you open cmd.exe (from the start menu > run), type java, and this command is recognized, you should be good to go.
-If this command is unrecognized, then you need to install a java runtime environment, and the java executable also needs to 
-be in the path variable.
+You need to extract it somewhere on your PC and have a batch script/shellscript invoke it using
+the syntax: java -jar jarfile parameters
+
+
+
+DOWNLOAD (for all systems):
+
+XMLCalabash can be freely downloaded from: http://xmlcalabash.com/download/
+The latest version can be downloaded here: 
+https://github.com/ndw/xmlcalabash1/releases/latest
+The zip-archive is the file you need to get.
+At time of writing this is xmlcalabash-1.1.9-96.zip, but any later version should be good.
+
+
 
 QUICK INSTALL for Windows users:
 
-xmlcalabash can be downloaded from: http://xmlcalabash.com/download/
+1) First check if you have java installed.
+   If you open cmd.exe (from the start menu > run), type java, 
+   and this command is recognized, you should be good to go.
 
-The latest version can be downloaded here: 
-https://github.com/ndw/xmlcalabash1/releases/latest
+   If this command is unrecognized, then you need to install a java runtime environment and/or add it to system path.
 
-1) Download the zip-archive and put in this folder (jats2epub/programs). 
-At time of writing this is xmlcalabash-1.1.9-96.zip, but any later version should be good.
+2) Download the zip-archive and put in this folder (jats2epub/programs). 
 
-2) Extract this folder.
+3) Extract this folder.
 
-3) Rename the extracted folder simply to xmlcalabash (stripping away the version part)
+4) Locate the xmlcalabash jar file within the extracted archive. Rename it exactly to xmlcalabash.jar 
+   (stripping away the version part)
 
-4) Rename the jar-file simply to xmlcalabash.jar (also stripping away the version part)
+5) Rename the folder containing xmlcalabash.jar to xmlcalabash (also stripping away the version part)
 
-5) Do not reaname any of the other files :)
+6) Move the xmlcalabash folder to jats2epub/programs stripping away the version part)
 
-The reason for this renaming is that the calabash.bat script located in the jats2epub\bin folder will then find the jarfile in:
-jats2epub\programs\xmlcalbash\xmlcalabash.jar
+7) Do not reaname any of the other files :)
 
-And then the calabash command used by jats2epub will be working.
+The reason for this renaming is that the calabash.bat script located in the jats2epub\bin folder will then find the jarfile in: jats2epub\programs\xmlcalbash\xmlcalabash.jar using a relative path.
 
-At any case, the folder containing the xmlcalabash.jar file should be renamed to xmlcalabash, and 
-it should be placed directly in the jats2epub/programs folder, so you might have to move this folder
-depending on how it was extracted.
+
+
+QUICK INSTALL for Unix/Gnu/Linux/MacOSX users:
+
+The install procedure is almost identical to epubcheck since this is a jar-archive.
+
+The recommended install proceduce is slightly different depending on if you have root access or not.
+(OR if you want to install system wide or only for a specific user).
+
+
+IF YOU HAVE ROOT ACCESS:
+
+Use your root access (often you can use sudo for this purpose):
+
+1) please extract to /usr/local/
+   cd /usr/local && sudo wget https://github.com/ndw/xmlcalabash1/releases/download/1.1.9-96/xmlcalabash-1.1.9-96.zip
+
+2) extract:
+   sudo unzip xmlcalabash-1.1.9-96.zip
+
+3) create symlinks to the xmlcalabash folder and to the jarfile 
+   (stripping away the version info in the name of the symlink):
+   
+   sudo ln -s /usr/local/xmlcalabash-1.1.9-96 /usr/local/xmlcalabash
+   cd /usr/local/xmlcalabash
+   sudo ln -s xmlcalabash-1.1.9-96.jar xmlcalabash.jar
+
+4) create a file /usr/local/bin/calabash with the following contents (two lines): 
+
+#!/bin/sh
+java -jar /usr/local/xmlcalabash/xmlcalabash/xmlcalabash.jar "$@"
+
+5) remember to make it executable: 
+sudo chmod +x /usr/local/bin/calabashcalabash
+
+
+IF YOU DON'T HAVE ROOT ACCESS:
+
+Similar procedure, but install to a local bin directory in your home directory
+
+Here's my setup for installing programs for only my user:
+
+1) please extract to ~/bin (bin direcotry in home folder)
+   cd ~/bin && wget https://github.com/ndw/xmlcalabash1/releases/download/1.1.9-96/xmlcalabash-1.1.9-96.zip
+
+2) extract:
+   unzip xmlcalabash-1.1.9-96.zip
+
+3) create symlinks to the xmlcalabash folder and to the jarfile 
+   (stripping away the version info in the name of the symlink):
+   
+   ln -s ~/bin/xmlcalabash-1.1.9-96 ~/bin/xmlcalabash
+   cd ~/bin/xmlcalabash
+   ln -s xmlcalabash-1.1.9-96.jar xmlcalabash.jar
+
+4) create a file ~/bin/calabash with the following contents (two lines): 
+
+#!/bin/sh
+java -jar ~/bin/xmlcalabash/xmlcalabash/xmlcalabash.jar "$@"
+
+5) remember to make it executable: 
+chmod +x ~/bin/calabash
+
+6) Note that this assumes that your ~/bin folder is in your $PATH and programs/scripts in this folder can be run
+from any folder. Try this command:
+
+echo $PATH
+
+If you find your homefolder/bin in this path string, you're good to go. If not, google is your friend.
+
+Now you should be able to run calabash typing the calabash command:
+calabash
+
+With this command you can run other XProc pipelines as well should you be adventurous.
