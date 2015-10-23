@@ -81,10 +81,6 @@ This file contains instructions on how the document should be prosessed to creat
 
 ```sudo ln -s xmlcalabash-1.1.9-96.jar xmlcalabash.jar```
 
-```cd /usr/local/xmlcalabash```
-
-```sudo ln -s xmlcalabash-1.1.9-96.jar xmlcalabash.jar```
-
 ```cd /usr/local/bin```
 
 **Now create a shellscript called calabash with the following contents:**
@@ -96,7 +92,7 @@ java -Xmx1024m -jar /usr/local/xmlcalabash/xmlcalabash.jar "$@"
 
 **Make it executable:**
 
-``` sudo chmod +x /usr/local/calabash ```
+``` sudo chmod +x /usr/local/bin/calabash ```
 
 **Now it should be possible to run XML Calabash using the command:**
 
