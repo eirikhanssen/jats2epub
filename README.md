@@ -79,7 +79,7 @@ Find detalied install instructions in the install files:
 - Several XSLT stylesheets used are from JATS tools developed by Wendell Piez for National Library of Medicine
     - these are in the folder: jats2epub/pipeline/jats-xslt
     - source: https://github.com/ncbi/JATSPreviewStylesheets
-- Stylesheets developed by our project group are in the folder: jats2epub/pipeline/hioa-xslt. Some of these are vertical customizations of the JATS TOOLS stylesheets.
+- Stylesheets developed by our project group are in the folder: jats2epub/pipeline/hioa-xslt. Some of these are vertical customizations of the JATS Tools stylesheets.
 
 ## Maintainer and official website
 jats2epub is hosted on: https://github.com/eirikhanssen/jats2epub
