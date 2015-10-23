@@ -77,6 +77,8 @@ This file contains instructions on how the document should be prosessed to creat
 
 ```sudo ln -s /usr/local/xmlcalabash-1.1.9-96 /usr/local/xmlcalabash```
 
+```cd /usr/local/xmlcalabash```
+
 ```sudo ln -s xmlcalabash-1.1.9-96.jar xmlcalabash.jar```
 
 ```cd /usr/local/xmlcalabash```
