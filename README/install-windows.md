@@ -27,7 +27,7 @@ If you have git installed, you can open cmd.exe, navigate to your chosen folder 
 ### IMPORTANT: How to use jats2epub once this install guide has been completed
 - From windows explorer, navigate to the jats2epub folder and double click **ClickMeToStart.bat**
     - this bat-file will set up the environment and open cmd.exe from this folder so that you can run jats2epub from any folder
-        - the most important thing done by **ClickMeToStart.bat** is adding jats2epub\programs\bin to the path environment variable.
+        - the most important thing done by ClickMeToStart.bat is **adding jats2epub\programs\bin to the path environment variable**.
         - then all .bat files in jats2epub\programs\bin can be run from any folder you navigate to in the cmd.exe terminal opened by **ClickMeToStart.bat**
     - jats2epub will *not* work if you start cmd.exe by other means.
 
