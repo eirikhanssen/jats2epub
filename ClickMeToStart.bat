@@ -36,6 +36,7 @@ set converted_dir=%cd%\converted
 set latest_dir=%cd%\latest-run
 set j2e_programs_dir=%cd%\programs
 set j2e_dir=%cd%
+set assets_dir=%j2e_dir%\assets
 set path=%bin%;%path%
 START /MAX cmd /K startupguide.bat
 

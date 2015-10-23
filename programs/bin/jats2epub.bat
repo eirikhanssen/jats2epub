@@ -34,7 +34,9 @@ rem	along with jats2epub.  If not, see http://www.gnu.org/licenses/gpl.html
 
 rem find number of argments passed to this script
 set current_dir=%cd%
-set input_file=%1%
+set infile=%1%
+rem convert backslashes in input file path to unix style forward slashes. This avoids java/calabash dos style path problems with unregocnized paths.
+for /f "delims=" %%u in ('b2fslash') do @set infile_unix=%%u
 set /a args_count=0
 for %%a in (%*) do set /a args_count+=1
 rem echo %args_count% arguments were passed!
@@ -179,7 +181,7 @@ endlocal && exit /b
 :epub-template-copy
 setlocal
 	echo:
-	echo # START # Copying over epub-template from assets\epub-template to latest-run\epub
+	echo # START # Copying over epub-template from %assets_dir%\epub-template to %latest_dir%\epub
 	echo:
 	xcopy %j2e_dir%\assets\epub-template %latest_dir%\epub\ /S /F /I
 	echo:
@@ -214,7 +216,7 @@ setlocal
 	echo:
 	echo # START # XProc pipeline processing with XMLCalabash on %1
 	echo:
-	call calabash -i source=%1 -p transform="github.com/eirikhanssen/jats2epub - based on github.com/ncbi/JATSPreviewStylesheets" work_dir=%work_dir% %jats2epub_xpl%
+	call calabash -i source=%infile_unix% -p transform="github.com/eirikhanssen/jats2epub - based on github.com/ncbi/JATSPreviewStylesheets" work_dir=%work_dir% %jats2epub_xpl%
 	echo:
 	echo # DONE # XProc pipeline processing with XMLCalabash on %1
 endlocal && exit /b
