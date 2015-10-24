@@ -1,9 +1,4 @@
-All users need to download and install epubcheck.
+epubcheck is used to validate epubs and pack epub archives
+epubcheck is required in order for jats2epub to validate and pack the generated epub archives.
 
-Windows users should download and install epubcheck in this folder.
-
-Gnu/Linux, MacOSX and Unix users also need to download and install epubcheck, but not in this folder.
-
-Please consult the detailed install instructions in jats2epub/README/ matching your operating system,
-
-It is important that these instructions are followed closely for the tool to work.
+please consult the install instructions in jats2epub/README matching your operating system for how to install epubcheck.
