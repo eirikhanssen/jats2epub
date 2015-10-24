@@ -112,9 +112,13 @@ This is the working version that was ready at the time of submitting the article
 ### Removed 3rd party programs from the package
 I have also removed 3rd party tools from the package, and instead I provide instructions on how to get/install the 3rd party applications on windows and Gnu/Linux like systems.
 
+An advantage of getting the 3rd party applications separately directly from the source is that you can update them and jats2epub independently. I also think getting applications directly from the ones developing them is the right thing to do.
+
 This means that xmlcalabash and epubcheck  is no longer distributed in this package.
 
-Some of the utils previously included for windows compatibility are no longer necessary.
+Some of the utils previously included for windows compatibility are no longer necessary:
+- UnixUtils date.exe used to make a timestamp has been replaced with my own timestamp generator written in java.
+- zip.exe used for packing epub archive has been dropped since I realized you can pack epub archives with epubcheck.
 
 In the v0.9 release, i used a commandline zip-utility to pack the epub-archive. Later I have learned that epubcheck that is used to validate an epub archive, can also be used to pack the expanded epub archive to a .epub file. date.exe from unix utils was needed on windows to generate a timestamp for filename creation.
 
@@ -148,12 +152,12 @@ I am currently working with two xml-based formats for the automatic tagging solu
 ### odf2jats
 https://github.com/eirikhanssen/odf2jats
 A semi automatic tagging conversion from Open Documen Format (.odt) to JATS (.xml)
-Using odf2jats makes it possible to dramatically decrease the time it takes to produce JATS .xml.
+Using odf2jats makes it possible to dramatically decrease the time it takes us to produce JATS .xml.
 
 ### ooxml2jats
 https://github.com/eirikhanssen/ooxml2jats
 Same objective as odf2jats but with the Office Open Xml (.docx) as a source to generate JATS (.xml)
-I started with ooxml2jats, but took the ideas and built odf2jats. ooxml2jats hasn't been worked on much, but could share most of the logic from odf2jats.
+I originally started with ooxml2jats, but took the ideas and built odf2jats. ooxml2jats hasn't been worked on much, but could share most of the logic from odf2jats to make it workable.
 
 ## Future possible improvements to jats2epub
 - Process <given-names> elements with regexp to make sure the initials are properly punctuated. 
