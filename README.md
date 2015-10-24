@@ -158,7 +158,8 @@ Using odf2jats makes it possible to dramatically decrease the time it takes us t
 
 ### ooxml2jats
 https://github.com/eirikhanssen/ooxml2jats
-Same objective as odf2jats but with the Office Open Xml (.docx) as a source to generate JATS (.xml)
+Same objective as odf2jats but with the Office Open Xml (.docx) as a source to generate JATS (.xml).
+
 I originally started with ooxml2jats, but took the ideas and built odf2jats. ooxml2jats hasn't been worked on much, but could share most of the logic from odf2jats to make it workable.
 
 ## Future possible improvements to jats2epub
