@@ -120,7 +120,7 @@ Some of the utils previously included for windows compatibility are no longer ne
 - UnixUtils date.exe used to make a timestamp has been replaced with my own timestamp generator written in java.
 - zip.exe used for packing epub archive has been dropped since I realized you can pack epub archives with epubcheck.
 
-In the v0.9 release, i used a commandline zip-utility to pack the epub-archive. Later I have learned that epubcheck that is used to validate an epub archive, can also be used to pack the expanded epub archive to a .epub file. date.exe from unix utils was needed on windows to generate a timestamp for filename creation.
+In the v0.9 release, on windows, I used a commandline zip-utility to pack the epub-archive. Later I have learned that epubcheck that is used to validate an epub archive, can also be used to pack the expanded epub archive to a .epub file. date.exe from unix utils was needed on windows to generate a timestamp for filename creation.
 
 I had some issues where I couldn't run this in a work environment because of group policies enforced by administrators, so I wrote a small java .jar program to generate a timestamp. This is included and used by the jats2epub.bat file for windows users.
 
@@ -128,6 +128,7 @@ I had some issues where I couldn't run this in a work environment because of gro
 
 #### Windows
 converted files are stored in jats2epub\converted
+
 temporary files are stored in jats2epub\latest-run (these are cleaned out when a new conversion run is initiated)
 
 #### Gnu/Linux, unix, MacOSX
