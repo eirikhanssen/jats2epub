@@ -1,9 +1,6 @@
-All users need to download and install xmlcalabash to use jats2epub.
+xmlcalabash is used to by jats2epub to run the XProc pipeline.
+The XProc pipeline does the heavy lifting and converts the input xml-file to various files needed to build the epub archive.
 
-Windows users should download and install to this folder.
+xmlcalabash is required by jats2epub, jats2epub will not be able to run without it.
 
-Gnu/Linux, MacOSX and Unix users should use a different folder as specified in the install guide.
-
-Please consult the detailed install instructions in jats2epub/README/ matching your operating system,
-
-It is important that these instructions are followed closely for the tool to work.
+please consult the install instructions in jats2epub/README matching your operating system for how to install xmlcalabash.
