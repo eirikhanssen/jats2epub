@@ -152,7 +152,8 @@ I am currently working with two xml-based formats for the automatic tagging solu
 
 ### odf2jats
 https://github.com/eirikhanssen/odf2jats
-A semi automatic tagging conversion from Open Documen Format (.odt) to JATS (.xml)
+A semi automatic tagging conversion from Open Documen Format (.odt) to JATS (.xml).
+
 Using odf2jats makes it possible to dramatically decrease the time it takes us to produce JATS .xml.
 
 ### ooxml2jats
