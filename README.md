@@ -127,9 +127,9 @@ I had some issues where I couldn't run this in a work environment because of gro
 ### Changes in where files are stored
 
 #### Windows
-converted files are stored in jats2epub\converted
+converted files are stored in ```jats2epub\converted```
 
-temporary files are stored in jats2epub\latest-run (these are cleaned out when a new conversion run is initiated)
+temporary files are stored in ```jats2epub\latest-run``` (these are cleaned out when a new conversion run is initiated)
 
 #### Gnu/Linux, unix, MacOSX
 converted files will be copied to two places:
