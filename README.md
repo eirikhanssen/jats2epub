@@ -89,13 +89,8 @@ Maintainer: Eirik Hanssen, Oslo and Akershus University College of Applied Scien
 Contact: eirik dot hanssen at hioa dot no
 
 ## Releases
-### v0.9 (2014-04-16)
-This is the working version that was ready at the time of submitting the article. It should work out of the box if java is installed. Some limitations that have been fixed later are: 
-- Only possible to run the jats2epub command from within the source folder
-- Incomplete toc.ncx (navigation aid)
-- Many 3rd party applications were included, this increased the download size but also allowed jats2epub to run 'out of the box'
 
-### 1.0-RC1 (2015-10-23)
+### 1.0-RC1 (2015-10-24)
 There are still some quirks that should be figured out, and the documentation needs to be updated.
 - Now possible to run jats2epub from any folder, provided it is installed correctly.
 - Now toc.ncx (navigation aid) will include navigation links to all the headings in the article
@@ -105,8 +100,14 @@ There are still some quirks that should be figured out, and the documentation ne
     - epubcheck
     - kindlegen
 
+### v0.9 (2014-04-16)
+This is the working version that was ready at the time of submitting the article. It should work out of the box if java is installed. Some limitations that have been fixed later are: 
+- Only possible to run the jats2epub command from within the source folder
+- Incomplete toc.ncx (navigation aid)
+- Many 3rd party applications were included, this increased the download size but also allowed jats2epub to run 'out of the box'
+
 # Status updates
-## 1.0-RC1 (2015-10-23)
+## 1.0-RC1 (2015-10-24)
 
 ### Removed 3rd party programs from the package
 I have also removed 3rd party tools from the package, and instead I provide instructions on how to get/install the 3rd party applications on windows and Gnu/Linux like systems.
