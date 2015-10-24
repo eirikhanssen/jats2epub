@@ -1,4 +1,4 @@
 Amazon kindlegen is used to convert epub to mobi for use on kindle devices.
 kindlegen is optional, you only need it if you want jats2epub to convert .epub to .mobi
 
-please consult the install instructions in jats2epub/README for how to install kindlegen.
+please consult the install instructions in jats2epub/README matching your operating system for how to install kindlegen.
