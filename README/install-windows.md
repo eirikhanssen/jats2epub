@@ -20,6 +20,8 @@ There are two options in getting jats2epub on windows:
 - Note that jats2epub might not work if you extract it to a network drive.
 
 ### Get jats2epub using git
+(If you already downloaded jats2epub you don't need to do this).
+
 If you have git installed, you can open cmd.exe, navigate to your chosen folder and type:
 
 ```git clone https://github.com/eirikhanssen/jats2epub.git```
