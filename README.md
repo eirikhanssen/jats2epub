@@ -3,9 +3,9 @@ jats2epub
 
 **jats2epub v1.0-RC1 does not work out of the box!**
 
-Please follow the install instructions in README: https://github.com/eirikhanssen/jats2epub/tree/master/README
+Please follow the install guide for your OS: https://github.com/eirikhanssen/jats2epub/tree/master/README
 
-Latest release: https://github.com/eirikhanssen/jats2epub/releases/latest
+Get latest release: https://github.com/eirikhanssen/jats2epub/releases/latest
 
 ## Purpose
 Create valid EPUB documents from journal articles marked up using the NISO JATS XML tagset.
