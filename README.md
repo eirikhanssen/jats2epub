@@ -1,7 +1,9 @@
 jats2epub
 =========
 
-**jats2epub v1.0-RC1 does not work out of the box! You need to follow the simple install instructions found in the README folder.**
+**jats2epub v1.0-RC1 does not work out of the box! You need to follow the simple install instructions found in the README folder:**
+
+https://github.com/eirikhanssen/jats2epub/tree/master/README
 
 The latest release can be downloaded from: https://github.com/eirikhanssen/jats2epub/releases/latest
 
