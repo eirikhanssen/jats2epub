@@ -62,11 +62,9 @@ Demo examples to try out first:
 Windows users need to use the backslash (\\) as a path separator instead of the slash (/) used in these examples.
 
 # Install instructions
-Find detailed install instrucitons matching your operating system:
+**Find detailed install instrucitons matching your operating system:**
 
 https://github.com/eirikhanssen/jats2epub/tree/master/README
-
-Since 3rd party applications are no longer distributed as part of jats2epub, it will not work out of the box!
 
 The user will need to download and and install the following if not present on the system (see install instructions for details):
 
