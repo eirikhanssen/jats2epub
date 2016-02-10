@@ -21,7 +21,7 @@ body { margin: .5em;
 
 div { margin-top: 0.5em }
 
-.back, .body { font-family: serif }
+.back, .body { font-family: sans-serif; }
 
 table.metadata td {
     vertical-align: top }
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 /* Every other heading should have a different font family to distinguish headers */
-h2, h4, h6 {font-family: "Times New Roman" , serif;}
+h2, h4, h6 {font-family: "DejaVu Sans", sans-serif;}
 
 h2 {font-size: 1.75em;}
 
@@ -133,7 +133,7 @@ div.panel { background-color: white;
 
 div.blockquote { font-size: 90%;
   margin-left: 1em; margin-right: 1em;
-  margin-top: 0.5em; margin-bottom: 0.5em }
+  margin-top: 0.5em; margin-bottom: 0.5em; line-height: 1.75em;}
 
 div.caption {
   margin-top: 0.5em; margin-bottom: 0.5em; font-family: sans-serif; font-style: italic;}
