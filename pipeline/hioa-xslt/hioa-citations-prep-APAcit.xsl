@@ -52,5 +52,79 @@
       <xsl:apply-templates mode="format"/>
     </italic>
   </xsl:template>
+	
+	<!-- ============================================================= -->
+	<!-- For publication type 'book-chapter'                           -->
+	<!-- ============================================================= -->
+	
+	<xsl:template name="book-chapter-citation-content"
+		match="element-citation[@publication-type='book-chapter']">
+		<xsl:variable name="all-names"
+			select="(person-group|name|collab|anonymous|etal|string-name) /
+			(. | nlm:fetch-comment(.))"/>
+		<!-- $all-authors are all the elements that might be authors -->
+		<xsl:variable name="placed-names"
+			select="$all-names[not(preceding-sibling::* intersect
+			(current()/* except $all-names))]"/>
+		<!-- placed authors are all person-groups and all the
+         elements that might be authors, except when they are 
+         preceded by elements that can't be authors -->
+		<xsl:variable name="date"
+			select="date[1] |
+			(year[1]|month[1]|day[1]|season[1])[not(exists(date))] |
+			date-in-citation[1][not(exists(date|year|month|day|season))]"/>
+		<!-- the date is either the first date element, or the first
+         year, month, day elements when there is no date element -->
+		<xsl:variable name="titles"
+			select="(chapter-title | article-title | trans-title) /
+			(. | nlm:fetch-comment(.))"/>
+		<xsl:variable name="placed-title"
+			select="$titles[1][not($placed-names)]"/>
+		<xsl:variable name="book-info"
+			select="(source | edition |
+			edition/following-sibling::*[1]/self::sup |
+			volume | fpage | lpage | page-range) /
+			(. | nlm:fetch-comment(.))"/>
+		<xsl:variable name="publisher"
+			select="(publisher-loc | publisher-name) /
+			(. | nlm:fetch-comment(.))"/>
+		<xsl:call-template name="format-names">
+			<xsl:with-param name="names"
+				select="$placed-names except comment"/>
+		</xsl:call-template>
+		<xsl:if test="not(exists($placed-names))">
+			<!-- if we have no authors to place, we'll have a placed
+           title -->
+			<xsl:apply-templates mode="article-title"
+				select="$placed-title"/>
+		</xsl:if>
+		<xsl:call-template name="format-date">
+			<xsl:with-param name="date" select="$date"/>
+		</xsl:call-template>
+		<!-- following the date, we process titles -->
+		<xsl:apply-templates mode="article-title"
+			select="$titles except ($placed-title | comment)"/>
+		<!-- next we do the book info, which includes source,
+         edition (w/ sup if it has any), volume, publisher-name,
+         publisher-loc, and any comments directly following 
+         these, plus any authors not included among
+         $placed-authors. -->
+		<xsl:call-template name="format-in-book">
+			<xsl:with-param name="book-info" select="$book-info"/>
+			<xsl:with-param name="book-names"
+				select="$all-names except $placed-names"/>
+		</xsl:call-template>
+		<xsl:call-template name="format-publisher">
+			<xsl:with-param name="publisher" select="$publisher"/>
+		</xsl:call-template>
+		<!-- if there's anything left we drop it in -->
+		<xsl:call-template name="comma-sequence-sentence">
+			<xsl:with-param name="phrases" as="node()*">
+				<xsl:apply-templates mode="book-chapter-item"
+					select="* except ($all-names | $date |
+					$titles | $book-info | $publisher)"/>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
 
 </xsl:stylesheet>
