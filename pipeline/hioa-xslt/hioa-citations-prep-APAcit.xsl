@@ -53,6 +53,7 @@
     </italic>
   </xsl:template>
 	
+
 	<!-- ============================================================= -->
 	<!-- For publication type 'book-chapter'                           -->
 	<!-- ============================================================= -->
@@ -81,7 +82,7 @@
 		<xsl:variable name="placed-title"
 			select="$titles[1][not($placed-names)]"/>
 		<xsl:variable name="book-info"
-			select="(source | edition |
+			select="(source | trans-source | edition |
 			edition/following-sibling::*[1]/self::sup |
 			volume | fpage | lpage | page-range) /
 			(. | nlm:fetch-comment(.))"/>

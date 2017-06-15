@@ -79,10 +79,37 @@
 	<!-- until we transit to html5 and epub3, rely on alternative representation of equations. -->
 	<p:delete name="remove-mml" match="//mml:math"/>
 
+	<p:xslt name="fix_trans_source_issues" version="2.0">
+		<p:input port="source">
+			<p:pipe port="result" step="remove-mml"></p:pipe>
+		</p:input>
+		<p:input port="stylesheet">
+			<p:inline>
+				<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					exclude-result-prefixes="xs"
+					version="2.0">
+					<xsl:output method="xml" indent="yes"></xsl:output>
+					
+					<xsl:template match="element-citation[@publication-type='book-chapter']//trans-source"><trans-source><xsl:text> [</xsl:text><xsl:value-of select="."/><xsl:text>]</xsl:text></trans-source></xsl:template>
+					
+					<xsl:template match="@*|node()">
+						<xsl:copy>
+							<xsl:apply-templates select="@*|node()"/>
+						</xsl:copy>
+					</xsl:template>
+				</xsl:stylesheet>
+			</p:inline>
+		</p:input>
+		<p:input port="parameters">
+			<p:empty></p:empty>
+		</p:input>
+	</p:xslt>
+
 	<p:xslt name="format-APA-citations" version="2.0">
 		<!-- EH 24.11.2013: Citations are APA-formatted. -->
 		<p:input port="source">
-			<p:pipe port="result" step="remove-mml"/>
+			<p:pipe port="result" step="fix_trans_source_issues"/>
 		</p:input>
 		<p:input port="stylesheet">
 			<!-- hioa-APAcit.xsl imports jats-APAcit.xsl -->
