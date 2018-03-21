@@ -217,11 +217,10 @@
 					</xsl:template>
 
 					<!-- Copy over all other elements unchanged (identity transform) -->
-					<xsl:template match="*">
-						<xsl:element name="{local-name()}" namespace="{namespace-uri(.)}">
-							<xsl:copy-of select="@*"/>
-							<xsl:apply-templates/>
-						</xsl:element>
+					<xsl:template match="@*|node()">
+						<xsl:copy>
+							<xsl:apply-templates select="@*|node()"/>
+						</xsl:copy>
 					</xsl:template>
 				</xsl:stylesheet>
 			</p:inline>

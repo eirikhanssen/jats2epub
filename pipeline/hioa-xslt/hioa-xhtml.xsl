@@ -625,4 +625,17 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  
+  <xsl:template match="graphic">
+    <xsl:apply-templates/>
+    <img alt="{@xlink:href}">
+      <xsl:for-each select="alt-text|../alt-text">
+        <xsl:attribute name="alt">
+          <xsl:value-of select="normalize-space(string(.))"/>
+        </xsl:attribute>
+      </xsl:for-each>
+      <xsl:call-template name="assign-src"/>
+    </img>
+  </xsl:template>
+  
 </xsl:stylesheet>
