@@ -123,15 +123,16 @@
 				<xsl:value-of select="article-meta/volume"/>
 				<xsl:text>, No </xsl:text>
 				<xsl:value-of select="article-meta/issue"/>
-				<xsl:text> (</xsl:text>
-				<xsl:value-of select="article-meta/pub-date[@pub-type='pub']/year"/>
-				<xsl:text>)</xsl:text>
+				<xsl:text> (</xsl:text><xsl:value-of select="article-meta/pub-date[@date-type='pub']/year"/><xsl:text>)</xsl:text>
 				<xsl:if test="article-meta/fpage and article-meta/lpage">
 					<xsl:text>, pp. </xsl:text>
 					<xsl:value-of select="article-meta/fpage"/>
 					<xsl:text>-</xsl:text>
 					<xsl:value-of select="article-meta/lpage"/>
 				</xsl:if>
+			  <xsl:if test="article-meta/elocation-id">
+			    <xsl:text>, </xsl:text><xsl:value-of select="article-meta/elocation-id"/>
+			  </xsl:if>
 			</p>
 		</xsl:when>
 		<!-- If volume and issue haven't been assigned, output no text for volume, year, issue and page number. -->
