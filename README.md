@@ -17,7 +17,7 @@ This work resulted in a paper published in Code4lib: EPUB as publication format 
 
 ## Input and output
 
-Windows users MUST use the ClickMeToStart.bat file to set up their environment - this will start cmd.exe (terminal look-alike) where jats2epub can be invoked using commands.
+Windows users MUST use the `ClickMeToStart.bat` file to set up their environment - this will start `cmd.exe` (terminal look-alike) where jats2epub can be invoked using commands.
 
 Gnu/Linux, Unix and MacOSX users simply need to open a shell/terminal to start using jats2epub provided the install instructions are followed.
 
@@ -41,7 +41,7 @@ JATS is a XML vocabulary for research papers.
 - JATS Tag Library: http://jats.nlm.nih.gov/publishing/tag-library/ 
 
 ## Technical overview at a glance
-jats2epub is a script, jats2epub.bat used on windows and jats2epub (shellscript) used on Gnu/Linux, Unix and MacOSX systems.
+jats2epub is a script, `jats2epub.bat` used on windows and jats2epub (shellscript) used on Gnu/Linux, Unix and MacOSX systems.
 
 The jats2epub script takes care of file copying and calling the different utilities needed to do the conversion.
 
@@ -79,9 +79,9 @@ The user will need to download and and install the following if not present on t
 - The initial XSLT-stylesheets were written by Tor-Arne Dahl, Trude Eikebrokk and Eirik Hanssen at Oslo and Akershus University College of Applied Sciences.
 - The windows batch-files, GNU/Linux shellscripts, and the xproc-pipeline are written by Eirik Hanssen. 
 - Several XSLT stylesheets used are from JATS tools developed by Wendell Piez for National Library of Medicine
-    - these are in the folder: jats2epub/pipeline/jats-xslt
+    - these are in the folder: `jats2epub/pipeline/jats-xslt`
     - source: https://github.com/ncbi/JATSPreviewStylesheets
-- Stylesheets developed by our project group are in the folder: jats2epub/pipeline/hioa-xslt. Some of these are vertical customizations of the JATS Tools stylesheets.
+- Stylesheets developed by our project group are in the folder: `jats2epub/pipeline/hioa-xslt`. Some of these are vertical customizations of the JATS Tools stylesheets.
 
 ## Maintainer and official website
 jats2epub is hosted on: https://github.com/eirikhanssen/jats2epub
@@ -114,7 +114,7 @@ I have also removed 3rd party tools from the package, and instead I provide inst
 
 An advantage of getting the 3rd party applications separately directly from the source is that you can update them and jats2epub independently. I also think getting applications directly from the ones developing them is the right thing to do.
 
-This means that xmlcalabash and epubcheck  is no longer distributed in this package.
+This means that xmlcalabash and epubcheck is no longer distributed in this package.
 
 Some of the utils previously included for windows compatibility are no longer necessary:
 - UnixUtils date.exe used to make a timestamp has been replaced with my own timestamp generator written in java.
@@ -137,12 +137,12 @@ converted files will be copied to two places:
     1) to the current directory where you run the command from
     2) a backup of the files is copied to ~/.jats2epub/converted
 
-temporary files will be stored in ~/.jats2epub/latest-run (these will be cleaned out when a new conversion run is initiated)
+temporary files will be stored in `~/.jats2epub/latest-run` (these will be cleaned out when a new conversion run is initiated)
 
 ## Status update (2015-04-17)
 Several improvements have been made: Code has been cleaned up for better readability and several bugs have been fixed.
-It is now easier to troubleshoot, because all intermediate documents are saved in output_working folder after each run.
-To preview html-file that will be used for upload to html fulltext, just open output_working/60-webversion.html. All 
+It is now easier to troubleshoot, because all intermediate documents are saved in `output_working` folder after each run.
+To preview html-file that will be used for upload to html fulltext, just open `output_working/60-webversion.html`. All 
 href/src links to stylesheets and images have been altered to work from this location.
 
 ## Related projects
@@ -177,7 +177,7 @@ I originally started with ooxml2jats, but took the ideas and built odf2jats. oox
     - Generate a clickable linked list with a table of contents (TOC) based on the document outline for easier navigation. The linked list TOC could be accessible as a drop-down menu with fixed CSS positioning.
         - This could be implemented using JavaScript/CSS.
 - ePub enhancements:
-    - Review ePub css based on WAI guidelines for readability. Speficically look at line height and space between pharagraphs/tables.
+    - Review ePub css based on WAI guidelines for readability. Specifically look at line height and space between pharagraphs/tables.
     - Look at css for displaying tables and bring it into APA6 standards.
 
 ## Todo
@@ -194,5 +194,5 @@ I originally started with ooxml2jats, but took the ideas and built odf2jats. oox
        }```
 
 ## Known bugs
-- Issue is formatted within square brackets [issue] when it should be in paranthesis (issue)
+- Issue is formatted within square brackets [issue] when it should be in parenthesis (issue)
     - **Condition that trigger the bug**: element citation for journal articles where issue is marked up, but no volume.
