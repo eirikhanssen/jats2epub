@@ -300,7 +300,7 @@
           </xsl:for-each>
         </div>
         <p class="license">
-          <img src="images/cc-license.png" alt="Attribution 3.0 Unported (CC BY 3.0)"/>
+          <img src="images/cc-license.png" alt="Creative Commons Attribution 4.0 International License (CC-BY-4.0)"/>
           <xsl:value-of select="permissions/license/license-p"/>
         </p>
       </div>
