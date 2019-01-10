@@ -247,6 +247,7 @@
 			<p:pipe step="jats2epub" port="transform"/>
 		</p:input>
 	</p:xslt>
+	
 
 	<!-- Stores the xhtml display document for use in ePub ( at this stage we have problems with elements that have no namespace - xmlns="" ) -->
 	<p:store omit-xml-declaration="true" indent="true" name="step-40-xhtml-article-display">
@@ -304,34 +305,6 @@
 		</p:input>
 	</p:namespace-rename>
 
-	<!--
-	EH 2014-03-24: OJS-compatibility complicates things. Have to add an id that will 
-	be used to target css rules. This is because the html-file will be included 
-	in another webpage in the OJS system.
-	
-	Prefixing all css rules of the css stylesheet with this id ensures that the rules
-	in the stylesheet won't afffect the rest of the webpage this html-file is embedded in
-	
-	First I tried adding this id to body. When the DOM is created, however, it will be in 
-	'tag-soup' mode since the OJS webpage won't validate.
-	
-	(OJS version 2.3.8 simply includes the whole uploaded html-file witin a div 
-	tag in the webpage). I tried a solution where I extracted the body from the 
-	article html file and renamed it to a div tag and uploaded this html-fragment file.
-	This works in OJS 2.3.8, because OJS recognizes it as a html-file based on the filename ending.
-	However, when I tried in the latest stable version of OJS, OJS seems to check for 
-	<!DOCTYPE ..> tag also. Therefore, a html-fragment like I tried first is detected 
-	as plaintext by the OJS system. When viewing a file OJS recognizes as text/plain,
-	OJS simply displays this file fragment without embedding it in its own page.
-	
-	Because of this inconsistent behaviour with OJS, I have decided to abandon 
-	trying to make the OJS webpage with the HTML file validate for now. The HTML
-	file uploaded to OJS should still validate by itself though.
-	
-	But still the css needs to be targeted right, so I decided to add this div to 
-	the first child div of the article html version intended for display in OJS.
--->
-
 	<p:xslt name="wrap-body-contents-in-div">
 		<p:input port="source"/>
 		<p:input port="stylesheet">
@@ -367,25 +340,49 @@ of relative url referenced css in the html fulltext that will make css validatio
 prevent css from functioning. -->
 	<p:delete match="//link[contains(@href,'css/hioa-epub.css')]"/>
 
-	<!-- EH 2014-09-03: for the html-file that will be uploaded to a server, we're linking to the cc by image hosted from creativecommons.org as well as linking to the license. -->
-	<p:replace match="//img[@src='images/cc-license.png']">
+	<!-- EH 2019-01-10: for the html-file that will be uploaded to a server, we're linking using CSS to display the CC-BY image as a background-image on the p.license element -->
+	<p:replace match="//p[@class='license']">
 		<p:input port="replacement">
 			<p:inline>
-				<a href="http://creativecommons.org/licenses/by/3.0/"
-					title="Creative Commons - Attribution 3.0 Unported  (CC BY 3.0)">
-					<img alt="Attribution 3.0 Unported (CC BY 3.0)"
-						src="http://i.creativecommons.org/l/by/3.0/88x31.png"/>
-				</a>
+				<p class="license">This work is licensed under a <a target="_top" rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</p>
 			</p:inline>
 		</p:input>
 	</p:replace>
 
-	<p:identity name="webversion-for-ojs-upload"/>
+	<!-- add target attribute to all external links -->
+	<p:add-attribute attribute-name="target" attribute-value="_top" match="//a[@href][matches(@href, 'https?://')]"/>
 
-	<!-- Saves a version for web display in OJS with html4.01 doctype -->
-	<p:store omit-xml-declaration="true" indent="true" encoding="utf-8" method="html" version="4.0"
-		doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
-		doctype-system="http://www.w3.org/TR/html4/loose.dtd" name="article-webversion">
+	<p:identity name="webversion-for-ojs-upload"/>
+	
+	<!-- PREPARE WEBVERSION for OJS GALLEY UPLOAD -->
+	<p:xslt version="2.0">
+		<p:input port="parameters"><p:empty/></p:input>
+		<p:input port="source"/>
+		<p:input port="stylesheet"><p:document href="hioa-xslt/create-html5-galley.xsl"/></p:input>
+	</p:xslt>
+	
+	<!-- link the stylesheet -->
+	<p:insert match="html/head" position="last-child">
+		<p:input port="source"/>
+		<p:input port="insertion">
+			<p:inline>
+				<link rel="stylesheet" href="/styles/galley/pp-xhtml5-galley.css" />
+			</p:inline>
+		</p:input>
+	</p:insert>
+
+	<!-- remove the logo for now-->
+	<p:delete match="//p[@class='logo']"/>
+
+	<!-- remove namespaces that are not needed to be defined in HTML5 -->
+	<p:namespace-rename apply-to="all" from="http://www.daisy.org/z3986/2005/ncx/" to=""/>
+	<p:namespace-rename apply-to="all" from="http://www.w3.org/1998/Math/MathML" to=""/>
+	<p:namespace-rename apply-to="all" from="http://www.w3.org/1999/xhtml" to=""/>
+
+	
+	<!-- Saves a version for web display in OJS with HTML5 doctype -->
+	<p:store omit-xml-declaration="true" undeclare-prefixes="true" indent="true" encoding="utf-8" method="html" version="5.0"
+ name="article-webversion">
 		<p:with-option name="href" select="concat($work_dir, 'article-webversion.html')"/>
 	</p:store>
 
