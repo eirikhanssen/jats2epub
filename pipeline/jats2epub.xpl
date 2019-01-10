@@ -340,11 +340,11 @@ of relative url referenced css in the html fulltext that will make css validatio
 prevent css from functioning. -->
 	<p:delete match="//link[contains(@href,'css/hioa-epub.css')]"/>
 
-	<!-- EH 2014-09-03: for the html-file that will be uploaded to a server, we're linking to the cc by image hosted from creativecommons.org as well as linking to the license. -->
+	<!-- EH 2019-01-10: for the html-file that will be uploaded to a server, we're linking using CSS to display the CC-BY image as a background-image on the p.license element -->
 	<p:replace match="//p[@class='license']">
 		<p:input port="replacement">
 			<p:inline>
-				<p class="license"><a target="_top" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a target="_top" rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</p>
+				<p class="license">This work is licensed under a <a target="_top" rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</p>
 			</p:inline>
 		</p:input>
 	</p:replace>
@@ -360,29 +360,8 @@ prevent css from functioning. -->
 		<p:input port="source"/>
 		<p:input port="stylesheet"><p:document href="hioa-xslt/create-html5-galley.xsl"/></p:input>
 	</p:xslt>
-	<!--<p:xslt version="2.0">
-		<p:input port="source"/>
-		<p:input port="parameters"><p:empty/></p:input>
-		<p:input port="stylesheet">
-			<p:inline>
-				<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/" xmlns:mml="http://www.w3.org/1998/Math/MathML">
-					<xsl:output exclude-result-prefixes="ncx mml"/>
-					
-					
-					
-					
-					
-					<xsl:template match="@*|node()">
-						<xsl:copy copy-namespaces="no">
-							<xsl:apply-templates select="@*|node()"/>
-						</xsl:copy>
-					</xsl:template>
-				</xsl:stylesheet>
-			</p:inline>
-		</p:input>
-	</p:xslt>
 	
-	
+	<!-- link the stylesheet -->
 	<p:insert match="html/head" position="last-child">
 		<p:input port="source"/>
 		<p:input port="insertion">
@@ -390,13 +369,17 @@ prevent css from functioning. -->
 				<link rel="stylesheet" href="/styles/galley/pp-xhtml5-galley.css" />
 			</p:inline>
 		</p:input>
-	</p:insert>-->
+	</p:insert>
+
+	<!-- remove the logo for now-->
+	<p:delete match="//p[@class='logo']"/>
 
 	<!-- remove namespaces that are not needed to be defined in HTML5 -->
 	<p:namespace-rename apply-to="all" from="http://www.daisy.org/z3986/2005/ncx/" to=""/>
 	<p:namespace-rename apply-to="all" from="http://www.w3.org/1998/Math/MathML" to=""/>
 	<p:namespace-rename apply-to="all" from="http://www.w3.org/1999/xhtml" to=""/>
 
+	
 	<!-- Saves a version for web display in OJS with HTML5 doctype -->
 	<p:store omit-xml-declaration="true" undeclare-prefixes="true" indent="true" encoding="utf-8" method="html" version="5.0"
  name="article-webversion">
